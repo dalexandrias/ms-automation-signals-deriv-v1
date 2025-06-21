@@ -16,8 +16,9 @@ services:
       - mongo-data:/data/db
 
   rise-fall-bot:
-    build: .
-    container_name: rise-fall-bot-container
+    # build: .
+    # container_name: rise-fall-bot-container
+    image: dalexandrias/rise-fall-bot:latest
     restart: always
     depends_on:
       - mongodb
