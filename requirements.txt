@@ -1,0 +1,8 @@
+websocket-client
+requests
+pandas
+numpy
+matplotlib
+ta
+pymongo
+pytz

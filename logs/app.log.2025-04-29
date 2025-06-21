@@ -1,0 +1,281 @@
+2025-04-29 17:58:07,856 INFO: === Iniciando script de geração de sinais ===
+2025-04-29 17:58:08,389 INFO: Websocket connected
+2025-04-29 17:58:08,733 INFO: ✅ Token autorizado com sucesso às 2025-04-29 20:58:08.733423 UTC
+2025-04-29 17:58:08,913 INFO: 📥 Histórico inicial recebido às 2025-04-29 20:58:08.913085 UTC
+2025-04-29 17:58:08,929 INFO: 📈 Análise em: 2025-04-29 20:58:08.929532 UTC | Close: 2453.67 | RSI: 48.29 | MACD: 0.28/0.27 | Hist: 0.00
+2025-04-29 17:58:08,930 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 40%
+2025-04-29 17:58:46,908 INFO: === Iniciando script de geração de sinais ===
+2025-04-29 17:58:47,156 INFO: Websocket connected
+2025-04-29 17:58:47,508 INFO: ✅ Token autorizado com sucesso às 2025-04-29 20:58:47.508724 UTC
+2025-04-29 17:58:47,710 INFO: 📥 Histórico inicial recebido às 2025-04-29 20:58:47.710852 UTC
+2025-04-29 17:58:47,717 INFO: 📈 Análise em: 2025-04-29 20:58:47.716383 UTC | Close: 2453.44 | RSI: 47.12 | MACD: 0.26/0.27 | Hist: -0.01
+2025-04-29 17:58:47,717 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 20%
+2025-04-29 17:59:00,390 INFO: 🔔 Novo candle fechado às 2025-04-29 20:59:00 UTC
+2025-04-29 17:59:00,395 INFO: 📈 Análise em: 2025-04-29 20:59:00.395131 UTC | Close: 2453.91 | RSI: 49.73 | MACD: 0.20/0.23 | Hist: -0.03
+2025-04-29 17:59:00,395 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 20%
+2025-04-29 18:00:00,435 INFO: 🔔 Novo candle fechado às 2025-04-29 21:00:00 UTC
+2025-04-29 18:00:00,439 INFO: 📈 Análise em: 2025-04-29 21:00:00.439054 UTC | Close: 2454.09 | RSI: 51.20 | MACD: 0.24/0.30 | Hist: -0.06
+2025-04-29 18:00:00,440 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 20%
+2025-04-29 18:01:00,390 INFO: 🔔 Novo candle fechado às 2025-04-29 21:01:00 UTC
+2025-04-29 18:01:00,394 INFO: 📈 Análise em: 2025-04-29 21:01:00.394944 UTC | Close: 2454.01 | RSI: 50.65 | MACD: 0.20/0.26 | Hist: -0.06
+2025-04-29 18:01:00,394 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 20%
+2025-04-29 18:18:48,898 INFO: === Logging ROOT inicializado ===
+2025-04-29 18:18:48,899 INFO: 🔗 Conectando ao WebSocket...
+2025-04-29 18:18:48,900 INFO: 🔗 Conexão WebSocket estabelecida. Aguardando dados...
+2025-04-29 18:19:34,556 INFO: === Logging ROOT inicializado ===
+2025-04-29 18:19:34,557 INFO: 🔗 Conectando ao WebSocket...
+2025-04-29 18:19:34,558 INFO: 🔗 Conexão WebSocket estabelecida. Aguardando mensagens...
+2025-04-29 18:19:35,021 INFO: Websocket connected
+2025-04-29 18:19:35,364 INFO: ✅ Token autorizado com sucesso às 2025-04-29 21:19:35.364615 UTC
+2025-04-29 18:19:35,566 INFO: 📥 Histórico inicial recebido às 2025-04-29 21:19:35.566383 UTC
+2025-04-29 18:19:35,571 INFO: 📈 Análise em: 2025-04-29 21:19:35.571658 UTC | Close: 2456.74 | RSI: 57.96 | MACD: 0.62/0.40 | Hist: 0.22
+2025-04-29 18:19:35,572 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 60%
+2025-04-29 18:20:00,431 INFO: 🔔 Novo candle fechado às 2025-04-29 21:20:00 UTC
+2025-04-29 18:20:00,437 INFO: 📈 Análise em: 2025-04-29 21:20:00.437243 UTC | Close: 2456.66 | RSI: 57.92 | MACD: 0.68/0.52 | Hist: 0.16
+2025-04-29 18:20:00,437 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 60%
+2025-04-29 18:21:04,908 INFO: === Logging ROOT inicializado ===
+2025-04-29 18:21:04,909 INFO: 🔗 Conectando ao WebSocket...
+2025-04-29 18:21:04,910 INFO: 🔗 Conexão WebSocket estabelecida. Aguardando dados...
+2025-04-29 18:21:16,154 INFO: === Logging ROOT inicializado ===
+2025-04-29 18:21:16,156 INFO: 🔗 Conectando ao WebSocket...
+2025-04-29 18:21:16,157 INFO: 🔗 Conexão WebSocket estabelecida. Aguardando dados...
+2025-04-29 18:21:16,645 INFO: Websocket connected
+2025-04-29 18:21:17,003 INFO: ✅ Token autorizado às 2025-04-29 21:21:17.003118 UTC
+2025-04-29 18:21:17,192 INFO: 📥 Histórico inicial recebido às 2025-04-29 21:21:17.192523 UTC
+2025-04-29 18:21:17,198 INFO: 📈 Análise: Close=2455.83 | RSI=52.69 | MACD=0.59/0.56 | Hist=0.03
+2025-04-29 18:21:17,198 INFO: ⚡ Nenhum sinal forte detectado. Melhor esperar!
+2025-04-29 18:22:00,404 INFO: 🔔 Novo candle em 2025-04-29 21:22:00 UTC
+2025-04-29 18:22:00,409 INFO: 📈 Análise: Close=2456.54 | RSI=56.35 | MACD=0.53/0.50 | Hist=0.03
+2025-04-29 18:22:00,409 INFO: ⚡ Nenhum sinal forte detectado. Melhor esperar!
+2025-04-29 18:23:00,399 INFO: 🔔 Novo candle em 2025-04-29 21:23:00 UTC
+2025-04-29 18:23:00,405 INFO: 📈 Análise: Close=2455.95 | RSI=52.90 | MACD=0.55/0.60 | Hist=-0.05
+2025-04-29 18:23:00,405 INFO: ⚡ Nenhum sinal forte detectado. Melhor esperar!
+2025-04-29 18:23:31,866 INFO: === Logging ROOT inicializado ===
+2025-04-29 18:23:31,867 INFO: 🔗 Conectando ao WebSocket...
+2025-04-29 18:23:31,868 INFO: 🔗 Conexão WebSocket estabelecida. Aguardando dados...
+2025-04-29 18:23:32,466 INFO: Websocket connected
+2025-04-29 18:23:32,777 INFO: ✅ Token autorizado às 2025-04-29 21:23:32.777145 UTC
+2025-04-29 18:23:32,960 INFO: 📥 Histórico inicial recebido às 2025-04-29 21:23:32.960715 UTC
+2025-04-29 18:23:32,965 INFO: 📈 Análise: Close=2455.76 | RSI=51.95 | MACD=0.53/0.60 | Hist=-0.07
+2025-04-29 18:23:32,966 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 20%
+2025-04-29 18:23:37,006 INFO: ✅ Mensagem enviada ao Telegram (ID: 1WYTLWXV).
+2025-04-29 18:23:37,007 INFO: Inicializando conexão com o MongoDB.
+2025-04-29 18:23:37,024 INFO: Conexão com o MongoDB estabelecida.
+2025-04-29 18:23:37,024 INFO: Inserindo documento: {'signal_id': '1WYTLWXV', 'signal': 'FALL', 'price': np.float64(2455.764), 'confidence': 20, 'analyze_time': '2025-04-29 18:23:32', 'entry_time': '2025-04-29 18:24:32'}
+2025-04-29 18:24:07,455 ERROR: Erro ao inserir documento: mongodb:27017: [Errno 11001] getaddrinfo failed (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 68114359d05d757d85640c92, topology_type: Unknown, servers: [<ServerDescription ('mongodb', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('mongodb:27017: [Errno 11001] getaddrinfo failed (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+2025-04-29 18:24:07,456 ERROR: Erro ao processar sinal 1WYTLWXV: mongodb:27017: [Errno 11001] getaddrinfo failed (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 68114359d05d757d85640c92, topology_type: Unknown, servers: [<ServerDescription ('mongodb', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('mongodb:27017: [Errno 11001] getaddrinfo failed (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+2025-04-29 18:24:07,460 INFO: 🔔 Novo candle em 2025-04-29 21:24:00 UTC
+2025-04-29 18:24:07,464 INFO: 📈 Análise: Close=2456.68 | RSI=57.42 | MACD=0.54/0.59 | Hist=-0.06
+2025-04-29 18:24:07,465 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 40%
+2025-04-29 18:24:09,430 INFO: ✅ Mensagem enviada ao Telegram (ID: 9WKJXI16).
+2025-04-29 18:24:09,431 INFO: Inicializando conexão com o MongoDB.
+2025-04-29 18:24:09,433 INFO: Conexão com o MongoDB estabelecida.
+2025-04-29 18:24:09,433 INFO: Inserindo documento: {'signal_id': '9WKJXI16', 'signal': 'RISE', 'price': np.float64(2456.675), 'confidence': 40, 'analyze_time': '2025-04-29 18:24:07', 'entry_time': '2025-04-29 18:25:07'}
+2025-04-29 18:24:39,840 ERROR: Erro ao inserir documento: mongodb:27017: [Errno 11001] getaddrinfo failed (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 68114379d05d757d85640c94, topology_type: Unknown, servers: [<ServerDescription ('mongodb', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('mongodb:27017: [Errno 11001] getaddrinfo failed (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+2025-04-29 18:24:39,841 ERROR: Erro ao processar sinal 9WKJXI16: mongodb:27017: [Errno 11001] getaddrinfo failed (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 68114379d05d757d85640c94, topology_type: Unknown, servers: [<ServerDescription ('mongodb', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('mongodb:27017: [Errno 11001] getaddrinfo failed (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+2025-04-29 18:25:00,353 INFO: 🔔 Novo candle em 2025-04-29 21:25:00 UTC
+2025-04-29 18:25:00,358 INFO: 📈 Análise: Close=2457.18 | RSI=59.72 | MACD=0.51/0.52 | Hist=-0.01
+2025-04-29 18:25:00,358 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 40%
+2025-04-29 18:25:01,159 INFO: ✅ Mensagem enviada ao Telegram (ID: 3W5T44E7).
+2025-04-29 18:25:01,160 INFO: Inicializando conexão com o MongoDB.
+2025-04-29 18:25:01,163 INFO: Conexão com o MongoDB estabelecida.
+2025-04-29 18:25:01,163 INFO: Inserindo documento: {'signal_id': '3W5T44E7', 'signal': 'RISE', 'price': np.float64(2457.184), 'confidence': 40, 'analyze_time': '2025-04-29 18:25:00', 'entry_time': '2025-04-29 18:26:00'}
+2025-04-29 18:25:26,420 INFO: === Logging ROOT inicializado ===
+2025-04-29 18:25:26,420 INFO: 🔗 Conectando ao WebSocket...
+2025-04-29 18:25:26,421 INFO: 🔗 Conexão WebSocket estabelecida. Aguardando dados...
+2025-04-29 18:25:26,891 INFO: Websocket connected
+2025-04-29 18:25:27,201 INFO: ✅ Token autorizado às 2025-04-29 21:25:27.201889 UTC
+2025-04-29 18:25:27,409 INFO: 📥 Histórico inicial recebido às 2025-04-29 21:25:27.409383 UTC
+2025-04-29 18:25:27,414 INFO: 📈 Análise: Close=2457.32 | RSI=60.17 | MACD=0.61/0.56 | Hist=0.04
+2025-04-29 18:25:27,414 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 40%
+2025-04-29 18:25:28,294 INFO: ✅ Mensagem enviada ao Telegram (ID: O1SSN918).
+2025-04-29 18:25:28,295 INFO: Inicializando conexão com o MongoDB.
+2025-04-29 18:25:28,306 INFO: Conexão com o MongoDB estabelecida.
+2025-04-29 18:25:28,312 INFO: Inserindo documento: {'signal_id': 'O1SSN918', 'signal': 'RISE', 'price': np.float64(2457.316), 'confidence': 40, 'analyze_time': '2025-04-29 18:25:27', 'entry_time': '2025-04-29 18:26:27'}
+2025-04-29 18:25:28,511 INFO: Documento inserido com ID: 681143c8cae36370a43548e7
+2025-04-29 18:26:00,436 INFO: 🔔 Novo candle em 2025-04-29 21:26:00 UTC
+2025-04-29 18:26:00,440 INFO: 📈 Análise: Close=2456.95 | RSI=58.10 | MACD=0.69/0.71 | Hist=-0.02
+2025-04-29 18:26:00,441 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 20%
+2025-04-29 18:26:01,265 INFO: ✅ Mensagem enviada ao Telegram (ID: CPFH05WJ).
+2025-04-29 18:26:01,266 INFO: Inicializando conexão com o MongoDB.
+2025-04-29 18:26:01,268 INFO: Conexão com o MongoDB estabelecida.
+2025-04-29 18:26:01,269 INFO: Inserindo documento: {'signal_id': 'CPFH05WJ', 'signal': 'FALL', 'price': np.float64(2456.95), 'confidence': 20, 'analyze_time': '2025-04-29 18:26:00', 'entry_time': '2025-04-29 18:27:00'}
+2025-04-29 18:26:01,288 INFO: Documento inserido com ID: 681143e9cae36370a43548e9
+2025-04-29 18:27:00,463 INFO: 🔔 Novo candle em 2025-04-29 21:27:00 UTC
+2025-04-29 18:27:00,468 INFO: 📈 Análise: Close=2458.52 | RSI=65.92 | MACD=0.78/0.70 | Hist=0.08
+2025-04-29 18:27:00,468 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 40%
+2025-04-29 18:27:01,331 INFO: ✅ Mensagem enviada ao Telegram (ID: 8FSVBZE4).
+2025-04-29 18:27:01,331 INFO: Inicializando conexão com o MongoDB.
+2025-04-29 18:27:01,333 INFO: Conexão com o MongoDB estabelecida.
+2025-04-29 18:27:01,335 INFO: Inserindo documento: {'signal_id': '8FSVBZE4', 'signal': 'RISE', 'price': np.float64(2458.523), 'confidence': 40, 'analyze_time': '2025-04-29 18:27:00', 'entry_time': '2025-04-29 18:28:00'}
+2025-04-29 18:27:01,373 INFO: Documento inserido com ID: 68114425cae36370a43548eb
+2025-04-29 18:28:00,454 INFO: 🔔 Novo candle em 2025-04-29 21:28:00 UTC
+2025-04-29 18:28:00,459 INFO: 📈 Análise: Close=2459.32 | RSI=68.77 | MACD=0.85/0.65 | Hist=0.19
+2025-04-29 18:28:00,459 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 40%
+2025-04-29 18:28:01,269 INFO: ✅ Mensagem enviada ao Telegram (ID: NNVQQG3V).
+2025-04-29 18:28:01,270 INFO: Inicializando conexão com o MongoDB.
+2025-04-29 18:28:01,272 INFO: Conexão com o MongoDB estabelecida.
+2025-04-29 18:28:01,273 INFO: Inserindo documento: {'signal_id': 'NNVQQG3V', 'signal': 'RISE', 'price': np.float64(2459.316), 'confidence': 40, 'analyze_time': '2025-04-29 18:28:00', 'entry_time': '2025-04-29 18:29:00'}
+2025-04-29 18:28:01,296 INFO: Documento inserido com ID: 68114461cae36370a43548ed
+2025-04-29 18:58:44,257 INFO: === Logging ROOT inicializado ===
+2025-04-29 18:58:44,258 INFO: 🔗 Conectando ao WebSocket...
+2025-04-29 18:58:44,260 INFO: 🔗 Conexão WebSocket estabelecida. Aguardando dados...
+2025-04-29 18:58:44,523 INFO: Websocket connected
+2025-04-29 18:58:44,834 INFO: ✅ Token autorizado às 2025-04-29 21:58:44.834583 UTC
+2025-04-29 18:58:45,007 INFO: 📥 Histórico inicial recebido às 2025-04-29 21:58:45.007460 UTC
+2025-04-29 18:58:45,032 INFO: 📈 Análise: EMA9=2453.99, EMA21=2455.28, trend=FALL, RSI=33.33, MACD=-1.11/-0.69, ATR=1.09, body=0.24, confidence=60
+2025-04-29 18:58:45,032 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 60%
+2025-04-29 18:58:45,907 INFO: ✅ Mensagem enviada ao Telegram (ID: ENJV91AM).
+2025-04-29 18:58:45,908 INFO: Inicializando conexão com o MongoDB.
+2025-04-29 18:58:45,923 INFO: Conexão com o MongoDB estabelecida.
+2025-04-29 18:58:45,924 INFO: Inserindo documento: {'signal_id': 'ENJV91AM', 'signal': 'FALL', 'price': np.float64(2453.104), 'confidence': 60, 'analyze_time': '2025-04-29 18:58:45', 'entry_time': '2025-04-29 18:59:45'}
+2025-04-29 18:58:45,958 INFO: Documento inserido com ID: 68114b956330fc0d84ea3ac1
+2025-04-29 18:59:00,481 INFO: 🔔 Novo candle em 2025-04-29 21:59:00 UTC
+2025-04-29 18:59:00,487 INFO: 📈 Análise: EMA9=2453.80, EMA21=2455.08, trend=FALL, RSI=32.99, MACD=-1.15/-0.79, ATR=1.02, body=0.00, confidence=60
+2025-04-29 18:59:00,488 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 60%
+2025-04-29 18:59:01,271 INFO: ✅ Mensagem enviada ao Telegram (ID: OIKUG9U0).
+2025-04-29 18:59:01,272 INFO: Inicializando conexão com o MongoDB.
+2025-04-29 18:59:01,275 INFO: Conexão com o MongoDB estabelecida.
+2025-04-29 18:59:01,275 INFO: Inserindo documento: {'signal_id': 'OIKUG9U0', 'signal': 'FALL', 'price': np.float64(2453.048), 'confidence': 60, 'analyze_time': '2025-04-29 18:59:00', 'entry_time': '2025-04-29 19:00:00'}
+2025-04-29 18:59:01,303 INFO: Documento inserido com ID: 68114ba56330fc0d84ea3ac3
+2025-04-29 19:00:00,477 INFO: 🔔 Novo candle em 2025-04-29 22:00:00 UTC
+2025-04-29 19:00:00,484 INFO: 📈 Análise: EMA9=2453.81, EMA21=2454.97, trend=FALL, RSI=39.87, MACD=-1.09/-0.86, ATR=1.00, body=0.00, confidence=60
+2025-04-29 19:00:00,485 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 60%
+2025-04-29 19:00:01,314 INFO: ✅ Mensagem enviada ao Telegram (ID: 50XLMS7B).
+2025-04-29 19:00:01,314 INFO: Inicializando conexão com o MongoDB.
+2025-04-29 19:00:01,317 INFO: Conexão com o MongoDB estabelecida.
+2025-04-29 19:00:01,317 INFO: Inserindo documento: {'signal_id': '50XLMS7B', 'signal': 'FALL', 'price': np.float64(2453.845), 'confidence': 60, 'analyze_time': '2025-04-29 19:00:00', 'entry_time': '2025-04-29 19:01:00'}
+2025-04-29 19:00:01,337 INFO: Documento inserido com ID: 68114be16330fc0d84ea3ac5
+2025-04-29 19:01:00,444 INFO: 🔔 Novo candle em 2025-04-29 22:01:00 UTC
+2025-04-29 19:01:00,456 INFO: 📈 Análise: EMA9=2453.93, EMA21=2454.91, trend=FALL, RSI=44.08, MACD=-0.99/-0.88, ATR=0.97, body=0.00, confidence=40
+2025-04-29 19:01:00,456 INFO: ⚡ Sem sinal forte. Aguardando próximo candle.
+2025-04-29 19:02:00,459 INFO: 🔔 Novo candle em 2025-04-29 22:02:00 UTC
+2025-04-29 19:02:00,466 INFO: 📈 Análise: EMA9=2453.77, EMA21=2454.76, trend=FALL, RSI=37.27, MACD=-1.03/-0.94, ATR=0.99, body=0.00, confidence=60
+2025-04-29 19:02:00,467 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 60%
+2025-04-29 19:02:01,419 INFO: ✅ Mensagem enviada ao Telegram (ID: QL1LDB2R).
+2025-04-29 19:02:01,420 INFO: Inicializando conexão com o MongoDB.
+2025-04-29 19:02:01,423 INFO: Conexão com o MongoDB estabelecida.
+2025-04-29 19:02:01,423 INFO: Inserindo documento: {'signal_id': 'QL1LDB2R', 'signal': 'FALL', 'price': np.float64(2453.135), 'confidence': 60, 'analyze_time': '2025-04-29 19:02:00', 'entry_time': '2025-04-29 19:03:00'}
+2025-04-29 19:02:01,445 INFO: Documento inserido com ID: 68114c596330fc0d84ea3ac7
+2025-04-29 19:04:58,452 INFO: === Logging ROOT inicializado ===
+2025-04-29 19:04:58,453 INFO: 🔗 Conectando ao WebSocket...
+2025-04-29 19:04:58,454 INFO: 🔗 Conexão WebSocket estabelecida. Aguardando dados...
+2025-04-29 19:04:58,786 INFO: Websocket connected
+2025-04-29 19:04:59,112 INFO: ✅ Token autorizado às 2025-04-29 22:04:59.112979 UTC
+2025-04-29 19:04:59,299 INFO: 📥 Histórico inicial recebido às 2025-04-29 22:04:59.299501 UTC
+2025-04-29 19:04:59,308 INFO: 📈 Análise: EMA9=2453.22, EMA21=2454.32, trend=FALL, RSI=38.68, MACD=-1.14/-1.03, ATR=1.12, body=0.45, confidence=60
+2025-04-29 19:04:59,308 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 60%
+2025-04-29 19:05:00,199 INFO: ✅ Mensagem enviada ao Telegram (ID: PM4SCUW3).
+2025-04-29 19:05:00,200 INFO: Inicializando conexão com o MongoDB.
+2025-04-29 19:05:00,213 INFO: Conexão com o MongoDB estabelecida.
+2025-04-29 19:05:00,214 INFO: Inserindo documento: {'signal_id': 'PM4SCUW3', 'signal': 'FALL', 'price': np.float64(2452.884), 'confidence': 60, 'analyze_time': '2025-04-29 19:04:59', 'entry_time': '2025-04-29 19:05:59'}
+2025-04-29 19:05:00,238 INFO: Documento inserido com ID: 68114d0c3437b1c8a06929b8
+2025-04-29 19:06:00,459 INFO: 🔔 Novo candle em 2025-04-29 22:06:00 UTC
+2025-04-29 19:06:00,466 INFO: 📈 Análise: EMA9=2453.03, EMA21=2454.14, trend=FALL, RSI=35.66, MACD=-1.18/-1.09, ATR=1.08, body=0.00, confidence=60
+2025-04-29 19:06:00,466 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 60%
+2025-04-29 19:06:01,293 INFO: ✅ Mensagem enviada ao Telegram (ID: 99DZ9I3B).
+2025-04-29 19:06:01,293 INFO: Inicializando conexão com o MongoDB.
+2025-04-29 19:06:01,295 INFO: Conexão com o MongoDB estabelecida.
+2025-04-29 19:06:01,296 INFO: Inserindo documento: {'signal_id': '99DZ9I3B', 'signal': 'FALL', 'price': np.float64(2452.251), 'confidence': 60, 'analyze_time': '2025-04-29 19:06:00', 'entry_time': '2025-04-29 19:07:00'}
+2025-04-29 19:06:01,319 INFO: Documento inserido com ID: 68114d493437b1c8a06929ba
+2025-04-29 19:07:00,468 INFO: 🔔 Novo candle em 2025-04-29 22:07:00 UTC
+2025-04-29 19:07:00,475 INFO: 📈 Análise: EMA9=2453.04, EMA21=2454.05, trend=FALL, RSI=41.54, MACD=-1.13/-1.11, ATR=1.06, body=0.00, confidence=40
+2025-04-29 19:07:00,475 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 40%
+2025-04-29 19:07:01,381 INFO: ✅ Mensagem enviada ao Telegram (ID: QR8WG8Q0).
+2025-04-29 19:07:01,382 INFO: Inicializando conexão com o MongoDB.
+2025-04-29 19:07:01,384 INFO: Conexão com o MongoDB estabelecida.
+2025-04-29 19:07:01,384 INFO: Inserindo documento: {'signal_id': 'QR8WG8Q0', 'signal': 'FALL', 'price': np.float64(2453.077), 'confidence': 40, 'analyze_time': '2025-04-29 19:07:00', 'entry_time': '2025-04-29 19:08:00'}
+2025-04-29 19:07:01,403 INFO: Documento inserido com ID: 68114d853437b1c8a06929bc
+2025-04-29 19:08:00,437 INFO: 🔔 Novo candle em 2025-04-29 22:08:00 UTC
+2025-04-29 19:08:00,444 INFO: 📈 Análise: EMA9=2453.20, EMA21=2454.02, trend=FALL, RSI=46.89, MACD=-0.96/-1.03, ATR=1.04, body=0.00, confidence=20
+2025-04-29 19:08:00,444 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 20%
+2025-04-29 19:08:01,252 INFO: ✅ Mensagem enviada ao Telegram (ID: RI6T43PF).
+2025-04-29 19:08:01,252 INFO: Inicializando conexão com o MongoDB.
+2025-04-29 19:08:01,255 INFO: Conexão com o MongoDB estabelecida.
+2025-04-29 19:08:01,255 INFO: Inserindo documento: {'signal_id': 'RI6T43PF', 'signal': 'FALL', 'price': np.float64(2453.867), 'confidence': 20, 'analyze_time': '2025-04-29 19:08:00', 'entry_time': '2025-04-29 19:09:00'}
+2025-04-29 19:08:01,298 INFO: Documento inserido com ID: 68114dc13437b1c8a06929be
+2025-04-29 19:09:00,476 INFO: 🔔 Novo candle em 2025-04-29 22:09:00 UTC
+2025-04-29 19:09:00,486 INFO: 📈 Análise: EMA9=2453.44, EMA21=2454.06, trend=FALL, RSI=49.86, MACD=-0.82/-1.00, ATR=1.00, body=0.00, confidence=20
+2025-04-29 19:09:00,486 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 20%
+2025-04-29 19:09:01,291 INFO: ✅ Mensagem enviada ao Telegram (ID: 4PPGOAKQ).
+2025-04-29 19:09:01,292 INFO: Inicializando conexão com o MongoDB.
+2025-04-29 19:09:01,295 INFO: Conexão com o MongoDB estabelecida.
+2025-04-29 19:09:01,296 INFO: Inserindo documento: {'signal_id': '4PPGOAKQ', 'signal': 'FALL', 'price': np.float64(2454.377), 'confidence': 20, 'analyze_time': '2025-04-29 19:09:00', 'entry_time': '2025-04-29 19:10:00'}
+2025-04-29 19:09:01,313 INFO: Documento inserido com ID: 68114dfd3437b1c8a06929c0
+2025-04-29 19:10:00,438 INFO: 🔔 Novo candle em 2025-04-29 22:10:00 UTC
+2025-04-29 19:10:00,445 INFO: 📈 Análise: EMA9=2453.52, EMA21=2454.03, trend=FALL, RSI=46.89, MACD=-0.72/-0.93, ATR=0.97, body=0.00, confidence=20
+2025-04-29 19:10:00,445 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 20%
+2025-04-29 19:10:01,265 INFO: ✅ Mensagem enviada ao Telegram (ID: 3VQVKPGV).
+2025-04-29 19:10:01,266 INFO: Inicializando conexão com o MongoDB.
+2025-04-29 19:10:01,284 INFO: Conexão com o MongoDB estabelecida.
+2025-04-29 19:10:01,284 INFO: Inserindo documento: {'signal_id': '3VQVKPGV', 'signal': 'FALL', 'price': np.float64(2453.841), 'confidence': 20, 'analyze_time': '2025-04-29 19:10:00', 'entry_time': '2025-04-29 19:11:00'}
+2025-04-29 19:10:01,322 INFO: Documento inserido com ID: 68114e393437b1c8a06929c2
+2025-04-29 19:11:00,431 INFO: 🔔 Novo candle em 2025-04-29 22:11:00 UTC
+2025-04-29 19:11:00,438 INFO: 📈 Análise: EMA9=2453.61, EMA21=2454.03, trend=FALL, RSI=47.64, MACD=-0.64/-0.88, ATR=0.91, body=0.00, confidence=20
+2025-04-29 19:11:00,438 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 20%
+2025-04-29 19:11:01,236 INFO: ✅ Mensagem enviada ao Telegram (ID: H44VITC7).
+2025-04-29 19:11:01,236 INFO: Inicializando conexão com o MongoDB.
+2025-04-29 19:11:01,239 INFO: Conexão com o MongoDB estabelecida.
+2025-04-29 19:11:01,240 INFO: Inserindo documento: {'signal_id': 'H44VITC7', 'signal': 'FALL', 'price': np.float64(2453.964), 'confidence': 20, 'analyze_time': '2025-04-29 19:11:00', 'entry_time': '2025-04-29 19:12:00'}
+2025-04-29 19:11:01,273 INFO: Documento inserido com ID: 68114e753437b1c8a06929c4
+2025-04-29 19:12:00,452 INFO: 🔔 Novo candle em 2025-04-29 22:12:00 UTC
+2025-04-29 19:12:00,460 INFO: 📈 Análise: EMA9=2453.50, EMA21=2453.94, trend=FALL, RSI=42.79, MACD=-0.63/-0.82, ATR=0.90, body=0.00, confidence=20
+2025-04-29 19:12:00,460 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 20%
+2025-04-29 19:12:01,320 INFO: ✅ Mensagem enviada ao Telegram (ID: JGH84QCI).
+2025-04-29 19:12:01,320 INFO: Inicializando conexão com o MongoDB.
+2025-04-29 19:12:01,323 INFO: Conexão com o MongoDB estabelecida.
+2025-04-29 19:12:01,323 INFO: Inserindo documento: {'signal_id': 'JGH84QCI', 'signal': 'FALL', 'price': np.float64(2453.085), 'confidence': 20, 'analyze_time': '2025-04-29 19:12:00', 'entry_time': '2025-04-29 19:13:00'}
+2025-04-29 19:12:01,346 INFO: Documento inserido com ID: 68114eb13437b1c8a06929c6
+2025-04-29 19:13:00,451 INFO: 🔔 Novo candle em 2025-04-29 22:13:00 UTC
+2025-04-29 19:13:00,459 INFO: 📈 Análise: EMA9=2453.51, EMA21=2453.91, trend=FALL, RSI=45.62, MACD=-0.60/-0.80, ATR=0.87, body=0.00, confidence=20
+2025-04-29 19:13:00,459 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 20%
+2025-04-29 19:13:01,249 INFO: ✅ Mensagem enviada ao Telegram (ID: OB2OBK91).
+2025-04-29 19:13:01,249 INFO: Inicializando conexão com o MongoDB.
+2025-04-29 19:13:01,252 INFO: Conexão com o MongoDB estabelecida.
+2025-04-29 19:13:01,252 INFO: Inserindo documento: {'signal_id': 'OB2OBK91', 'signal': 'FALL', 'price': np.float64(2453.518), 'confidence': 20, 'analyze_time': '2025-04-29 19:13:00', 'entry_time': '2025-04-29 19:14:00'}
+2025-04-29 19:13:01,275 INFO: Documento inserido com ID: 68114eed3437b1c8a06929c8
+2025-04-29 19:14:00,473 INFO: 🔔 Novo candle em 2025-04-29 22:14:00 UTC
+2025-04-29 19:14:00,480 INFO: 📈 Análise: EMA9=2453.18, EMA21=2453.73, trend=FALL, RSI=37.49, MACD=-0.70/-0.79, ATR=0.92, body=0.00, confidence=60
+2025-04-29 19:14:00,480 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 60%
+2025-04-29 19:14:01,278 INFO: ✅ Mensagem enviada ao Telegram (ID: 99EQSONW).
+2025-04-29 19:14:01,279 INFO: Inicializando conexão com o MongoDB.
+2025-04-29 19:14:01,298 INFO: Conexão com o MongoDB estabelecida.
+2025-04-29 19:14:01,298 INFO: Inserindo documento: {'signal_id': '99EQSONW', 'signal': 'FALL', 'price': np.float64(2451.869), 'confidence': 60, 'analyze_time': '2025-04-29 19:14:00', 'entry_time': '2025-04-29 19:15:00'}
+2025-04-29 19:14:01,320 INFO: Documento inserido com ID: 68114f293437b1c8a06929ca
+2025-04-29 19:15:00,458 INFO: 🔔 Novo candle em 2025-04-29 22:15:00 UTC
+2025-04-29 19:15:00,465 INFO: 📈 Análise: EMA9=2452.96, EMA21=2453.57, trend=FALL, RSI=39.08, MACD=-0.73/-0.76, ATR=0.87, body=0.00, confidence=40
+2025-04-29 19:15:00,465 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 40%
+2025-04-29 19:15:01,257 INFO: ✅ Mensagem enviada ao Telegram (ID: N5OKCA0W).
+2025-04-29 19:15:01,258 INFO: Inicializando conexão com o MongoDB.
+2025-04-29 19:15:01,277 INFO: Conexão com o MongoDB estabelecida.
+2025-04-29 19:15:01,277 INFO: Inserindo documento: {'signal_id': 'N5OKCA0W', 'signal': 'FALL', 'price': np.float64(2452.084), 'confidence': 40, 'analyze_time': '2025-04-29 19:15:00', 'entry_time': '2025-04-29 19:16:00'}
+2025-04-29 19:15:01,296 INFO: Documento inserido com ID: 68114f653437b1c8a06929cc
+2025-04-29 19:16:00,453 INFO: 🔔 Novo candle em 2025-04-29 22:16:00 UTC
+2025-04-29 19:16:00,459 INFO: 📈 Análise: EMA9=2453.08, EMA21=2453.59, trend=FALL, RSI=48.16, MACD=-0.68/-0.79, ATR=0.92, body=0.00, confidence=20
+2025-04-29 19:16:00,460 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 20%
+2025-04-29 19:16:01,321 INFO: ✅ Mensagem enviada ao Telegram (ID: QH1NAGJF).
+2025-04-29 19:16:01,321 INFO: Inicializando conexão com o MongoDB.
+2025-04-29 19:16:01,323 INFO: Conexão com o MongoDB estabelecida.
+2025-04-29 19:16:01,324 INFO: Inserindo documento: {'signal_id': 'QH1NAGJF', 'signal': 'FALL', 'price': np.float64(2453.576), 'confidence': 20, 'analyze_time': '2025-04-29 19:16:00', 'entry_time': '2025-04-29 19:17:00'}
+2025-04-29 19:16:01,358 INFO: Documento inserido com ID: 68114fa13437b1c8a06929ce
+2025-04-29 19:17:00,437 INFO: 🔔 Novo candle em 2025-04-29 22:17:00 UTC
+2025-04-29 19:17:00,443 INFO: 📈 Análise: EMA9=2452.86, EMA21=2453.44, trend=FALL, RSI=40.64, MACD=-0.74/-0.81, ATR=0.97, body=0.00, confidence=20
+2025-04-29 19:17:00,444 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 20%
+2025-04-29 19:17:01,273 INFO: ✅ Mensagem enviada ao Telegram (ID: 5NJUWZT5).
+2025-04-29 19:17:01,274 INFO: Inicializando conexão com o MongoDB.
+2025-04-29 19:17:01,293 INFO: Conexão com o MongoDB estabelecida.
+2025-04-29 19:17:01,293 INFO: Inserindo documento: {'signal_id': '5NJUWZT5', 'signal': 'FALL', 'price': np.float64(2451.943), 'confidence': 20, 'analyze_time': '2025-04-29 19:17:00', 'entry_time': '2025-04-29 19:18:00'}
+2025-04-29 19:17:01,311 INFO: Documento inserido com ID: 68114fdd3437b1c8a06929d0
+2025-04-29 19:17:20,129 INFO: === Logging ROOT inicializado ===
+2025-04-29 19:17:20,130 INFO: 🔗 Conectando ao WebSocket...
+2025-04-29 19:17:20,132 INFO: 🔗 Conexão WebSocket estabelecida. Aguardando dados...
+2025-04-29 19:17:20,631 INFO: Websocket connected
+2025-04-29 19:17:21,005 INFO: ✅ Token autorizado às 2025-04-29 22:17:21.005405 UTC
+2025-04-29 19:17:21,185 INFO: 📥 Histórico inicial recebido às 2025-04-29 22:17:21.185042 UTC
+2025-04-29 19:17:21,195 INFO: 📈 Análise: EMA9=2452.66, EMA21=2453.30, trend=FALL, RSI=40.35, MACD=-0.76/-0.78, ATR=1.10, body=0.10, band_width=0.001, confidence=20
+2025-04-29 19:17:21,196 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 20%
+2025-04-29 19:17:22,072 INFO: ✅ Mensagem enviada ao Telegram (ID: 00QPC0IS).
+2025-04-29 19:17:22,072 INFO: Inicializando conexão com o MongoDB.
+2025-04-29 19:17:22,085 INFO: Conexão com o MongoDB estabelecida.
+2025-04-29 19:17:22,085 INFO: Inserindo documento: {'signal_id': '00QPC0IS', 'signal': 'FALL', 'price': np.float64(2451.843), 'confidence': 20, 'analyze_time': '2025-04-29 19:17:21', 'entry_time': '2025-04-29 19:18:21'}
+2025-04-29 19:17:22,117 INFO: Documento inserido com ID: 68114ff2698f12ce86783032
