@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  mongodb:
+      image: mongo:latest
+      container_name: mongodb
+      restart: always
+      environment:
+        MONGO_INITDB_ROOT_USERNAME: mongoadmin
+        MONGO_INITDB_ROOT_PASSWORD: mongopassword
+      ports:
+        - "27017:27018"
+      volumes:
+        - ./data/mongo:/data/db
+      networks:
+        - automation-network
+
+  rise-fall-bot:
+    image: dalexandrias/rise-fall-bot:1.0.0
+    container_name: rise-fall-bot-container
+    environment:
+      - DERIV_TOKEN=${DERIV_TOKEN}
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+      - TELEGRAM_CHAT_ID=${TELEGRAM_CHAT_ID}
+      - GRANULARITY=${GRANULARITY}
+      - MAX_CANDLES=${MAX_CANDLES}
+      - BOLLINGER_THRESHOLD=${BOLLINGER_THRESHOLD}
+      - MIN_CONFIDENCE_TO_SEND=${MIN_CONFIDENCE_TO_SEND}
+      - MONGO_URI=${MONGO_URI}
+      - MONGO_DATABASE=${MONGO_DATABASE}
+      - MONGO_COLLECTION=${MONGO_COLLECTION}
+      - SIGNAL_COOLDOWN=${SIGNAL_COOLDOWN}
+    restart: always
+    depends_on:
+      - mongodb
+    volumes:
+      - ./logs:/app/logs
+    networks:
+      - automation-network
+
+networks:
+  automation-network:
+    external: true
