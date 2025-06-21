@@ -13,7 +13,7 @@ services:
     ports:
       - "27018:27018"
     volumes:
-      - ./data/mongo:/data/db
+      - mongo-data:/data/db
 
   rise-fall-bot:
     build: .
@@ -34,4 +34,10 @@ services:
       MONGO_DATABASE: rise_fall_bot
       MONGO_COLLECTION: sinais
     volumes:
-      - ./logs:/app/logs
+      - logs:/app/logs
+
+volumes:
+  mongo-data:
+    driver: local
+  logs:
+    driver: local
