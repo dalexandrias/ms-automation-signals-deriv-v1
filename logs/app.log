@@ -1,1309 +1,236 @@
-2025-04-30 21:03:10,724 INFO: === Logging ROOT inicializado ===
-2025-04-30 21:03:10,734 INFO: 🔗 Conectando ao WebSocket...
-2025-04-30 21:03:10,736 INFO: 🔗 Conexão WebSocket estabelecida. Aguardando dados...
-2025-04-30 21:03:11,029 INFO: Websocket connected
-2025-04-30 21:03:11,337 INFO: ✅ Token autorizado às 2025-05-01 00:03:11.337453 UTC
-2025-04-30 21:03:11,575 INFO: 📥 Histórico inicial recebido às 2025-05-01 00:03:11.575316 UTC
-2025-04-30 21:03:11,605 INFO: 📈 Análise: EMA9=2484.54, EMA21=2485.01, trend=FALL, RSI=41.31, MACD=-0.56/-0.53, ATR=1.19, body=0.34, band_width=0.001, confidence=40
-2025-04-30 21:03:11,606 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 40%
-2025-04-30 21:03:11,606 INFO: 🔄 Ignorando sinal inicial antes de primeiro candle OHL.
-2025-04-30 21:04:05,513 INFO: 🔔 Novo candle em 2025-05-01 00:04:00 UTC
-2025-04-30 21:04:09,216 INFO: ⏳ Agendada validação do candle 1746057780 em 120s.
-2025-04-30 21:04:19,117 INFO: 📈 Análise: EMA9=2484.52, EMA21=2484.96, trend=FALL, RSI=46.38, MACD=-0.54/-0.54, ATR=1.17, body=0.00, band_width=0.001, confidence=20
-2025-04-30 21:04:19,117 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 20%
-2025-04-30 21:04:20,053 INFO: ✅ Mensagem enviada ao Telegram (ID: IZMIWE4M).
-2025-04-30 21:04:20,055 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 21:04:20,091 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 21:04:20,093 INFO: Inserindo documento: {'signal_id': 'IZMIWE4M', 'signal': 'FALL', 'price': np.float64(2484.469), 'confidence': 20, 'analyze_time': datetime.datetime(2025, 4, 30, 21, 4, 19, 118059, tzinfo=<DstTzInfo 'America/Sao_Paulo' -03-1 day, 21:00:00 STD>), 'entry_time': '2025-04-30 21:05:19', 'message_id': 599, 'chat_id': -4767147054, 'result': None}
-2025-04-30 21:04:20,132 INFO: Documento inserido com ID: 6812ba84f2ac93c9ca53a384
-2025-04-30 21:05:00,583 INFO: 🔔 Novo candle em 2025-05-01 00:05:00 UTC
-2025-04-30 21:05:00,585 INFO: ⏳ Agendada validação do candle 1746057840 em 120s.
-2025-04-30 21:05:00,613 INFO: 📈 Análise: EMA9=2484.60, EMA21=2484.97, trend=FALL, RSI=48.46, MACD=-0.50/-0.57, ATR=1.12, body=0.00, band_width=0.001, confidence=20
-2025-04-30 21:05:00,614 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 20%
-2025-04-30 21:05:00,614 INFO: ⏳ Em cooldown (120s). Próximo sinal em 79s.
-2025-04-30 21:06:00,588 INFO: 🔔 Novo candle em 2025-05-01 00:06:00 UTC
-2025-04-30 21:06:00,590 INFO: ⏳ Agendada validação do candle 1746057900 em 120s.
-2025-04-30 21:06:00,611 INFO: 📈 Análise: EMA9=2484.60, EMA21=2484.92, trend=FALL, RSI=46.98, MACD=-0.45/-0.51, ATR=1.07, body=0.00, band_width=0.001, confidence=20
-2025-04-30 21:06:00,611 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 20%
-2025-04-30 21:06:00,612 INFO: ⏳ Em cooldown (120s). Próximo sinal em 19s.
-2025-04-30 21:06:08,249 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 21:06:08,276 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 21:06:08,277 INFO: Buscando documento com a query: {'signal_id': 'IZMIWE4M'}
-2025-04-30 21:06:08,300 INFO: Documento encontrado: {'_id': ObjectId('6812ba84f2ac93c9ca53a384'), 'signal_id': 'IZMIWE4M', 'signal': 'FALL', 'price': 2484.469, 'confidence': 20, 'analyze_time': datetime.datetime(2025, 5, 1, 0, 4, 19, 118000), 'entry_time': '2025-04-30 21:05:19', 'message_id': 599, 'chat_id': -4767147054, 'result': None}
-2025-04-30 21:06:08,301 INFO: Atualizando documento com a query: {'signal_id': 'IZMIWE4M'}, update: {'$set': {'result': 'LOSS'}}
-2025-04-30 21:06:08,304 INFO: Número de documentos modificados: 1
-2025-04-30 21:06:08,305 INFO: Sinal IZMIWE4M validado como LOSS
-2025-04-30 21:06:08,305 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 21:06:08,313 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 21:06:08,314 INFO: Buscando documento com a query: {'signal_id': 'IZMIWE4M'}
-2025-04-30 21:06:08,335 INFO: Documento encontrado: {'_id': ObjectId('6812ba84f2ac93c9ca53a384'), 'signal_id': 'IZMIWE4M', 'signal': 'FALL', 'price': 2484.469, 'confidence': 20, 'analyze_time': datetime.datetime(2025, 5, 1, 0, 4, 19, 118000), 'entry_time': '2025-04-30 21:05:19', 'message_id': 599, 'chat_id': -4767147054, 'result': 'LOSS'}
-2025-04-30 21:14:13,071 INFO: === Logging ROOT inicializado ===
-2025-04-30 21:14:13,073 INFO: 🔗 Conectando ao WebSocket...
-2025-04-30 21:14:13,075 INFO: 🔗 Conexão WebSocket estabelecida. Aguardando dados...
-2025-04-30 21:14:13,621 INFO: Websocket connected
-2025-04-30 21:14:13,950 INFO: ✅ Token autorizado às 2025-05-01 00:14:13.950324 UTC
-2025-04-30 21:14:14,154 INFO: 📥 Histórico inicial recebido às 2025-05-01 00:14:14.154597 UTC
-2025-04-30 21:14:14,186 INFO: 📈 Análise: EMA9=2484.86, EMA21=2484.93, trend=FALL, RSI=48.77, MACD=-0.13/-0.19, ATR=1.05, body=0.08, band_width=0.000, confidence=20
-2025-04-30 21:14:14,187 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 20%
-2025-04-30 21:14:14,187 INFO: 🔄 Ignorando sinal inicial antes de primeiro candle OHL.
-2025-04-30 21:15:00,619 INFO: 🔔 Novo candle em 2025-05-01 00:15:00 UTC
-2025-04-30 21:15:00,622 INFO: ⏳ Agendada validação do candle 1746058440 em 120s.
-2025-04-30 21:15:00,643 INFO: 📈 Análise: EMA9=2485.10, EMA21=2485.04, trend=RISE, RSI=56.23, MACD=-0.05/-0.19, ATR=1.06, body=0.00, band_width=0.001, confidence=60
-2025-04-30 21:15:00,644 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 60%
-2025-04-30 21:15:01,576 INFO: ✅ Mensagem enviada ao Telegram (ID: YD7KZ24E).
-2025-04-30 21:15:01,578 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 21:15:01,605 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 21:15:01,608 INFO: Inserindo documento: {'signal_id': 'YD7KZ24E', 'signal': 'RISE', 'price': np.float64(2486.046), 'confidence': 60, 'analyze_time': datetime.datetime(2025, 4, 30, 21, 15, 0, 645466, tzinfo=<DstTzInfo 'America/Sao_Paulo' -03-1 day, 21:00:00 STD>), 'entry_time': '2025-04-30 21:16:00', 'message_id': 601, 'chat_id': -4767147054, 'result': None}
-2025-04-30 21:15:01,649 INFO: Documento inserido com ID: 6812bd0566e7c408c76157b1
-2025-04-30 21:16:00,636 INFO: 🔔 Novo candle em 2025-05-01 00:16:00 UTC
-2025-04-30 21:16:00,638 INFO: ⏳ Agendada validação do candle 1746058500 em 120s.
-2025-04-30 21:16:00,657 INFO: 📈 Análise: EMA9=2485.42, EMA21=2485.19, trend=RISE, RSI=59.66, MACD=0.08/-0.14, ATR=1.03, body=0.00, band_width=0.001, confidence=60
-2025-04-30 21:16:00,658 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 60%
-2025-04-30 21:16:00,658 INFO: ⏳ Em cooldown (120s). Próximo sinal em 60s.
-2025-04-30 21:17:00,626 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 21:17:00,633 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 21:17:00,634 INFO: Buscando documento com a query: {'signal_id': 'YD7KZ24E'}
-2025-04-30 21:17:00,656 INFO: Documento encontrado: {'_id': ObjectId('6812bd0566e7c408c76157b1'), 'signal_id': 'YD7KZ24E', 'signal': 'RISE', 'price': 2486.046, 'confidence': 60, 'analyze_time': datetime.datetime(2025, 5, 1, 0, 15, 0, 645000), 'entry_time': '2025-04-30 21:16:00', 'message_id': 601, 'chat_id': -4767147054, 'result': None}
-2025-04-30 21:17:00,656 INFO: Atualizando documento com a query: {'signal_id': 'YD7KZ24E'}, update: {'$set': {'result': 'WIN'}}
-2025-04-30 21:17:00,660 INFO: 🔔 Novo candle em 2025-05-01 00:17:00 UTC
-2025-04-30 21:17:00,661 INFO: Número de documentos modificados: 1
-2025-04-30 21:17:00,662 INFO: Sinal YD7KZ24E validado como WIN
-2025-04-30 21:17:00,663 INFO: ⏳ Agendada validação do candle 1746058560 em 120s.
-2025-04-30 21:17:00,663 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 21:17:00,685 INFO: 📈 Análise: EMA9=2485.72, EMA21=2485.35, trend=RISE, RSI=60.90, MACD=0.20/-0.07, ATR=0.98, body=0.00, band_width=0.001, confidence=80
-2025-04-30 21:17:00,686 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 80%
-2025-04-30 21:17:00,698 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 21:17:00,698 INFO: Buscando documento com a query: {'signal_id': 'YD7KZ24E'}
-2025-04-30 21:17:00,731 INFO: Documento encontrado: {'_id': ObjectId('6812bd0566e7c408c76157b1'), 'signal_id': 'YD7KZ24E', 'signal': 'RISE', 'price': 2486.046, 'confidence': 60, 'analyze_time': datetime.datetime(2025, 5, 1, 0, 15, 0, 645000), 'entry_time': '2025-04-30 21:16:00', 'message_id': 601, 'chat_id': -4767147054, 'result': 'WIN'}
-2025-04-30 21:17:01,480 INFO: ✅ Mensagem enviada ao Telegram (ID: A9NXPYDE).
-2025-04-30 21:17:01,481 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 21:17:01,490 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 21:17:01,492 INFO: Inserindo documento: {'signal_id': 'A9NXPYDE', 'signal': 'RISE', 'price': np.float64(2486.934), 'confidence': 80, 'analyze_time': datetime.datetime(2025, 4, 30, 21, 17, 0, 686855, tzinfo=<DstTzInfo 'America/Sao_Paulo' -03-1 day, 21:00:00 STD>), 'entry_time': '2025-04-30 21:18:00', 'message_id': 602, 'chat_id': -4767147054, 'result': None}
-2025-04-30 21:17:01,515 INFO: Documento inserido com ID: 6812bd7d66e7c408c76157b5
-2025-04-30 21:18:00,648 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 21:18:00,656 INFO: 🔔 Novo candle em 2025-05-01 00:18:00 UTC
-2025-04-30 21:18:00,657 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 21:18:00,660 INFO: Buscando documento com a query: {'signal_id': 'A9NXPYDE'}
-2025-04-30 21:18:00,661 INFO: ⏳ Agendada validação do candle 1746058620 em 120s.
-2025-04-30 21:18:00,693 INFO: 📈 Análise: EMA9=2486.20, EMA21=2485.60, trend=RISE, RSI=66.42, MACD=0.39/0.02, ATR=1.00, body=0.00, band_width=0.001, confidence=80
-2025-04-30 21:18:00,697 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 80%
-2025-04-30 21:18:00,699 INFO: ⏳ Em cooldown (120s). Próximo sinal em 60s.
-2025-04-30 21:18:00,721 INFO: Documento encontrado: {'_id': ObjectId('6812bd7d66e7c408c76157b5'), 'signal_id': 'A9NXPYDE', 'signal': 'RISE', 'price': 2486.934, 'confidence': 80, 'analyze_time': datetime.datetime(2025, 5, 1, 0, 17, 0, 686000), 'entry_time': '2025-04-30 21:18:00', 'message_id': 602, 'chat_id': -4767147054, 'result': None}
-2025-04-30 21:18:00,722 INFO: Atualizando documento com a query: {'signal_id': 'A9NXPYDE'}, update: {'$set': {'result': 'LOSS'}}
-2025-04-30 21:18:00,727 INFO: Número de documentos modificados: 1
-2025-04-30 21:18:00,727 INFO: Sinal A9NXPYDE validado como LOSS
-2025-04-30 21:18:00,728 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 21:18:00,736 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 21:18:00,737 INFO: Buscando documento com a query: {'signal_id': 'A9NXPYDE'}
-2025-04-30 21:18:00,763 INFO: Documento encontrado: {'_id': ObjectId('6812bd7d66e7c408c76157b5'), 'signal_id': 'A9NXPYDE', 'signal': 'RISE', 'price': 2486.934, 'confidence': 80, 'analyze_time': datetime.datetime(2025, 5, 1, 0, 17, 0, 686000), 'entry_time': '2025-04-30 21:18:00', 'message_id': 602, 'chat_id': -4767147054, 'result': 'LOSS'}
-2025-04-30 21:19:00,646 INFO: 🔔 Novo candle em 2025-05-01 00:19:00 UTC
-2025-04-30 21:19:00,649 INFO: ⏳ Agendada validação do candle 1746058680 em 120s.
-2025-04-30 21:19:00,668 INFO: 📈 Análise: EMA9=2486.41, EMA21=2485.77, trend=RISE, RSI=59.53, MACD=0.44/0.07, ATR=0.99, body=0.00, band_width=0.001, confidence=40
-2025-04-30 21:19:00,668 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 40%
-2025-04-30 21:19:00,669 INFO: ⏳ Em cooldown (120s). Próximo sinal em 1s.
-2025-04-30 21:19:00,674 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 21:19:00,683 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 21:20:00,635 INFO: 🔔 Novo candle em 2025-05-01 00:20:00 UTC
-2025-04-30 21:20:00,637 INFO: ⏳ Agendada validação do candle 1746058740 em 120s.
-2025-04-30 21:20:00,655 INFO: 📈 Análise: EMA9=2486.64, EMA21=2485.93, trend=RISE, RSI=61.15, MACD=0.52/0.16, ATR=0.94, body=0.00, band_width=0.001, confidence=60
-2025-04-30 21:20:00,656 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 60%
-2025-04-30 21:20:00,665 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 21:20:00,675 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 21:20:01,476 INFO: ✅ Mensagem enviada ao Telegram (ID: 1EP13IF3).
-2025-04-30 21:20:01,477 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 21:20:01,486 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 21:20:01,488 INFO: Inserindo documento: {'signal_id': '1EP13IF3', 'signal': 'RISE', 'price': np.float64(2487.577), 'confidence': 60, 'analyze_time': datetime.datetime(2025, 4, 30, 21, 20, 0, 656437, tzinfo=<DstTzInfo 'America/Sao_Paulo' -03-1 day, 21:00:00 STD>), 'entry_time': '2025-04-30 21:21:00', 'message_id': 605, 'chat_id': -4767147054, 'result': None}
-2025-04-30 21:20:01,509 INFO: Documento inserido com ID: 6812be3166e7c408c76157bb
-2025-04-30 21:21:00,655 INFO: 🔔 Novo candle em 2025-05-01 00:21:00 UTC
-2025-04-30 21:21:00,658 INFO: ⏳ Agendada validação do candle 1746058800 em 120s.
-2025-04-30 21:21:00,676 INFO: 📈 Análise: EMA9=2487.01, EMA21=2486.15, trend=RISE, RSI=65.38, MACD=0.67/0.29, ATR=0.94, body=0.00, band_width=0.002, confidence=80
-2025-04-30 21:21:00,676 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 21:21:00,677 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 80%
-2025-04-30 21:21:00,679 INFO: ⏳ Em cooldown (120s). Próximo sinal em 60s.
-2025-04-30 21:21:00,687 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 21:21:00,688 INFO: Buscando documento com a query: {'signal_id': '1EP13IF3'}
-2025-04-30 21:21:00,709 INFO: Documento encontrado: {'_id': ObjectId('6812be3166e7c408c76157bb'), 'signal_id': '1EP13IF3', 'signal': 'RISE', 'price': 2487.577, 'confidence': 60, 'analyze_time': datetime.datetime(2025, 5, 1, 0, 20, 0, 656000), 'entry_time': '2025-04-30 21:21:00', 'message_id': 605, 'chat_id': -4767147054, 'result': None}
-2025-04-30 21:21:00,709 INFO: Atualizando documento com a query: {'signal_id': '1EP13IF3'}, update: {'$set': {'result': 'LOSS'}}
-2025-04-30 21:21:00,713 INFO: Número de documentos modificados: 1
-2025-04-30 21:21:00,713 INFO: Sinal 1EP13IF3 validado como LOSS
-2025-04-30 21:21:00,714 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 21:21:00,721 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 21:21:00,722 INFO: Buscando documento com a query: {'signal_id': '1EP13IF3'}
-2025-04-30 21:21:00,745 INFO: Documento encontrado: {'_id': ObjectId('6812be3166e7c408c76157bb'), 'signal_id': '1EP13IF3', 'signal': 'RISE', 'price': 2487.577, 'confidence': 60, 'analyze_time': datetime.datetime(2025, 5, 1, 0, 20, 0, 656000), 'entry_time': '2025-04-30 21:21:00', 'message_id': 605, 'chat_id': -4767147054, 'result': 'LOSS'}
-2025-04-30 21:22:00,638 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 21:22:00,646 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 21:22:00,676 INFO: 🔔 Novo candle em 2025-05-01 00:22:00 UTC
-2025-04-30 21:22:00,678 INFO: ⏳ Agendada validação do candle 1746058860 em 120s.
-2025-04-30 21:22:00,700 INFO: 📈 Análise: EMA9=2487.62, EMA21=2486.51, trend=RISE, RSI=71.12, MACD=0.89/0.41, ATR=0.99, body=0.00, band_width=0.002, confidence=80
-2025-04-30 21:22:00,700 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 80%
-2025-04-30 21:22:01,505 INFO: ✅ Mensagem enviada ao Telegram (ID: E4FZ3YW6).
-2025-04-30 21:22:01,510 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 21:22:01,519 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 21:22:01,520 INFO: Inserindo documento: {'signal_id': 'E4FZ3YW6', 'signal': 'RISE', 'price': np.float64(2490.074), 'confidence': 80, 'analyze_time': datetime.datetime(2025, 4, 30, 21, 22, 0, 701309, tzinfo=<DstTzInfo 'America/Sao_Paulo' -03-1 day, 21:00:00 STD>), 'entry_time': '2025-04-30 21:23:00', 'message_id': 607, 'chat_id': -4767147054, 'result': None}
-2025-04-30 21:22:01,540 INFO: Documento inserido com ID: 6812bea966e7c408c76157c0
-2025-04-30 21:23:00,657 INFO: 🔔 Novo candle em 2025-05-01 00:23:00 UTC
-2025-04-30 21:23:00,659 INFO: ⏳ Agendada validação do candle 1746058920 em 120s.
-2025-04-30 21:23:00,685 INFO: 📈 Análise: EMA9=2488.12, EMA21=2486.82, trend=RISE, RSI=71.81, MACD=1.11/0.62, ATR=0.92, body=0.00, band_width=0.002, confidence=80
-2025-04-30 21:23:00,686 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 21:23:00,686 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 80%
-2025-04-30 21:23:00,688 INFO: ⏳ Em cooldown (120s). Próximo sinal em 61s.
-2025-04-30 21:23:00,694 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 21:23:00,695 INFO: Buscando documento com a query: {'signal_id': 'E4FZ3YW6'}
-2025-04-30 21:23:00,718 INFO: Documento encontrado: {'_id': ObjectId('6812bea966e7c408c76157c0'), 'signal_id': 'E4FZ3YW6', 'signal': 'RISE', 'price': 2490.074, 'confidence': 80, 'analyze_time': datetime.datetime(2025, 5, 1, 0, 22, 0, 701000), 'entry_time': '2025-04-30 21:23:00', 'message_id': 607, 'chat_id': -4767147054, 'result': None}
-2025-04-30 21:23:00,719 INFO: Atualizando documento com a query: {'signal_id': 'E4FZ3YW6'}, update: {'$set': {'result': 'LOSS'}}
-2025-04-30 21:23:00,723 INFO: Número de documentos modificados: 1
-2025-04-30 21:23:00,724 INFO: Sinal E4FZ3YW6 validado como LOSS
-2025-04-30 21:23:00,724 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 21:23:00,731 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 21:23:00,732 INFO: Buscando documento com a query: {'signal_id': 'E4FZ3YW6'}
-2025-04-30 21:23:00,753 INFO: Documento encontrado: {'_id': ObjectId('6812bea966e7c408c76157c0'), 'signal_id': 'E4FZ3YW6', 'signal': 'RISE', 'price': 2490.074, 'confidence': 80, 'analyze_time': datetime.datetime(2025, 5, 1, 0, 22, 0, 701000), 'entry_time': '2025-04-30 21:23:00', 'message_id': 607, 'chat_id': -4767147054, 'result': 'LOSS'}
-2025-04-30 21:24:52,615 INFO: === Logging ROOT inicializado ===
-2025-04-30 21:24:52,617 INFO: 🔗 Conectando ao WebSocket...
-2025-04-30 21:24:52,619 INFO: 🔗 Conexão WebSocket estabelecida. Aguardando dados...
-2025-04-30 21:24:52,895 INFO: Websocket connected
-2025-04-30 21:24:53,206 INFO: ✅ Token autorizado às 2025-05-01 00:24:53.206159 UTC
-2025-04-30 21:24:53,399 INFO: 📥 Histórico inicial recebido às 2025-05-01 00:24:53.399310 UTC
-2025-04-30 21:24:53,429 INFO: 📈 Análise: EMA9=2489.05, EMA21=2487.47, trend=RISE, RSI=74.83, MACD=1.41/0.89, ATR=1.13, body=1.41, band_width=0.002, confidence=100
-2025-04-30 21:24:53,430 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 100%
-2025-04-30 21:24:53,430 INFO: 🔄 Ignorando sinal inicial antes de primeiro candle OHL.
-2025-04-30 21:25:00,633 INFO: 🔔 Novo candle em 2025-05-01 00:25:00 UTC
-2025-04-30 21:25:00,634 INFO: ⏳ Agendada validação do candle 1746059040 em 120s.
-2025-04-30 21:25:00,652 INFO: 📈 Análise: EMA9=2489.41, EMA21=2487.78, trend=RISE, RSI=71.09, MACD=1.49/1.01, ATR=1.08, body=0.00, band_width=0.002, confidence=60
-2025-04-30 21:25:00,653 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 60%
-2025-04-30 21:25:01,595 INFO: ✅ Mensagem enviada ao Telegram (ID: 4D7S045E).
-2025-04-30 21:25:01,595 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 21:25:01,624 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 21:25:01,625 INFO: Inserindo documento: {'signal_id': '4D7S045E', 'signal': 'RISE', 'price': np.float64(2490.879), 'confidence': 60, 'analyze_time': datetime.datetime(2025, 4, 30, 21, 25, 0, 653192, tzinfo=<DstTzInfo 'America/Sao_Paulo' -03-1 day, 21:00:00 STD>), 'entry_time': '2025-04-30 21:26:00', 'message_id': 609, 'chat_id': -4767147054, 'result': None}
-2025-04-30 21:25:01,663 INFO: Documento inserido com ID: 6812bf5d6601d642017bab7f
-2025-04-30 21:26:00,598 INFO: 🔔 Novo candle em 2025-05-01 00:26:00 UTC
-2025-04-30 21:28:37,190 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 21:28:37,959 INFO: ⏳ Agendada validação do candle 1746059100 em 120s.
-2025-04-30 21:28:38,763 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 21:28:38,764 INFO: Buscando documento com a query: {'signal_id': '4D7S045E'}
-2025-04-30 21:28:38,795 INFO: Documento encontrado: {'_id': ObjectId('6812bf5d6601d642017bab7f'), 'signal_id': '4D7S045E', 'signal': 'RISE', 'price': 2490.879, 'confidence': 60, 'analyze_time': datetime.datetime(2025, 5, 1, 0, 25, 0, 653000), 'entry_time': '2025-04-30 21:26:00', 'message_id': 609, 'chat_id': -4767147054, 'result': None}
-2025-04-30 21:28:38,796 INFO: Atualizando documento com a query: {'signal_id': '4D7S045E'}, update: {'$set': {'result': 'WIN'}}
-2025-04-30 21:28:38,800 INFO: Número de documentos modificados: 1
-2025-04-30 21:28:38,801 INFO: Sinal 4D7S045E validado como WIN
-2025-04-30 21:28:38,801 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 21:28:38,808 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 21:28:38,810 INFO: Buscando documento com a query: {'signal_id': '4D7S045E'}
-2025-04-30 21:28:38,830 INFO: Documento encontrado: {'_id': ObjectId('6812bf5d6601d642017bab7f'), 'signal_id': '4D7S045E', 'signal': 'RISE', 'price': 2490.879, 'confidence': 60, 'analyze_time': datetime.datetime(2025, 5, 1, 0, 25, 0, 653000), 'entry_time': '2025-04-30 21:26:00', 'message_id': 609, 'chat_id': -4767147054, 'result': 'WIN'}
-2025-04-30 21:31:40,621 INFO: === Logging ROOT inicializado ===
-2025-04-30 21:31:40,623 INFO: 🔗 Conectando ao WebSocket...
-2025-04-30 21:31:40,627 INFO: 🔗 Conexão WebSocket estabelecida. Aguardando dados...
-2025-04-30 21:31:40,920 INFO: Websocket connected
-2025-04-30 21:31:41,297 INFO: ✅ Token autorizado às 2025-05-01 00:31:41.297986 UTC
-2025-04-30 21:31:41,492 INFO: 📥 Histórico inicial recebido às 2025-05-01 00:31:41.492977 UTC
-2025-04-30 21:31:41,526 INFO: 📈 Análise: EMA9=2489.75, EMA21=2488.66, trend=RISE, RSI=66.10, MACD=1.20/1.18, ATR=1.09, body=0.94, band_width=0.001, confidence=80
-2025-04-30 21:31:41,527 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 80%
-2025-04-30 21:31:41,527 INFO: 🔄 Ignorando sinal inicial antes de primeiro candle OHL.
-2025-04-30 21:41:02,734 INFO: 🔔 Novo candle em 2025-05-01 00:32:00 UTC
-2025-04-30 21:41:04,051 INFO: ⏳ Agendada validação do candle 1746059460 em 120s.
-2025-04-30 21:41:04,780 INFO: 📈 Análise: EMA9=2490.06, EMA21=2488.91, trend=RISE, RSI=69.31, MACD=1.24/1.18, ATR=1.07, body=0.00, band_width=0.001, confidence=80
-2025-04-30 21:41:04,781 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 80%
-2025-04-30 21:41:05,701 INFO: ✅ Mensagem enviada ao Telegram (ID: 52UCQXH9).
-2025-04-30 21:41:05,701 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 21:41:05,733 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 21:41:05,736 INFO: Inserindo documento: {'signal_id': '52UCQXH9', 'signal': 'RISE', 'price': np.float64(2491.292), 'confidence': 80, 'analyze_time': datetime.datetime(2025, 4, 30, 21, 41, 4, 781989, tzinfo=<DstTzInfo 'America/Sao_Paulo' -03-1 day, 21:00:00 STD>), 'entry_time': '2025-04-30 21:42:04', 'message_id': 611, 'chat_id': -4767147054, 'result': None}
-2025-04-30 21:41:05,773 INFO: Documento inserido com ID: 6812c3218bee309ad3e5cd4e
-2025-04-30 21:41:22,674 INFO: 🔔 Novo candle em 2025-05-01 00:33:00 UTC
-2025-04-30 21:41:22,676 INFO: ⏳ Agendada validação do candle 1746059520 em 120s.
-2025-04-30 21:49:25,140 INFO: === Logging ROOT inicializado ===
-2025-04-30 21:49:25,141 INFO: 🔗 Conectando ao WebSocket...
-2025-04-30 21:49:25,145 INFO: 🔗 Conexão WebSocket estabelecida. Aguardando dados...
-2025-04-30 21:49:25,688 INFO: Websocket connected
-2025-04-30 21:49:25,977 INFO: ✅ Token autorizado às 2025-05-01 00:49:25.977884 UTC
-2025-04-30 21:49:26,169 INFO: 📥 Histórico inicial recebido às 2025-05-01 00:49:26.169261 UTC
-2025-04-30 22:15:08,746 INFO: === Logging ROOT inicializado ===
-2025-04-30 22:15:08,748 INFO: 🔗 Conectando ao WebSocket...
-2025-04-30 22:15:08,751 INFO: 🔗 Conexão WebSocket estabelecida. Aguardando dados...
-2025-04-30 22:15:09,038 INFO: Websocket connected
-2025-04-30 22:15:09,355 INFO: ✅ Token autorizado às 2025-05-01 01:15:09.355375 UTC
-2025-04-30 22:15:09,572 INFO: 📥 Histórico inicial recebido às 2025-05-01 01:15:09.572216 UTC
-2025-04-30 22:15:16,421 INFO: 📈 Análise: EMA9=2486.47, EMA21=2487.29, trend=FALL, RSI=40.10, MACD=-0.93/-0.95, ATR=1.08, body=0.34, band_width=0.001, confidence=20
-2025-04-30 22:15:16,422 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 20%
-2025-04-30 22:15:16,423 INFO: 🔄 Ignorando sinal inicial antes de primeiro candle OHL.
-2025-04-30 22:16:00,527 INFO: 🔔 Novo candle em 2025-05-01 01:16:00 UTC
-2025-04-30 22:16:00,530 INFO: ⏳ Agendada validação do candle 1746062100 em 120s.
-2025-04-30 22:16:00,550 INFO: 📈 Análise: EMA9=2486.79, EMA21=2487.36, trend=FALL, RSI=52.39, MACD=-0.75/-0.92, ATR=1.12, body=0.00, band_width=0.001, confidence=20
-2025-04-30 22:16:00,551 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 20%
-2025-04-30 22:16:01,500 INFO: ✅ Mensagem enviada ao Telegram (ID: I36VIGSS).
-2025-04-30 22:16:01,501 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 22:16:01,530 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 22:16:01,532 INFO: Inserindo documento: {'signal_id': 'I36VIGSS', 'signal': 'FALL', 'price': np.float64(2488.035), 'confidence': 20, 'analyze_time': datetime.datetime(2025, 4, 30, 22, 16, 0, 552087, tzinfo=<DstTzInfo 'America/Sao_Paulo' -03-1 day, 21:00:00 STD>), 'entry_time': '2025-04-30 22:17:00', 'open_candle_timestamp': 1746062220, 'message_id': 612, 'chat_id': -4767147054, 'result': None}
-2025-04-30 22:16:01,565 INFO: Documento inserido com ID: 6812cb512d37f5a0c37225a1
-2025-04-30 22:17:00,530 INFO: 🔔 Novo candle em 2025-05-01 01:17:00 UTC
-2025-04-30 22:17:00,532 INFO: ⏳ Agendada validação do candle 1746062160 em 120s.
-2025-04-30 22:17:00,550 INFO: 📈 Análise: EMA9=2486.76, EMA21=2487.29, trend=FALL, RSI=44.29, MACD=-0.70/-0.86, ATR=1.14, body=0.00, band_width=0.001, confidence=20
-2025-04-30 22:17:00,550 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 20%
-2025-04-30 22:17:00,551 INFO: ⏳ Em cooldown (120s). Próximo sinal em 61s.
-2025-04-30 22:18:00,518 INFO: 🔔 Novo candle em 2025-05-01 01:18:00 UTC
-2025-04-30 22:18:00,520 INFO: ⏳ Agendada validação do candle 1746062220 em 120s.
-2025-04-30 22:18:00,541 INFO: 📈 Análise: EMA9=2486.79, EMA21=2487.26, trend=FALL, RSI=46.07, MACD=-0.65/-0.82, ATR=1.08, body=0.00, band_width=0.001, confidence=20
-2025-04-30 22:18:00,541 INFO: Iniciando metodo validate_signals_for_candle
-2025-04-30 22:18:00,542 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 20%
-2025-04-30 22:18:00,542 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 22:18:00,543 INFO: ⏳ Em cooldown (120s). Próximo sinal em 1s.
-2025-04-30 22:18:00,553 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 22:18:00,555 INFO: Buscando documento com a query: {'signal_id': 'I36VIGSS'}
-2025-04-30 22:18:00,579 INFO: Documento encontrado: {'_id': ObjectId('6812cb512d37f5a0c37225a1'), 'signal_id': 'I36VIGSS', 'signal': 'FALL', 'price': 2488.035, 'confidence': 20, 'analyze_time': datetime.datetime(2025, 5, 1, 1, 16, 0, 552000), 'entry_time': '2025-04-30 22:17:00', 'open_candle_timestamp': 1746062220, 'message_id': 612, 'chat_id': -4767147054, 'result': None}
-2025-04-30 22:28:44,082 INFO: === Logging ROOT inicializado ===
-2025-04-30 22:28:44,084 INFO: 🔗 Conectando ao WebSocket...
-2025-04-30 22:28:44,086 INFO: 🔗 Conexão WebSocket estabelecida. Aguardando dados...
-2025-04-30 22:28:44,503 INFO: Websocket connected
-2025-04-30 22:28:44,805 INFO: ✅ Token autorizado às 2025-05-01 01:28:44.805354 UTC
-2025-04-30 22:28:44,996 INFO: 📥 Histórico inicial recebido às 2025-05-01 01:28:44.995961 UTC
-2025-04-30 22:28:45,027 INFO: 📈 Análise: EMA9=2488.02, EMA21=2487.68, trend=RISE, RSI=60.27, MACD=0.08/-0.31, ATR=1.19, body=0.37, band_width=0.001, confidence=80
-2025-04-30 22:28:45,028 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 80%
-2025-04-30 22:28:45,028 INFO: 🔄 Ignorando sinal inicial antes de primeiro candle OHL.
-2025-04-30 22:29:00,466 INFO: 🔔 Novo candle em 2025-05-01 01:29:00 UTC
-2025-04-30 22:29:00,468 INFO: ⏳ Agendada validação do candle 1746062880 em 120s.
-2025-04-30 22:29:00,486 INFO: 📈 Análise: EMA9=2488.29, EMA21=2487.84, trend=RISE, RSI=60.64, MACD=0.19/-0.22, ATR=1.11, body=0.00, band_width=0.001, confidence=60
-2025-04-30 22:29:00,487 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 60%
-2025-04-30 22:29:01,413 INFO: ✅ Mensagem enviada ao Telegram (ID: 6I07HFIU).
-2025-04-30 22:29:01,414 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 22:29:01,444 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 22:29:01,445 INFO: Inserindo documento: {'signal_id': '6I07HFIU', 'signal': 'RISE', 'price': np.float64(2489.4), 'confidence': 60, 'analyze_time': datetime.datetime(2025, 4, 30, 22, 29, 0, 488106, tzinfo=<DstTzInfo 'America/Sao_Paulo' -03-1 day, 21:00:00 STD>), 'entry_time': '2025-04-30 22:30:00', 'open_candle_timestamp': 1746063000, 'message_id': 613, 'chat_id': -4767147054, 'result': None}
-2025-04-30 22:29:01,484 INFO: Documento inserido com ID: 6812ce5d2d3b58e0f4615aad
-2025-04-30 22:30:00,468 INFO: 🔔 Novo candle em 2025-05-01 01:30:00 UTC
-2025-04-30 22:30:00,470 INFO: ⏳ Agendada validação do candle 1746062940 em 120s.
-2025-04-30 22:30:00,487 INFO: 📈 Análise: EMA9=2488.60, EMA21=2488.01, trend=RISE, RSI=63.10, MACD=0.33/-0.09, ATR=1.07, body=0.00, band_width=0.001, confidence=60
-2025-04-30 22:30:00,487 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 60%
-2025-04-30 22:30:00,488 INFO: ⏳ Em cooldown (120s). Próximo sinal em 60s.
-2025-04-30 22:31:00,467 INFO: 🔔 Novo candle em 2025-05-01 01:31:00 UTC
-2025-04-30 22:31:00,469 INFO: ⏳ Agendada validação do candle 1746063000 em 120s.
-2025-04-30 22:31:00,472 INFO: Iniciando metodo validate_signals_for_candle
-2025-04-30 22:31:00,487 INFO: 📈 Análise: EMA9=2488.75, EMA21=2488.13, trend=RISE, RSI=59.15, MACD=0.39/0.02, ATR=1.02, body=0.00, band_width=0.001, confidence=40
-2025-04-30 22:31:00,487 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 22:31:00,488 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 40%
-2025-04-30 22:31:00,503 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 22:31:00,503 INFO: Buscando documento com a query: {'signal_id': '6I07HFIU'}
-2025-04-30 22:31:00,529 INFO: Documento encontrado: {'_id': ObjectId('6812ce5d2d3b58e0f4615aad'), 'signal_id': '6I07HFIU', 'signal': 'RISE', 'price': 2489.4, 'confidence': 60, 'analyze_time': datetime.datetime(2025, 5, 1, 1, 29, 0, 488000), 'entry_time': '2025-04-30 22:30:00', 'open_candle_timestamp': 1746063000, 'message_id': 613, 'chat_id': -4767147054, 'result': None}
-2025-04-30 22:31:00,529 INFO: Atualizando documento com a query: {'signal_id': '6I07HFIU'}, update: {'$set': {'result': 'LOSS'}}
-2025-04-30 22:31:00,536 INFO: Número de documentos modificados: 1
-2025-04-30 22:31:00,536 INFO: Sinal 6I07HFIU validado como LOSS
-2025-04-30 22:31:00,536 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 22:31:00,543 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 22:31:00,544 INFO: Buscando documento com a query: {'signal_id': '6I07HFIU'}
-2025-04-30 22:31:00,566 INFO: Documento encontrado: {'_id': ObjectId('6812ce5d2d3b58e0f4615aad'), 'signal_id': '6I07HFIU', 'signal': 'RISE', 'price': 2489.4, 'confidence': 60, 'analyze_time': datetime.datetime(2025, 5, 1, 1, 29, 0, 488000), 'entry_time': '2025-04-30 22:30:00', 'open_candle_timestamp': 1746063000, 'message_id': 613, 'chat_id': -4767147054, 'result': 'LOSS'}
-2025-04-30 22:31:01,304 INFO: ✅ Mensagem enviada ao Telegram (ID: 1I4H1XHI).
-2025-04-30 22:31:01,304 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 22:31:01,313 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 22:31:01,314 INFO: Inserindo documento: {'signal_id': '1I4H1XHI', 'signal': 'RISE', 'price': np.float64(2489.358), 'confidence': 40, 'analyze_time': datetime.datetime(2025, 4, 30, 22, 31, 0, 490813, tzinfo=<DstTzInfo 'America/Sao_Paulo' -03-1 day, 21:00:00 STD>), 'entry_time': '2025-04-30 22:32:00', 'open_candle_timestamp': 1746063120, 'message_id': 614, 'chat_id': -4767147054, 'result': None}
-2025-04-30 22:31:01,340 INFO: Documento inserido com ID: 6812ced52d3b58e0f4615ab1
-2025-04-30 22:31:01,378 INFO: Buscando documento com a query: {'signal_id': '1I4H1XHI'}
-2025-04-30 22:31:01,382 INFO: Documento encontrado: {'_id': ObjectId('6812ced52d3b58e0f4615ab1'), 'signal_id': '1I4H1XHI', 'signal': 'RISE', 'price': 2489.358, 'confidence': 40, 'analyze_time': datetime.datetime(2025, 5, 1, 1, 31, 0, 490000), 'entry_time': '2025-04-30 22:32:00', 'open_candle_timestamp': 1746063120, 'message_id': 614, 'chat_id': -4767147054, 'result': None}
-2025-04-30 22:31:01,383 INFO: ⚠️ Sinal 1I4H1XHI não encontrado no candle atual.
-2025-04-30 22:31:01,383 INFO: Finalizando metodo validate_signals_for_candle
-2025-04-30 22:32:00,452 INFO: 🔔 Novo candle em 2025-05-01 01:32:00 UTC
-2025-04-30 22:32:00,454 INFO: ⏳ Agendada validação do candle 1746063060 em 120s.
-2025-04-30 22:32:00,475 INFO: 📈 Análise: EMA9=2488.92, EMA21=2488.26, trend=RISE, RSI=60.64, MACD=0.46/0.11, ATR=0.97, body=0.00, band_width=0.001, confidence=60
-2025-04-30 22:32:00,475 INFO: Iniciando metodo validate_signals_for_candle
-2025-04-30 22:32:00,475 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 60%
-2025-04-30 22:32:00,475 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 22:32:00,476 INFO: ⏳ Em cooldown (120s). Próximo sinal em 61s.
-2025-04-30 22:32:00,483 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 22:32:00,484 INFO: Buscando documento com a query: {'signal_id': '1I4H1XHI'}
-2025-04-30 22:32:00,505 INFO: Documento encontrado: {'_id': ObjectId('6812ced52d3b58e0f4615ab1'), 'signal_id': '1I4H1XHI', 'signal': 'RISE', 'price': 2489.358, 'confidence': 40, 'analyze_time': datetime.datetime(2025, 5, 1, 1, 31, 0, 490000), 'entry_time': '2025-04-30 22:32:00', 'open_candle_timestamp': 1746063120, 'message_id': 614, 'chat_id': -4767147054, 'result': None}
-2025-04-30 22:32:00,506 INFO: Atualizando documento com a query: {'signal_id': '1I4H1XHI'}, update: {'$set': {'result': 'LOSS'}}
-2025-04-30 22:32:00,508 INFO: Número de documentos modificados: 1
-2025-04-30 22:32:00,509 INFO: Sinal 1I4H1XHI validado como LOSS
-2025-04-30 22:32:00,509 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 22:32:00,516 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 22:32:00,518 INFO: Buscando documento com a query: {'signal_id': '1I4H1XHI'}
-2025-04-30 22:32:00,536 INFO: Documento encontrado: {'_id': ObjectId('6812ced52d3b58e0f4615ab1'), 'signal_id': '1I4H1XHI', 'signal': 'RISE', 'price': 2489.358, 'confidence': 40, 'analyze_time': datetime.datetime(2025, 5, 1, 1, 31, 0, 490000), 'entry_time': '2025-04-30 22:32:00', 'open_candle_timestamp': 1746063120, 'message_id': 614, 'chat_id': -4767147054, 'result': 'LOSS'}
-2025-04-30 22:32:01,346 INFO: Finalizando metodo validate_signals_for_candle
-2025-04-30 22:33:00,458 INFO: 🔔 Novo candle em 2025-05-01 01:33:00 UTC
-2025-04-30 22:33:00,461 INFO: ⏳ Agendada validação do candle 1746063120 em 120s.
-2025-04-30 22:33:00,467 INFO: Iniciando metodo validate_signals_for_candle
-2025-04-30 22:33:00,485 INFO: 📈 Análise: EMA9=2488.96, EMA21=2488.33, trend=RISE, RSI=56.71, MACD=0.48/0.21, ATR=0.93, body=0.00, band_width=0.001, confidence=40
-2025-04-30 22:33:00,486 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 22:33:00,486 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 40%
-2025-04-30 22:33:00,490 INFO: ⏳ Em cooldown (120s). Próximo sinal em 1s.
-2025-04-30 22:33:00,499 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 22:33:00,501 INFO: Finalizando metodo validate_signals_for_candle
-2025-04-30 22:34:00,437 INFO: 🔔 Novo candle em 2025-05-01 01:34:00 UTC
-2025-04-30 22:34:00,438 INFO: ⏳ Agendada validação do candle 1746063180 em 120s.
-2025-04-30 22:34:00,456 INFO: 📈 Análise: EMA9=2489.12, EMA21=2488.47, trend=RISE, RSI=60.46, MACD=0.52/0.26, ATR=0.91, body=0.00, band_width=0.001, confidence=60
-2025-04-30 22:34:00,457 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 60%
-2025-04-30 22:34:00,464 INFO: Iniciando metodo validate_signals_for_candle
-2025-04-30 22:34:00,467 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 22:34:00,474 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 22:34:00,475 INFO: Finalizando metodo validate_signals_for_candle
-2025-04-30 22:34:01,281 INFO: ✅ Mensagem enviada ao Telegram (ID: OF3YAVN4).
-2025-04-30 22:34:01,282 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 22:34:01,291 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 22:34:01,291 INFO: Inserindo documento: {'signal_id': 'OF3YAVN4', 'signal': 'RISE', 'price': np.float64(2489.753), 'confidence': 60, 'analyze_time': datetime.datetime(2025, 4, 30, 22, 34, 0, 458024, tzinfo=<DstTzInfo 'America/Sao_Paulo' -03-1 day, 21:00:00 STD>), 'entry_time': '2025-04-30 22:35:00', 'open_candle_timestamp': 1746063300, 'message_id': 617, 'chat_id': -4767147054, 'result': None}
-2025-04-30 22:34:01,313 INFO: Documento inserido com ID: 6812cf892d3b58e0f4615ab7
-2025-04-30 22:35:00,465 INFO: Iniciando metodo validate_signals_for_candle
-2025-04-30 22:35:00,465 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 22:35:00,472 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 22:35:00,474 INFO: Buscando documento com a query: {'signal_id': 'OF3YAVN4'}
-2025-04-30 22:35:00,494 INFO: Documento encontrado: {'_id': ObjectId('6812cf892d3b58e0f4615ab7'), 'signal_id': 'OF3YAVN4', 'signal': 'RISE', 'price': 2489.753, 'confidence': 60, 'analyze_time': datetime.datetime(2025, 5, 1, 1, 34, 0, 458000), 'entry_time': '2025-04-30 22:35:00', 'open_candle_timestamp': 1746063300, 'message_id': 617, 'chat_id': -4767147054, 'result': None}
-2025-04-30 22:35:22,510 INFO: 🔔 Novo candle em 2025-05-01 01:35:00 UTC
-2025-04-30 22:35:22,512 INFO: ⏳ Agendada validação do candle 1746063240 em 120s.
-2025-04-30 22:35:22,531 INFO: 📈 Análise: EMA9=2489.25, EMA21=2488.58, trend=RISE, RSI=60.54, MACD=0.56/0.33, ATR=0.85, body=0.00, band_width=0.000, confidence=60
-2025-04-30 22:35:22,531 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 60%
-2025-04-30 22:35:22,532 INFO: ⏳ Em cooldown (120s). Próximo sinal em 38s.
-2025-04-30 22:35:36,220 INFO: ⚠️ Sinal OF3YAVN4 não encontrado no candle atual.
-2025-04-30 22:35:36,221 INFO: Finalizando metodo validate_signals_for_candle
-2025-04-30 22:36:00,443 INFO: Iniciando metodo validate_signals_for_candle
-2025-04-30 22:36:00,443 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 22:36:00,451 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 22:36:00,452 INFO: Buscando documento com a query: {'signal_id': 'OF3YAVN4'}
-2025-04-30 22:36:00,472 INFO: Documento encontrado: {'_id': ObjectId('6812cf892d3b58e0f4615ab7'), 'signal_id': 'OF3YAVN4', 'signal': 'RISE', 'price': 2489.753, 'confidence': 60, 'analyze_time': datetime.datetime(2025, 5, 1, 1, 34, 0, 458000), 'entry_time': '2025-04-30 22:35:00', 'open_candle_timestamp': 1746063300, 'message_id': 617, 'chat_id': -4767147054, 'result': None}
-2025-04-30 22:36:08,701 INFO: 🔔 Novo candle em 2025-05-01 01:36:00 UTC
-2025-04-30 22:36:08,703 INFO: ⏳ Agendada validação do candle 1746063300 em 120s.
-2025-04-30 22:36:08,721 INFO: 📈 Análise: EMA9=2489.16, EMA21=2488.60, trend=RISE, RSI=52.52, MACD=0.50/0.36, ATR=0.85, body=0.00, band_width=0.000, confidence=40
-2025-04-30 22:36:08,721 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 40%
-2025-04-30 22:36:23,906 INFO: ✅ Mensagem enviada ao Telegram (ID: S4OGTZGV).
-2025-04-30 22:36:23,907 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 22:36:23,914 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 22:36:23,916 INFO: Inserindo documento: {'signal_id': 'S4OGTZGV', 'signal': 'RISE', 'price': np.float64(2488.813), 'confidence': 40, 'analyze_time': datetime.datetime(2025, 4, 30, 22, 36, 8, 722562, tzinfo=<DstTzInfo 'America/Sao_Paulo' -03-1 day, 21:00:00 STD>), 'entry_time': '2025-04-30 22:37:08', 'open_candle_timestamp': 1746063420, 'message_id': 618, 'chat_id': -4767147054, 'result': None}
-2025-04-30 22:36:23,935 INFO: Documento inserido com ID: 6812d0172d3b58e0f4615abb
-2025-04-30 22:39:45,460 INFO: Iniciando metodo validate_signals_for_candle
-2025-04-30 22:39:45,461 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 22:39:45,472 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 22:39:45,474 INFO: Buscando documento com a query: {'signal_id': 'OF3YAVN4'}
-2025-04-30 22:39:45,497 INFO: Documento encontrado: {'_id': ObjectId('6812cf892d3b58e0f4615ab7'), 'signal_id': 'OF3YAVN4', 'signal': 'RISE', 'price': 2489.753, 'confidence': 60, 'analyze_time': datetime.datetime(2025, 5, 1, 1, 34, 0, 458000), 'entry_time': '2025-04-30 22:35:00', 'open_candle_timestamp': 1746063300, 'message_id': 617, 'chat_id': -4767147054, 'result': None}
-2025-04-30 22:39:49,169 INFO: Atualizando documento com a query: {'signal_id': 'OF3YAVN4'}, update: {'$set': {'result': 'LOSS'}}
-2025-04-30 22:39:49,174 INFO: Número de documentos modificados: 1
-2025-04-30 22:39:49,174 INFO: Sinal OF3YAVN4 validado como LOSS
-2025-04-30 22:39:49,174 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 22:39:49,181 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 22:39:49,182 INFO: Buscando documento com a query: {'signal_id': 'OF3YAVN4'}
-2025-04-30 22:39:49,185 INFO: Iniciando metodo validate_signals_for_candle
-2025-04-30 22:39:49,189 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 22:39:49,220 INFO: 🔔 Novo candle em 2025-05-01 01:37:00 UTC
-2025-04-30 22:39:49,221 INFO: Documento encontrado: {'_id': ObjectId('6812cf892d3b58e0f4615ab7'), 'signal_id': 'OF3YAVN4', 'signal': 'RISE', 'price': 2489.753, 'confidence': 60, 'analyze_time': datetime.datetime(2025, 5, 1, 1, 34, 0, 458000), 'entry_time': '2025-04-30 22:35:00', 'open_candle_timestamp': 1746063300, 'message_id': 617, 'chat_id': -4767147054, 'result': 'LOSS'}
-2025-04-30 22:39:49,222 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 22:39:49,224 INFO: Buscando documento com a query: {'signal_id': 'OF3YAVN4'}
-2025-04-30 22:39:49,233 INFO: ⏳ Agendada validação do candle 1746063360 em 120s.
-2025-04-30 22:39:49,233 INFO: Atualizando documento com a query: {'signal_id': 'OF3YAVN4'}, update: {'$set': {'result': 'LOSS'}}
-2025-04-30 22:39:57,467 INFO: Buscando documento com a query: {'signal_id': 'S4OGTZGV'}
-2025-04-30 22:39:57,471 INFO: Documento encontrado: {'_id': ObjectId('6812d0172d3b58e0f4615abb'), 'signal_id': 'S4OGTZGV', 'signal': 'RISE', 'price': 2488.813, 'confidence': 40, 'analyze_time': datetime.datetime(2025, 5, 1, 1, 36, 8, 722000), 'entry_time': '2025-04-30 22:37:08', 'open_candle_timestamp': 1746063420, 'message_id': 618, 'chat_id': -4767147054, 'result': None}
-2025-04-30 22:39:58,229 INFO: ⚠️ Sinal S4OGTZGV não encontrado no candle atual.
-2025-04-30 22:39:58,229 INFO: Finalizando metodo validate_signals_for_candle
-2025-04-30 22:39:59,163 INFO: Número de documentos modificados: 0
-2025-04-30 22:39:59,164 INFO: Sinal OF3YAVN4 validado como LOSS
-2025-04-30 22:39:59,165 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 22:39:59,171 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 22:39:59,172 INFO: Buscando documento com a query: {'signal_id': 'OF3YAVN4'}
-2025-04-30 22:39:59,179 INFO: Documento encontrado: {'_id': ObjectId('6812cf892d3b58e0f4615ab7'), 'signal_id': 'OF3YAVN4', 'signal': 'RISE', 'price': 2489.753, 'confidence': 60, 'analyze_time': datetime.datetime(2025, 5, 1, 1, 34, 0, 458000), 'entry_time': '2025-04-30 22:35:00', 'open_candle_timestamp': 1746063300, 'message_id': 617, 'chat_id': -4767147054, 'result': 'LOSS'}
-2025-04-30 22:40:00,053 INFO: Documento encontrado: {'_id': ObjectId('6812cf892d3b58e0f4615ab7'), 'signal_id': 'OF3YAVN4', 'signal': 'RISE', 'price': 2489.753, 'confidence': 60, 'analyze_time': datetime.datetime(2025, 5, 1, 1, 34, 0, 458000), 'entry_time': '2025-04-30 22:35:00', 'open_candle_timestamp': 1746063300, 'message_id': 617, 'chat_id': -4767147054, 'result': 'LOSS'}
-2025-04-30 22:40:00,084 INFO: Atualizando documento com a query: {'signal_id': 'OF3YAVN4'}, update: {'$set': {'result': 'LOSS'}}
-2025-04-30 22:40:00,089 INFO: Número de documentos modificados: 0
-2025-04-30 22:40:00,089 INFO: Sinal OF3YAVN4 validado como LOSS
-2025-04-30 22:40:00,090 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 22:40:00,096 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 22:40:00,097 INFO: Buscando documento com a query: {'signal_id': 'OF3YAVN4'}
-2025-04-30 22:40:00,119 INFO: Documento encontrado: {'_id': ObjectId('6812cf892d3b58e0f4615ab7'), 'signal_id': 'OF3YAVN4', 'signal': 'RISE', 'price': 2489.753, 'confidence': 60, 'analyze_time': datetime.datetime(2025, 5, 1, 1, 34, 0, 458000), 'entry_time': '2025-04-30 22:35:00', 'open_candle_timestamp': 1746063300, 'message_id': 617, 'chat_id': -4767147054, 'result': 'LOSS'}
-2025-04-30 22:40:00,200 INFO: 📈 Análise: EMA9=2488.79, EMA21=2488.48, trend=RISE, RSI=42.63, MACD=0.32/0.35, ATR=0.90, body=0.00, band_width=0.001, confidence=20
-2025-04-30 22:40:00,201 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 20%
-2025-04-30 22:40:04,914 INFO: ✅ Mensagem enviada ao Telegram (ID: HY4MSGG9).
-2025-04-30 22:40:04,915 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 22:40:04,922 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 22:40:04,923 INFO: Inserindo documento: {'signal_id': 'HY4MSGG9', 'signal': 'RISE', 'price': np.float64(2487.285), 'confidence': 20, 'analyze_time': datetime.datetime(2025, 4, 30, 22, 40, 0, 201125, tzinfo=<DstTzInfo 'America/Sao_Paulo' -03-1 day, 21:00:00 STD>), 'entry_time': '2025-04-30 22:41:00', 'open_candle_timestamp': 1746063480, 'message_id': 622, 'chat_id': -4767147054, 'result': None}
-2025-04-30 22:40:04,946 INFO: Documento inserido com ID: 6812d0f42d3b58e0f4615ac2
-2025-04-30 22:40:04,988 INFO: 🔔 Novo candle em 2025-05-01 01:38:00 UTC
-2025-04-30 22:40:04,990 INFO: ⏳ Agendada validação do candle 1746063420 em 120s.
-2025-04-30 22:40:07,141 INFO: 📈 Análise: EMA9=2488.40, EMA21=2488.33, trend=RISE, RSI=40.49, MACD=0.16/0.33, ATR=0.87, body=0.00, band_width=0.001, confidence=20
-2025-04-30 22:40:07,141 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 20%
-2025-04-30 22:40:07,143 INFO: ⏳ Em cooldown (120s). Próximo sinal em 114s.
-2025-04-30 22:40:07,180 INFO: 🔔 Novo candle em 2025-05-01 01:39:00 UTC
-2025-04-30 22:40:07,182 INFO: ⏳ Agendada validação do candle 1746063480 em 120s.
-2025-04-30 22:42:33,513 INFO: Iniciando metodo validate_signals_for_candle
-2025-04-30 22:42:33,514 INFO: Iniciando metodo validate_signals_for_candle
-2025-04-30 22:42:33,514 INFO: Iniciando metodo validate_signals_for_candle
-2025-04-30 22:42:33,515 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 22:42:33,515 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 22:42:33,515 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 22:42:33,543 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 22:42:33,546 INFO: Buscando documento com a query: {'signal_id': 'S4OGTZGV'}
-2025-04-30 22:42:33,551 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 22:42:33,551 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 22:42:33,557 INFO: Buscando documento com a query: {'signal_id': 'S4OGTZGV'}
-2025-04-30 22:42:33,564 INFO: Buscando documento com a query: {'signal_id': 'S4OGTZGV'}
-2025-04-30 22:42:33,591 INFO: Documento encontrado: {'_id': ObjectId('6812d0172d3b58e0f4615abb'), 'signal_id': 'S4OGTZGV', 'signal': 'RISE', 'price': 2488.813, 'confidence': 40, 'analyze_time': datetime.datetime(2025, 5, 1, 1, 36, 8, 722000), 'entry_time': '2025-04-30 22:37:08', 'open_candle_timestamp': 1746063420, 'message_id': 618, 'chat_id': -4767147054, 'result': None}
-2025-04-30 22:42:33,592 INFO: Documento encontrado: {'_id': ObjectId('6812d0172d3b58e0f4615abb'), 'signal_id': 'S4OGTZGV', 'signal': 'RISE', 'price': 2488.813, 'confidence': 40, 'analyze_time': datetime.datetime(2025, 5, 1, 1, 36, 8, 722000), 'entry_time': '2025-04-30 22:37:08', 'open_candle_timestamp': 1746063420, 'message_id': 618, 'chat_id': -4767147054, 'result': None}
-2025-04-30 22:42:39,076 INFO: 📈 Análise: EMA9=2487.82, EMA21=2488.08, trend=FALL, RSI=34.08, MACD=-0.09/0.23, ATR=0.90, body=0.00, band_width=0.002, confidence=80
-2025-04-30 22:42:39,077 INFO: Atualizando documento com a query: {'signal_id': 'S4OGTZGV'}, update: {'$set': {'result': 'LOSS'}}
-2025-04-30 22:42:39,077 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 80%
-2025-04-30 22:42:39,084 INFO: Número de documentos modificados: 1
-2025-04-30 22:42:39,089 INFO: Sinal S4OGTZGV validado como LOSS
-2025-04-30 22:42:39,096 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 22:42:39,109 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 22:42:39,110 INFO: Buscando documento com a query: {'signal_id': 'S4OGTZGV'}
-2025-04-30 22:42:39,144 INFO: Documento encontrado: {'_id': ObjectId('6812d0172d3b58e0f4615abb'), 'signal_id': 'S4OGTZGV', 'signal': 'RISE', 'price': 2488.813, 'confidence': 40, 'analyze_time': datetime.datetime(2025, 5, 1, 1, 36, 8, 722000), 'entry_time': '2025-04-30 22:37:08', 'open_candle_timestamp': 1746063420, 'message_id': 618, 'chat_id': -4767147054, 'result': 'LOSS'}
-2025-04-30 22:42:39,154 INFO: Documento encontrado: {'_id': ObjectId('6812d0172d3b58e0f4615abb'), 'signal_id': 'S4OGTZGV', 'signal': 'RISE', 'price': 2488.813, 'confidence': 40, 'analyze_time': datetime.datetime(2025, 5, 1, 1, 36, 8, 722000), 'entry_time': '2025-04-30 22:37:08', 'open_candle_timestamp': 1746063420, 'message_id': 618, 'chat_id': -4767147054, 'result': None}
-2025-04-30 22:42:39,154 INFO: Atualizando documento com a query: {'signal_id': 'S4OGTZGV'}, update: {'$set': {'result': 'LOSS'}}
-2025-04-30 22:42:39,155 INFO: Atualizando documento com a query: {'signal_id': 'S4OGTZGV'}, update: {'$set': {'result': 'LOSS'}}
-2025-04-30 22:42:39,158 INFO: Número de documentos modificados: 0
-2025-04-30 22:42:39,160 INFO: Número de documentos modificados: 0
-2025-04-30 22:42:39,160 INFO: Sinal S4OGTZGV validado como LOSS
-2025-04-30 22:42:39,160 INFO: Sinal S4OGTZGV validado como LOSS
-2025-04-30 22:42:39,161 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 22:42:39,161 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 22:42:39,172 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 22:42:39,175 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 22:42:39,175 INFO: Buscando documento com a query: {'signal_id': 'S4OGTZGV'}
-2025-04-30 22:42:39,176 INFO: Buscando documento com a query: {'signal_id': 'S4OGTZGV'}
-2025-04-30 22:42:39,202 INFO: Documento encontrado: {'_id': ObjectId('6812d0172d3b58e0f4615abb'), 'signal_id': 'S4OGTZGV', 'signal': 'RISE', 'price': 2488.813, 'confidence': 40, 'analyze_time': datetime.datetime(2025, 5, 1, 1, 36, 8, 722000), 'entry_time': '2025-04-30 22:37:08', 'open_candle_timestamp': 1746063420, 'message_id': 618, 'chat_id': -4767147054, 'result': 'LOSS'}
-2025-04-30 22:42:39,203 INFO: Documento encontrado: {'_id': ObjectId('6812d0172d3b58e0f4615abb'), 'signal_id': 'S4OGTZGV', 'signal': 'RISE', 'price': 2488.813, 'confidence': 40, 'analyze_time': datetime.datetime(2025, 5, 1, 1, 36, 8, 722000), 'entry_time': '2025-04-30 22:37:08', 'open_candle_timestamp': 1746063420, 'message_id': 618, 'chat_id': -4767147054, 'result': 'LOSS'}
-2025-04-30 22:42:39,907 INFO: ✅ Mensagem enviada ao Telegram (ID: YXC2Y0P8).
-2025-04-30 22:42:39,908 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 22:42:39,915 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 22:42:39,916 INFO: Inserindo documento: {'signal_id': 'YXC2Y0P8', 'signal': 'FALL', 'price': np.float64(2485.506), 'confidence': 80, 'analyze_time': datetime.datetime(2025, 4, 30, 22, 42, 39, 81056, tzinfo=<DstTzInfo 'America/Sao_Paulo' -03-1 day, 21:00:00 STD>), 'entry_time': '2025-04-30 22:43:39', 'open_candle_timestamp': 1746063600, 'message_id': 623, 'chat_id': -4767147054, 'result': None}
-2025-04-30 22:42:39,939 INFO: Documento inserido com ID: 6812d18f2d3b58e0f4615aca
-2025-04-30 22:42:42,023 INFO: Buscando documento com a query: {'signal_id': 'HY4MSGG9'}
-2025-04-30 22:42:42,027 INFO: Documento encontrado: {'_id': ObjectId('6812d0f42d3b58e0f4615ac2'), 'signal_id': 'HY4MSGG9', 'signal': 'RISE', 'price': 2487.285, 'confidence': 20, 'analyze_time': datetime.datetime(2025, 5, 1, 1, 40, 0, 201000), 'entry_time': '2025-04-30 22:41:00', 'open_candle_timestamp': 1746063480, 'message_id': 622, 'chat_id': -4767147054, 'result': None}
-2025-04-30 22:42:42,028 INFO: Atualizando documento com a query: {'signal_id': 'HY4MSGG9'}, update: {'$set': {'result': 'LOSS'}}
-2025-04-30 22:42:42,031 INFO: Número de documentos modificados: 1
-2025-04-30 22:42:42,031 INFO: Sinal HY4MSGG9 validado como LOSS
-2025-04-30 22:42:42,031 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 22:42:42,038 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 22:42:42,039 INFO: Buscando documento com a query: {'signal_id': 'HY4MSGG9'}
-2025-04-30 22:42:42,060 INFO: Documento encontrado: {'_id': ObjectId('6812d0f42d3b58e0f4615ac2'), 'signal_id': 'HY4MSGG9', 'signal': 'RISE', 'price': 2487.285, 'confidence': 20, 'analyze_time': datetime.datetime(2025, 5, 1, 1, 40, 0, 201000), 'entry_time': '2025-04-30 22:41:00', 'open_candle_timestamp': 1746063480, 'message_id': 622, 'chat_id': -4767147054, 'result': 'LOSS'}
-2025-04-30 22:42:42,084 INFO: Buscando documento com a query: {'signal_id': 'HY4MSGG9'}
-2025-04-30 22:42:42,093 INFO: Documento encontrado: {'_id': ObjectId('6812d0f42d3b58e0f4615ac2'), 'signal_id': 'HY4MSGG9', 'signal': 'RISE', 'price': 2487.285, 'confidence': 20, 'analyze_time': datetime.datetime(2025, 5, 1, 1, 40, 0, 201000), 'entry_time': '2025-04-30 22:41:00', 'open_candle_timestamp': 1746063480, 'message_id': 622, 'chat_id': -4767147054, 'result': 'LOSS'}
-2025-04-30 22:42:42,094 INFO: Atualizando documento com a query: {'signal_id': 'HY4MSGG9'}, update: {'$set': {'result': 'LOSS'}}
-2025-04-30 22:42:42,098 INFO: Número de documentos modificados: 0
-2025-04-30 22:42:42,101 INFO: Sinal HY4MSGG9 validado como LOSS
-2025-04-30 22:42:42,102 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 22:42:42,104 INFO: Buscando documento com a query: {'signal_id': 'HY4MSGG9'}
-2025-04-30 22:42:42,111 INFO: Documento encontrado: {'_id': ObjectId('6812d0f42d3b58e0f4615ac2'), 'signal_id': 'HY4MSGG9', 'signal': 'RISE', 'price': 2487.285, 'confidence': 20, 'analyze_time': datetime.datetime(2025, 5, 1, 1, 40, 0, 201000), 'entry_time': '2025-04-30 22:41:00', 'open_candle_timestamp': 1746063480, 'message_id': 622, 'chat_id': -4767147054, 'result': 'LOSS'}
-2025-04-30 22:42:42,114 INFO: Atualizando documento com a query: {'signal_id': 'HY4MSGG9'}, update: {'$set': {'result': 'LOSS'}}
-2025-04-30 22:42:42,119 INFO: Número de documentos modificados: 0
-2025-04-30 22:42:42,120 INFO: Sinal HY4MSGG9 validado como LOSS
-2025-04-30 22:42:42,122 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 22:42:42,122 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 22:42:42,127 INFO: Buscando documento com a query: {'signal_id': 'HY4MSGG9'}
-2025-04-30 22:42:42,142 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 22:42:42,144 INFO: Buscando documento com a query: {'signal_id': 'HY4MSGG9'}
-2025-04-30 22:42:43,025 INFO: Documento encontrado: {'_id': ObjectId('6812d0f42d3b58e0f4615ac2'), 'signal_id': 'HY4MSGG9', 'signal': 'RISE', 'price': 2487.285, 'confidence': 20, 'analyze_time': datetime.datetime(2025, 5, 1, 1, 40, 0, 201000), 'entry_time': '2025-04-30 22:41:00', 'open_candle_timestamp': 1746063480, 'message_id': 622, 'chat_id': -4767147054, 'result': 'LOSS'}
-2025-04-30 22:42:43,042 INFO: Documento encontrado: {'_id': ObjectId('6812d0f42d3b58e0f4615ac2'), 'signal_id': 'HY4MSGG9', 'signal': 'RISE', 'price': 2487.285, 'confidence': 20, 'analyze_time': datetime.datetime(2025, 5, 1, 1, 40, 0, 201000), 'entry_time': '2025-04-30 22:41:00', 'open_candle_timestamp': 1746063480, 'message_id': 622, 'chat_id': -4767147054, 'result': 'LOSS'}
-2025-04-30 22:42:43,706 INFO: Buscando documento com a query: {'signal_id': 'YXC2Y0P8'}
-2025-04-30 22:42:43,710 INFO: Documento encontrado: {'_id': ObjectId('6812d18f2d3b58e0f4615aca'), 'signal_id': 'YXC2Y0P8', 'signal': 'FALL', 'price': 2485.506, 'confidence': 80, 'analyze_time': datetime.datetime(2025, 5, 1, 1, 42, 39, 81000), 'entry_time': '2025-04-30 22:43:39', 'open_candle_timestamp': 1746063600, 'message_id': 623, 'chat_id': -4767147054, 'result': None}
-2025-04-30 22:42:43,710 INFO: ⚠️ Sinal YXC2Y0P8 não encontrado no candle atual.
-2025-04-30 22:42:43,711 INFO: Finalizando metodo validate_signals_for_candle
-2025-04-30 22:42:56,939 INFO: 🔔 Novo candle em 2025-05-01 01:40:00 UTC
-2025-04-30 22:42:56,944 INFO: ⏳ Agendada validação do candle 1746063540 em 120s.
-2025-04-30 22:42:59,552 INFO: 📈 Análise: EMA9=2487.05, EMA21=2487.69, trend=FALL, RSI=28.78, MACD=-0.38/0.15, ATR=0.95, body=0.00, band_width=0.002, confidence=80
-2025-04-30 22:42:59,553 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 80%
-2025-04-30 22:42:59,554 INFO: ⏳ Em cooldown (120s). Próximo sinal em 100s.
-2025-04-30 22:42:59,598 INFO: 🔔 Novo candle em 2025-05-01 01:41:00 UTC
-2025-04-30 22:42:59,600 INFO: ⏳ Agendada validação do candle 1746063600 em 120s.
-2025-04-30 22:43:03,387 INFO: 📈 Análise: EMA9=2486.24, EMA21=2487.26, trend=FALL, RSI=25.97, MACD=-0.68/0.00, ATR=0.95, body=0.00, band_width=0.003, confidence=80
-2025-04-30 22:43:03,388 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 80%
-2025-04-30 22:43:03,389 INFO: ⏳ Em cooldown (120s). Próximo sinal em 96s.
-2025-04-30 22:43:03,431 INFO: 🔔 Novo candle em 2025-05-01 01:42:00 UTC
-2025-04-30 22:43:03,433 INFO: ⏳ Agendada validação do candle 1746063660 em 120s.
-2025-04-30 22:43:03,458 INFO: 📈 Análise: EMA9=2485.50, EMA21=2486.82, trend=FALL, RSI=24.75, MACD=-0.95/-0.16, ATR=0.92, body=0.00, band_width=0.003, confidence=80
-2025-04-30 22:43:03,458 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 80%
-2025-04-30 22:43:03,459 INFO: ⏳ Em cooldown (120s). Próximo sinal em 96s.
-2025-04-30 22:43:03,500 INFO: 🔔 Novo candle em 2025-05-01 01:43:00 UTC
-2025-04-30 22:43:03,503 INFO: ⏳ Agendada validação do candle 1746063720 em 120s.
-2025-04-30 22:43:03,526 INFO: 📈 Análise: EMA9=2484.68, EMA21=2486.35, trend=FALL, RSI=21.58, MACD=-1.30/-0.45, ATR=0.93, body=0.00, band_width=0.004, confidence=80
-2025-04-30 22:43:03,526 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 80%
-2025-04-30 22:43:03,527 INFO: ⏳ Em cooldown (120s). Próximo sinal em 96s.
-2025-04-30 22:46:50,907 INFO: Iniciando metodo validate_signals_for_candle
-2025-04-30 22:46:50,909 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 22:47:46,646 INFO: Iniciando metodo validate_signals_for_candle
-2025-04-30 22:47:46,647 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 22:47:46,658 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 22:47:46,660 INFO: Buscando documento com a query: {'signal_id': 'YXC2Y0P8'}
-2025-04-30 22:47:46,711 INFO: Documento encontrado: {'_id': ObjectId('6812d18f2d3b58e0f4615aca'), 'signal_id': 'YXC2Y0P8', 'signal': 'FALL', 'price': 2485.506, 'confidence': 80, 'analyze_time': datetime.datetime(2025, 5, 1, 1, 42, 39, 81000), 'entry_time': '2025-04-30 22:43:39', 'open_candle_timestamp': 1746063600, 'message_id': 623, 'chat_id': -4767147054, 'result': None}
-2025-04-30 22:47:46,716 INFO: Atualizando documento com a query: {'signal_id': 'YXC2Y0P8'}, update: {'$set': {'result': 'LOSS'}}
-2025-04-30 22:47:46,727 INFO: Número de documentos modificados: 1
-2025-04-30 22:47:46,729 INFO: Sinal YXC2Y0P8 validado como LOSS
-2025-04-30 22:47:46,729 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 22:47:46,763 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 22:47:46,766 INFO: Buscando documento com a query: {'signal_id': 'YXC2Y0P8'}
-2025-04-30 22:47:46,804 INFO: Iniciando metodo validate_signals_for_candle
-2025-04-30 22:47:46,812 INFO: Iniciando metodo validate_signals_for_candle
-2025-04-30 22:47:46,815 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 22:47:46,816 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 22:47:46,818 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 22:47:46,833 INFO: Buscando documento com a query: {'signal_id': 'YXC2Y0P8'}
-2025-04-30 22:47:46,834 INFO: Documento encontrado: {'_id': ObjectId('6812d18f2d3b58e0f4615aca'), 'signal_id': 'YXC2Y0P8', 'signal': 'FALL', 'price': 2485.506, 'confidence': 80, 'analyze_time': datetime.datetime(2025, 5, 1, 1, 42, 39, 81000), 'entry_time': '2025-04-30 22:43:39', 'open_candle_timestamp': 1746063600, 'message_id': 623, 'chat_id': -4767147054, 'result': 'LOSS'}
-2025-04-30 22:47:46,854 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 22:48:07,275 INFO: Documento encontrado: {'_id': ObjectId('6812d18f2d3b58e0f4615aca'), 'signal_id': 'YXC2Y0P8', 'signal': 'FALL', 'price': 2485.506, 'confidence': 80, 'analyze_time': datetime.datetime(2025, 5, 1, 1, 42, 39, 81000), 'entry_time': '2025-04-30 22:43:39', 'open_candle_timestamp': 1746063600, 'message_id': 623, 'chat_id': -4767147054, 'result': 'LOSS'}
-2025-04-30 22:48:07,275 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 22:48:07,277 INFO: Buscando documento com a query: {'signal_id': 'YXC2Y0P8'}
-2025-04-30 22:48:07,277 INFO: Finalizando metodo validate_signals_for_candle
-2025-04-30 22:48:07,278 INFO: Atualizando documento com a query: {'signal_id': 'YXC2Y0P8'}, update: {'$set': {'result': 'LOSS'}}
-2025-04-30 22:48:07,279 INFO: Finalizando metodo validate_signals_for_candle
-2025-04-30 22:48:07,285 INFO: Número de documentos modificados: 0
-2025-04-30 22:48:07,285 INFO: Sinal YXC2Y0P8 validado como LOSS
-2025-04-30 22:48:07,286 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 22:48:07,293 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 22:48:07,294 INFO: Buscando documento com a query: {'signal_id': 'YXC2Y0P8'}
-2025-04-30 22:48:07,302 INFO: Documento encontrado: {'_id': ObjectId('6812d18f2d3b58e0f4615aca'), 'signal_id': 'YXC2Y0P8', 'signal': 'FALL', 'price': 2485.506, 'confidence': 80, 'analyze_time': datetime.datetime(2025, 5, 1, 1, 42, 39, 81000), 'entry_time': '2025-04-30 22:43:39', 'open_candle_timestamp': 1746063600, 'message_id': 623, 'chat_id': -4767147054, 'result': 'LOSS'}
-2025-04-30 22:48:07,303 INFO: Atualizando documento com a query: {'signal_id': 'YXC2Y0P8'}, update: {'$set': {'result': 'LOSS'}}
-2025-04-30 22:48:07,308 INFO: Número de documentos modificados: 0
-2025-04-30 22:48:07,308 INFO: Sinal YXC2Y0P8 validado como LOSS
-2025-04-30 22:48:07,309 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 22:48:07,318 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 22:48:07,320 INFO: Buscando documento com a query: {'signal_id': 'YXC2Y0P8'}
-2025-04-30 22:48:07,323 INFO: Documento encontrado: {'_id': ObjectId('6812d18f2d3b58e0f4615aca'), 'signal_id': 'YXC2Y0P8', 'signal': 'FALL', 'price': 2485.506, 'confidence': 80, 'analyze_time': datetime.datetime(2025, 5, 1, 1, 42, 39, 81000), 'entry_time': '2025-04-30 22:43:39', 'open_candle_timestamp': 1746063600, 'message_id': 623, 'chat_id': -4767147054, 'result': 'LOSS'}
-2025-04-30 22:48:07,346 INFO: Documento encontrado: {'_id': ObjectId('6812d18f2d3b58e0f4615aca'), 'signal_id': 'YXC2Y0P8', 'signal': 'FALL', 'price': 2485.506, 'confidence': 80, 'analyze_time': datetime.datetime(2025, 5, 1, 1, 42, 39, 81000), 'entry_time': '2025-04-30 22:43:39', 'open_candle_timestamp': 1746063600, 'message_id': 623, 'chat_id': -4767147054, 'result': 'LOSS'}
-2025-04-30 23:09:07,133 INFO: === Logging ROOT inicializado ===
-2025-04-30 23:09:07,136 INFO: 🔗 Conectando ao WebSocket...
-2025-04-30 23:09:07,138 INFO: 🔗 Conexão WebSocket estabelecida. Aguardando dados...
-2025-04-30 23:09:07,679 INFO: Websocket connected
-2025-04-30 23:09:16,879 INFO: ✅ Token autorizado às 2025-05-01 02:09:16.879121 UTC
-2025-04-30 23:09:20,129 ERROR: error from callback <function on_message at 0x0000021542C0FA60>: 'tuple' object has no attribute 'append'
-2025-04-30 23:26:59,670 INFO: === Logging ROOT inicializado ===
-2025-04-30 23:26:59,673 INFO: 🔗 Conectando ao WebSocket...
-2025-04-30 23:26:59,675 INFO: 🔗 Conexão WebSocket estabelecida. Aguardando dados...
-2025-04-30 23:26:59,936 INFO: Websocket connected
-2025-04-30 23:27:00,282 INFO: ✅ Token autorizado às 2025-05-01 02:27:00.282962 UTC
-2025-04-30 23:27:00,528 INFO: 📥 Histórico inicial recebido às 2025-05-01 02:27:00.528575 UTC
-2025-04-30 23:27:00,562 INFO: 📈 Análise: EMA9=2484.68, EMA21=2483.44, trend=RISE, RSI=68.29, MACD=1.12/0.79, ATR=1.04, body=0.00, band_width=0.001, confidence=60
-2025-04-30 23:27:00,563 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 60%
-2025-04-30 23:27:00,563 INFO: 🔄 Ignorando sinal inicial antes de primeiro candle OHL.
-2025-04-30 23:28:00,381 INFO: 🔔 Novo candle em 2025-05-01 02:28:00 UTC
-2025-04-30 23:28:00,383 INFO: ⏳ Agendada validação do candle 1746066420 em 120s.
-2025-04-30 23:28:00,401 INFO: 📈 Análise: EMA9=2484.73, EMA21=2483.56, trend=RISE, RSI=61.18, MACD=1.12/0.90, ATR=1.02, body=0.00, band_width=0.001, confidence=60
-2025-04-30 23:28:00,402 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 60%
-2025-04-30 23:28:01,377 INFO: ✅ Mensagem enviada ao Telegram (ID: S3GD4G7S).
-2025-04-30 23:28:01,378 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 23:28:01,405 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 23:28:01,407 INFO: Inserindo documento: {'signal_id': 'S3GD4G7S', 'signal': 'RISE', 'price': np.float64(2484.916), 'confidence': 60, 'analyze_time': datetime.datetime(2025, 4, 30, 23, 28, 0, 402279, tzinfo=<DstTzInfo 'America/Sao_Paulo' -03-1 day, 21:00:00 STD>), 'entry_time': '2025-04-30 23:29:00', 'open_candle_timestamp': 1746066540, 'message_id': 638, 'chat_id': -4767147054, 'result': None}
-2025-04-30 23:28:01,457 INFO: Documento inserido com ID: 6812dc311ae0425fae9a47fc
-2025-04-30 23:29:00,401 INFO: 🔔 Novo candle em 2025-05-01 02:29:00 UTC
-2025-04-30 23:29:00,403 INFO: ⏳ Agendada validação do candle 1746066480 em 120s.
-2025-04-30 23:29:00,427 INFO: 📈 Análise: EMA9=2484.88, EMA21=2483.73, trend=RISE, RSI=64.19, MACD=1.15/0.98, ATR=0.99, body=0.00, band_width=0.001, confidence=60
-2025-04-30 23:29:00,427 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 60%
-2025-04-30 23:29:00,428 INFO: ⏳ Em cooldown (120s). Próximo sinal em 60s.
-2025-04-30 23:31:38,825 INFO: Iniciando metodo validate_signals_for_candle
-2025-04-30 23:31:38,825 INFO: Iniciando metodo validate_signals_for_candle
-2025-04-30 23:31:38,826 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 23:31:38,826 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 23:31:38,851 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 23:31:38,854 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 23:31:38,854 INFO: Buscando documento com a query: {'signal_id': 'S3GD4G7S'}
-2025-04-30 23:31:38,857 INFO: Buscando documento com a query: {'signal_id': 'S3GD4G7S'}
-2025-04-30 23:31:38,893 INFO: Documento encontrado: {'_id': ObjectId('6812dc311ae0425fae9a47fc'), 'signal_id': 'S3GD4G7S', 'signal': 'RISE', 'price': 2484.916, 'confidence': 60, 'analyze_time': datetime.datetime(2025, 5, 1, 2, 28, 0, 402000), 'entry_time': '2025-04-30 23:29:00', 'open_candle_timestamp': 1746066540, 'message_id': 638, 'chat_id': -4767147054, 'result': None}
-2025-04-30 23:31:38,894 INFO: Documento encontrado: {'_id': ObjectId('6812dc311ae0425fae9a47fc'), 'signal_id': 'S3GD4G7S', 'signal': 'RISE', 'price': 2484.916, 'confidence': 60, 'analyze_time': datetime.datetime(2025, 5, 1, 2, 28, 0, 402000), 'entry_time': '2025-04-30 23:29:00', 'open_candle_timestamp': 1746066540, 'message_id': 638, 'chat_id': -4767147054, 'result': None}
-2025-04-30 23:31:38,894 INFO: Atualizando documento com a query: {'signal_id': 'S3GD4G7S'}, update: {'$set': {'result': 'LOSS'}}
-2025-04-30 23:31:38,895 INFO: Atualizando documento com a query: {'signal_id': 'S3GD4G7S'}, update: {'$set': {'result': 'LOSS'}}
-2025-04-30 23:31:38,904 INFO: Número de documentos modificados: 1
-2025-04-30 23:31:38,905 INFO: Sinal S3GD4G7S validado como LOSS
-2025-04-30 23:31:38,905 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 23:31:38,916 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 23:31:38,917 INFO: Buscando documento com a query: {'signal_id': 'S3GD4G7S'}
-2025-04-30 23:31:38,941 INFO: Documento encontrado: {'_id': ObjectId('6812dc311ae0425fae9a47fc'), 'signal_id': 'S3GD4G7S', 'signal': 'RISE', 'price': 2484.916, 'confidence': 60, 'analyze_time': datetime.datetime(2025, 5, 1, 2, 28, 0, 402000), 'entry_time': '2025-04-30 23:29:00', 'open_candle_timestamp': 1746066540, 'message_id': 638, 'chat_id': -4767147054, 'result': 'LOSS'}
-2025-04-30 23:31:38,951 INFO: Número de documentos modificados: 0
-2025-04-30 23:31:38,952 INFO: Sinal S3GD4G7S validado como LOSS
-2025-04-30 23:31:38,953 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 23:31:38,961 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 23:31:38,962 INFO: Buscando documento com a query: {'signal_id': 'S3GD4G7S'}
-2025-04-30 23:31:38,997 INFO: Documento encontrado: {'_id': ObjectId('6812dc311ae0425fae9a47fc'), 'signal_id': 'S3GD4G7S', 'signal': 'RISE', 'price': 2484.916, 'confidence': 60, 'analyze_time': datetime.datetime(2025, 5, 1, 2, 28, 0, 402000), 'entry_time': '2025-04-30 23:29:00', 'open_candle_timestamp': 1746066540, 'message_id': 638, 'chat_id': -4767147054, 'result': 'LOSS'}
-2025-04-30 23:31:40,791 INFO: Finalizando metodo validate_signals_for_candle
-2025-04-30 23:32:17,032 INFO: 🔔 Novo candle em 2025-05-01 02:30:00 UTC
-2025-04-30 23:32:17,035 INFO: ⏳ Agendada validação do candle 1746066540 em 120s.
-2025-04-30 23:32:49,837 INFO: 📈 Análise: EMA9=2484.94, EMA21=2483.86, trend=RISE, RSI=61.75, MACD=1.12/1.01, ATR=0.94, body=0.00, band_width=0.001, confidence=60
-2025-04-30 23:32:49,838 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 60%
-2025-04-30 23:32:50,657 INFO: ✅ Mensagem enviada ao Telegram (ID: NUOHB6YV).
-2025-04-30 23:32:50,661 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 23:32:50,676 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 23:32:50,677 INFO: Inserindo documento: {'signal_id': 'NUOHB6YV', 'signal': 'RISE', 'price': np.float64(2485.196), 'confidence': 60, 'analyze_time': datetime.datetime(2025, 4, 30, 23, 32, 49, 839378, tzinfo=<DstTzInfo 'America/Sao_Paulo' -03-1 day, 21:00:00 STD>), 'entry_time': '2025-04-30 23:33:49', 'open_candle_timestamp': 1746066660, 'message_id': 641, 'chat_id': -4767147054, 'result': None}
-2025-04-30 23:32:50,703 INFO: Documento inserido com ID: 6812dd521ae0425fae9a4802
-2025-04-30 23:32:50,748 INFO: 🔔 Novo candle em 2025-05-01 02:31:00 UTC
-2025-04-30 23:33:01,132 INFO: ⏳ Agendada validação do candle 1746066600 em 120s.
-2025-04-30 23:33:02,487 INFO: 📈 Análise: EMA9=2485.24, EMA21=2484.09, trend=RISE, RSI=67.47, MACD=1.20/1.07, ATR=0.96, body=0.00, band_width=0.001, confidence=60
-2025-04-30 23:33:02,487 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 60%
-2025-04-30 23:33:02,488 INFO: ⏳ Em cooldown (120s). Próximo sinal em 108s.
-2025-04-30 23:33:22,390 INFO: 🔔 Novo candle em 2025-05-01 02:32:00 UTC
-2025-04-30 23:33:22,393 INFO: ⏳ Agendada validação do candle 1746066660 em 120s.
-2025-04-30 23:33:22,433 INFO: 📈 Análise: EMA9=2485.51, EMA21=2484.31, trend=RISE, RSI=68.15, MACD=1.25/1.12, ATR=0.91, body=0.00, band_width=0.001, confidence=60
-2025-04-30 23:33:22,433 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 60%
-2025-04-30 23:33:22,434 INFO: ⏳ Em cooldown (120s). Próximo sinal em 88s.
-2025-04-30 23:33:22,467 INFO: 🔔 Novo candle em 2025-05-01 02:33:00 UTC
-2025-04-30 23:33:22,470 INFO: ⏳ Agendada validação do candle 1746066720 em 120s.
-2025-04-30 23:33:22,495 INFO: 📈 Análise: EMA9=2485.86, EMA21=2484.58, trend=RISE, RSI=70.74, MACD=1.32/1.15, ATR=0.89, body=0.00, band_width=0.001, confidence=80
-2025-04-30 23:33:22,495 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 80%
-2025-04-30 23:33:22,496 INFO: ⏳ Em cooldown (120s). Próximo sinal em 88s.
-2025-04-30 23:34:02,669 INFO: 🔔 Novo candle em 2025-05-01 02:34:00 UTC
-2025-04-30 23:34:02,671 INFO: ⏳ Agendada validação do candle 1746066780 em 120s.
-2025-04-30 23:34:02,704 INFO: 📈 Análise: EMA9=2486.16, EMA21=2484.82, trend=RISE, RSI=71.45, MACD=1.39/1.23, ATR=0.84, body=0.00, band_width=0.001, confidence=80
-2025-04-30 23:34:02,705 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 80%
-2025-04-30 23:34:02,705 INFO: ⏳ Em cooldown (120s). Próximo sinal em 48s.
-2025-04-30 23:34:17,043 INFO: Iniciando metodo validate_signals_for_candle
-2025-04-30 23:34:17,043 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 23:34:17,055 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 23:34:17,056 INFO: Buscando documento com a query: {'signal_id': 'NUOHB6YV'}
-2025-04-30 23:34:17,077 INFO: Documento encontrado: {'_id': ObjectId('6812dd521ae0425fae9a4802'), 'signal_id': 'NUOHB6YV', 'signal': 'RISE', 'price': 2485.196, 'confidence': 60, 'analyze_time': datetime.datetime(2025, 5, 1, 2, 32, 49, 839000), 'entry_time': '2025-04-30 23:33:49', 'open_candle_timestamp': 1746066660, 'message_id': 641, 'chat_id': -4767147054, 'result': None}
-2025-04-30 23:34:17,078 INFO: Atualizando documento com a query: {'signal_id': 'NUOHB6YV'}, update: {'$set': {'result': 'LOSS'}}
-2025-04-30 23:34:17,083 INFO: Número de documentos modificados: 1
-2025-04-30 23:34:17,083 INFO: Sinal NUOHB6YV validado como LOSS
-2025-04-30 23:34:17,084 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 23:34:17,091 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 23:34:17,092 INFO: Buscando documento com a query: {'signal_id': 'NUOHB6YV'}
-2025-04-30 23:34:17,115 INFO: Documento encontrado: {'_id': ObjectId('6812dd521ae0425fae9a4802'), 'signal_id': 'NUOHB6YV', 'signal': 'RISE', 'price': 2485.196, 'confidence': 60, 'analyze_time': datetime.datetime(2025, 5, 1, 2, 32, 49, 839000), 'entry_time': '2025-04-30 23:33:49', 'open_candle_timestamp': 1746066660, 'message_id': 641, 'chat_id': -4767147054, 'result': 'LOSS'}
-2025-04-30 23:34:17,923 INFO: Finalizando metodo validate_signals_for_candle
-2025-04-30 23:35:00,408 INFO: 🔔 Novo candle em 2025-05-01 02:35:00 UTC
-2025-04-30 23:35:00,411 INFO: ⏳ Agendada validação do candle 1746066840 em 120s.
-2025-04-30 23:35:27,947 INFO: Iniciando metodo validate_signals_for_candle
-2025-04-30 23:35:27,947 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 23:35:27,960 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 23:35:27,962 INFO: Finalizando metodo validate_signals_for_candle
-2025-04-30 23:35:27,992 INFO: Iniciando metodo validate_signals_for_candle
-2025-04-30 23:35:27,992 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 23:35:28,000 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 23:35:28,001 INFO: Finalizando metodo validate_signals_for_candle
-2025-04-30 23:35:28,023 INFO: Iniciando metodo validate_signals_for_candle
-2025-04-30 23:35:28,024 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 23:35:28,031 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 23:35:28,032 INFO: Finalizando metodo validate_signals_for_candle
-2025-04-30 23:35:28,969 INFO: 📈 Análise: EMA9=2486.32, EMA21=2485.02, trend=RISE, RSI=67.55, MACD=1.37/1.24, ATR=0.81, body=0.00, band_width=0.001, confidence=60
-2025-04-30 23:35:28,969 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 60%
-2025-04-30 23:35:29,781 INFO: ✅ Mensagem enviada ao Telegram (ID: K4DKH4F7).
-2025-04-30 23:35:29,782 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 23:35:29,790 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 23:35:29,791 INFO: Inserindo documento: {'signal_id': 'K4DKH4F7', 'signal': 'RISE', 'price': np.float64(2486.962), 'confidence': 60, 'analyze_time': datetime.datetime(2025, 4, 30, 23, 35, 28, 970949, tzinfo=<DstTzInfo 'America/Sao_Paulo' -03-1 day, 21:00:00 STD>), 'entry_time': '2025-04-30 23:36:28', 'open_candle_timestamp': 1746066960, 'message_id': 643, 'chat_id': -4767147054, 'result': None}
-2025-04-30 23:35:29,814 INFO: Documento inserido com ID: 6812ddf11ae0425fae9a4809
-2025-04-30 23:36:01,629 INFO: 🔔 Novo candle em 2025-05-01 02:36:00 UTC
-2025-04-30 23:36:01,635 INFO: ⏳ Agendada validação do candle 1746066900 em 120s.
-2025-04-30 23:36:26,794 INFO: Iniciando metodo validate_signals_for_candle
-2025-04-30 23:36:26,795 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 23:36:26,807 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 23:36:26,808 INFO: Buscando documento com a query: {'signal_id': 'K4DKH4F7'}
-2025-04-30 23:36:26,832 INFO: Documento encontrado: {'_id': ObjectId('6812ddf11ae0425fae9a4809'), 'signal_id': 'K4DKH4F7', 'signal': 'RISE', 'price': 2486.962, 'confidence': 60, 'analyze_time': datetime.datetime(2025, 5, 1, 2, 35, 28, 970000), 'entry_time': '2025-04-30 23:36:28', 'open_candle_timestamp': 1746066960, 'message_id': 643, 'chat_id': -4767147054, 'result': None}
-2025-04-30 23:36:26,833 INFO: ⚠️ Sinal K4DKH4F7 não encontrado no candle atual.
-2025-04-30 23:36:26,834 INFO: Finalizando metodo validate_signals_for_candle
-2025-04-30 23:36:26,990 INFO: 📈 Análise: EMA9=2486.56, EMA21=2485.23, trend=RISE, RSI=70.33, MACD=1.42/1.32, ATR=0.79, body=0.00, band_width=0.001, confidence=60
-2025-04-30 23:36:26,990 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 60%
-2025-04-30 23:36:26,991 INFO: ⏳ Em cooldown (120s). Próximo sinal em 62s.
-2025-04-30 23:37:00,421 INFO: Iniciando metodo validate_signals_for_candle
-2025-04-30 23:37:00,421 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 23:37:00,430 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 23:37:00,431 INFO: Buscando documento com a query: {'signal_id': 'K4DKH4F7'}
-2025-04-30 23:37:00,433 INFO: 🔔 Novo candle em 2025-05-01 02:37:00 UTC
-2025-04-30 23:37:00,437 INFO: ⏳ Agendada validação do candle 1746066960 em 120s.
-2025-04-30 23:37:00,463 INFO: 📈 Análise: EMA9=2486.83, EMA21=2485.48, trend=RISE, RSI=72.14, MACD=1.46/1.36, ATR=0.76, body=0.00, band_width=0.001, confidence=60
-2025-04-30 23:37:00,464 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 60%
-2025-04-30 23:37:00,467 INFO: ⏳ Em cooldown (120s). Próximo sinal em 29s.
-2025-04-30 23:37:00,479 INFO: Documento encontrado: {'_id': ObjectId('6812ddf11ae0425fae9a4809'), 'signal_id': 'K4DKH4F7', 'signal': 'RISE', 'price': 2486.962, 'confidence': 60, 'analyze_time': datetime.datetime(2025, 5, 1, 2, 35, 28, 970000), 'entry_time': '2025-04-30 23:36:28', 'open_candle_timestamp': 1746066960, 'message_id': 643, 'chat_id': -4767147054, 'result': None}
-2025-04-30 23:37:00,480 INFO: Atualizando documento com a query: {'signal_id': 'K4DKH4F7'}, update: {'$set': {'result': 'LOSS'}}
-2025-04-30 23:37:00,486 INFO: Número de documentos modificados: 1
-2025-04-30 23:37:00,486 INFO: Sinal K4DKH4F7 validado como LOSS
-2025-04-30 23:37:00,486 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 23:37:00,494 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 23:37:00,496 INFO: Buscando documento com a query: {'signal_id': 'K4DKH4F7'}
-2025-04-30 23:37:00,517 INFO: Documento encontrado: {'_id': ObjectId('6812ddf11ae0425fae9a4809'), 'signal_id': 'K4DKH4F7', 'signal': 'RISE', 'price': 2486.962, 'confidence': 60, 'analyze_time': datetime.datetime(2025, 5, 1, 2, 35, 28, 970000), 'entry_time': '2025-04-30 23:36:28', 'open_candle_timestamp': 1746066960, 'message_id': 643, 'chat_id': -4767147054, 'result': 'LOSS'}
-2025-04-30 23:37:01,387 INFO: Finalizando metodo validate_signals_for_candle
-2025-04-30 23:43:03,314 INFO: === Logging ROOT inicializado ===
-2025-04-30 23:43:03,316 INFO: 🔗 Conectando ao WebSocket...
-2025-04-30 23:43:03,318 INFO: 🔗 Conexão WebSocket estabelecida. Aguardando dados...
-2025-04-30 23:43:03,844 INFO: Websocket connected
-2025-04-30 23:43:06,564 INFO: ✅ Token autorizado às 2025-05-01 02:43:06.564037 UTC
-2025-04-30 23:44:09,467 INFO: 📥 Histórico inicial recebido às 2025-05-01 02:44:09.467770 UTC
-2025-04-30 23:46:09,914 INFO: 📈 Análise: EMA9=2488.42, EMA21=2486.92, trend=RISE, RSI=72.15, MACD=1.58/1.39, ATR=1.14, body=0.29, band_width=0.002, confidence=60
-2025-04-30 23:46:14,245 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 60%
-2025-04-30 23:46:23,543 INFO: 🔄 Ignorando sinal inicial antes de primeiro candle OHL.
-2025-04-30 23:46:32,481 INFO: 🔔 Novo candle em 2025-05-01 02:44:00 UTC
-2025-04-30 23:46:32,484 INFO: ⏳ Agendada validação do candle 1746067380 em 120s.
-2025-04-30 23:46:32,510 INFO: 📈 Análise: EMA9=2488.61, EMA21=2487.13, trend=RISE, RSI=66.89, MACD=1.60/1.46, ATR=1.10, body=0.00, band_width=0.002, confidence=60
-2025-04-30 23:46:32,511 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 60%
-2025-04-30 23:46:33,442 INFO: ✅ Mensagem enviada ao Telegram (ID: VSR5T08O).
-2025-04-30 23:46:33,444 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 23:46:33,479 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 23:46:33,480 INFO: Inserindo documento: {'signal_id': 'VSR5T08O', 'signal': 'RISE', 'price': np.float64(2489.374), 'confidence': 60, 'analyze_time': datetime.datetime(2025, 4, 30, 23, 46, 32, 512829, tzinfo=<DstTzInfo 'America/Sao_Paulo' -03-1 day, 21:00:00 STD>), 'entry_time': '2025-04-30 23:47:32', 'open_candle_timestamp': 1746067500, 'message_id': 645, 'chat_id': -4767147054, 'result': None}
-2025-04-30 23:46:33,525 INFO: Documento inserido com ID: 6812e0890efa8cda88a5cec0
-2025-04-30 23:46:33,574 INFO: 🔔 Novo candle em 2025-05-01 02:45:00 UTC
-2025-04-30 23:46:33,576 INFO: ⏳ Agendada validação do candle 1746067440 em 120s.
-2025-04-30 23:46:33,601 INFO: 📈 Análise: EMA9=2488.58, EMA21=2487.25, trend=RISE, RSI=60.21, MACD=1.49/1.47, ATR=1.09, body=0.00, band_width=0.002, confidence=60
-2025-04-30 23:46:33,602 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 60%
-2025-04-30 23:46:33,604 INFO: ⏳ Em cooldown (120s). Próximo sinal em 119s.
-2025-04-30 23:46:33,643 INFO: 🔔 Novo candle em 2025-05-01 02:46:00 UTC
-2025-04-30 23:46:33,645 INFO: ⏳ Agendada validação do candle 1746067500 em 120s.
-2025-04-30 23:46:33,669 INFO: 📈 Análise: EMA9=2488.57, EMA21=2487.37, trend=RISE, RSI=60.72, MACD=1.40/1.44, ATR=1.02, body=0.00, band_width=0.002, confidence=40
-2025-04-30 23:46:33,670 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 40%
-2025-04-30 23:46:33,671 INFO: ⏳ Em cooldown (120s). Próximo sinal em 119s.
-2025-04-30 23:47:00,443 INFO: 🔔 Novo candle em 2025-05-01 02:47:00 UTC
-2025-04-30 23:47:00,445 INFO: ⏳ Agendada validação do candle 1746067560 em 120s.
-2025-04-30 23:47:00,464 INFO: 📈 Análise: EMA9=2488.29, EMA21=2487.35, trend=RISE, RSI=51.79, MACD=1.21/1.40, ATR=1.05, body=0.00, band_width=0.002, confidence=20
-2025-04-30 23:47:00,465 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 20%
-2025-04-30 23:47:00,466 INFO: ⏳ Em cooldown (120s). Próximo sinal em 93s.
-2025-04-30 23:48:00,431 INFO: 🔔 Novo candle em 2025-05-01 02:48:00 UTC
-2025-04-30 23:48:00,434 INFO: ⏳ Agendada validação do candle 1746067620 em 120s.
-2025-04-30 23:48:00,460 INFO: 📈 Análise: EMA9=2488.11, EMA21=2487.36, trend=RISE, RSI=53.05, MACD=1.06/1.33, ATR=0.99, body=0.00, band_width=0.002, confidence=20
-2025-04-30 23:48:00,461 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 20%
-2025-04-30 23:48:00,462 INFO: ⏳ Em cooldown (120s). Próximo sinal em 33s.
-2025-04-30 23:48:32,490 INFO: Iniciando metodo validate_signals_for_candle
-2025-04-30 23:48:32,490 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 23:48:32,500 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 23:48:32,502 INFO: Buscando documento com a query: {'signal_id': 'VSR5T08O'}
-2025-04-30 23:48:32,524 INFO: Documento encontrado: {'_id': ObjectId('6812e0890efa8cda88a5cec0'), 'signal_id': 'VSR5T08O', 'signal': 'RISE', 'price': 2489.374, 'confidence': 60, 'analyze_time': datetime.datetime(2025, 5, 1, 2, 46, 32, 512000), 'entry_time': '2025-04-30 23:47:32', 'open_candle_timestamp': 1746067500, 'message_id': 645, 'chat_id': -4767147054, 'result': None}
-2025-04-30 23:48:42,426 INFO: Iniciando metodo validate_signals_for_candle
-2025-04-30 23:48:42,427 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 23:48:42,435 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 23:48:42,437 INFO: Buscando documento com a query: {'signal_id': 'VSR5T08O'}
-2025-04-30 23:48:42,457 INFO: Documento encontrado: {'_id': ObjectId('6812e0890efa8cda88a5cec0'), 'signal_id': 'VSR5T08O', 'signal': 'RISE', 'price': 2489.374, 'confidence': 60, 'analyze_time': datetime.datetime(2025, 5, 1, 2, 46, 32, 512000), 'entry_time': '2025-04-30 23:47:32', 'open_candle_timestamp': 1746067500, 'message_id': 645, 'chat_id': -4767147054, 'result': None}
-2025-04-30 23:48:44,808 INFO: Atualizando documento com a query: {'signal_id': 'VSR5T08O'}, update: {'$set': {'result': 'LOSS'}}
-2025-04-30 23:48:44,812 INFO: Número de documentos modificados: 1
-2025-04-30 23:48:44,813 INFO: Sinal VSR5T08O validado como LOSS
-2025-04-30 23:48:44,813 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 23:48:44,820 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 23:48:44,821 INFO: Buscando documento com a query: {'signal_id': 'VSR5T08O'}
-2025-04-30 23:48:44,843 INFO: Documento encontrado: {'_id': ObjectId('6812e0890efa8cda88a5cec0'), 'signal_id': 'VSR5T08O', 'signal': 'RISE', 'price': 2489.374, 'confidence': 60, 'analyze_time': datetime.datetime(2025, 5, 1, 2, 46, 32, 512000), 'entry_time': '2025-04-30 23:47:32', 'open_candle_timestamp': 1746067500, 'message_id': 645, 'chat_id': -4767147054, 'result': 'LOSS'}
-2025-04-30 23:48:44,974 INFO: Iniciando metodo validate_signals_for_candle
-2025-04-30 23:48:44,975 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 23:48:44,988 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 23:48:44,989 INFO: Buscando documento com a query: {'signal_id': 'VSR5T08O'}
-2025-04-30 23:50:21,583 INFO: Atualizando documento com a query: {'signal_id': 'VSR5T08O'}, update: {'$set': {'result': 'LOSS'}}
-2025-04-30 23:50:21,588 INFO: Finalizando metodo validate_signals_for_candle
-2025-04-30 23:50:21,591 INFO: Número de documentos modificados: 0
-2025-04-30 23:50:21,591 INFO: Sinal VSR5T08O validado como LOSS
-2025-04-30 23:50:21,592 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 23:50:21,602 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 23:50:21,604 INFO: Buscando documento com a query: {'signal_id': 'VSR5T08O'}
-2025-04-30 23:50:21,629 INFO: Documento encontrado: {'_id': ObjectId('6812e0890efa8cda88a5cec0'), 'signal_id': 'VSR5T08O', 'signal': 'RISE', 'price': 2489.374, 'confidence': 60, 'analyze_time': datetime.datetime(2025, 5, 1, 2, 46, 32, 512000), 'entry_time': '2025-04-30 23:47:32', 'open_candle_timestamp': 1746067500, 'message_id': 645, 'chat_id': -4767147054, 'result': 'LOSS'}
-2025-04-30 23:50:21,660 INFO: Iniciando metodo validate_signals_for_candle
-2025-04-30 23:50:21,661 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 23:50:21,670 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 23:50:21,671 INFO: Finalizando metodo validate_signals_for_candle
-2025-04-30 23:50:21,738 INFO: Iniciando metodo validate_signals_for_candle
-2025-04-30 23:50:21,743 INFO: Documento encontrado: {'_id': ObjectId('6812e0890efa8cda88a5cec0'), 'signal_id': 'VSR5T08O', 'signal': 'RISE', 'price': 2489.374, 'confidence': 60, 'analyze_time': datetime.datetime(2025, 5, 1, 2, 46, 32, 512000), 'entry_time': '2025-04-30 23:47:32', 'open_candle_timestamp': 1746067500, 'message_id': 645, 'chat_id': -4767147054, 'result': 'LOSS'}
-2025-04-30 23:50:21,745 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 23:50:21,749 INFO: Atualizando documento com a query: {'signal_id': 'VSR5T08O'}, update: {'$set': {'result': 'LOSS'}}
-2025-04-30 23:50:21,770 INFO: 🔔 Novo candle em 2025-05-01 02:49:00 UTC
-2025-04-30 23:50:21,771 INFO: Número de documentos modificados: 0
-2025-04-30 23:50:21,774 INFO: Sinal VSR5T08O validado como LOSS
-2025-04-30 23:50:21,780 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 23:50:21,789 INFO: ⏳ Agendada validação do candle 1746067680 em 120s.
-2025-04-30 23:50:21,847 INFO: 📈 Análise: EMA9=2488.23, EMA21=2487.48, trend=RISE, RSI=59.29, MACD=1.02/1.25, ATR=1.02, body=0.00, band_width=0.001, confidence=20
-2025-04-30 23:50:21,849 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 23:50:21,850 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 20%
-2025-04-30 23:50:21,853 INFO: Finalizando metodo validate_signals_for_candle
-2025-04-30 23:50:21,859 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 23:50:21,877 INFO: Buscando documento com a query: {'signal_id': 'VSR5T08O'}
-2025-04-30 23:50:21,906 INFO: Documento encontrado: {'_id': ObjectId('6812e0890efa8cda88a5cec0'), 'signal_id': 'VSR5T08O', 'signal': 'RISE', 'price': 2489.374, 'confidence': 60, 'analyze_time': datetime.datetime(2025, 5, 1, 2, 46, 32, 512000), 'entry_time': '2025-04-30 23:47:32', 'open_candle_timestamp': 1746067500, 'message_id': 645, 'chat_id': -4767147054, 'result': 'LOSS'}
-2025-04-30 23:50:25,172 INFO: ✅ Mensagem enviada ao Telegram (ID: VUGJLHTX).
-2025-04-30 23:50:25,174 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 23:50:25,181 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 23:50:25,182 INFO: Inserindo documento: {'signal_id': 'VUGJLHTX', 'signal': 'RISE', 'price': np.float64(2488.706), 'confidence': 20, 'analyze_time': datetime.datetime(2025, 4, 30, 23, 50, 21, 856524, tzinfo=<DstTzInfo 'America/Sao_Paulo' -03-1 day, 21:00:00 STD>), 'entry_time': '2025-04-30 23:51:21', 'open_candle_timestamp': 1746067800, 'message_id': 648, 'chat_id': -4767147054, 'result': None}
-2025-04-30 23:50:26,041 INFO: Documento inserido com ID: 6812e1710efa8cda88a5ceca
-2025-04-30 23:50:26,085 INFO: 🔔 Novo candle em 2025-05-01 02:50:00 UTC
-2025-04-30 23:50:26,087 INFO: ⏳ Agendada validação do candle 1746067740 em 120s.
-2025-04-30 23:50:26,108 INFO: 📈 Análise: EMA9=2488.17, EMA21=2487.52, trend=RISE, RSI=54.87, MACD=0.94/1.20, ATR=1.00, body=0.00, band_width=0.001, confidence=20
-2025-04-30 23:50:26,109 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 20%
-2025-04-30 23:50:26,110 INFO: ⏳ Em cooldown (120s). Próximo sinal em 116s.
-2025-04-30 23:51:00,456 INFO: 🔔 Novo candle em 2025-05-01 02:51:00 UTC
-2025-04-30 23:51:00,458 INFO: ⏳ Agendada validação do candle 1746067800 em 120s.
-2025-04-30 23:51:00,478 INFO: 📈 Análise: EMA9=2488.24, EMA21=2487.61, trend=RISE, RSI=57.47, MACD=0.91/1.14, ATR=0.97, body=0.00, band_width=0.001, confidence=20
-2025-04-30 23:51:00,479 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 20%
-2025-04-30 23:51:00,479 INFO: ⏳ Em cooldown (120s). Próximo sinal em 82s.
-2025-04-30 23:52:12,668 INFO: 🔔 Novo candle em 2025-05-01 02:52:00 UTC
-2025-04-30 23:52:12,671 INFO: ⏳ Agendada validação do candle 1746067860 em 120s.
-2025-04-30 23:52:12,697 INFO: 📈 Análise: EMA9=2488.38, EMA21=2487.72, trend=RISE, RSI=59.58, MACD=0.93/1.13, ATR=0.93, body=0.00, band_width=0.001, confidence=20
-2025-04-30 23:52:12,698 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 20%
-2025-04-30 23:52:12,699 INFO: ⏳ Em cooldown (120s). Próximo sinal em 10s.
-2025-04-30 23:52:21,996 INFO: Iniciando metodo validate_signals_for_candle
-2025-04-30 23:52:21,997 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 23:52:22,011 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 23:52:22,013 INFO: Buscando documento com a query: {'signal_id': 'VUGJLHTX'}
-2025-04-30 23:52:22,034 INFO: Documento encontrado: {'_id': ObjectId('6812e1710efa8cda88a5ceca'), 'signal_id': 'VUGJLHTX', 'signal': 'RISE', 'price': 2488.706, 'confidence': 20, 'analyze_time': datetime.datetime(2025, 5, 1, 2, 50, 21, 856000), 'entry_time': '2025-04-30 23:51:21', 'open_candle_timestamp': 1746067800, 'message_id': 648, 'chat_id': -4767147054, 'result': None}
-2025-04-30 23:52:22,035 INFO: Atualizando documento com a query: {'signal_id': 'VUGJLHTX'}, update: {'$set': {'result': 'LOSS'}}
-2025-04-30 23:52:22,040 INFO: Número de documentos modificados: 1
-2025-04-30 23:52:22,040 INFO: Sinal VUGJLHTX validado como LOSS
-2025-04-30 23:52:22,041 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 23:52:22,048 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 23:52:22,049 INFO: Buscando documento com a query: {'signal_id': 'VUGJLHTX'}
-2025-04-30 23:52:22,068 INFO: Documento encontrado: {'_id': ObjectId('6812e1710efa8cda88a5ceca'), 'signal_id': 'VUGJLHTX', 'signal': 'RISE', 'price': 2488.706, 'confidence': 20, 'analyze_time': datetime.datetime(2025, 5, 1, 2, 50, 21, 856000), 'entry_time': '2025-04-30 23:51:21', 'open_candle_timestamp': 1746067800, 'message_id': 648, 'chat_id': -4767147054, 'result': 'LOSS'}
-2025-04-30 23:52:23,332 INFO: Finalizando metodo validate_signals_for_candle
-2025-04-30 23:52:26,503 INFO: Iniciando metodo validate_signals_for_candle
-2025-04-30 23:52:26,503 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 23:52:26,511 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 23:52:26,512 INFO: Finalizando metodo validate_signals_for_candle
-2025-04-30 23:53:01,786 INFO: Iniciando metodo validate_signals_for_candle
-2025-04-30 23:53:01,787 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 23:53:01,797 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 23:53:01,799 INFO: Finalizando metodo validate_signals_for_candle
-2025-04-30 23:53:36,356 INFO: 🔔 Novo candle em 2025-05-01 02:53:00 UTC
-2025-04-30 23:53:36,359 INFO: ⏳ Agendada validação do candle 1746067920 em 120s.
-2025-04-30 23:53:36,386 INFO: 📈 Análise: EMA9=2488.65, EMA21=2487.91, trend=RISE, RSI=62.85, MACD=0.97/1.09, ATR=0.92, body=0.00, band_width=0.001, confidence=60
-2025-04-30 23:53:36,387 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 60%
-2025-04-30 23:53:37,214 INFO: ✅ Mensagem enviada ao Telegram (ID: GWB61J0A).
-2025-04-30 23:53:37,215 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 23:53:37,227 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 23:53:37,229 INFO: Inserindo documento: {'signal_id': 'GWB61J0A', 'signal': 'RISE', 'price': np.float64(2489.72), 'confidence': 60, 'analyze_time': datetime.datetime(2025, 4, 30, 23, 53, 36, 389335, tzinfo=<DstTzInfo 'America/Sao_Paulo' -03-1 day, 21:00:00 STD>), 'entry_time': '2025-04-30 23:54:36', 'open_candle_timestamp': 1746068040, 'message_id': 651, 'chat_id': -4767147054, 'result': None}
-2025-04-30 23:53:37,252 INFO: Documento inserido com ID: 6812e2310efa8cda88a5ced0
-2025-04-30 23:55:16,159 INFO: Iniciando metodo validate_signals_for_candle
-2025-04-30 23:55:16,160 INFO: Inicializando conexão com o MongoDB.
-2025-04-30 23:55:16,170 INFO: Conexão com o MongoDB estabelecida.
-2025-04-30 23:55:16,172 INFO: Buscando documento com a query: {'signal_id': 'GWB61J0A'}
-2025-04-30 23:55:16,194 INFO: Documento encontrado: {'_id': ObjectId('6812e2310efa8cda88a5ced0'), 'signal_id': 'GWB61J0A', 'signal': 'RISE', 'price': 2489.72, 'confidence': 60, 'analyze_time': datetime.datetime(2025, 5, 1, 2, 53, 36, 389000), 'entry_time': '2025-04-30 23:54:36', 'open_candle_timestamp': 1746068040, 'message_id': 651, 'chat_id': -4767147054, 'result': None}
-2025-04-30 23:55:16,195 INFO: ⚠️ Sinal GWB61J0A não encontrado no candle atual.
-2025-04-30 23:55:16,195 INFO: Finalizando metodo validate_signals_for_candle
-2025-04-30 23:55:18,248 INFO: 🔔 Novo candle em 2025-05-01 02:54:00 UTC
-2025-04-30 23:55:18,250 INFO: ⏳ Agendada validação do candle 1746067980 em 120s.
-2025-04-30 23:55:18,284 INFO: 📈 Análise: EMA9=2489.00, EMA21=2488.14, trend=RISE, RSI=65.46, MACD=1.04/1.08, ATR=0.90, body=0.00, band_width=0.001, confidence=60
-2025-04-30 23:55:18,284 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 60%
-2025-04-30 23:55:18,285 INFO: ⏳ Em cooldown (120s). Próximo sinal em 19s.
-2025-05-01 00:01:22,171 INFO: Iniciando metodo validate_signals_for_candle
-2025-05-01 00:01:22,171 INFO: Iniciando metodo validate_signals_for_candle
-2025-05-01 00:01:22,172 INFO: Inicializando conexão com o MongoDB.
-2025-05-01 00:01:22,172 INFO: Inicializando conexão com o MongoDB.
-2025-05-01 00:01:22,184 INFO: Conexão com o MongoDB estabelecida.
-2025-05-01 00:01:22,187 INFO: Buscando documento com a query: {'signal_id': 'GWB61J0A'}
-2025-05-01 00:01:22,188 INFO: Conexão com o MongoDB estabelecida.
-2025-05-01 00:03:07,605 INFO: 🔔 Novo candle em 2025-05-01 02:55:00 UTC
-2025-05-01 00:03:07,608 INFO: ⏳ Agendada validação do candle 1746068040 em 120s.
-2025-05-01 00:03:07,642 INFO: 📈 Análise: EMA9=2489.27, EMA21=2488.33, trend=RISE, RSI=65.28, MACD=1.11/1.11, ATR=0.84, body=0.00, band_width=0.001, confidence=60
-2025-05-01 00:03:07,644 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 60%
-2025-05-01 00:03:07,645 INFO: Buscando documento com a query: {'signal_id': 'GWB61J0A'}
-2025-05-01 00:03:07,697 INFO: Documento encontrado: {'_id': ObjectId('6812e2310efa8cda88a5ced0'), 'signal_id': 'GWB61J0A', 'signal': 'RISE', 'price': 2489.72, 'confidence': 60, 'analyze_time': datetime.datetime(2025, 5, 1, 2, 53, 36, 389000), 'entry_time': '2025-04-30 23:54:36', 'open_candle_timestamp': 1746068040, 'message_id': 651, 'chat_id': -4767147054, 'result': None}
-2025-05-01 00:03:07,697 INFO: Atualizando documento com a query: {'signal_id': 'GWB61J0A'}, update: {'$set': {'result': 'LOSS'}}
-2025-05-01 00:03:07,702 INFO: Número de documentos modificados: 1
-2025-05-01 00:03:07,703 INFO: Sinal GWB61J0A validado como LOSS
-2025-05-01 00:03:07,703 INFO: Inicializando conexão com o MongoDB.
-2025-05-01 00:03:07,714 INFO: Conexão com o MongoDB estabelecida.
-2025-05-01 00:03:07,714 INFO: Buscando documento com a query: {'signal_id': 'GWB61J0A'}
-2025-05-01 00:03:07,736 INFO: Documento encontrado: {'_id': ObjectId('6812e2310efa8cda88a5ced0'), 'signal_id': 'GWB61J0A', 'signal': 'RISE', 'price': 2489.72, 'confidence': 60, 'analyze_time': datetime.datetime(2025, 5, 1, 2, 53, 36, 389000), 'entry_time': '2025-04-30 23:54:36', 'open_candle_timestamp': 1746068040, 'message_id': 651, 'chat_id': -4767147054, 'result': 'LOSS'}
-2025-05-01 00:03:07,754 INFO: Documento encontrado: {'_id': ObjectId('6812e2310efa8cda88a5ced0'), 'signal_id': 'GWB61J0A', 'signal': 'RISE', 'price': 2489.72, 'confidence': 60, 'analyze_time': datetime.datetime(2025, 5, 1, 2, 53, 36, 389000), 'entry_time': '2025-04-30 23:54:36', 'open_candle_timestamp': 1746068040, 'message_id': 651, 'chat_id': -4767147054, 'result': None}
-2025-05-01 00:03:07,756 INFO: Atualizando documento com a query: {'signal_id': 'GWB61J0A'}, update: {'$set': {'result': 'LOSS'}}
-2025-05-01 00:03:07,759 INFO: Número de documentos modificados: 0
-2025-05-01 00:03:07,761 INFO: Sinal GWB61J0A validado como LOSS
-2025-05-01 00:03:07,761 INFO: Inicializando conexão com o MongoDB.
-2025-05-01 00:03:07,767 INFO: Conexão com o MongoDB estabelecida.
-2025-05-01 00:03:07,769 INFO: Buscando documento com a query: {'signal_id': 'GWB61J0A'}
-2025-05-01 00:03:07,790 INFO: Documento encontrado: {'_id': ObjectId('6812e2310efa8cda88a5ced0'), 'signal_id': 'GWB61J0A', 'signal': 'RISE', 'price': 2489.72, 'confidence': 60, 'analyze_time': datetime.datetime(2025, 5, 1, 2, 53, 36, 389000), 'entry_time': '2025-04-30 23:54:36', 'open_candle_timestamp': 1746068040, 'message_id': 651, 'chat_id': -4767147054, 'result': 'LOSS'}
-2025-05-01 00:03:08,480 INFO: ✅ Mensagem enviada ao Telegram (ID: 5VG5SZN6).
-2025-05-01 00:03:08,481 INFO: Inicializando conexão com o MongoDB.
-2025-05-01 00:03:08,489 INFO: Conexão com o MongoDB estabelecida.
-2025-05-01 00:03:08,490 INFO: Inserindo documento: {'signal_id': '5VG5SZN6', 'signal': 'RISE', 'price': np.float64(2490.339), 'confidence': 60, 'analyze_time': datetime.datetime(2025, 5, 1, 0, 3, 7, 645979, tzinfo=<DstTzInfo 'America/Sao_Paulo' -03-1 day, 21:00:00 STD>), 'entry_time': '2025-05-01 00:04:07', 'open_candle_timestamp': 1746068160, 'message_id': 652, 'chat_id': -4767147054, 'result': None}
-2025-05-01 00:03:08,516 INFO: Documento inserido com ID: 6812e46c0efa8cda88a5ced7
-2025-05-01 00:03:08,552 INFO: Buscando documento com a query: {'signal_id': '5VG5SZN6'}
-2025-05-01 00:03:08,566 INFO: Documento encontrado: {'_id': ObjectId('6812e46c0efa8cda88a5ced7'), 'signal_id': '5VG5SZN6', 'signal': 'RISE', 'price': 2490.339, 'confidence': 60, 'analyze_time': datetime.datetime(2025, 5, 1, 3, 3, 7, 645000), 'entry_time': '2025-05-01 00:04:07', 'open_candle_timestamp': 1746068160, 'message_id': 652, 'chat_id': -4767147054, 'result': None}
-2025-05-01 00:03:08,569 INFO: ⚠️ Sinal 5VG5SZN6 não encontrado no candle atual.
-2025-05-01 00:03:08,573 INFO: Finalizando metodo validate_signals_for_candle
-2025-05-01 00:03:08,585 INFO: 🔔 Novo candle em 2025-05-01 02:56:00 UTC
-2025-05-01 00:03:08,593 INFO: ⏳ Agendada validação do candle 1746068100 em 120s.
-2025-05-01 00:03:10,694 INFO: 📈 Análise: EMA9=2489.48, EMA21=2488.51, trend=RISE, RSI=65.11, MACD=1.13/1.11, ATR=0.78, body=0.00, band_width=0.001, confidence=60
-2025-05-01 00:03:10,694 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 60%
-2025-05-01 00:03:10,695 INFO: ⏳ Em cooldown (120s). Próximo sinal em 117s.
-2025-05-01 00:03:10,728 INFO: 🔔 Novo candle em 2025-05-01 02:57:00 UTC
-2025-05-01 00:03:10,731 INFO: ⏳ Agendada validação do candle 1746068160 em 120s.
-2025-05-01 00:03:10,750 INFO: 📈 Análise: EMA9=2489.60, EMA21=2488.65, trend=RISE, RSI=63.11, MACD=1.11/1.11, ATR=0.74, body=0.00, band_width=0.001, confidence=60
-2025-05-01 00:03:10,751 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 60%
-2025-05-01 00:03:10,751 INFO: ⏳ Em cooldown (120s). Próximo sinal em 117s.
-2025-05-01 00:03:10,784 INFO: 🔔 Novo candle em 2025-05-01 02:58:00 UTC
-2025-05-01 00:03:10,787 INFO: ⏳ Agendada validação do candle 1746068220 em 120s.
-2025-05-01 00:03:10,807 INFO: 📈 Análise: EMA9=2489.85, EMA21=2488.86, trend=RISE, RSI=66.60, MACD=1.14/1.11, ATR=0.74, body=0.00, band_width=0.001, confidence=60
-2025-05-01 00:03:10,808 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 60%
-2025-05-01 00:03:10,809 INFO: ⏳ Em cooldown (120s). Próximo sinal em 117s.
-2025-05-01 00:03:10,846 INFO: 🔔 Novo candle em 2025-05-01 02:59:00 UTC
-2025-05-01 00:03:10,847 INFO: ⏳ Agendada validação do candle 1746068280 em 120s.
-2025-05-01 00:03:10,868 INFO: 📈 Análise: EMA9=2490.07, EMA21=2489.04, trend=RISE, RSI=67.12, MACD=1.17/1.13, ATR=0.70, body=0.00, band_width=0.001, confidence=60
-2025-05-01 00:03:10,869 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 60%
-2025-05-01 00:03:10,870 INFO: ⏳ Em cooldown (120s). Próximo sinal em 117s.
-2025-05-01 00:03:10,905 INFO: 🔔 Novo candle em 2025-05-01 03:00:00 UTC
-2025-05-01 00:03:10,908 INFO: ⏳ Agendada validação do candle 1746068340 em 120s.
-2025-05-01 00:03:10,929 INFO: 📈 Análise: EMA9=2490.18, EMA21=2489.19, trend=RISE, RSI=63.90, MACD=1.14/1.12, ATR=0.67, body=0.00, band_width=0.001, confidence=60
-2025-05-01 00:03:10,930 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 60%
-2025-05-01 00:03:10,931 INFO: ⏳ Em cooldown (120s). Próximo sinal em 117s.
-2025-05-01 00:03:10,968 INFO: 🔔 Novo candle em 2025-05-01 03:01:00 UTC
-2025-05-01 00:03:10,969 INFO: ⏳ Agendada validação do candle 1746068400 em 120s.
-2025-05-01 00:03:10,989 INFO: 📈 Análise: EMA9=2490.23, EMA21=2489.31, trend=RISE, RSI=62.11, MACD=1.07/1.07, ATR=0.64, body=0.00, band_width=0.001, confidence=40
-2025-05-01 00:03:10,990 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 40%
-2025-05-01 00:03:10,991 INFO: ⏳ Em cooldown (120s). Próximo sinal em 117s.
-2025-05-01 00:03:11,025 INFO: 🔔 Novo candle em 2025-05-01 03:02:00 UTC
-2025-05-01 00:03:11,027 INFO: ⏳ Agendada validação do candle 1746068460 em 120s.
-2025-05-01 00:03:11,045 INFO: 📈 Análise: EMA9=2490.12, EMA21=2489.35, trend=RISE, RSI=55.57, MACD=0.95/1.03, ATR=0.64, body=0.00, band_width=0.000, confidence=20
-2025-05-01 00:03:11,046 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 20%
-2025-05-01 00:03:11,046 INFO: ⏳ Em cooldown (120s). Próximo sinal em 117s.
-2025-05-01 00:03:11,078 INFO: 🔔 Novo candle em 2025-05-01 03:03:00 UTC
-2025-05-01 00:03:11,079 INFO: ⏳ Agendada validação do candle 1746068520 em 120s.
-2025-05-01 00:03:11,099 INFO: 📈 Análise: EMA9=2490.03, EMA21=2489.38, trend=RISE, RSI=55.59, MACD=0.86/1.00, ATR=0.60, body=0.00, band_width=0.000, confidence=20
-2025-05-01 00:03:11,100 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 20%
-2025-05-01 00:03:11,101 INFO: ⏳ Em cooldown (120s). Próximo sinal em 117s.
-2025-05-01 00:05:13,707 INFO: === Logging ROOT inicializado ===
-2025-05-01 00:05:13,710 INFO: 🔗 Conectando ao WebSocket...
-2025-05-01 00:05:13,712 INFO: 🔗 Conexão WebSocket estabelecida. Aguardando dados...
-2025-05-01 00:05:14,219 INFO: Websocket connected
-2025-05-01 00:05:14,558 INFO: ✅ Token autorizado às 2025-05-01 03:05:14.558142 UTC
-2025-05-01 00:05:48,704 INFO: 📥 Histórico inicial recebido às 2025-05-01 03:05:48.704196 UTC
-2025-05-01 00:05:48,738 INFO: 📈 Análise: EMA9=2489.24, EMA21=2489.14, trend=RISE, RSI=43.59, MACD=0.42/0.80, ATR=1.04, body=0.56, band_width=0.001, confidence=40
-2025-05-01 00:05:48,738 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 40%
-2025-05-01 00:05:48,739 INFO: 🔄 Ignorando sinal inicial antes de primeiro candle OHL.
-2025-05-01 00:06:00,394 INFO: 🔔 Novo candle em 2025-05-01 03:06:00 UTC
-2025-05-01 00:06:00,396 INFO: ⏳ Agendada validação do candle 1746068700 em 120s.
-2025-05-01 00:06:00,414 INFO: 📈 Análise: EMA9=2486.97, EMA21=2487.26, trend=FALL, RSI=45.50, MACD=-0.35/-0.42, ATR=1.46, body=0.00, band_width=0.000, confidence=20
-2025-05-01 00:06:00,415 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 20%
-2025-05-01 00:06:01,343 INFO: ✅ Mensagem enviada ao Telegram (ID: RKVK65E7).
-2025-05-01 00:06:01,344 INFO: Inicializando conexão com o MongoDB.
-2025-05-01 00:06:01,378 INFO: Conexão com o MongoDB estabelecida.
-2025-05-01 00:06:01,379 INFO: Inserindo documento: {'signal_id': 'RKVK65E7', 'signal': 'FALL', 'price': np.float64(2487.134), 'confidence': 20, 'analyze_time': datetime.datetime(2025, 5, 1, 0, 6, 0, 415562, tzinfo=<DstTzInfo 'America/Sao_Paulo' -03-1 day, 21:00:00 STD>), 'entry_time': '2025-05-01 00:07:00', 'open_candle_timestamp': 1746068820, 'message_id': 655, 'chat_id': -4767147054, 'result': None}
-2025-05-01 00:06:01,418 INFO: Documento inserido com ID: 6812e519a76b7ff8ab8877d6
-2025-05-01 00:09:33,585 INFO: Iniciando metodo validate_signals_for_candle
-2025-05-01 00:09:34,657 INFO: Inicializando conexão com o MongoDB.
-2025-05-01 00:11:10,544 INFO: 🔔 Novo candle em 2025-05-01 03:07:00 UTC
-2025-05-01 00:11:10,546 INFO: Conexão com o MongoDB estabelecida.
-2025-05-01 00:11:10,549 INFO: Buscando documento com a query: {'signal_id': 'RKVK65E7'}
-2025-05-01 00:11:10,551 INFO: ⏳ Agendada validação do candle 1746068760 em 120s.
-2025-05-01 00:11:10,589 INFO: 📈 Análise: EMA9=2487.78, EMA21=2487.67, trend=RISE, RSI=50.25, MACD=0.14/0.16, ATR=0.82, body=0.00, band_width=0.000, confidence=20
-2025-05-01 00:11:10,591 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 20%
-2025-05-01 00:11:10,623 INFO: Documento encontrado: {'_id': ObjectId('6812e519a76b7ff8ab8877d6'), 'signal_id': 'RKVK65E7', 'signal': 'FALL', 'price': 2487.134, 'confidence': 20, 'analyze_time': datetime.datetime(2025, 5, 1, 3, 6, 0, 415000), 'entry_time': '2025-05-01 00:07:00', 'open_candle_timestamp': 1746068820, 'message_id': 655, 'chat_id': -4767147054, 'result': None}
-2025-05-01 00:11:10,624 INFO: Atualizando documento com a query: {'signal_id': 'RKVK65E7'}, update: {'$set': {'result': 'LOSS'}}
-2025-05-01 00:11:10,629 INFO: Número de documentos modificados: 1
-2025-05-01 00:11:10,629 INFO: Sinal RKVK65E7 validado como LOSS
-2025-05-01 00:11:10,630 INFO: Inicializando conexão com o MongoDB.
-2025-05-01 00:11:10,642 INFO: Conexão com o MongoDB estabelecida.
-2025-05-01 00:11:10,643 INFO: Buscando documento com a query: {'signal_id': 'RKVK65E7'}
-2025-05-01 00:11:10,680 INFO: Documento encontrado: {'_id': ObjectId('6812e519a76b7ff8ab8877d6'), 'signal_id': 'RKVK65E7', 'signal': 'FALL', 'price': 2487.134, 'confidence': 20, 'analyze_time': datetime.datetime(2025, 5, 1, 3, 6, 0, 415000), 'entry_time': '2025-05-01 00:07:00', 'open_candle_timestamp': 1746068820, 'message_id': 655, 'chat_id': -4767147054, 'result': 'LOSS'}
-2025-05-01 00:11:11,410 INFO: ✅ Mensagem enviada ao Telegram (ID: IRYJP719).
-2025-05-01 00:11:11,411 INFO: Inicializando conexão com o MongoDB.
-2025-05-01 00:11:11,419 INFO: Conexão com o MongoDB estabelecida.
-2025-05-01 00:11:11,421 INFO: Inserindo documento: {'signal_id': 'IRYJP719', 'signal': 'RISE', 'price': np.float64(2487.62), 'confidence': 20, 'analyze_time': datetime.datetime(2025, 5, 1, 0, 11, 10, 593335, tzinfo=<DstTzInfo 'America/Sao_Paulo' -03-1 day, 21:00:00 STD>), 'entry_time': '2025-05-01 00:12:10', 'open_candle_timestamp': 1746068880, 'message_id': 656, 'chat_id': -4767147054, 'result': None}
-2025-05-01 00:11:11,444 INFO: Documento inserido com ID: 6812e64fa76b7ff8ab8877da
-2025-05-01 00:11:11,486 INFO: Buscando documento com a query: {'signal_id': 'IRYJP719'}
-2025-05-01 00:11:11,487 INFO: 🔔 Novo candle em 2025-05-01 03:08:00 UTC
-2025-05-01 00:11:11,491 INFO: ⏳ Agendada validação do candle 1746068820 em 120s.
-2025-05-01 00:11:11,492 INFO: Documento encontrado: {'_id': ObjectId('6812e64fa76b7ff8ab8877da'), 'signal_id': 'IRYJP719', 'signal': 'RISE', 'price': 2487.62, 'confidence': 20, 'analyze_time': datetime.datetime(2025, 5, 1, 3, 11, 10, 593000), 'entry_time': '2025-05-01 00:12:10', 'open_candle_timestamp': 1746068880, 'message_id': 656, 'chat_id': -4767147054, 'result': None}
-2025-05-01 00:11:11,512 INFO: 📈 Análise: EMA9=2487.61, EMA21=2487.47, trend=RISE, RSI=60.40, MACD=0.10/0.01, ATR=0.74, body=0.00, band_width=0.000, confidence=60
-2025-05-01 00:11:11,512 INFO: Atualizando documento com a query: {'signal_id': 'IRYJP719'}, update: {'$set': {'result': 'LOSS'}}
-2025-05-01 00:11:11,513 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 60%
-2025-05-01 00:11:11,516 INFO: ⏳ Em cooldown (120s). Próximo sinal em 120s.
-2025-05-01 00:11:11,520 INFO: Número de documentos modificados: 1
-2025-05-01 00:11:11,522 INFO: Sinal IRYJP719 validado como LOSS
-2025-05-01 00:11:11,524 INFO: Inicializando conexão com o MongoDB.
-2025-05-01 00:11:11,545 INFO: Conexão com o MongoDB estabelecida.
-2025-05-01 00:11:11,548 INFO: Buscando documento com a query: {'signal_id': 'IRYJP719'}
-2025-05-01 00:11:11,575 INFO: 🔔 Novo candle em 2025-05-01 03:09:00 UTC
-2025-05-01 00:11:11,576 INFO: Documento encontrado: {'_id': ObjectId('6812e64fa76b7ff8ab8877da'), 'signal_id': 'IRYJP719', 'signal': 'RISE', 'price': 2487.62, 'confidence': 20, 'analyze_time': datetime.datetime(2025, 5, 1, 3, 11, 10, 593000), 'entry_time': '2025-05-01 00:12:10', 'open_candle_timestamp': 1746068880, 'message_id': 656, 'chat_id': -4767147054, 'result': 'LOSS'}
-2025-05-01 00:11:11,577 INFO: ⏳ Agendada validação do candle 1746068880 em 120s.
-2025-05-01 00:11:11,607 INFO: 📈 Análise: EMA9=2487.86, EMA21=2487.86, trend=RISE, RSI=47.50, MACD=0.04/0.10, ATR=0.67, body=0.00, band_width=0.000, confidence=20
-2025-05-01 00:11:11,610 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 20%
-2025-05-01 00:11:11,612 INFO: ⏳ Em cooldown (120s). Próximo sinal em 119s.
-2025-05-01 00:11:11,648 INFO: 🔔 Novo candle em 2025-05-01 03:10:00 UTC
-2025-05-01 00:11:11,649 INFO: ⏳ Agendada validação do candle 1746068940 em 120s.
-2025-05-01 00:11:11,667 INFO: 📈 Análise: EMA9=2487.31, EMA21=2487.43, trend=FALL, RSI=42.32, MACD=-0.13/-0.13, ATR=0.76, body=0.00, band_width=0.000, confidence=40
-2025-05-01 00:11:11,668 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 40%
-2025-05-01 00:11:11,669 INFO: ⏳ Em cooldown (120s). Próximo sinal em 119s.
-2025-05-01 00:11:11,715 INFO: 🔔 Novo candle em 2025-05-01 03:11:00 UTC
-2025-05-01 00:11:11,716 INFO: ⏳ Agendada validação do candle 1746069000 em 120s.
-2025-05-01 00:11:11,737 INFO: 📈 Análise: EMA9=2487.60, EMA21=2487.57, trend=RISE, RSI=44.46, MACD=0.05/0.08, ATR=0.79, body=0.00, band_width=0.000, confidence=20
-2025-05-01 00:11:11,738 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 20%
-2025-05-01 00:11:11,739 INFO: ⏳ Em cooldown (120s). Próximo sinal em 119s.
-2025-05-01 00:11:12,397 INFO: Finalizando metodo validate_signals_for_candle
-2025-05-01 00:12:00,400 INFO: 🔔 Novo candle em 2025-05-01 03:12:00 UTC
-2025-05-01 00:12:00,403 INFO: ⏳ Agendada validação do candle 1746069060 em 120s.
-2025-05-01 00:12:00,438 INFO: 📈 Análise: EMA9=2487.26, EMA21=2487.26, trend=FALL, RSI=51.97, MACD=-0.02/-0.05, ATR=0.65, body=0.00, band_width=0.000, confidence=20
-2025-05-01 00:12:00,439 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 20%
-2025-05-01 00:12:00,440 INFO: ⏳ Em cooldown (120s). Próximo sinal em 71s.
-2025-05-01 00:13:00,384 INFO: 🔔 Novo candle em 2025-05-01 03:13:00 UTC
-2025-05-01 00:13:00,387 INFO: ⏳ Agendada validação do candle 1746069120 em 120s.
-2025-05-01 00:13:00,406 INFO: 📈 Análise: EMA9=2487.94, EMA21=2487.74, trend=RISE, RSI=59.41, MACD=0.20/0.16, ATR=0.66, body=0.00, band_width=0.000, confidence=40
-2025-05-01 00:13:00,406 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 40%
-2025-05-01 00:13:00,407 INFO: ⏳ Em cooldown (120s). Próximo sinal em 11s.
-2025-05-01 00:13:10,556 INFO: Iniciando metodo validate_signals_for_candle
-2025-05-01 00:13:10,556 INFO: Inicializando conexão com o MongoDB.
-2025-05-01 00:13:10,567 INFO: Conexão com o MongoDB estabelecida.
-2025-05-01 00:13:10,568 INFO: Finalizando metodo validate_signals_for_candle
-2025-05-01 00:13:11,503 INFO: Iniciando metodo validate_signals_for_candle
-2025-05-01 00:13:11,504 INFO: Inicializando conexão com o MongoDB.
-2025-05-01 00:13:11,509 INFO: Conexão com o MongoDB estabelecida.
-2025-05-01 00:13:11,510 INFO: Finalizando metodo validate_signals_for_candle
-2025-05-01 00:13:11,580 INFO: Iniciando metodo validate_signals_for_candle
-2025-05-01 00:13:11,583 INFO: Inicializando conexão com o MongoDB.
-2025-05-01 00:13:11,602 INFO: Conexão com o MongoDB estabelecida.
-2025-05-01 00:13:11,602 INFO: Finalizando metodo validate_signals_for_candle
-2025-05-01 00:13:11,657 INFO: Iniciando metodo validate_signals_for_candle
-2025-05-01 00:13:11,657 INFO: Inicializando conexão com o MongoDB.
-2025-05-01 00:13:11,671 INFO: Conexão com o MongoDB estabelecida.
-2025-05-01 00:13:11,673 INFO: Finalizando metodo validate_signals_for_candle
-2025-05-01 00:13:11,718 INFO: Iniciando metodo validate_signals_for_candle
-2025-05-01 00:13:11,719 INFO: Inicializando conexão com o MongoDB.
-2025-05-01 00:13:11,730 INFO: Conexão com o MongoDB estabelecida.
-2025-05-01 00:13:11,731 INFO: Finalizando metodo validate_signals_for_candle
-2025-05-01 00:14:00,395 INFO: 🔔 Novo candle em 2025-05-01 03:14:00 UTC
-2025-05-01 00:14:00,397 INFO: ⏳ Agendada validação do candle 1746069180 em 120s.
-2025-05-01 00:14:00,416 INFO: 📈 Análise: EMA9=2487.84, EMA21=2487.78, trend=RISE, RSI=53.49, MACD=0.05/0.03, ATR=0.48, body=0.00, band_width=0.000, confidence=40
-2025-05-01 00:14:00,416 INFO: Iniciando metodo validate_signals_for_candle
-2025-05-01 00:14:00,417 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 40%
-2025-05-01 00:14:00,417 INFO: Inicializando conexão com o MongoDB.
-2025-05-01 00:14:00,434 INFO: Conexão com o MongoDB estabelecida.
-2025-05-01 00:14:00,435 INFO: Finalizando metodo validate_signals_for_candle
-2025-05-01 00:14:01,242 INFO: ✅ Mensagem enviada ao Telegram (ID: GPQ7TTKI).
-2025-05-01 00:14:01,245 INFO: Inicializando conexão com o MongoDB.
-2025-05-01 00:14:01,256 INFO: Conexão com o MongoDB estabelecida.
-2025-05-01 00:14:01,258 INFO: Inserindo documento: {'signal_id': 'GPQ7TTKI', 'signal': 'RISE', 'price': np.float64(2487.857), 'confidence': 40, 'analyze_time': datetime.datetime(2025, 5, 1, 0, 14, 0, 418741, tzinfo=<DstTzInfo 'America/Sao_Paulo' -03-1 day, 21:00:00 STD>), 'entry_time': '2025-05-01 00:15:00', 'open_candle_timestamp': 1746069300, 'message_id': 659, 'chat_id': -4767147054, 'result': None}
-2025-05-01 00:14:01,287 INFO: Documento inserido com ID: 6812e6f9a76b7ff8ab8877e3
-2025-05-01 00:15:00,386 INFO: 🔔 Novo candle em 2025-05-01 03:15:00 UTC
-2025-05-01 00:15:00,388 INFO: ⏳ Agendada validação do candle 1746069240 em 120s.
-2025-05-01 00:15:00,410 INFO: 📈 Análise: EMA9=2487.95, EMA21=2487.96, trend=FALL, RSI=46.64, MACD=-0.00/0.01, ATR=0.54, body=0.00, band_width=0.000, confidence=40
-2025-05-01 00:15:00,410 INFO: Iniciando metodo validate_signals_for_candle
-2025-05-01 00:15:00,410 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 40%
-2025-05-01 00:15:00,411 INFO: Inicializando conexão com o MongoDB.
-2025-05-01 00:15:00,411 INFO: ⏳ Em cooldown (120s). Próximo sinal em 61s.
-2025-05-01 00:15:00,420 INFO: Conexão com o MongoDB estabelecida.
-2025-05-01 00:15:00,421 INFO: Buscando documento com a query: {'signal_id': 'GPQ7TTKI'}
-2025-05-01 00:15:00,439 INFO: Documento encontrado: {'_id': ObjectId('6812e6f9a76b7ff8ab8877e3'), 'signal_id': 'GPQ7TTKI', 'signal': 'RISE', 'price': 2487.857, 'confidence': 40, 'analyze_time': datetime.datetime(2025, 5, 1, 3, 14, 0, 418000), 'entry_time': '2025-05-01 00:15:00', 'open_candle_timestamp': 1746069300, 'message_id': 659, 'chat_id': -4767147054, 'result': None}
-2025-05-01 00:15:00,439 INFO: Atualizando documento com a query: {'signal_id': 'GPQ7TTKI'}, update: {'$set': {'result': 'LOSS'}}
-2025-05-01 00:15:00,443 INFO: Número de documentos modificados: 1
-2025-05-01 00:15:00,444 INFO: Sinal GPQ7TTKI validado como LOSS
-2025-05-01 00:15:00,444 INFO: Inicializando conexão com o MongoDB.
-2025-05-01 00:15:00,453 INFO: Conexão com o MongoDB estabelecida.
-2025-05-01 00:15:00,454 INFO: Buscando documento com a query: {'signal_id': 'GPQ7TTKI'}
-2025-05-01 00:15:00,474 INFO: Documento encontrado: {'_id': ObjectId('6812e6f9a76b7ff8ab8877e3'), 'signal_id': 'GPQ7TTKI', 'signal': 'RISE', 'price': 2487.857, 'confidence': 40, 'analyze_time': datetime.datetime(2025, 5, 1, 3, 14, 0, 418000), 'entry_time': '2025-05-01 00:15:00', 'open_candle_timestamp': 1746069300, 'message_id': 659, 'chat_id': -4767147054, 'result': 'LOSS'}
-2025-05-01 00:15:01,290 INFO: Finalizando metodo validate_signals_for_candle
-2025-05-01 00:32:57,727 INFO: === Logging ROOT inicializado ===
-2025-05-01 00:32:57,729 INFO: 🔗 Conectando ao WebSocket...
-2025-05-01 00:32:57,731 INFO: 🔗 Conexão WebSocket estabelecida. Aguardando dados...
-2025-05-01 00:32:58,210 INFO: Websocket connected
-2025-05-01 00:32:58,530 INFO: ✅ Token autorizado às 2025-05-01 03:32:58.530159 UTC
-2025-05-01 00:32:58,708 INFO: 📥 Histórico inicial recebido às 2025-05-01 03:32:58.708778 UTC
-2025-05-01 00:32:58,740 INFO: 📈 Análise: EMA9=2488.69, EMA21=2488.40, trend=RISE, RSI=58.24, MACD=0.14/-0.12, ATR=1.12, body=1.07, band_width=0.001, confidence=60
-2025-05-01 00:32:58,741 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 60%
-2025-05-01 00:32:58,742 INFO: 🔄 Ignorando sinal inicial antes de primeiro candle OHL.
-2025-05-01 00:34:00,536 INFO: 🔔 Novo candle em 2025-05-01 03:34:00 UTC
-2025-05-01 00:34:00,539 INFO: ⏳ Agendada validação do candle 1746070380 em 120s.
-2025-05-01 00:34:00,559 INFO: 📈 Análise: EMA9=2489.83, EMA21=2489.86, trend=FALL, RSI=45.18, MACD=0.07/0.18, ATR=0.93, body=0.00, band_width=0.000, confidence=60
-2025-05-01 00:34:00,559 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 60%
-2025-05-01 00:34:01,480 INFO: ✅ Mensagem enviada ao Telegram (ID: QCRU5HF8).
-2025-05-01 00:34:01,481 INFO: Inicializando conexão com o MongoDB.
-2025-05-01 00:34:01,508 INFO: Conexão com o MongoDB estabelecida.
-2025-05-01 00:34:01,510 INFO: Inserindo documento: {'signal_id': 'QCRU5HF8', 'signal': 'FALL', 'price': np.float64(2489.583), 'confidence': 60, 'analyze_time': datetime.datetime(2025, 5, 1, 0, 34, 0, 560738, tzinfo=<DstTzInfo 'America/Sao_Paulo' -03-1 day, 21:00:00 STD>), 'entry_time': '2025-05-01 00:35:00', 'open_candle_timestamp': 1746070558, 'message_id': 661, 'chat_id': -4767147054, 'result': None}
-2025-05-01 00:34:01,544 INFO: Documento inserido com ID: 6812eba902a80bd21019ff0d
-2025-05-01 00:35:00,401 INFO: 🔔 Novo candle em 2025-05-01 03:35:00 UTC
-2025-05-01 00:35:00,403 INFO: ⏳ Agendada validação do candle 1746070440 em 120s.
-2025-05-01 00:35:00,421 INFO: 📈 Análise: EMA9=2491.06, EMA21=2490.87, trend=RISE, RSI=64.01, MACD=0.20/0.15, ATR=1.36, body=0.00, band_width=0.000, confidence=60
-2025-05-01 00:35:00,421 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 60%
-2025-05-01 00:35:00,422 INFO: ⏳ Em cooldown (120s). Próximo sinal em 61s.
-2025-05-01 00:36:00,422 INFO: 🔔 Novo candle em 2025-05-01 03:36:00 UTC
-2025-05-01 00:36:00,424 INFO: ⏳ Agendada validação do candle 1746070500 em 120s.
-2025-05-01 00:36:00,455 INFO: 📈 Análise: EMA9=2492.25, EMA21=2491.92, trend=RISE, RSI=73.26, MACD=0.32/0.23, ATR=0.87, body=0.00, band_width=0.000, confidence=80
-2025-05-01 00:36:00,455 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 80%
-2025-05-01 00:36:00,456 INFO: ⏳ Em cooldown (120s). Próximo sinal em 1s.
-2025-05-01 00:36:00,550 INFO: Iniciando metodo validate_signals_for_candle
-2025-05-01 00:36:00,550 INFO: Inicializando conexão com o MongoDB.
-2025-05-01 00:36:00,557 INFO: Conexão com o MongoDB estabelecida.
-2025-05-01 00:36:00,558 INFO: Buscando documento com a query: {'signal_id': 'QCRU5HF8'}
-2025-05-01 00:36:00,582 INFO: Documento encontrado: {'_id': ObjectId('6812eba902a80bd21019ff0d'), 'signal_id': 'QCRU5HF8', 'signal': 'FALL', 'price': 2489.583, 'confidence': 60, 'analyze_time': datetime.datetime(2025, 5, 1, 3, 34, 0, 560000), 'entry_time': '2025-05-01 00:35:00', 'open_candle_timestamp': 1746070558, 'message_id': 661, 'chat_id': -4767147054, 'result': None}
-2025-05-01 00:36:00,583 INFO: Atualizando documento com a query: {'signal_id': 'QCRU5HF8'}, update: {'$set': {'result': 'LOSS'}}
-2025-05-01 00:36:00,587 INFO: Número de documentos modificados: 1
-2025-05-01 00:36:00,588 INFO: Sinal QCRU5HF8 validado como LOSS
-2025-05-01 00:36:00,588 INFO: Inicializando conexão com o MongoDB.
-2025-05-01 00:36:00,596 INFO: Conexão com o MongoDB estabelecida.
-2025-05-01 00:36:00,597 INFO: Buscando documento com a query: {'signal_id': 'QCRU5HF8'}
-2025-05-01 00:36:00,618 INFO: Documento encontrado: {'_id': ObjectId('6812eba902a80bd21019ff0d'), 'signal_id': 'QCRU5HF8', 'signal': 'FALL', 'price': 2489.583, 'confidence': 60, 'analyze_time': datetime.datetime(2025, 5, 1, 3, 34, 0, 560000), 'entry_time': '2025-05-01 00:35:00', 'open_candle_timestamp': 1746070558, 'message_id': 661, 'chat_id': -4767147054, 'result': 'LOSS'}
-2025-05-01 00:36:01,412 INFO: Finalizando metodo validate_signals_for_candle
-2025-05-01 00:38:01,189 INFO: Iniciando metodo validate_signals_for_candle
-2025-05-01 00:38:01,190 INFO: Iniciando metodo validate_signals_for_candle
-2025-05-01 00:38:01,190 INFO: Inicializando conexão com o MongoDB.
-2025-05-01 00:38:01,191 INFO: Inicializando conexão com o MongoDB.
-2025-05-01 00:38:01,206 INFO: Conexão com o MongoDB estabelecida.
-2025-05-01 00:38:01,207 INFO: Finalizando metodo validate_signals_for_candle
-2025-05-01 00:38:01,211 INFO: Conexão com o MongoDB estabelecida.
-2025-05-01 00:38:01,216 INFO: Finalizando metodo validate_signals_for_candle
-2025-05-01 00:38:03,819 INFO: 🔔 Novo candle em 2025-05-01 03:37:00 UTC
-2025-05-01 00:38:03,821 INFO: ⏳ Agendada validação do candle 1746070560 em 120s.
-2025-05-01 00:38:03,849 INFO: 📈 Análise: EMA9=2492.66, EMA21=2492.67, trend=FALL, RSI=56.34, MACD=0.02/0.06, ATR=0.46, body=0.00, band_width=0.000, confidence=40
-2025-05-01 00:38:03,849 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 40%
-2025-05-01 00:38:04,651 INFO: ✅ Mensagem enviada ao Telegram (ID: LUKTSEAS).
-2025-05-01 00:38:04,652 INFO: Inicializando conexão com o MongoDB.
-2025-05-01 00:38:04,659 INFO: Conexão com o MongoDB estabelecida.
-2025-05-01 00:38:04,659 INFO: Inserindo documento: {'signal_id': 'LUKTSEAS', 'signal': 'FALL', 'price': np.float64(2492.859), 'confidence': 40, 'analyze_time': datetime.datetime(2025, 5, 1, 0, 38, 3, 850754, tzinfo=<DstTzInfo 'America/Sao_Paulo' -03-1 day, 21:00:00 STD>), 'entry_time': '2025-05-01 00:39:03', 'open_candle_timestamp': 1746070738, 'message_id': 663, 'chat_id': -4767147054, 'result': None}
-2025-05-01 00:38:04,685 INFO: Documento inserido com ID: 6812ec9c02a80bd21019ff13
-2025-05-01 00:38:04,724 INFO: 🔔 Novo candle em 2025-05-01 03:38:00 UTC
-2025-05-01 00:38:04,727 INFO: ⏳ Agendada validação do candle 1746070620 em 120s.
-2025-05-01 00:38:04,754 INFO: 📈 Análise: EMA9=2492.45, EMA21=2492.64, trend=FALL, RSI=35.59, MACD=-0.16/-0.06, ATR=0.90, body=0.00, band_width=0.000, confidence=60
-2025-05-01 00:38:04,755 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 60%
-2025-05-01 00:38:04,756 INFO: ⏳ Em cooldown (120s). Próximo sinal em 120s.
-2025-05-01 00:39:00,399 INFO: 🔔 Novo candle em 2025-05-01 03:39:00 UTC
-2025-05-01 00:39:00,401 INFO: ⏳ Agendada validação do candle 1746070680 em 120s.
-2025-05-01 00:39:00,420 INFO: 📈 Análise: EMA9=2492.41, EMA21=2492.36, trend=RISE, RSI=56.60, MACD=0.02/-0.02, ATR=0.63, body=0.00, band_width=0.000, confidence=40
-2025-05-01 00:39:00,420 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 40%
-2025-05-01 00:39:00,421 INFO: ⏳ Em cooldown (120s). Próximo sinal em 64s.
-2025-05-01 00:40:00,418 INFO: 🔔 Novo candle em 2025-05-01 03:40:00 UTC
-2025-05-01 00:40:00,421 INFO: ⏳ Agendada validação do candle 1746070740 em 120s.
-2025-05-01 00:40:00,442 INFO: 📈 Análise: EMA9=2492.88, EMA21=2492.55, trend=RISE, RSI=75.60, MACD=0.26/0.11, ATR=0.95, body=0.00, band_width=0.001, confidence=80
-2025-05-01 00:40:00,444 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 80%
-2025-05-01 00:40:00,445 INFO: ⏳ Em cooldown (120s). Próximo sinal em 4s.
-2025-05-01 00:40:03,822 INFO: Iniciando metodo validate_signals_for_candle
-2025-05-01 00:40:03,822 INFO: Inicializando conexão com o MongoDB.
-2025-05-01 00:40:03,829 INFO: Conexão com o MongoDB estabelecida.
-2025-05-01 00:40:03,830 INFO: Buscando documento com a query: {'signal_id': 'LUKTSEAS'}
-2025-05-01 00:40:03,850 INFO: Documento encontrado: {'_id': ObjectId('6812ec9c02a80bd21019ff13'), 'signal_id': 'LUKTSEAS', 'signal': 'FALL', 'price': 2492.859, 'confidence': 40, 'analyze_time': datetime.datetime(2025, 5, 1, 3, 38, 3, 850000), 'entry_time': '2025-05-01 00:39:03', 'open_candle_timestamp': 1746070738, 'message_id': 663, 'chat_id': -4767147054, 'result': None}
-2025-05-01 00:40:03,851 INFO: Atualizando documento com a query: {'signal_id': 'LUKTSEAS'}, update: {'$set': {'result': 'LOSS'}}
-2025-05-01 00:40:03,855 INFO: Número de documentos modificados: 1
-2025-05-01 00:40:03,856 INFO: Sinal LUKTSEAS validado como LOSS
-2025-05-01 00:40:03,856 INFO: Inicializando conexão com o MongoDB.
-2025-05-01 00:40:03,863 INFO: Conexão com o MongoDB estabelecida.
-2025-05-01 00:40:03,864 INFO: Buscando documento com a query: {'signal_id': 'LUKTSEAS'}
-2025-05-01 00:40:03,885 INFO: Documento encontrado: {'_id': ObjectId('6812ec9c02a80bd21019ff13'), 'signal_id': 'LUKTSEAS', 'signal': 'FALL', 'price': 2492.859, 'confidence': 40, 'analyze_time': datetime.datetime(2025, 5, 1, 3, 38, 3, 850000), 'entry_time': '2025-05-01 00:39:03', 'open_candle_timestamp': 1746070738, 'message_id': 663, 'chat_id': -4767147054, 'result': 'LOSS'}
-2025-05-01 00:40:04,697 INFO: Finalizando metodo validate_signals_for_candle
-2025-05-01 00:40:04,733 INFO: Iniciando metodo validate_signals_for_candle
-2025-05-01 00:40:04,733 INFO: Inicializando conexão com o MongoDB.
-2025-05-01 00:40:04,741 INFO: Conexão com o MongoDB estabelecida.
-2025-05-01 00:40:04,743 INFO: Finalizando metodo validate_signals_for_candle
-2025-05-01 00:41:00,382 INFO: 🔔 Novo candle em 2025-05-01 03:41:00 UTC
-2025-05-01 00:41:00,384 INFO: ⏳ Agendada validação do candle 1746070800 em 120s.
-2025-05-01 00:41:00,402 INFO: 📈 Análise: EMA9=2494.16, EMA21=2494.01, trend=RISE, RSI=58.02, MACD=0.23/0.29, ATR=0.87, body=0.00, band_width=0.000, confidence=20
-2025-05-01 00:41:00,402 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 20%
-2025-05-01 00:41:00,412 INFO: Iniciando metodo validate_signals_for_candle
-2025-05-01 00:41:00,412 INFO: Inicializando conexão com o MongoDB.
-2025-05-01 00:41:00,420 INFO: Conexão com o MongoDB estabelecida.
-2025-05-01 00:41:00,421 INFO: Finalizando metodo validate_signals_for_candle
-2025-05-01 00:41:01,193 INFO: ✅ Mensagem enviada ao Telegram (ID: 05IQLHIP).
-2025-05-01 00:41:01,194 INFO: Inicializando conexão com o MongoDB.
-2025-05-01 00:41:01,202 INFO: Conexão com o MongoDB estabelecida.
-2025-05-01 00:41:01,203 INFO: Inserindo documento: {'signal_id': '05IQLHIP', 'signal': 'RISE', 'price': np.float64(2494.199), 'confidence': 20, 'analyze_time': datetime.datetime(2025, 5, 1, 0, 41, 0, 403776, tzinfo=<DstTzInfo 'America/Sao_Paulo' -03-1 day, 21:00:00 STD>), 'entry_time': '2025-05-01 00:42:00', 'open_candle_timestamp': 1746070978, 'message_id': 665, 'chat_id': -4767147054, 'result': None}
-2025-05-01 00:41:01,224 INFO: Documento inserido com ID: 6812ed4d02a80bd21019ff19
-2025-05-01 00:42:00,418 INFO: 🔔 Novo candle em 2025-05-01 03:42:00 UTC
-2025-05-01 00:42:00,420 INFO: ⏳ Agendada validação do candle 1746070860 em 120s.
-2025-05-01 00:42:00,445 INFO: 📈 Análise: EMA9=2495.58, EMA21=2495.23, trend=RISE, RSI=74.58, MACD=0.36/0.31, ATR=1.04, body=0.00, band_width=0.000, confidence=80
-2025-05-01 00:42:00,445 INFO: Iniciando metodo validate_signals_for_candle
-2025-05-01 00:42:00,446 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 80%
-2025-05-01 00:42:00,447 INFO: Inicializando conexão com o MongoDB.
-2025-05-01 00:42:00,448 INFO: ⏳ Em cooldown (120s). Próximo sinal em 60s.
-2025-05-01 00:42:00,457 INFO: Conexão com o MongoDB estabelecida.
-2025-05-01 00:42:00,459 INFO: Buscando documento com a query: {'signal_id': '05IQLHIP'}
-2025-05-01 00:42:00,484 INFO: Documento encontrado: {'_id': ObjectId('6812ed4d02a80bd21019ff19'), 'signal_id': '05IQLHIP', 'signal': 'RISE', 'price': 2494.199, 'confidence': 20, 'analyze_time': datetime.datetime(2025, 5, 1, 3, 41, 0, 403000), 'entry_time': '2025-05-01 00:42:00', 'open_candle_timestamp': 1746070978, 'message_id': 665, 'chat_id': -4767147054, 'result': None}
-2025-05-01 00:42:00,485 INFO: ⚠️ Sinal 05IQLHIP não encontrado no candle atual.
-2025-05-01 00:42:00,485 INFO: Finalizando metodo validate_signals_for_candle
-2025-05-01 00:43:00,396 INFO: Iniciando metodo validate_signals_for_candle
-2025-05-01 00:43:00,396 INFO: Inicializando conexão com o MongoDB.
-2025-05-01 00:43:00,404 INFO: Conexão com o MongoDB estabelecida.
-2025-05-01 00:43:00,405 INFO: Buscando documento com a query: {'signal_id': '05IQLHIP'}
-2025-05-01 00:43:00,419 INFO: 🔔 Novo candle em 2025-05-01 03:43:00 UTC
-2025-05-01 00:43:00,421 INFO: ⏳ Agendada validação do candle 1746070920 em 120s.
-2025-05-01 00:43:00,441 INFO: 📈 Análise: EMA9=2496.00, EMA21=2495.95, trend=RISE, RSI=43.22, MACD=0.11/0.19, ATR=0.79, body=0.00, band_width=0.000, confidence=20
-2025-05-01 00:43:00,442 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 20%
-2025-05-01 00:43:00,450 INFO: Documento encontrado: {'_id': ObjectId('6812ed4d02a80bd21019ff19'), 'signal_id': '05IQLHIP', 'signal': 'RISE', 'price': 2494.199, 'confidence': 20, 'analyze_time': datetime.datetime(2025, 5, 1, 3, 41, 0, 403000), 'entry_time': '2025-05-01 00:42:00', 'open_candle_timestamp': 1746070978, 'message_id': 665, 'chat_id': -4767147054, 'result': None}
-2025-05-01 00:43:00,450 INFO: Atualizando documento com a query: {'signal_id': '05IQLHIP'}, update: {'$set': {'result': 'LOSS'}}
-2025-05-01 00:43:00,454 INFO: Número de documentos modificados: 1
-2025-05-01 00:43:00,454 INFO: Sinal 05IQLHIP validado como LOSS
-2025-05-01 00:43:00,455 INFO: Inicializando conexão com o MongoDB.
-2025-05-01 00:43:00,461 INFO: Conexão com o MongoDB estabelecida.
-2025-05-01 00:43:00,461 INFO: Buscando documento com a query: {'signal_id': '05IQLHIP'}
-2025-05-01 00:43:00,484 INFO: Documento encontrado: {'_id': ObjectId('6812ed4d02a80bd21019ff19'), 'signal_id': '05IQLHIP', 'signal': 'RISE', 'price': 2494.199, 'confidence': 20, 'analyze_time': datetime.datetime(2025, 5, 1, 3, 41, 0, 403000), 'entry_time': '2025-05-01 00:42:00', 'open_candle_timestamp': 1746070978, 'message_id': 665, 'chat_id': -4767147054, 'result': 'LOSS'}
-2025-05-01 00:43:01,253 INFO: ✅ Mensagem enviada ao Telegram (ID: C1B1R78M).
-2025-05-01 00:43:01,254 INFO: Inicializando conexão com o MongoDB.
-2025-05-01 00:43:01,261 INFO: Conexão com o MongoDB estabelecida.
-2025-05-01 00:43:01,263 INFO: Inserindo documento: {'signal_id': 'C1B1R78M', 'signal': 'RISE', 'price': np.float64(2495.634), 'confidence': 20, 'analyze_time': datetime.datetime(2025, 5, 1, 0, 43, 0, 443660, tzinfo=<DstTzInfo 'America/Sao_Paulo' -03-1 day, 21:00:00 STD>), 'entry_time': '2025-05-01 00:44:00', 'open_candle_timestamp': 1746071098, 'message_id': 666, 'chat_id': -4767147054, 'result': None}
-2025-05-01 00:43:01,287 INFO: Documento inserido com ID: 6812edc502a80bd21019ff1e
-2025-05-01 00:43:01,287 INFO: Finalizando metodo validate_signals_for_candle
-2025-05-01 00:44:00,392 INFO: 🔔 Novo candle em 2025-05-01 03:44:00 UTC
-2025-05-01 00:44:00,394 INFO: ⏳ Agendada validação do candle 1746070980 em 120s.
-2025-05-01 00:44:00,417 INFO: 📈 Análise: EMA9=2496.43, EMA21=2496.19, trend=RISE, RSI=70.22, MACD=0.21/0.14, ATR=0.85, body=0.00, band_width=0.000, confidence=80
-2025-05-01 00:44:00,417 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 80%
-2025-05-01 00:44:00,418 INFO: ⏳ Em cooldown (120s). Próximo sinal em 61s.
-2025-05-01 00:44:00,432 INFO: Iniciando metodo validate_signals_for_candle
-2025-05-01 00:44:00,432 INFO: Inicializando conexão com o MongoDB.
-2025-05-01 00:44:00,439 INFO: Conexão com o MongoDB estabelecida.
-2025-05-01 00:44:00,440 INFO: Buscando documento com a query: {'signal_id': 'C1B1R78M'}
-2025-05-01 00:44:00,467 INFO: Documento encontrado: {'_id': ObjectId('6812edc502a80bd21019ff1e'), 'signal_id': 'C1B1R78M', 'signal': 'RISE', 'price': 2495.634, 'confidence': 20, 'analyze_time': datetime.datetime(2025, 5, 1, 3, 43, 0, 443000), 'entry_time': '2025-05-01 00:44:00', 'open_candle_timestamp': 1746071098, 'message_id': 666, 'chat_id': -4767147054, 'result': None}
-2025-05-01 00:44:00,468 INFO: ⚠️ Sinal C1B1R78M não encontrado no candle atual.
-2025-05-01 00:44:00,468 INFO: Finalizando metodo validate_signals_for_candle
-2025-05-01 00:45:00,394 INFO: 🔔 Novo candle em 2025-05-01 03:45:00 UTC
-2025-05-01 00:45:00,395 INFO: ⏳ Agendada validação do candle 1746071040 em 120s.
-2025-05-01 00:45:00,416 INFO: 📈 Análise: EMA9=2496.99, EMA21=2496.77, trend=RISE, RSI=68.85, MACD=0.19/0.11, ATR=0.95, body=0.00, band_width=0.000, confidence=80
-2025-05-01 00:45:00,417 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 80%
-2025-05-01 00:45:00,418 INFO: ⏳ Em cooldown (120s). Próximo sinal em 1s.
-2025-05-01 00:45:00,423 INFO: Iniciando metodo validate_signals_for_candle
-2025-05-01 00:45:00,423 INFO: Inicializando conexão com o MongoDB.
-2025-05-01 00:45:00,431 INFO: Conexão com o MongoDB estabelecida.
-2025-05-01 00:45:00,432 INFO: Buscando documento com a query: {'signal_id': 'C1B1R78M'}
-2025-05-01 00:45:00,454 INFO: Documento encontrado: {'_id': ObjectId('6812edc502a80bd21019ff1e'), 'signal_id': 'C1B1R78M', 'signal': 'RISE', 'price': 2495.634, 'confidence': 20, 'analyze_time': datetime.datetime(2025, 5, 1, 3, 43, 0, 443000), 'entry_time': '2025-05-01 00:44:00', 'open_candle_timestamp': 1746071098, 'message_id': 666, 'chat_id': -4767147054, 'result': None}
-2025-05-01 00:45:00,455 INFO: Atualizando documento com a query: {'signal_id': 'C1B1R78M'}, update: {'$set': {'result': 'WIN'}}
-2025-05-01 00:45:00,458 INFO: Número de documentos modificados: 1
-2025-05-01 00:45:00,459 INFO: Sinal C1B1R78M validado como WIN
-2025-05-01 00:45:00,459 INFO: Inicializando conexão com o MongoDB.
-2025-05-01 00:45:00,466 INFO: Conexão com o MongoDB estabelecida.
-2025-05-01 00:45:00,467 INFO: Buscando documento com a query: {'signal_id': 'C1B1R78M'}
-2025-05-01 00:45:00,490 INFO: Documento encontrado: {'_id': ObjectId('6812edc502a80bd21019ff1e'), 'signal_id': 'C1B1R78M', 'signal': 'RISE', 'price': 2495.634, 'confidence': 20, 'analyze_time': datetime.datetime(2025, 5, 1, 3, 43, 0, 443000), 'entry_time': '2025-05-01 00:44:00', 'open_candle_timestamp': 1746071098, 'message_id': 666, 'chat_id': -4767147054, 'result': 'WIN'}
-2025-05-01 00:45:01,306 INFO: Finalizando metodo validate_signals_for_candle
-2025-05-01 00:46:00,402 INFO: 🔔 Novo candle em 2025-05-01 03:46:00 UTC
-2025-05-01 00:46:00,404 INFO: Iniciando metodo validate_signals_for_candle
-2025-05-01 00:46:00,404 INFO: ⏳ Agendada validação do candle 1746071100 em 120s.
-2025-05-01 00:46:00,405 INFO: Inicializando conexão com o MongoDB.
-2025-05-01 00:46:00,424 INFO: 📈 Análise: EMA9=2497.27, EMA21=2497.18, trend=RISE, RSI=53.74, MACD=0.10/0.09, ATR=0.75, body=0.00, band_width=0.000, confidence=40
-2025-05-01 00:46:00,426 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 40%
-2025-05-01 00:46:00,438 INFO: Conexão com o MongoDB estabelecida.
-2025-05-01 00:46:00,439 INFO: Finalizando metodo validate_signals_for_candle
-2025-05-01 00:46:01,255 INFO: ✅ Mensagem enviada ao Telegram (ID: X0TLD0X0).
-2025-05-01 00:46:01,256 INFO: Inicializando conexão com o MongoDB.
-2025-05-01 00:46:01,264 INFO: Conexão com o MongoDB estabelecida.
-2025-05-01 00:46:01,265 INFO: Inserindo documento: {'signal_id': 'X0TLD0X0', 'signal': 'RISE', 'price': np.float64(2497.252), 'confidence': 40, 'analyze_time': datetime.datetime(2025, 5, 1, 0, 46, 0, 427772, tzinfo=<DstTzInfo 'America/Sao_Paulo' -03-1 day, 21:00:00 STD>), 'entry_time': '2025-05-01 00:47:00', 'open_candle_timestamp': 1746071278, 'message_id': 669, 'chat_id': -4767147054, 'result': None}
-2025-05-01 00:46:01,287 INFO: Documento inserido com ID: 6812ee7902a80bd21019ff24
-2025-05-01 00:47:00,373 INFO: 🔔 Novo candle em 2025-05-01 03:47:00 UTC
-2025-05-01 00:47:00,375 INFO: ⏳ Agendada validação do candle 1746071160 em 120s.
-2025-05-01 00:47:00,392 INFO: 📈 Análise: EMA9=2497.57, EMA21=2497.56, trend=RISE, RSI=48.24, MACD=0.02/0.03, ATR=0.59, body=0.00, band_width=0.000, confidence=20
-2025-05-01 00:47:00,392 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 20%
-2025-05-01 00:47:00,393 INFO: ⏳ Em cooldown (120s). Próximo sinal em 61s.
-2025-05-01 00:47:00,406 INFO: Iniciando metodo validate_signals_for_candle
-2025-05-01 00:47:00,406 INFO: Inicializando conexão com o MongoDB.
-2025-05-01 00:47:00,413 INFO: Conexão com o MongoDB estabelecida.
-2025-05-01 00:47:00,414 INFO: Buscando documento com a query: {'signal_id': 'X0TLD0X0'}
-2025-05-01 00:47:00,433 INFO: Documento encontrado: {'_id': ObjectId('6812ee7902a80bd21019ff24'), 'signal_id': 'X0TLD0X0', 'signal': 'RISE', 'price': 2497.252, 'confidence': 40, 'analyze_time': datetime.datetime(2025, 5, 1, 3, 46, 0, 427000), 'entry_time': '2025-05-01 00:47:00', 'open_candle_timestamp': 1746071278, 'message_id': 669, 'chat_id': -4767147054, 'result': None}
-2025-05-01 00:47:00,433 INFO: ⚠️ Sinal X0TLD0X0 não encontrado no candle atual.
-2025-05-01 00:47:00,434 INFO: Finalizando metodo validate_signals_for_candle
-2025-05-01 00:48:00,409 INFO: Iniciando metodo validate_signals_for_candle
-2025-05-01 00:48:00,409 INFO: Inicializando conexão com o MongoDB.
-2025-05-01 00:48:00,419 INFO: Conexão com o MongoDB estabelecida.
-2025-05-01 00:48:00,422 INFO: Buscando documento com a query: {'signal_id': 'X0TLD0X0'}
-2025-05-01 00:48:00,428 INFO: 🔔 Novo candle em 2025-05-01 03:48:00 UTC
-2025-05-01 00:48:00,432 INFO: ⏳ Agendada validação do candle 1746071220 em 120s.
-2025-05-01 00:48:00,463 INFO: 📈 Análise: EMA9=2497.97, EMA21=2497.93, trend=RISE, RSI=58.05, MACD=0.04/0.03, ATR=0.62, body=0.00, band_width=0.000, confidence=60
-2025-05-01 00:48:00,467 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 60%
-2025-05-01 00:48:00,484 INFO: Documento encontrado: {'_id': ObjectId('6812ee7902a80bd21019ff24'), 'signal_id': 'X0TLD0X0', 'signal': 'RISE', 'price': 2497.252, 'confidence': 40, 'analyze_time': datetime.datetime(2025, 5, 1, 3, 46, 0, 427000), 'entry_time': '2025-05-01 00:47:00', 'open_candle_timestamp': 1746071278, 'message_id': 669, 'chat_id': -4767147054, 'result': None}
-2025-05-01 00:48:00,484 INFO: Atualizando documento com a query: {'signal_id': 'X0TLD0X0'}, update: {'$set': {'result': 'WIN'}}
-2025-05-01 00:48:00,489 INFO: Número de documentos modificados: 1
-2025-05-01 00:48:00,490 INFO: Sinal X0TLD0X0 validado como WIN
-2025-05-01 00:48:00,490 INFO: Inicializando conexão com o MongoDB.
-2025-05-01 00:48:00,499 INFO: Conexão com o MongoDB estabelecida.
-2025-05-01 00:48:00,501 INFO: Buscando documento com a query: {'signal_id': 'X0TLD0X0'}
-2025-05-01 00:48:00,528 INFO: Documento encontrado: {'_id': ObjectId('6812ee7902a80bd21019ff24'), 'signal_id': 'X0TLD0X0', 'signal': 'RISE', 'price': 2497.252, 'confidence': 40, 'analyze_time': datetime.datetime(2025, 5, 1, 3, 46, 0, 427000), 'entry_time': '2025-05-01 00:47:00', 'open_candle_timestamp': 1746071278, 'message_id': 669, 'chat_id': -4767147054, 'result': 'WIN'}
-2025-05-01 00:48:01,315 INFO: ✅ Mensagem enviada ao Telegram (ID: T0IZESUG).
-2025-05-01 00:48:01,316 INFO: Inicializando conexão com o MongoDB.
-2025-05-01 00:48:01,325 INFO: Finalizando metodo validate_signals_for_candle
-2025-05-01 00:48:01,335 INFO: Conexão com o MongoDB estabelecida.
-2025-05-01 00:48:01,336 INFO: Inserindo documento: {'signal_id': 'T0IZESUG', 'signal': 'RISE', 'price': np.float64(2498.123), 'confidence': 60, 'analyze_time': datetime.datetime(2025, 5, 1, 0, 48, 0, 468304, tzinfo=<DstTzInfo 'America/Sao_Paulo' -03-1 day, 21:00:00 STD>), 'entry_time': '2025-05-01 00:49:00', 'open_candle_timestamp': 1746071398, 'message_id': 670, 'chat_id': -4767147054, 'result': None}
-2025-05-01 00:48:01,362 INFO: Documento inserido com ID: 6812eef102a80bd21019ff29
-2025-05-01 00:49:00,384 INFO: Iniciando metodo validate_signals_for_candle
-2025-05-01 00:49:00,384 INFO: Inicializando conexão com o MongoDB.
-2025-05-01 00:49:00,391 INFO: Conexão com o MongoDB estabelecida.
-2025-05-01 00:49:00,392 INFO: Buscando documento com a query: {'signal_id': 'T0IZESUG'}
-2025-05-01 00:49:00,412 INFO: Documento encontrado: {'_id': ObjectId('6812eef102a80bd21019ff29'), 'signal_id': 'T0IZESUG', 'signal': 'RISE', 'price': 2498.123, 'confidence': 60, 'analyze_time': datetime.datetime(2025, 5, 1, 3, 48, 0, 468000), 'entry_time': '2025-05-01 00:49:00', 'open_candle_timestamp': 1746071398, 'message_id': 670, 'chat_id': -4767147054, 'result': None}
-2025-05-01 00:49:00,413 INFO: 🔔 Novo candle em 2025-05-01 03:49:00 UTC
-2025-05-01 00:49:00,413 INFO: ⚠️ Sinal T0IZESUG não encontrado no candle atual.
-2025-05-01 00:49:00,414 INFO: Finalizando metodo validate_signals_for_candle
-2025-05-01 00:49:00,415 INFO: ⏳ Agendada validação do candle 1746071280 em 120s.
-2025-05-01 00:49:00,433 INFO: 📈 Análise: EMA9=2497.56, EMA21=2497.66, trend=FALL, RSI=45.01, MACD=-0.12/-0.12, ATR=0.93, body=0.00, band_width=0.000, confidence=20
-2025-05-01 00:49:00,433 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 20%
-2025-05-01 00:49:00,435 INFO: ⏳ Em cooldown (120s). Próximo sinal em 61s.
-2025-05-01 00:50:00,394 INFO: 🔔 Novo candle em 2025-05-01 03:50:00 UTC
-2025-05-01 00:50:00,395 INFO: ⏳ Agendada validação do candle 1746071340 em 120s.
-2025-05-01 00:50:00,412 INFO: 📈 Análise: EMA9=2498.04, EMA21=2498.00, trend=RISE, RSI=51.20, MACD=0.05/0.06, ATR=0.83, body=0.00, band_width=0.000, confidence=20
-2025-05-01 00:50:00,413 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 20%
-2025-05-01 00:50:00,413 INFO: ⏳ Em cooldown (120s). Próximo sinal em 1s.
-2025-05-01 00:50:00,432 INFO: Iniciando metodo validate_signals_for_candle
-2025-05-01 00:50:00,433 INFO: Inicializando conexão com o MongoDB.
-2025-05-01 00:50:00,440 INFO: Conexão com o MongoDB estabelecida.
-2025-05-01 00:50:00,441 INFO: Buscando documento com a query: {'signal_id': 'T0IZESUG'}
-2025-05-01 00:50:00,459 INFO: Documento encontrado: {'_id': ObjectId('6812eef102a80bd21019ff29'), 'signal_id': 'T0IZESUG', 'signal': 'RISE', 'price': 2498.123, 'confidence': 60, 'analyze_time': datetime.datetime(2025, 5, 1, 3, 48, 0, 468000), 'entry_time': '2025-05-01 00:49:00', 'open_candle_timestamp': 1746071398, 'message_id': 670, 'chat_id': -4767147054, 'result': None}
-2025-05-01 00:50:00,460 INFO: Atualizando documento com a query: {'signal_id': 'T0IZESUG'}, update: {'$set': {'result': 'WIN'}}
-2025-05-01 00:50:00,464 INFO: Número de documentos modificados: 1
-2025-05-01 00:50:00,464 INFO: Sinal T0IZESUG validado como WIN
-2025-05-01 00:50:00,465 INFO: Inicializando conexão com o MongoDB.
-2025-05-01 00:50:00,472 INFO: Conexão com o MongoDB estabelecida.
-2025-05-01 00:50:00,473 INFO: Buscando documento com a query: {'signal_id': 'T0IZESUG'}
-2025-05-01 00:50:00,493 INFO: Documento encontrado: {'_id': ObjectId('6812eef102a80bd21019ff29'), 'signal_id': 'T0IZESUG', 'signal': 'RISE', 'price': 2498.123, 'confidence': 60, 'analyze_time': datetime.datetime(2025, 5, 1, 3, 48, 0, 468000), 'entry_time': '2025-05-01 00:49:00', 'open_candle_timestamp': 1746071398, 'message_id': 670, 'chat_id': -4767147054, 'result': 'WIN'}
-2025-05-01 00:50:01,334 INFO: Finalizando metodo validate_signals_for_candle
-2025-05-01 00:51:00,406 INFO: 🔔 Novo candle em 2025-05-01 03:51:00 UTC
-2025-05-01 00:51:00,408 INFO: ⏳ Agendada validação do candle 1746071400 em 120s.
-2025-05-01 00:51:00,426 INFO: 📈 Análise: EMA9=2498.85, EMA21=2498.74, trend=RISE, RSI=62.79, MACD=0.14/0.15, ATR=0.84, body=0.00, band_width=0.000, confidence=60
-2025-05-01 00:51:00,426 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 60%
-2025-05-01 00:51:00,427 INFO: Iniciando metodo validate_signals_for_candle
-2025-05-01 00:51:00,430 INFO: Inicializando conexão com o MongoDB.
-2025-05-01 00:51:00,439 INFO: Conexão com o MongoDB estabelecida.
-2025-05-01 00:51:00,440 INFO: Finalizando metodo validate_signals_for_candle
-2025-05-01 00:51:01,242 INFO: ✅ Mensagem enviada ao Telegram (ID: NM2VENC7).
-2025-05-01 00:51:01,243 INFO: Inicializando conexão com o MongoDB.
-2025-05-01 00:51:01,253 INFO: Conexão com o MongoDB estabelecida.
-2025-05-01 00:51:01,254 INFO: Inserindo documento: {'signal_id': 'NM2VENC7', 'signal': 'RISE', 'price': np.float64(2498.974), 'confidence': 60, 'analyze_time': datetime.datetime(2025, 5, 1, 0, 51, 0, 427188, tzinfo=<DstTzInfo 'America/Sao_Paulo' -03-1 day, 21:00:00 STD>), 'entry_time': '2025-05-01 00:52:00', 'open_candle_timestamp': 1746071578, 'message_id': 673, 'chat_id': -4767147054, 'result': None}
-2025-05-01 00:51:01,276 INFO: Documento inserido com ID: 6812efa502a80bd21019ff2f
+2025-07-04 09:24:51,761 INFO: === Logging ROOT inicializado ===
+2025-07-04 09:24:51,766 INFO: 🔗 Conectando ao WebSocket...
+2025-07-04 09:24:51,768 INFO: 🔗 Conexão WebSocket estabelecida. Aguardando dados...
+2025-07-04 09:24:52,049 INFO: Websocket connected
+2025-07-04 09:24:52,354 INFO: ✅ Token autorizado às 2025-07-04 12:24:52.354434 UTC
+2025-07-04 09:24:52,540 INFO: 📥 Histórico inicial recebido às 2025-07-04 12:24:52.540285 UTC
+2025-07-04 09:24:52,563 INFO: ⚠️ Dados insuficientes para HMA, usando apenas EMA.
+2025-07-04 09:24:52,589 INFO: 📈 Análise: EMA9=2675.48, EMA21=2677.16, trend_ema=FALL, trend_final=FALL, RSI=34.06, MACD=-1.84/-1.78, ATR=1.20, body=0.32, band_width=0.001, confidence=60
+2025-07-04 09:24:52,589 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 60%
+2025-07-04 09:24:52,591 INFO: 🔄 Ignorando sinal inicial antes de primeiro candle OHL.
+2025-07-04 09:25:00,321 INFO: 🔔 Novo candle em 2025-07-04 12:25:00 UTC
+2025-07-04 09:25:00,324 INFO: ⚠️ Dados insuficientes para HMA, usando apenas EMA.
+2025-07-04 09:25:00,327 INFO: 📈 Análise: EMA9=2675.38, EMA21=2676.61, trend_ema=FALL, trend_final=FALL, RSI=34.54, MACD=-1.57/-1.81, ATR=1.04, body=0.00, band_width=0.000, confidence=40
+2025-07-04 09:25:00,328 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 40%
+2025-07-04 09:25:04,531 INFO: ✅ Mensagem enviada ao Telegram (ID: IRDBL0B8).
+2025-07-04 09:25:04,531 INFO: Inicializando conexão com o MongoDB.
+2025-07-04 09:25:04,635 INFO: Conexão com o MongoDB estabelecida.
+2025-07-04 09:25:04,637 INFO: Inserindo documento: {'signal_id': 'IRDBL0B8', 'signal': 'FALL', 'price': np.float64(2675.369), 'confidence': 40, 'analyze_time': datetime.datetime(2025, 7, 4, 9, 25, 0, 328657, tzinfo=<DstTzInfo 'America/Sao_Paulo' -03-1 day, 21:00:00 STD>), 'entry_time': '2025-07-04 09:26:00', 'open_candle_timestamp': 1751632018, 'message_id': 9086, 'chat_id': -4767147054, 'result': None}
+2025-07-04 09:25:04,816 INFO: Documento inserido com ID: 6867c820699ced28510fe1c0
+2025-07-04 09:25:32,667 INFO: === Logging ROOT inicializado ===
+2025-07-04 09:25:32,668 INFO: 🔗 Conectando ao WebSocket...
+2025-07-04 09:25:32,669 INFO: 🔗 Conexão WebSocket estabelecida. Aguardando dados...
+2025-07-04 09:25:33,179 INFO: Websocket connected
+2025-07-04 09:25:33,500 INFO: ✅ Token autorizado às 2025-07-04 12:25:33.500890 UTC
+2025-07-04 09:25:33,899 INFO: 📥 Histórico inicial recebido às 2025-07-04 12:25:33.899053 UTC
+2025-07-04 09:25:33,912 ERROR: ⚠️ Erro no processamento dos candles: 0
+2025-07-04 09:26:01,528 INFO: === Logging ROOT inicializado ===
+2025-07-04 09:26:01,529 INFO: 🔗 Conectando ao WebSocket...
+2025-07-04 09:26:01,530 INFO: 🔗 Conexão WebSocket estabelecida. Aguardando dados...
+2025-07-04 09:26:01,774 INFO: Websocket connected
+2025-07-04 09:26:02,137 INFO: ✅ Token autorizado às 2025-07-04 12:26:02.137724 UTC
+2025-07-04 09:26:02,552 INFO: 📥 Histórico inicial recebido às 2025-07-04 12:26:02.552967 UTC
+2025-07-04 09:26:02,558 ERROR: ⚠️ Erro no processamento dos candles: 0
+2025-07-04 09:26:58,430 INFO: === Logging ROOT inicializado ===
+2025-07-04 09:26:58,432 INFO: 🔗 Conectando ao WebSocket...
+2025-07-04 09:26:58,433 INFO: 🔗 Conexão WebSocket estabelecida. Aguardando dados...
+2025-07-04 09:26:58,653 INFO: Websocket connected
+2025-07-04 09:26:58,928 INFO: ✅ Token autorizado às 2025-07-04 12:26:58.928268 UTC
+2025-07-04 09:26:59,137 INFO: 📥 Histórico inicial recebido às 2025-07-04 12:26:59.137164 UTC
+2025-07-04 09:26:59,142 ERROR: ⚠️ Erro no processamento dos candles: 0
+2025-07-04 09:27:13,929 INFO: === Logging ROOT inicializado ===
+2025-07-04 09:27:13,930 INFO: 🔗 Conectando ao WebSocket...
+2025-07-04 09:27:13,931 INFO: 🔗 Conexão WebSocket estabelecida. Aguardando dados...
+2025-07-04 09:27:14,400 INFO: Websocket connected
+2025-07-04 09:27:14,658 INFO: ✅ Token autorizado às 2025-07-04 12:27:14.658603 UTC
+2025-07-04 09:27:14,860 INFO: 📥 Histórico inicial recebido às 2025-07-04 12:27:14.860291 UTC
+2025-07-04 09:27:14,866 INFO: ⚠️ Dados insuficientes para HMA, usando apenas EMA.
+2025-07-04 09:27:14,882 INFO: 📈 Análise: EMA9=2676.04, EMA21=2676.99, trend_ema=FALL, trend_final=FALL, RSI=45.48, MACD=-1.22/-1.48, ATR=1.14, body=0.17, band_width=0.001, confidence=20
+2025-07-04 09:27:14,882 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 20%
+2025-07-04 09:27:14,884 INFO: 🔄 Ignorando sinal inicial antes de primeiro candle OHL.
+2025-07-04 09:27:34,228 INFO: === Logging ROOT inicializado ===
+2025-07-04 09:27:34,229 INFO: 🔗 Conectando ao WebSocket...
+2025-07-04 09:27:34,231 INFO: 🔗 Conexão WebSocket estabelecida. Aguardando dados...
+2025-07-04 09:27:34,707 INFO: Websocket connected
+2025-07-04 09:27:35,004 INFO: ✅ Token autorizado às 2025-07-04 12:27:35.004161 UTC
+2025-07-04 09:27:35,216 INFO: 📥 Histórico inicial recebido às 2025-07-04 12:27:35.215307 UTC
+2025-07-04 09:27:35,219 INFO: ⚠️ Dados insuficientes para HMA, usando apenas EMA.
+2025-07-04 09:27:35,226 INFO: 📈 Análise: EMA9=2676.15, EMA21=2677.04, trend_ema=FALL, trend_final=FALL, RSI=48.60, MACD=-1.18/-1.48, ATR=1.17, body=0.39, band_width=0.001, confidence=20
+2025-07-04 09:27:35,226 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 20%
+2025-07-04 09:27:35,226 INFO: 🔄 Ignorando sinal inicial antes de primeiro candle OHL.
+2025-07-04 09:28:00,453 INFO: 🔔 Novo candle em 2025-07-04 12:28:00 UTC
+2025-07-04 09:28:00,456 INFO: ⚠️ Dados insuficientes para HMA, usando apenas EMA.
+2025-07-04 09:28:00,461 INFO: 📈 Análise: EMA9=2676.28, EMA21=2676.60, trend_ema=FALL, trend_final=FALL, RSI=39.59, MACD=-0.48/-0.59, ATR=1.00, body=0.00, band_width=0.000, confidence=60
+2025-07-04 09:28:00,461 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 60%
+2025-07-04 09:28:01,392 INFO: ✅ Mensagem enviada ao Telegram (ID: GBO9GWEJ).
+2025-07-04 09:28:01,393 INFO: Inicializando conexão com o MongoDB.
+2025-07-04 09:28:01,411 INFO: Conexão com o MongoDB estabelecida.
+2025-07-04 09:28:01,411 INFO: Inserindo documento: {'signal_id': 'GBO9GWEJ', 'signal': 'FALL', 'price': np.float64(2675.957), 'confidence': 60, 'analyze_time': datetime.datetime(2025, 7, 4, 9, 28, 0, 462225, tzinfo=<DstTzInfo 'America/Sao_Paulo' -03-1 day, 21:00:00 STD>), 'entry_time': '2025-07-04 09:29:00', 'open_candle_timestamp': 1751632198, 'message_id': 9087, 'chat_id': -4767147054, 'result': None}
+2025-07-04 09:28:01,454 INFO: Documento inserido com ID: 6867c8d1dfec0f67e4776d71
+2025-07-04 09:29:00,414 INFO: 🔔 Novo candle em 2025-07-04 12:29:00 UTC
+2025-07-04 09:29:00,415 INFO: ⏳ Agendada validação do candle 1751632080 em 120s.
+2025-07-04 09:29:00,418 INFO: ⚠️ Dados insuficientes para HMA, usando apenas EMA.
+2025-07-04 09:29:00,423 INFO: 📈 Análise: EMA9=2676.76, EMA21=2676.56, trend_ema=RISE, trend_final=RISE, RSI=63.94, MACD=0.12/0.00, ATR=0.87, body=0.00, band_width=0.000, confidence=60
+2025-07-04 09:29:00,423 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 60%
+2025-07-04 09:29:00,424 INFO: ⏳ Em cooldown (120s). Próximo sinal em 61s.
+2025-07-04 09:29:43,308 INFO: === Logging ROOT inicializado ===
+2025-07-04 09:29:43,309 INFO: 🔗 Conectando ao WebSocket...
+2025-07-04 09:29:43,310 INFO: 🔗 Conexão WebSocket estabelecida. Aguardando dados...
+2025-07-04 09:29:43,810 INFO: Websocket connected
+2025-07-04 09:29:44,059 INFO: ✅ Token autorizado às 2025-07-04 12:29:44.059807 UTC
+2025-07-04 09:29:44,399 INFO: 📥 Histórico inicial recebido às 2025-07-04 12:29:44.398281 UTC
+2025-07-04 09:29:44,406 ERROR: ⚠️ Erro no processamento dos candles: 0
+2025-07-04 09:30:00,398 INFO: 🔔 Novo candle em 2025-07-04 12:30:00 UTC
+2025-07-04 09:30:00,401 ERROR: ⚠️ Erro no processamento dos candles: 0
+2025-07-04 09:36:52,853 INFO: === Logging ROOT inicializado ===
+2025-07-04 09:36:52,854 INFO: Configurações carregadas: MAX_CANDLES=200, GRANULARITY=60
+2025-07-04 09:36:52,854 INFO: 🔗 Conectando ao WebSocket...
+2025-07-04 09:36:52,855 INFO: 🔗 Conexão WebSocket estabelecida. Aguardando dados...
+2025-07-04 09:36:53,116 INFO: Websocket connected
+2025-07-04 09:36:53,425 INFO: Token autorizado. Solicitando 200 candles históricos...
+2025-07-04 09:36:53,425 INFO: Enviando requisição: {'ticks_history': 'R_25', 'style': 'candles', 'granularity': 60, 'count': 200, 'end': 'latest', 'subscribe': 1}
+2025-07-04 09:36:53,426 INFO: ✅ Token autorizado às 2025-07-04 12:36:53.426061 UTC
+2025-07-04 09:36:53,669 INFO: Recebendo histórico inicial com 200 candles
+2025-07-04 09:36:53,669 INFO: Estrutura do primeiro candle: {'close': 2679.122, 'epoch': 1751620620, 'high': 2680.207, 'low': 2678.518, 'open': 2679.821}
+2025-07-04 09:36:53,669 INFO: 📥 Histórico inicial recebido às 2025-07-04 12:36:53.669966 UTC. Total de candles: 200
+2025-07-04 09:36:53,670 INFO: Estrutura dos dados: (1751620620, 2679.821, 2680.207, 2678.518, 2679.122)
+2025-07-04 09:36:53,685 INFO: Verificando dados para HMA. Tamanho do DataFrame: 200
+2025-07-04 09:36:53,685 INFO: Calculando HMA21...
+2025-07-04 09:36:53,704 INFO: Calculando HMA100...
+2025-07-04 09:36:53,712 INFO: 📊 HMA: HMA21=2679.34 (RISE), HMA100=2677.70 (FALL), trend_hma=RISE
+2025-07-04 09:36:53,730 INFO: 📈 Análise: EMA9=2678.37, EMA21=2677.85, trend_ema=RISE, HMA21=2679.34, HMA100=2677.70, trend_hma=RISE, trend_final=RISE, RSI=59.76, MACD=0.16/-0.40, ATR=1.21, body=0.02, band_width=0.001, confidence=40
+2025-07-04 09:36:53,730 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 40%
+2025-07-04 09:36:53,732 INFO: 🔄 Ignorando sinal inicial antes de primeiro candle OHL.
+2025-07-04 09:37:00,402 INFO: 🔔 Novo candle em 2025-07-04 12:37:00 UTC
+2025-07-04 09:37:00,402 INFO: Estrutura dos dados: (1751620860, 2675.188, 2675.558, 2673.833, 2673.978)
+2025-07-04 09:37:00,407 INFO: Verificando dados para HMA. Tamanho do DataFrame: 200
+2025-07-04 09:37:00,407 INFO: Calculando HMA21...
+2025-07-04 09:37:00,421 INFO: Calculando HMA100...
+2025-07-04 09:37:00,432 INFO: 📊 HMA: HMA21=2680.37 (RISE), HMA100=2677.37 (FALL), trend_hma=RISE
+2025-07-04 09:37:00,438 INFO: 📈 Análise: EMA9=2679.20, EMA21=2678.46, trend_ema=RISE, HMA21=2680.37, HMA100=2677.37, trend_hma=RISE, trend_final=RISE, RSI=59.91, MACD=0.49/0.08, ATR=1.06, body=0.00, band_width=0.001, confidence=40
+2025-07-04 09:37:00,438 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 40%
+2025-07-04 09:37:01,353 INFO: ✅ Mensagem enviada ao Telegram (ID: MDZ2F7WD).
+2025-07-04 09:37:01,354 INFO: Inicializando conexão com o MongoDB.
+2025-07-04 09:37:01,385 INFO: Conexão com o MongoDB estabelecida.
+2025-07-04 09:37:01,386 INFO: Inserindo documento: {'signal_id': 'MDZ2F7WD', 'signal': 'RISE', 'price': np.float64(2679.737), 'confidence': 40, 'analyze_time': datetime.datetime(2025, 7, 4, 9, 37, 0, 439479, tzinfo=<DstTzInfo 'America/Sao_Paulo' -03-1 day, 21:00:00 STD>), 'entry_time': '2025-07-04 09:38:00', 'open_candle_timestamp': 1751632738, 'message_id': 9088, 'chat_id': -4767147054, 'result': None}
+2025-07-04 09:37:01,433 INFO: Documento inserido com ID: 6867caedc78f181714792de9
+2025-07-04 09:38:00,424 INFO: 🔔 Novo candle em 2025-07-04 12:38:00 UTC
+2025-07-04 09:38:00,425 INFO: ⏳ Agendada validação do candle 1751632620 em 120s.
+2025-07-04 09:38:00,425 INFO: Estrutura dos dados: (1751622660, 2673.329, 2673.449, 2672.082, 2672.241)
+2025-07-04 09:38:00,429 INFO: Verificando dados para HMA. Tamanho do DataFrame: 200
+2025-07-04 09:38:00,430 INFO: Calculando HMA21...
+2025-07-04 09:38:00,440 INFO: Calculando HMA100...
+2025-07-04 09:38:00,449 INFO: 📊 HMA: HMA21=2679.79 (RISE), HMA100=2679.36 (RISE), trend_hma=RISE
+2025-07-04 09:38:00,456 INFO: 📈 Análise: EMA9=2679.68, EMA21=2679.59, trend_ema=RISE, HMA21=2679.79, HMA100=2679.36, trend_hma=RISE, trend_final=RISE, RSI=53.65, MACD=0.12/0.14, ATR=0.87, body=0.00, band_width=0.000, confidence=30
+2025-07-04 09:38:00,456 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 30%
+2025-07-04 09:38:00,457 INFO: ⏳ Em cooldown (120s). Próximo sinal em 60s.
+2025-07-04 09:39:00,414 INFO: 🔔 Novo candle em 2025-07-04 12:39:00 UTC
+2025-07-04 09:39:00,414 INFO: ⏳ Agendada validação do candle 1751632680 em 120s.
+2025-07-04 09:39:00,415 INFO: Estrutura dos dados: (1751624460, 2671.814, 2672.097, 2671.089, 2672.097)
+2025-07-04 09:39:00,419 INFO: Verificando dados para HMA. Tamanho do DataFrame: 200
+2025-07-04 09:39:00,419 INFO: Calculando HMA21...
+2025-07-04 09:39:00,432 INFO: Calculando HMA100...
+2025-07-04 09:39:00,440 INFO: 📊 HMA: HMA21=2678.47 (FALL), HMA100=2679.35 (FALL), trend_hma=FALL
+2025-07-04 09:39:00,447 INFO: 📈 Análise: EMA9=2678.70, EMA21=2678.91, trend_ema=FALL, HMA21=2678.47, HMA100=2679.35, trend_hma=FALL, trend_final=FALL, RSI=42.22, MACD=-0.21/-0.19, ATR=0.84, body=0.00, band_width=0.000, confidence=50
+2025-07-04 09:39:00,448 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 50%
+2025-07-04 09:39:01,252 INFO: ✅ Mensagem enviada ao Telegram (ID: GT26VV9L).
+2025-07-04 09:39:01,254 INFO: Inicializando conexão com o MongoDB.
+2025-07-04 09:39:01,256 INFO: Conexão com o MongoDB estabelecida.
+2025-07-04 09:39:01,257 INFO: Inserindo documento: {'signal_id': 'GT26VV9L', 'signal': 'FALL', 'price': np.float64(2678.712), 'confidence': 50, 'analyze_time': datetime.datetime(2025, 7, 4, 9, 39, 0, 448626, tzinfo=<DstTzInfo 'America/Sao_Paulo' -03-1 day, 21:00:00 STD>), 'entry_time': '2025-07-04 09:40:00', 'open_candle_timestamp': 1751632858, 'message_id': 9089, 'chat_id': -4767147054, 'result': None}
+2025-07-04 09:39:01,296 INFO: Documento inserido com ID: 6867cb65c78f181714792deb
+2025-07-04 09:40:00,436 INFO: Iniciando metodo validate_signals_for_candle
+2025-07-04 09:40:00,436 INFO: Inicializando conexão com o MongoDB.
+2025-07-04 09:40:00,437 INFO: 🔔 Novo candle em 2025-07-04 12:40:00 UTC
+2025-07-04 09:40:00,438 INFO: ⏳ Agendada validação do candle 1751632740 em 120s.
+2025-07-04 09:40:00,439 INFO: Estrutura dos dados: (1751626260, 2679.38, 2679.85, 2678.532, 2679.05)
+2025-07-04 09:40:00,444 INFO: Conexão com o MongoDB estabelecida.
+2025-07-04 09:40:00,446 INFO: Verificando dados para HMA. Tamanho do DataFrame: 200
+2025-07-04 09:40:00,447 INFO: Buscando documento com a query: {'signal_id': 'MDZ2F7WD'}
+2025-07-04 09:40:00,447 INFO: Calculando HMA21...
+2025-07-04 09:40:00,461 INFO: Calculando HMA100...
+2025-07-04 09:40:00,472 INFO: 📊 HMA: HMA21=2679.40 (RISE), HMA100=2678.75 (RISE), trend_hma=RISE
+2025-07-04 09:40:00,481 INFO: 📈 Análise: EMA9=2679.27, EMA21=2679.12, trend_ema=RISE, HMA21=2679.40, HMA100=2678.75, trend_hma=RISE, trend_final=RISE, RSI=56.30, MACD=0.13/0.08, ATR=0.70, body=0.00, band_width=0.000, confidence=50
+2025-07-04 09:40:00,482 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 50%
+2025-07-04 09:40:00,483 INFO: ⏳ Em cooldown (120s). Próximo sinal em 60s.
+2025-07-04 09:40:00,501 INFO: Documento encontrado: {'_id': ObjectId('6867caedc78f181714792de9'), 'signal_id': 'MDZ2F7WD', 'signal': 'RISE', 'price': 2679.737, 'confidence': 40, 'analyze_time': datetime.datetime(2025, 7, 4, 12, 37, 0, 439000), 'entry_time': '2025-07-04 09:38:00', 'open_candle_timestamp': 1751632738, 'message_id': 9088, 'chat_id': -4767147054, 'result': None}
+2025-07-04 09:40:00,501 INFO: Atualizando documento com a query: {'signal_id': 'MDZ2F7WD'}, update: {'$set': {'result': 'LOSS'}}
+2025-07-04 09:40:00,510 INFO: Número de documentos modificados: 1
+2025-07-04 09:40:00,511 INFO: Sinal MDZ2F7WD validado como LOSS
+2025-07-04 09:40:00,511 INFO: Inicializando conexão com o MongoDB.
+2025-07-04 09:40:00,514 INFO: Conexão com o MongoDB estabelecida.
+2025-07-04 09:40:00,515 INFO: Buscando documento com a query: {'signal_id': 'MDZ2F7WD'}
+2025-07-04 09:40:00,534 INFO: Documento encontrado: {'_id': ObjectId('6867caedc78f181714792de9'), 'signal_id': 'MDZ2F7WD', 'signal': 'RISE', 'price': 2679.737, 'confidence': 40, 'analyze_time': datetime.datetime(2025, 7, 4, 12, 37, 0, 439000), 'entry_time': '2025-07-04 09:38:00', 'open_candle_timestamp': 1751632738, 'message_id': 9088, 'chat_id': -4767147054, 'result': 'LOSS'}
+2025-07-04 09:40:01,354 INFO: Buscando documento com a query: {'signal_id': 'GT26VV9L'}
+2025-07-04 09:40:01,357 INFO: Documento encontrado: {'_id': ObjectId('6867cb65c78f181714792deb'), 'signal_id': 'GT26VV9L', 'signal': 'FALL', 'price': 2678.712, 'confidence': 50, 'analyze_time': datetime.datetime(2025, 7, 4, 12, 39, 0, 448000), 'entry_time': '2025-07-04 09:40:00', 'open_candle_timestamp': 1751632858, 'message_id': 9089, 'chat_id': -4767147054, 'result': None}
+2025-07-04 09:40:01,357 INFO: ⚠️ Sinal GT26VV9L não encontrado no candle atual.
+2025-07-04 09:40:01,357 INFO: Finalizando metodo validate_signals_for_candle
+2025-07-04 09:41:00,412 INFO: 🔔 Novo candle em 2025-07-04 12:41:00 UTC
+2025-07-04 09:41:00,413 INFO: ⏳ Agendada validação do candle 1751632800 em 120s.
+2025-07-04 09:41:00,413 INFO: Estrutura dos dados: (1751628060, 2674.561, 2675.308, 2674.243, 2675.308)
+2025-07-04 09:41:00,418 INFO: Verificando dados para HMA. Tamanho do DataFrame: 200
+2025-07-04 09:41:00,418 INFO: Calculando HMA21...
+2025-07-04 09:41:00,429 INFO: Iniciando metodo validate_signals_for_candle
+2025-07-04 09:41:00,430 INFO: Calculando HMA100...
+2025-07-04 09:41:00,430 INFO: Inicializando conexão com o MongoDB.
+2025-07-04 09:41:00,440 INFO: 📊 HMA: HMA21=2678.98 (RISE), HMA100=2679.22 (FALL), trend_hma=RISE
+2025-07-04 09:41:00,448 INFO: 📈 Análise: EMA9=2679.02, EMA21=2679.07, trend_ema=FALL, HMA21=2678.98, HMA100=2679.22, trend_hma=RISE, trend_final=RISE, RSI=47.84, MACD=-0.06/-0.05, ATR=0.79, body=0.00, band_width=0.000, confidence=20
+2025-07-04 09:41:00,449 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 20%
+2025-07-04 09:41:00,452 INFO: Conexão com o MongoDB estabelecida.
+2025-07-04 09:41:00,454 INFO: Buscando documento com a query: {'signal_id': 'GT26VV9L'}
+2025-07-04 09:41:00,487 INFO: Documento encontrado: {'_id': ObjectId('6867cb65c78f181714792deb'), 'signal_id': 'GT26VV9L', 'signal': 'FALL', 'price': 2678.712, 'confidence': 50, 'analyze_time': datetime.datetime(2025, 7, 4, 12, 39, 0, 448000), 'entry_time': '2025-07-04 09:40:00', 'open_candle_timestamp': 1751632858, 'message_id': 9089, 'chat_id': -4767147054, 'result': None}
+2025-07-04 09:41:00,487 INFO: Atualizando documento com a query: {'signal_id': 'GT26VV9L'}, update: {'$set': {'result': 'WIN'}}
+2025-07-04 09:41:00,493 INFO: Número de documentos modificados: 1
+2025-07-04 09:41:00,493 INFO: Sinal GT26VV9L validado como WIN
+2025-07-04 09:41:00,494 INFO: Inicializando conexão com o MongoDB.
+2025-07-04 09:41:00,499 INFO: Conexão com o MongoDB estabelecida.
+2025-07-04 09:41:00,499 INFO: Buscando documento com a query: {'signal_id': 'GT26VV9L'}
+2025-07-04 09:41:00,526 INFO: Documento encontrado: {'_id': ObjectId('6867cb65c78f181714792deb'), 'signal_id': 'GT26VV9L', 'signal': 'FALL', 'price': 2678.712, 'confidence': 50, 'analyze_time': datetime.datetime(2025, 7, 4, 12, 39, 0, 448000), 'entry_time': '2025-07-04 09:40:00', 'open_candle_timestamp': 1751632858, 'message_id': 9089, 'chat_id': -4767147054, 'result': 'WIN'}
+2025-07-04 09:41:01,257 INFO: ✅ Mensagem enviada ao Telegram (ID: E76T30H9).
+2025-07-04 09:41:01,258 INFO: Inicializando conexão com o MongoDB.
+2025-07-04 09:41:01,261 INFO: Conexão com o MongoDB estabelecida.
+2025-07-04 09:41:01,262 INFO: Inserindo documento: {'signal_id': 'E76T30H9', 'signal': 'RISE', 'price': np.float64(2679.011), 'confidence': 20, 'analyze_time': datetime.datetime(2025, 7, 4, 9, 41, 0, 451459, tzinfo=<DstTzInfo 'America/Sao_Paulo' -03-1 day, 21:00:00 STD>), 'entry_time': '2025-07-04 09:42:00', 'open_candle_timestamp': 1751632978, 'message_id': 9091, 'chat_id': -4767147054, 'result': None}
+2025-07-04 09:41:01,280 INFO: Documento inserido com ID: 6867cbddc78f181714792df1
+2025-07-04 09:41:01,324 INFO: Buscando documento com a query: {'signal_id': 'E76T30H9'}
+2025-07-04 09:41:01,326 INFO: Documento encontrado: {'_id': ObjectId('6867cbddc78f181714792df1'), 'signal_id': 'E76T30H9', 'signal': 'RISE', 'price': 2679.011, 'confidence': 20, 'analyze_time': datetime.datetime(2025, 7, 4, 12, 41, 0, 451000), 'entry_time': '2025-07-04 09:42:00', 'open_candle_timestamp': 1751632978, 'message_id': 9091, 'chat_id': -4767147054, 'result': None}
+2025-07-04 09:41:01,327 INFO: ⚠️ Sinal E76T30H9 não encontrado no candle atual.
+2025-07-04 09:41:01,328 INFO: Finalizando metodo validate_signals_for_candle
+2025-07-04 09:42:00,406 INFO: 🔔 Novo candle em 2025-07-04 12:42:00 UTC
+2025-07-04 09:42:00,406 INFO: ⏳ Agendada validação do candle 1751632860 em 120s.
+2025-07-04 09:42:00,406 INFO: Estrutura dos dados: (1751629860, 2685.733, 2686.096, 2684.66, 2684.883)
+2025-07-04 09:42:00,411 INFO: Verificando dados para HMA. Tamanho do DataFrame: 200
+2025-07-04 09:42:00,412 INFO: Calculando HMA21...
+2025-07-04 09:42:00,421 INFO: Calculando HMA100...
+2025-07-04 09:42:00,429 INFO: 📊 HMA: HMA21=2678.16 (RISE), HMA100=2678.27 (FALL), trend_hma=RISE
+2025-07-04 09:42:00,437 INFO: 📈 Análise: EMA9=2678.24, EMA21=2678.30, trend_ema=FALL, HMA21=2678.16, HMA100=2678.27, trend_hma=RISE, trend_final=RISE, RSI=49.80, MACD=-0.13/-0.20, ATR=1.06, body=0.00, band_width=0.000, confidence=40
+2025-07-04 09:42:00,437 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 40%
+2025-07-04 09:42:00,437 INFO: ⏳ Em cooldown (120s). Próximo sinal em 61s.
+2025-07-04 09:42:00,444 INFO: Iniciando metodo validate_signals_for_candle
+2025-07-04 09:42:00,444 INFO: Inicializando conexão com o MongoDB.
+2025-07-04 09:42:00,447 INFO: Conexão com o MongoDB estabelecida.
+2025-07-04 09:42:00,447 INFO: Buscando documento com a query: {'signal_id': 'E76T30H9'}
+2025-07-04 09:42:00,468 INFO: Documento encontrado: {'_id': ObjectId('6867cbddc78f181714792df1'), 'signal_id': 'E76T30H9', 'signal': 'RISE', 'price': 2679.011, 'confidence': 20, 'analyze_time': datetime.datetime(2025, 7, 4, 12, 41, 0, 451000), 'entry_time': '2025-07-04 09:42:00', 'open_candle_timestamp': 1751632978, 'message_id': 9091, 'chat_id': -4767147054, 'result': None}
+2025-07-04 09:42:00,469 INFO: ⚠️ Sinal E76T30H9 não encontrado no candle atual.
+2025-07-04 09:42:00,469 INFO: Finalizando metodo validate_signals_for_candle
+2025-07-04 09:43:00,411 INFO: 🔔 Novo candle em 2025-07-04 12:43:00 UTC
+2025-07-04 09:43:00,412 INFO: ⏳ Agendada validação do candle 1751632920 em 120s.
+2025-07-04 09:43:00,412 INFO: Estrutura dos dados: (1751631660, 2675.061, 2675.261, 2674.257, 2674.257)
+2025-07-04 09:43:00,416 INFO: Verificando dados para HMA. Tamanho do DataFrame: 200
+2025-07-04 09:43:00,416 INFO: Iniciando metodo validate_signals_for_candle
+2025-07-04 09:43:00,417 INFO: Calculando HMA21...
+2025-07-04 09:43:00,417 INFO: Inicializando conexão com o MongoDB.
+2025-07-04 09:43:00,427 INFO: Calculando HMA100...
+2025-07-04 09:43:00,434 INFO: 📊 HMA: HMA21=2677.79 (FALL), HMA100=2678.23 (FALL), trend_hma=FALL
+2025-07-04 09:43:00,440 INFO: 📈 Análise: EMA9=2677.94, EMA21=2678.20, trend_ema=FALL, HMA21=2677.79, HMA100=2678.23, trend_hma=FALL, trend_final=FALL, RSI=25.00, MACD=-0.22/-0.10, ATR=0.66, body=0.00, band_width=0.000, confidence=90
+2025-07-04 09:43:00,440 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 90%
+2025-07-04 09:43:00,441 INFO: ⏳ Em cooldown (120s). Próximo sinal em 1s.
+2025-07-04 09:43:00,442 INFO: Conexão com o MongoDB estabelecida.
+2025-07-04 09:43:00,442 INFO: Buscando documento com a query: {'signal_id': 'E76T30H9'}
+2025-07-04 09:43:00,459 INFO: Documento encontrado: {'_id': ObjectId('6867cbddc78f181714792df1'), 'signal_id': 'E76T30H9', 'signal': 'RISE', 'price': 2679.011, 'confidence': 20, 'analyze_time': datetime.datetime(2025, 7, 4, 12, 41, 0, 451000), 'entry_time': '2025-07-04 09:42:00', 'open_candle_timestamp': 1751632978, 'message_id': 9091, 'chat_id': -4767147054, 'result': None}
+2025-07-04 09:43:00,460 INFO: Atualizando documento com a query: {'signal_id': 'E76T30H9'}, update: {'$set': {'result': 'LOSS'}}
+2025-07-04 09:43:00,462 INFO: Número de documentos modificados: 1
+2025-07-04 09:43:00,463 INFO: Sinal E76T30H9 validado como LOSS
+2025-07-04 09:43:00,463 INFO: Inicializando conexão com o MongoDB.
+2025-07-04 09:43:00,465 INFO: Conexão com o MongoDB estabelecida.
+2025-07-04 09:43:00,466 INFO: Buscando documento com a query: {'signal_id': 'E76T30H9'}
+2025-07-04 09:43:00,484 INFO: Documento encontrado: {'_id': ObjectId('6867cbddc78f181714792df1'), 'signal_id': 'E76T30H9', 'signal': 'RISE', 'price': 2679.011, 'confidence': 20, 'analyze_time': datetime.datetime(2025, 7, 4, 12, 41, 0, 451000), 'entry_time': '2025-07-04 09:42:00', 'open_candle_timestamp': 1751632978, 'message_id': 9091, 'chat_id': -4767147054, 'result': 'LOSS'}
+2025-07-04 09:43:01,347 INFO: Finalizando metodo validate_signals_for_candle

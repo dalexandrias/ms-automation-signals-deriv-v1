@@ -16,9 +16,9 @@ services:
       - mongo-data:/data/db
 
   rise-fall-bot:
-    # build: .
-    # container_name: rise-fall-bot-container
-    image: dalexandrias/rise-fall-bot:latest
+    build: .
+    container_name: rise-fall-bot-container
+    # image: dalexandrias/rise-fall-bot:latest
     restart: always
     depends_on:
       - mongodb
@@ -27,7 +27,7 @@ services:
       TELEGRAM_BOT_TOKEN: 7650660098:AAGCkAfDiLeUzn-zmqWPkxR3Blr90VagH6k
       TELEGRAM_CHAT_ID: -4767147054
       GRANULARITY: 60
-      MAX_CANDLES: 50
+      MAX_CANDLES: 200
       BOLLINGER_THRESHOLD: 0.0
       MIN_CONFIDENCE_TO_SEND: 20
       # Ajusta a URI para apontar na porta interna 27018

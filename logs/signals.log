@@ -1,43 +1,13 @@
-2025-04-30 21:03:10,732 INFO: === Signal logger inicializado ===
-2025-04-30 21:04:20,054 INFO: [IZMIWE4M] Signal: FALL | Price: 2484.469 | Confidence: 20% | Entry: 2025-04-30 21:05:19.118059-03:00
-2025-04-30 21:14:13,072 INFO: === Signal logger inicializado ===
-2025-04-30 21:15:01,577 INFO: [YD7KZ24E] Signal: RISE | Price: 2486.046 | Confidence: 60% | Entry: 2025-04-30 21:16:00.645466-03:00
-2025-04-30 21:17:01,481 INFO: [A9NXPYDE] Signal: RISE | Price: 2486.934 | Confidence: 80% | Entry: 2025-04-30 21:18:00.686855-03:00
-2025-04-30 21:20:01,477 INFO: [1EP13IF3] Signal: RISE | Price: 2487.577 | Confidence: 60% | Entry: 2025-04-30 21:21:00.656437-03:00
-2025-04-30 21:22:01,505 INFO: [E4FZ3YW6] Signal: RISE | Price: 2490.074 | Confidence: 80% | Entry: 2025-04-30 21:23:00.701309-03:00
-2025-04-30 21:24:52,617 INFO: === Signal logger inicializado ===
-2025-04-30 21:25:01,595 INFO: [4D7S045E] Signal: RISE | Price: 2490.879 | Confidence: 60% | Entry: 2025-04-30 21:26:00.653192-03:00
-2025-04-30 21:31:40,622 INFO: === Signal logger inicializado ===
-2025-04-30 21:41:05,701 INFO: [52UCQXH9] Signal: RISE | Price: 2491.292 | Confidence: 80% | Entry: 2025-04-30 21:42:04.781989-03:00
-2025-04-30 21:49:25,141 INFO: === Signal logger inicializado ===
-2025-04-30 22:15:08,748 INFO: === Signal logger inicializado ===
-2025-04-30 22:16:01,501 INFO: [I36VIGSS] Signal: FALL | Price: 2488.035 | Confidence: 20% | Entry: 2025-04-30 22:17:00.552087-03:00
-2025-04-30 22:28:44,084 INFO: === Signal logger inicializado ===
-2025-04-30 22:29:01,414 INFO: [6I07HFIU] Signal: RISE | Price: 2489.4 | Confidence: 60% | Entry: 2025-04-30 22:30:00.488106-03:00
-2025-04-30 22:31:01,304 INFO: [1I4H1XHI] Signal: RISE | Price: 2489.358 | Confidence: 40% | Entry: 2025-04-30 22:32:00.490813-03:00
-2025-04-30 22:34:01,281 INFO: [OF3YAVN4] Signal: RISE | Price: 2489.753 | Confidence: 60% | Entry: 2025-04-30 22:35:00.458024-03:00
-2025-04-30 22:36:23,906 INFO: [S4OGTZGV] Signal: RISE | Price: 2488.813 | Confidence: 40% | Entry: 2025-04-30 22:37:08.722562-03:00
-2025-04-30 22:40:04,914 INFO: [HY4MSGG9] Signal: RISE | Price: 2487.285 | Confidence: 20% | Entry: 2025-04-30 22:41:00.201125-03:00
-2025-04-30 22:42:39,907 INFO: [YXC2Y0P8] Signal: FALL | Price: 2485.506 | Confidence: 80% | Entry: 2025-04-30 22:43:39.081056-03:00
-2025-04-30 23:09:07,135 INFO: === Signal logger inicializado ===
-2025-04-30 23:26:59,671 INFO: === Signal logger inicializado ===
-2025-04-30 23:28:01,377 INFO: [S3GD4G7S] Signal: RISE | Price: 2484.916 | Confidence: 60% | Entry: 2025-04-30 23:29:00.402279-03:00
-2025-04-30 23:32:50,659 INFO: [NUOHB6YV] Signal: RISE | Price: 2485.196 | Confidence: 60% | Entry: 2025-04-30 23:33:49.839378-03:00
-2025-04-30 23:35:29,781 INFO: [K4DKH4F7] Signal: RISE | Price: 2486.962 | Confidence: 60% | Entry: 2025-04-30 23:36:28.970949-03:00
-2025-04-30 23:43:03,315 INFO: === Signal logger inicializado ===
-2025-04-30 23:46:33,443 INFO: [VSR5T08O] Signal: RISE | Price: 2489.374 | Confidence: 60% | Entry: 2025-04-30 23:47:32.512829-03:00
-2025-04-30 23:50:25,173 INFO: [VUGJLHTX] Signal: RISE | Price: 2488.706 | Confidence: 20% | Entry: 2025-04-30 23:51:21.856524-03:00
-2025-04-30 23:53:37,215 INFO: [GWB61J0A] Signal: RISE | Price: 2489.72 | Confidence: 60% | Entry: 2025-04-30 23:54:36.389335-03:00
-2025-05-01 00:03:08,480 INFO: [5VG5SZN6] Signal: RISE | Price: 2490.339 | Confidence: 60% | Entry: 2025-05-01 00:04:07.645979-03:00
-2025-05-01 00:05:13,709 INFO: === Signal logger inicializado ===
-2025-05-01 00:06:01,343 INFO: [RKVK65E7] Signal: FALL | Price: 2487.134 | Confidence: 20% | Entry: 2025-05-01 00:07:00.415562-03:00
-2025-05-01 00:11:11,411 INFO: [IRYJP719] Signal: RISE | Price: 2487.62 | Confidence: 20% | Entry: 2025-05-01 00:12:10.593335-03:00
-2025-05-01 00:14:01,243 INFO: [GPQ7TTKI] Signal: RISE | Price: 2487.857 | Confidence: 40% | Entry: 2025-05-01 00:15:00.418741-03:00
-2025-05-01 00:32:57,728 INFO: === Signal logger inicializado ===
-2025-05-01 00:34:01,481 INFO: [QCRU5HF8] Signal: FALL | Price: 2489.583 | Confidence: 60% | Entry: 2025-05-01 00:35:00.560738-03:00
-2025-05-01 00:38:04,651 INFO: [LUKTSEAS] Signal: FALL | Price: 2492.859 | Confidence: 40% | Entry: 2025-05-01 00:39:03.850754-03:00
-2025-05-01 00:41:01,194 INFO: [05IQLHIP] Signal: RISE | Price: 2494.199 | Confidence: 20% | Entry: 2025-05-01 00:42:00.403776-03:00
-2025-05-01 00:43:01,254 INFO: [C1B1R78M] Signal: RISE | Price: 2495.634 | Confidence: 20% | Entry: 2025-05-01 00:44:00.443660-03:00
-2025-05-01 00:46:01,255 INFO: [X0TLD0X0] Signal: RISE | Price: 2497.252 | Confidence: 40% | Entry: 2025-05-01 00:47:00.427772-03:00
-2025-05-01 00:48:01,315 INFO: [T0IZESUG] Signal: RISE | Price: 2498.123 | Confidence: 60% | Entry: 2025-05-01 00:49:00.468304-03:00
-2025-05-01 00:51:01,243 INFO: [NM2VENC7] Signal: RISE | Price: 2498.974 | Confidence: 60% | Entry: 2025-05-01 00:52:00.427188-03:00
+2025-07-04 09:24:51,764 INFO: === Signal logger inicializado ===
+2025-07-04 09:25:04,531 INFO: [IRDBL0B8] Signal: FALL | Price: 2675.369 | Confidence: 40% | Entry: 2025-07-04 09:26:00.328657-03:00
+2025-07-04 09:25:32,667 INFO: === Signal logger inicializado ===
+2025-07-04 09:26:01,529 INFO: === Signal logger inicializado ===
+2025-07-04 09:26:58,432 INFO: === Signal logger inicializado ===
+2025-07-04 09:27:13,930 INFO: === Signal logger inicializado ===
+2025-07-04 09:27:34,229 INFO: === Signal logger inicializado ===
+2025-07-04 09:28:01,392 INFO: [GBO9GWEJ] Signal: FALL | Price: 2675.957 | Confidence: 60% | Entry: 2025-07-04 09:29:00.462225-03:00
+2025-07-04 09:29:43,308 INFO: === Signal logger inicializado ===
+2025-07-04 09:36:52,854 INFO: === Signal logger inicializado ===
+2025-07-04 09:37:01,354 INFO: [MDZ2F7WD] Signal: RISE | Price: 2679.737 | Confidence: 40% | Entry: 2025-07-04 09:38:00.439479-03:00
+2025-07-04 09:39:01,252 INFO: [GT26VV9L] Signal: FALL | Price: 2678.712 | Confidence: 50% | Entry: 2025-07-04 09:40:00.448626-03:00
+2025-07-04 09:41:01,258 INFO: [E76T30H9] Signal: RISE | Price: 2679.011 | Confidence: 20% | Entry: 2025-07-04 09:42:00.451459-03:00
