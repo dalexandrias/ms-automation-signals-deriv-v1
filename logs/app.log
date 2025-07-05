@@ -1,236 +1,473 @@
-2025-07-04 09:24:51,761 INFO: === Logging ROOT inicializado ===
-2025-07-04 09:24:51,766 INFO: 🔗 Conectando ao WebSocket...
-2025-07-04 09:24:51,768 INFO: 🔗 Conexão WebSocket estabelecida. Aguardando dados...
-2025-07-04 09:24:52,049 INFO: Websocket connected
-2025-07-04 09:24:52,354 INFO: ✅ Token autorizado às 2025-07-04 12:24:52.354434 UTC
-2025-07-04 09:24:52,540 INFO: 📥 Histórico inicial recebido às 2025-07-04 12:24:52.540285 UTC
-2025-07-04 09:24:52,563 INFO: ⚠️ Dados insuficientes para HMA, usando apenas EMA.
-2025-07-04 09:24:52,589 INFO: 📈 Análise: EMA9=2675.48, EMA21=2677.16, trend_ema=FALL, trend_final=FALL, RSI=34.06, MACD=-1.84/-1.78, ATR=1.20, body=0.32, band_width=0.001, confidence=60
-2025-07-04 09:24:52,589 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 60%
-2025-07-04 09:24:52,591 INFO: 🔄 Ignorando sinal inicial antes de primeiro candle OHL.
-2025-07-04 09:25:00,321 INFO: 🔔 Novo candle em 2025-07-04 12:25:00 UTC
-2025-07-04 09:25:00,324 INFO: ⚠️ Dados insuficientes para HMA, usando apenas EMA.
-2025-07-04 09:25:00,327 INFO: 📈 Análise: EMA9=2675.38, EMA21=2676.61, trend_ema=FALL, trend_final=FALL, RSI=34.54, MACD=-1.57/-1.81, ATR=1.04, body=0.00, band_width=0.000, confidence=40
-2025-07-04 09:25:00,328 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 40%
-2025-07-04 09:25:04,531 INFO: ✅ Mensagem enviada ao Telegram (ID: IRDBL0B8).
-2025-07-04 09:25:04,531 INFO: Inicializando conexão com o MongoDB.
-2025-07-04 09:25:04,635 INFO: Conexão com o MongoDB estabelecida.
-2025-07-04 09:25:04,637 INFO: Inserindo documento: {'signal_id': 'IRDBL0B8', 'signal': 'FALL', 'price': np.float64(2675.369), 'confidence': 40, 'analyze_time': datetime.datetime(2025, 7, 4, 9, 25, 0, 328657, tzinfo=<DstTzInfo 'America/Sao_Paulo' -03-1 day, 21:00:00 STD>), 'entry_time': '2025-07-04 09:26:00', 'open_candle_timestamp': 1751632018, 'message_id': 9086, 'chat_id': -4767147054, 'result': None}
-2025-07-04 09:25:04,816 INFO: Documento inserido com ID: 6867c820699ced28510fe1c0
-2025-07-04 09:25:32,667 INFO: === Logging ROOT inicializado ===
-2025-07-04 09:25:32,668 INFO: 🔗 Conectando ao WebSocket...
-2025-07-04 09:25:32,669 INFO: 🔗 Conexão WebSocket estabelecida. Aguardando dados...
-2025-07-04 09:25:33,179 INFO: Websocket connected
-2025-07-04 09:25:33,500 INFO: ✅ Token autorizado às 2025-07-04 12:25:33.500890 UTC
-2025-07-04 09:25:33,899 INFO: 📥 Histórico inicial recebido às 2025-07-04 12:25:33.899053 UTC
-2025-07-04 09:25:33,912 ERROR: ⚠️ Erro no processamento dos candles: 0
-2025-07-04 09:26:01,528 INFO: === Logging ROOT inicializado ===
-2025-07-04 09:26:01,529 INFO: 🔗 Conectando ao WebSocket...
-2025-07-04 09:26:01,530 INFO: 🔗 Conexão WebSocket estabelecida. Aguardando dados...
-2025-07-04 09:26:01,774 INFO: Websocket connected
-2025-07-04 09:26:02,137 INFO: ✅ Token autorizado às 2025-07-04 12:26:02.137724 UTC
-2025-07-04 09:26:02,552 INFO: 📥 Histórico inicial recebido às 2025-07-04 12:26:02.552967 UTC
-2025-07-04 09:26:02,558 ERROR: ⚠️ Erro no processamento dos candles: 0
-2025-07-04 09:26:58,430 INFO: === Logging ROOT inicializado ===
-2025-07-04 09:26:58,432 INFO: 🔗 Conectando ao WebSocket...
-2025-07-04 09:26:58,433 INFO: 🔗 Conexão WebSocket estabelecida. Aguardando dados...
-2025-07-04 09:26:58,653 INFO: Websocket connected
-2025-07-04 09:26:58,928 INFO: ✅ Token autorizado às 2025-07-04 12:26:58.928268 UTC
-2025-07-04 09:26:59,137 INFO: 📥 Histórico inicial recebido às 2025-07-04 12:26:59.137164 UTC
-2025-07-04 09:26:59,142 ERROR: ⚠️ Erro no processamento dos candles: 0
-2025-07-04 09:27:13,929 INFO: === Logging ROOT inicializado ===
-2025-07-04 09:27:13,930 INFO: 🔗 Conectando ao WebSocket...
-2025-07-04 09:27:13,931 INFO: 🔗 Conexão WebSocket estabelecida. Aguardando dados...
-2025-07-04 09:27:14,400 INFO: Websocket connected
-2025-07-04 09:27:14,658 INFO: ✅ Token autorizado às 2025-07-04 12:27:14.658603 UTC
-2025-07-04 09:27:14,860 INFO: 📥 Histórico inicial recebido às 2025-07-04 12:27:14.860291 UTC
-2025-07-04 09:27:14,866 INFO: ⚠️ Dados insuficientes para HMA, usando apenas EMA.
-2025-07-04 09:27:14,882 INFO: 📈 Análise: EMA9=2676.04, EMA21=2676.99, trend_ema=FALL, trend_final=FALL, RSI=45.48, MACD=-1.22/-1.48, ATR=1.14, body=0.17, band_width=0.001, confidence=20
-2025-07-04 09:27:14,882 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 20%
-2025-07-04 09:27:14,884 INFO: 🔄 Ignorando sinal inicial antes de primeiro candle OHL.
-2025-07-04 09:27:34,228 INFO: === Logging ROOT inicializado ===
-2025-07-04 09:27:34,229 INFO: 🔗 Conectando ao WebSocket...
-2025-07-04 09:27:34,231 INFO: 🔗 Conexão WebSocket estabelecida. Aguardando dados...
-2025-07-04 09:27:34,707 INFO: Websocket connected
-2025-07-04 09:27:35,004 INFO: ✅ Token autorizado às 2025-07-04 12:27:35.004161 UTC
-2025-07-04 09:27:35,216 INFO: 📥 Histórico inicial recebido às 2025-07-04 12:27:35.215307 UTC
-2025-07-04 09:27:35,219 INFO: ⚠️ Dados insuficientes para HMA, usando apenas EMA.
-2025-07-04 09:27:35,226 INFO: 📈 Análise: EMA9=2676.15, EMA21=2677.04, trend_ema=FALL, trend_final=FALL, RSI=48.60, MACD=-1.18/-1.48, ATR=1.17, body=0.39, band_width=0.001, confidence=20
-2025-07-04 09:27:35,226 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 20%
-2025-07-04 09:27:35,226 INFO: 🔄 Ignorando sinal inicial antes de primeiro candle OHL.
-2025-07-04 09:28:00,453 INFO: 🔔 Novo candle em 2025-07-04 12:28:00 UTC
-2025-07-04 09:28:00,456 INFO: ⚠️ Dados insuficientes para HMA, usando apenas EMA.
-2025-07-04 09:28:00,461 INFO: 📈 Análise: EMA9=2676.28, EMA21=2676.60, trend_ema=FALL, trend_final=FALL, RSI=39.59, MACD=-0.48/-0.59, ATR=1.00, body=0.00, band_width=0.000, confidence=60
-2025-07-04 09:28:00,461 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 60%
-2025-07-04 09:28:01,392 INFO: ✅ Mensagem enviada ao Telegram (ID: GBO9GWEJ).
-2025-07-04 09:28:01,393 INFO: Inicializando conexão com o MongoDB.
-2025-07-04 09:28:01,411 INFO: Conexão com o MongoDB estabelecida.
-2025-07-04 09:28:01,411 INFO: Inserindo documento: {'signal_id': 'GBO9GWEJ', 'signal': 'FALL', 'price': np.float64(2675.957), 'confidence': 60, 'analyze_time': datetime.datetime(2025, 7, 4, 9, 28, 0, 462225, tzinfo=<DstTzInfo 'America/Sao_Paulo' -03-1 day, 21:00:00 STD>), 'entry_time': '2025-07-04 09:29:00', 'open_candle_timestamp': 1751632198, 'message_id': 9087, 'chat_id': -4767147054, 'result': None}
-2025-07-04 09:28:01,454 INFO: Documento inserido com ID: 6867c8d1dfec0f67e4776d71
-2025-07-04 09:29:00,414 INFO: 🔔 Novo candle em 2025-07-04 12:29:00 UTC
-2025-07-04 09:29:00,415 INFO: ⏳ Agendada validação do candle 1751632080 em 120s.
-2025-07-04 09:29:00,418 INFO: ⚠️ Dados insuficientes para HMA, usando apenas EMA.
-2025-07-04 09:29:00,423 INFO: 📈 Análise: EMA9=2676.76, EMA21=2676.56, trend_ema=RISE, trend_final=RISE, RSI=63.94, MACD=0.12/0.00, ATR=0.87, body=0.00, band_width=0.000, confidence=60
-2025-07-04 09:29:00,423 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 60%
-2025-07-04 09:29:00,424 INFO: ⏳ Em cooldown (120s). Próximo sinal em 61s.
-2025-07-04 09:29:43,308 INFO: === Logging ROOT inicializado ===
-2025-07-04 09:29:43,309 INFO: 🔗 Conectando ao WebSocket...
-2025-07-04 09:29:43,310 INFO: 🔗 Conexão WebSocket estabelecida. Aguardando dados...
-2025-07-04 09:29:43,810 INFO: Websocket connected
-2025-07-04 09:29:44,059 INFO: ✅ Token autorizado às 2025-07-04 12:29:44.059807 UTC
-2025-07-04 09:29:44,399 INFO: 📥 Histórico inicial recebido às 2025-07-04 12:29:44.398281 UTC
-2025-07-04 09:29:44,406 ERROR: ⚠️ Erro no processamento dos candles: 0
-2025-07-04 09:30:00,398 INFO: 🔔 Novo candle em 2025-07-04 12:30:00 UTC
-2025-07-04 09:30:00,401 ERROR: ⚠️ Erro no processamento dos candles: 0
-2025-07-04 09:36:52,853 INFO: === Logging ROOT inicializado ===
-2025-07-04 09:36:52,854 INFO: Configurações carregadas: MAX_CANDLES=200, GRANULARITY=60
-2025-07-04 09:36:52,854 INFO: 🔗 Conectando ao WebSocket...
-2025-07-04 09:36:52,855 INFO: 🔗 Conexão WebSocket estabelecida. Aguardando dados...
-2025-07-04 09:36:53,116 INFO: Websocket connected
-2025-07-04 09:36:53,425 INFO: Token autorizado. Solicitando 200 candles históricos...
-2025-07-04 09:36:53,425 INFO: Enviando requisição: {'ticks_history': 'R_25', 'style': 'candles', 'granularity': 60, 'count': 200, 'end': 'latest', 'subscribe': 1}
-2025-07-04 09:36:53,426 INFO: ✅ Token autorizado às 2025-07-04 12:36:53.426061 UTC
-2025-07-04 09:36:53,669 INFO: Recebendo histórico inicial com 200 candles
-2025-07-04 09:36:53,669 INFO: Estrutura do primeiro candle: {'close': 2679.122, 'epoch': 1751620620, 'high': 2680.207, 'low': 2678.518, 'open': 2679.821}
-2025-07-04 09:36:53,669 INFO: 📥 Histórico inicial recebido às 2025-07-04 12:36:53.669966 UTC. Total de candles: 200
-2025-07-04 09:36:53,670 INFO: Estrutura dos dados: (1751620620, 2679.821, 2680.207, 2678.518, 2679.122)
-2025-07-04 09:36:53,685 INFO: Verificando dados para HMA. Tamanho do DataFrame: 200
-2025-07-04 09:36:53,685 INFO: Calculando HMA21...
-2025-07-04 09:36:53,704 INFO: Calculando HMA100...
-2025-07-04 09:36:53,712 INFO: 📊 HMA: HMA21=2679.34 (RISE), HMA100=2677.70 (FALL), trend_hma=RISE
-2025-07-04 09:36:53,730 INFO: 📈 Análise: EMA9=2678.37, EMA21=2677.85, trend_ema=RISE, HMA21=2679.34, HMA100=2677.70, trend_hma=RISE, trend_final=RISE, RSI=59.76, MACD=0.16/-0.40, ATR=1.21, body=0.02, band_width=0.001, confidence=40
-2025-07-04 09:36:53,730 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 40%
-2025-07-04 09:36:53,732 INFO: 🔄 Ignorando sinal inicial antes de primeiro candle OHL.
-2025-07-04 09:37:00,402 INFO: 🔔 Novo candle em 2025-07-04 12:37:00 UTC
-2025-07-04 09:37:00,402 INFO: Estrutura dos dados: (1751620860, 2675.188, 2675.558, 2673.833, 2673.978)
-2025-07-04 09:37:00,407 INFO: Verificando dados para HMA. Tamanho do DataFrame: 200
-2025-07-04 09:37:00,407 INFO: Calculando HMA21...
-2025-07-04 09:37:00,421 INFO: Calculando HMA100...
-2025-07-04 09:37:00,432 INFO: 📊 HMA: HMA21=2680.37 (RISE), HMA100=2677.37 (FALL), trend_hma=RISE
-2025-07-04 09:37:00,438 INFO: 📈 Análise: EMA9=2679.20, EMA21=2678.46, trend_ema=RISE, HMA21=2680.37, HMA100=2677.37, trend_hma=RISE, trend_final=RISE, RSI=59.91, MACD=0.49/0.08, ATR=1.06, body=0.00, band_width=0.001, confidence=40
-2025-07-04 09:37:00,438 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 40%
-2025-07-04 09:37:01,353 INFO: ✅ Mensagem enviada ao Telegram (ID: MDZ2F7WD).
-2025-07-04 09:37:01,354 INFO: Inicializando conexão com o MongoDB.
-2025-07-04 09:37:01,385 INFO: Conexão com o MongoDB estabelecida.
-2025-07-04 09:37:01,386 INFO: Inserindo documento: {'signal_id': 'MDZ2F7WD', 'signal': 'RISE', 'price': np.float64(2679.737), 'confidence': 40, 'analyze_time': datetime.datetime(2025, 7, 4, 9, 37, 0, 439479, tzinfo=<DstTzInfo 'America/Sao_Paulo' -03-1 day, 21:00:00 STD>), 'entry_time': '2025-07-04 09:38:00', 'open_candle_timestamp': 1751632738, 'message_id': 9088, 'chat_id': -4767147054, 'result': None}
-2025-07-04 09:37:01,433 INFO: Documento inserido com ID: 6867caedc78f181714792de9
-2025-07-04 09:38:00,424 INFO: 🔔 Novo candle em 2025-07-04 12:38:00 UTC
-2025-07-04 09:38:00,425 INFO: ⏳ Agendada validação do candle 1751632620 em 120s.
-2025-07-04 09:38:00,425 INFO: Estrutura dos dados: (1751622660, 2673.329, 2673.449, 2672.082, 2672.241)
-2025-07-04 09:38:00,429 INFO: Verificando dados para HMA. Tamanho do DataFrame: 200
-2025-07-04 09:38:00,430 INFO: Calculando HMA21...
-2025-07-04 09:38:00,440 INFO: Calculando HMA100...
-2025-07-04 09:38:00,449 INFO: 📊 HMA: HMA21=2679.79 (RISE), HMA100=2679.36 (RISE), trend_hma=RISE
-2025-07-04 09:38:00,456 INFO: 📈 Análise: EMA9=2679.68, EMA21=2679.59, trend_ema=RISE, HMA21=2679.79, HMA100=2679.36, trend_hma=RISE, trend_final=RISE, RSI=53.65, MACD=0.12/0.14, ATR=0.87, body=0.00, band_width=0.000, confidence=30
-2025-07-04 09:38:00,456 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 30%
-2025-07-04 09:38:00,457 INFO: ⏳ Em cooldown (120s). Próximo sinal em 60s.
-2025-07-04 09:39:00,414 INFO: 🔔 Novo candle em 2025-07-04 12:39:00 UTC
-2025-07-04 09:39:00,414 INFO: ⏳ Agendada validação do candle 1751632680 em 120s.
-2025-07-04 09:39:00,415 INFO: Estrutura dos dados: (1751624460, 2671.814, 2672.097, 2671.089, 2672.097)
-2025-07-04 09:39:00,419 INFO: Verificando dados para HMA. Tamanho do DataFrame: 200
-2025-07-04 09:39:00,419 INFO: Calculando HMA21...
-2025-07-04 09:39:00,432 INFO: Calculando HMA100...
-2025-07-04 09:39:00,440 INFO: 📊 HMA: HMA21=2678.47 (FALL), HMA100=2679.35 (FALL), trend_hma=FALL
-2025-07-04 09:39:00,447 INFO: 📈 Análise: EMA9=2678.70, EMA21=2678.91, trend_ema=FALL, HMA21=2678.47, HMA100=2679.35, trend_hma=FALL, trend_final=FALL, RSI=42.22, MACD=-0.21/-0.19, ATR=0.84, body=0.00, band_width=0.000, confidence=50
-2025-07-04 09:39:00,448 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 50%
-2025-07-04 09:39:01,252 INFO: ✅ Mensagem enviada ao Telegram (ID: GT26VV9L).
-2025-07-04 09:39:01,254 INFO: Inicializando conexão com o MongoDB.
-2025-07-04 09:39:01,256 INFO: Conexão com o MongoDB estabelecida.
-2025-07-04 09:39:01,257 INFO: Inserindo documento: {'signal_id': 'GT26VV9L', 'signal': 'FALL', 'price': np.float64(2678.712), 'confidence': 50, 'analyze_time': datetime.datetime(2025, 7, 4, 9, 39, 0, 448626, tzinfo=<DstTzInfo 'America/Sao_Paulo' -03-1 day, 21:00:00 STD>), 'entry_time': '2025-07-04 09:40:00', 'open_candle_timestamp': 1751632858, 'message_id': 9089, 'chat_id': -4767147054, 'result': None}
-2025-07-04 09:39:01,296 INFO: Documento inserido com ID: 6867cb65c78f181714792deb
-2025-07-04 09:40:00,436 INFO: Iniciando metodo validate_signals_for_candle
-2025-07-04 09:40:00,436 INFO: Inicializando conexão com o MongoDB.
-2025-07-04 09:40:00,437 INFO: 🔔 Novo candle em 2025-07-04 12:40:00 UTC
-2025-07-04 09:40:00,438 INFO: ⏳ Agendada validação do candle 1751632740 em 120s.
-2025-07-04 09:40:00,439 INFO: Estrutura dos dados: (1751626260, 2679.38, 2679.85, 2678.532, 2679.05)
-2025-07-04 09:40:00,444 INFO: Conexão com o MongoDB estabelecida.
-2025-07-04 09:40:00,446 INFO: Verificando dados para HMA. Tamanho do DataFrame: 200
-2025-07-04 09:40:00,447 INFO: Buscando documento com a query: {'signal_id': 'MDZ2F7WD'}
-2025-07-04 09:40:00,447 INFO: Calculando HMA21...
-2025-07-04 09:40:00,461 INFO: Calculando HMA100...
-2025-07-04 09:40:00,472 INFO: 📊 HMA: HMA21=2679.40 (RISE), HMA100=2678.75 (RISE), trend_hma=RISE
-2025-07-04 09:40:00,481 INFO: 📈 Análise: EMA9=2679.27, EMA21=2679.12, trend_ema=RISE, HMA21=2679.40, HMA100=2678.75, trend_hma=RISE, trend_final=RISE, RSI=56.30, MACD=0.13/0.08, ATR=0.70, body=0.00, band_width=0.000, confidence=50
-2025-07-04 09:40:00,482 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 50%
-2025-07-04 09:40:00,483 INFO: ⏳ Em cooldown (120s). Próximo sinal em 60s.
-2025-07-04 09:40:00,501 INFO: Documento encontrado: {'_id': ObjectId('6867caedc78f181714792de9'), 'signal_id': 'MDZ2F7WD', 'signal': 'RISE', 'price': 2679.737, 'confidence': 40, 'analyze_time': datetime.datetime(2025, 7, 4, 12, 37, 0, 439000), 'entry_time': '2025-07-04 09:38:00', 'open_candle_timestamp': 1751632738, 'message_id': 9088, 'chat_id': -4767147054, 'result': None}
-2025-07-04 09:40:00,501 INFO: Atualizando documento com a query: {'signal_id': 'MDZ2F7WD'}, update: {'$set': {'result': 'LOSS'}}
-2025-07-04 09:40:00,510 INFO: Número de documentos modificados: 1
-2025-07-04 09:40:00,511 INFO: Sinal MDZ2F7WD validado como LOSS
-2025-07-04 09:40:00,511 INFO: Inicializando conexão com o MongoDB.
-2025-07-04 09:40:00,514 INFO: Conexão com o MongoDB estabelecida.
-2025-07-04 09:40:00,515 INFO: Buscando documento com a query: {'signal_id': 'MDZ2F7WD'}
-2025-07-04 09:40:00,534 INFO: Documento encontrado: {'_id': ObjectId('6867caedc78f181714792de9'), 'signal_id': 'MDZ2F7WD', 'signal': 'RISE', 'price': 2679.737, 'confidence': 40, 'analyze_time': datetime.datetime(2025, 7, 4, 12, 37, 0, 439000), 'entry_time': '2025-07-04 09:38:00', 'open_candle_timestamp': 1751632738, 'message_id': 9088, 'chat_id': -4767147054, 'result': 'LOSS'}
-2025-07-04 09:40:01,354 INFO: Buscando documento com a query: {'signal_id': 'GT26VV9L'}
-2025-07-04 09:40:01,357 INFO: Documento encontrado: {'_id': ObjectId('6867cb65c78f181714792deb'), 'signal_id': 'GT26VV9L', 'signal': 'FALL', 'price': 2678.712, 'confidence': 50, 'analyze_time': datetime.datetime(2025, 7, 4, 12, 39, 0, 448000), 'entry_time': '2025-07-04 09:40:00', 'open_candle_timestamp': 1751632858, 'message_id': 9089, 'chat_id': -4767147054, 'result': None}
-2025-07-04 09:40:01,357 INFO: ⚠️ Sinal GT26VV9L não encontrado no candle atual.
-2025-07-04 09:40:01,357 INFO: Finalizando metodo validate_signals_for_candle
-2025-07-04 09:41:00,412 INFO: 🔔 Novo candle em 2025-07-04 12:41:00 UTC
-2025-07-04 09:41:00,413 INFO: ⏳ Agendada validação do candle 1751632800 em 120s.
-2025-07-04 09:41:00,413 INFO: Estrutura dos dados: (1751628060, 2674.561, 2675.308, 2674.243, 2675.308)
-2025-07-04 09:41:00,418 INFO: Verificando dados para HMA. Tamanho do DataFrame: 200
-2025-07-04 09:41:00,418 INFO: Calculando HMA21...
-2025-07-04 09:41:00,429 INFO: Iniciando metodo validate_signals_for_candle
-2025-07-04 09:41:00,430 INFO: Calculando HMA100...
-2025-07-04 09:41:00,430 INFO: Inicializando conexão com o MongoDB.
-2025-07-04 09:41:00,440 INFO: 📊 HMA: HMA21=2678.98 (RISE), HMA100=2679.22 (FALL), trend_hma=RISE
-2025-07-04 09:41:00,448 INFO: 📈 Análise: EMA9=2679.02, EMA21=2679.07, trend_ema=FALL, HMA21=2678.98, HMA100=2679.22, trend_hma=RISE, trend_final=RISE, RSI=47.84, MACD=-0.06/-0.05, ATR=0.79, body=0.00, band_width=0.000, confidence=20
-2025-07-04 09:41:00,449 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 20%
-2025-07-04 09:41:00,452 INFO: Conexão com o MongoDB estabelecida.
-2025-07-04 09:41:00,454 INFO: Buscando documento com a query: {'signal_id': 'GT26VV9L'}
-2025-07-04 09:41:00,487 INFO: Documento encontrado: {'_id': ObjectId('6867cb65c78f181714792deb'), 'signal_id': 'GT26VV9L', 'signal': 'FALL', 'price': 2678.712, 'confidence': 50, 'analyze_time': datetime.datetime(2025, 7, 4, 12, 39, 0, 448000), 'entry_time': '2025-07-04 09:40:00', 'open_candle_timestamp': 1751632858, 'message_id': 9089, 'chat_id': -4767147054, 'result': None}
-2025-07-04 09:41:00,487 INFO: Atualizando documento com a query: {'signal_id': 'GT26VV9L'}, update: {'$set': {'result': 'WIN'}}
-2025-07-04 09:41:00,493 INFO: Número de documentos modificados: 1
-2025-07-04 09:41:00,493 INFO: Sinal GT26VV9L validado como WIN
-2025-07-04 09:41:00,494 INFO: Inicializando conexão com o MongoDB.
-2025-07-04 09:41:00,499 INFO: Conexão com o MongoDB estabelecida.
-2025-07-04 09:41:00,499 INFO: Buscando documento com a query: {'signal_id': 'GT26VV9L'}
-2025-07-04 09:41:00,526 INFO: Documento encontrado: {'_id': ObjectId('6867cb65c78f181714792deb'), 'signal_id': 'GT26VV9L', 'signal': 'FALL', 'price': 2678.712, 'confidence': 50, 'analyze_time': datetime.datetime(2025, 7, 4, 12, 39, 0, 448000), 'entry_time': '2025-07-04 09:40:00', 'open_candle_timestamp': 1751632858, 'message_id': 9089, 'chat_id': -4767147054, 'result': 'WIN'}
-2025-07-04 09:41:01,257 INFO: ✅ Mensagem enviada ao Telegram (ID: E76T30H9).
-2025-07-04 09:41:01,258 INFO: Inicializando conexão com o MongoDB.
-2025-07-04 09:41:01,261 INFO: Conexão com o MongoDB estabelecida.
-2025-07-04 09:41:01,262 INFO: Inserindo documento: {'signal_id': 'E76T30H9', 'signal': 'RISE', 'price': np.float64(2679.011), 'confidence': 20, 'analyze_time': datetime.datetime(2025, 7, 4, 9, 41, 0, 451459, tzinfo=<DstTzInfo 'America/Sao_Paulo' -03-1 day, 21:00:00 STD>), 'entry_time': '2025-07-04 09:42:00', 'open_candle_timestamp': 1751632978, 'message_id': 9091, 'chat_id': -4767147054, 'result': None}
-2025-07-04 09:41:01,280 INFO: Documento inserido com ID: 6867cbddc78f181714792df1
-2025-07-04 09:41:01,324 INFO: Buscando documento com a query: {'signal_id': 'E76T30H9'}
-2025-07-04 09:41:01,326 INFO: Documento encontrado: {'_id': ObjectId('6867cbddc78f181714792df1'), 'signal_id': 'E76T30H9', 'signal': 'RISE', 'price': 2679.011, 'confidence': 20, 'analyze_time': datetime.datetime(2025, 7, 4, 12, 41, 0, 451000), 'entry_time': '2025-07-04 09:42:00', 'open_candle_timestamp': 1751632978, 'message_id': 9091, 'chat_id': -4767147054, 'result': None}
-2025-07-04 09:41:01,327 INFO: ⚠️ Sinal E76T30H9 não encontrado no candle atual.
-2025-07-04 09:41:01,328 INFO: Finalizando metodo validate_signals_for_candle
-2025-07-04 09:42:00,406 INFO: 🔔 Novo candle em 2025-07-04 12:42:00 UTC
-2025-07-04 09:42:00,406 INFO: ⏳ Agendada validação do candle 1751632860 em 120s.
-2025-07-04 09:42:00,406 INFO: Estrutura dos dados: (1751629860, 2685.733, 2686.096, 2684.66, 2684.883)
-2025-07-04 09:42:00,411 INFO: Verificando dados para HMA. Tamanho do DataFrame: 200
-2025-07-04 09:42:00,412 INFO: Calculando HMA21...
-2025-07-04 09:42:00,421 INFO: Calculando HMA100...
-2025-07-04 09:42:00,429 INFO: 📊 HMA: HMA21=2678.16 (RISE), HMA100=2678.27 (FALL), trend_hma=RISE
-2025-07-04 09:42:00,437 INFO: 📈 Análise: EMA9=2678.24, EMA21=2678.30, trend_ema=FALL, HMA21=2678.16, HMA100=2678.27, trend_hma=RISE, trend_final=RISE, RSI=49.80, MACD=-0.13/-0.20, ATR=1.06, body=0.00, band_width=0.000, confidence=40
-2025-07-04 09:42:00,437 INFO: 🚨 SINAL DETECTADO: RISE | Confiança: 40%
-2025-07-04 09:42:00,437 INFO: ⏳ Em cooldown (120s). Próximo sinal em 61s.
-2025-07-04 09:42:00,444 INFO: Iniciando metodo validate_signals_for_candle
-2025-07-04 09:42:00,444 INFO: Inicializando conexão com o MongoDB.
-2025-07-04 09:42:00,447 INFO: Conexão com o MongoDB estabelecida.
-2025-07-04 09:42:00,447 INFO: Buscando documento com a query: {'signal_id': 'E76T30H9'}
-2025-07-04 09:42:00,468 INFO: Documento encontrado: {'_id': ObjectId('6867cbddc78f181714792df1'), 'signal_id': 'E76T30H9', 'signal': 'RISE', 'price': 2679.011, 'confidence': 20, 'analyze_time': datetime.datetime(2025, 7, 4, 12, 41, 0, 451000), 'entry_time': '2025-07-04 09:42:00', 'open_candle_timestamp': 1751632978, 'message_id': 9091, 'chat_id': -4767147054, 'result': None}
-2025-07-04 09:42:00,469 INFO: ⚠️ Sinal E76T30H9 não encontrado no candle atual.
-2025-07-04 09:42:00,469 INFO: Finalizando metodo validate_signals_for_candle
-2025-07-04 09:43:00,411 INFO: 🔔 Novo candle em 2025-07-04 12:43:00 UTC
-2025-07-04 09:43:00,412 INFO: ⏳ Agendada validação do candle 1751632920 em 120s.
-2025-07-04 09:43:00,412 INFO: Estrutura dos dados: (1751631660, 2675.061, 2675.261, 2674.257, 2674.257)
-2025-07-04 09:43:00,416 INFO: Verificando dados para HMA. Tamanho do DataFrame: 200
-2025-07-04 09:43:00,416 INFO: Iniciando metodo validate_signals_for_candle
-2025-07-04 09:43:00,417 INFO: Calculando HMA21...
-2025-07-04 09:43:00,417 INFO: Inicializando conexão com o MongoDB.
-2025-07-04 09:43:00,427 INFO: Calculando HMA100...
-2025-07-04 09:43:00,434 INFO: 📊 HMA: HMA21=2677.79 (FALL), HMA100=2678.23 (FALL), trend_hma=FALL
-2025-07-04 09:43:00,440 INFO: 📈 Análise: EMA9=2677.94, EMA21=2678.20, trend_ema=FALL, HMA21=2677.79, HMA100=2678.23, trend_hma=FALL, trend_final=FALL, RSI=25.00, MACD=-0.22/-0.10, ATR=0.66, body=0.00, band_width=0.000, confidence=90
-2025-07-04 09:43:00,440 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 90%
-2025-07-04 09:43:00,441 INFO: ⏳ Em cooldown (120s). Próximo sinal em 1s.
-2025-07-04 09:43:00,442 INFO: Conexão com o MongoDB estabelecida.
-2025-07-04 09:43:00,442 INFO: Buscando documento com a query: {'signal_id': 'E76T30H9'}
-2025-07-04 09:43:00,459 INFO: Documento encontrado: {'_id': ObjectId('6867cbddc78f181714792df1'), 'signal_id': 'E76T30H9', 'signal': 'RISE', 'price': 2679.011, 'confidence': 20, 'analyze_time': datetime.datetime(2025, 7, 4, 12, 41, 0, 451000), 'entry_time': '2025-07-04 09:42:00', 'open_candle_timestamp': 1751632978, 'message_id': 9091, 'chat_id': -4767147054, 'result': None}
-2025-07-04 09:43:00,460 INFO: Atualizando documento com a query: {'signal_id': 'E76T30H9'}, update: {'$set': {'result': 'LOSS'}}
-2025-07-04 09:43:00,462 INFO: Número de documentos modificados: 1
-2025-07-04 09:43:00,463 INFO: Sinal E76T30H9 validado como LOSS
-2025-07-04 09:43:00,463 INFO: Inicializando conexão com o MongoDB.
-2025-07-04 09:43:00,465 INFO: Conexão com o MongoDB estabelecida.
-2025-07-04 09:43:00,466 INFO: Buscando documento com a query: {'signal_id': 'E76T30H9'}
-2025-07-04 09:43:00,484 INFO: Documento encontrado: {'_id': ObjectId('6867cbddc78f181714792df1'), 'signal_id': 'E76T30H9', 'signal': 'RISE', 'price': 2679.011, 'confidence': 20, 'analyze_time': datetime.datetime(2025, 7, 4, 12, 41, 0, 451000), 'entry_time': '2025-07-04 09:42:00', 'open_candle_timestamp': 1751632978, 'message_id': 9091, 'chat_id': -4767147054, 'result': 'LOSS'}
-2025-07-04 09:43:01,347 INFO: Finalizando metodo validate_signals_for_candle
+2025-07-04 21:00:00,410 INFO: 🔔 Novo candle em 2025-07-05 00:00:00 UTC
+2025-07-04 21:00:00,413 INFO: Estrutura dos dados: (1751673202, 2674.646, 2675.768, 2674.46, 2675.768)
+2025-07-04 21:00:00,421 INFO: ⚠️ Sem dados suficientes para HMA. Dados HMA: True, Confiança: 60
+2025-07-04 21:00:00,421 INFO: 📈 Análise: EMA9=2674.87, EMA21=2675.20, trend_ema=FALL, trend_final=Tendencia nao definida, RSI=35.44, MACD=-0.27/-0.14, ATR=0.92, body=0.00, band_width=0.000, confidence=60
+2025-07-04 21:00:00,422 INFO: ⚡ Sem sinal forte. Aguardando próximo candle.
+2025-07-04 21:01:00,398 INFO: 🔔 Novo candle em 2025-07-05 00:01:00 UTC
+2025-07-04 21:01:00,399 INFO: Estrutura dos dados: (1751673262, 2677.338, 2677.338, 2675.996, 2676.128)
+2025-07-04 21:01:00,425 INFO: Tendência HMA: FALL (HMA21=2674.64, HMA100=2675.13)
+2025-07-04 21:01:00,425 INFO: ✅ Tendências HMA21 e HMA100 concordam: FALL | EMA: FALL
+2025-07-04 21:01:00,426 INFO: 📈 Análise: EMA9=2674.90, EMA21=2675.08, trend_ema=FALL, trend_final=FALL, RSI=35.50, MACD=-0.15/-0.08, ATR=0.96, body=0.00, band_width=0.000, confidence=80
+2025-07-04 21:01:00,426 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 80%
+2025-07-04 21:01:01,294 INFO: ✅ Mensagem enviada ao Telegram (ID: Q459HHWA).
+2025-07-04 21:01:01,296 INFO: Inicializando conexão com o MongoDB.
+2025-07-04 21:01:01,308 INFO: Conexão com o MongoDB estabelecida.
+2025-07-04 21:01:01,309 INFO: Inserindo documento: {'signal_id': 'Q459HHWA', 'signal': 'FALL', 'price': np.float64(2674.699), 'confidence': 80, 'analyze_time': datetime.datetime(2025, 7, 4, 21, 1, 0, 426578, tzinfo=<DstTzInfo 'America/Sao_Paulo' -03-1 day, 21:00:00 STD>), 'entry_time': '2025-07-04 21:02:00', 'open_candle_timestamp': 1751673778, 'message_id': 9204, 'chat_id': -4767147054, 'result': None}
+2025-07-04 21:01:01,339 INFO: Documento inserido com ID: 68686b3d9f41a075cd8a18e1
+2025-07-04 21:02:00,385 INFO: 🔔 Novo candle em 2025-07-05 00:02:00 UTC
+2025-07-04 21:02:00,386 INFO: ⏳ Agendada validação do candle 1751673660 em 120s.
+2025-07-04 21:02:00,386 INFO: Estrutura dos dados: (1751673322, 2676.925, 2677.357, 2676.864, 2677.029)
+2025-07-04 21:02:00,395 INFO: ⚠️ Sem dados suficientes para HMA. Dados HMA: True, Confiança: 20
+2025-07-04 21:02:00,396 INFO: 📈 Análise: EMA9=2675.01, EMA21=2674.99, trend_ema=RISE, trend_final=Tendencia nao definida, RSI=44.60, MACD=0.02/0.02, ATR=0.93, body=0.00, band_width=0.000, confidence=20
+2025-07-04 21:02:00,396 INFO: ⚡ Sem sinal forte. Aguardando próximo candle.
+2025-07-04 21:03:00,388 INFO: 🔔 Novo candle em 2025-07-05 00:03:00 UTC
+2025-07-04 21:03:00,388 INFO: ⏳ Agendada validação do candle 1751673720 em 120s.
+2025-07-04 21:03:00,389 INFO: Estrutura dos dados: (1751673382, 2676.454, 2676.454, 2675.341, 2675.516)
+2025-07-04 21:03:00,398 INFO: ⚠️ Sem dados suficientes para HMA. Dados HMA: True, Confiança: 60
+2025-07-04 21:03:00,398 INFO: 📈 Análise: EMA9=2674.88, EMA21=2674.90, trend_ema=FALL, trend_final=Tendencia nao definida, RSI=45.97, MACD=-0.01/0.01, ATR=0.81, body=0.00, band_width=0.000, confidence=60
+2025-07-04 21:03:00,398 INFO: ⚡ Sem sinal forte. Aguardando próximo candle.
+2025-07-04 21:04:00,390 INFO: 🔔 Novo candle em 2025-07-05 00:04:00 UTC
+2025-07-04 21:04:00,391 INFO: ⏳ Agendada validação do candle 1751673780 em 120s.
+2025-07-04 21:04:00,391 INFO: Estrutura dos dados: (1751673442, 2675.221, 2675.926, 2675.11, 2675.836)
+2025-07-04 21:04:00,398 INFO: Iniciando metodo validate_signals_for_candle
+2025-07-04 21:04:00,401 INFO: ⚠️ Sem dados suficientes para HMA. Dados HMA: True, Confiança: 60
+2025-07-04 21:04:00,401 INFO: Inicializando conexão com o MongoDB.
+2025-07-04 21:04:00,401 INFO: 📈 Análise: EMA9=2675.92, EMA21=2675.72, trend_ema=RISE, trend_final=Tendencia nao definida, RSI=68.29, MACD=0.21/0.18, ATR=0.92, body=0.00, band_width=0.000, confidence=60
+2025-07-04 21:04:00,402 INFO: ⚡ Sem sinal forte. Aguardando próximo candle.
+2025-07-04 21:04:00,405 INFO: Conexão com o MongoDB estabelecida.
+2025-07-04 21:04:00,405 INFO: Buscando documento com a query: {'signal_id': 'Q459HHWA'}
+2025-07-04 21:04:00,454 INFO: Documento encontrado: {'_id': ObjectId('68686b3d9f41a075cd8a18e1'), 'signal_id': 'Q459HHWA', 'signal': 'FALL', 'price': 2674.699, 'confidence': 80, 'analyze_time': datetime.datetime(2025, 7, 5, 0, 1, 0, 426000), 'entry_time': '2025-07-04 21:02:00', 'open_candle_timestamp': 1751673778, 'message_id': 9204, 'chat_id': -4767147054, 'result': None}
+2025-07-04 21:04:00,454 INFO: Atualizando documento com a query: {'signal_id': 'Q459HHWA'}, update: {'$set': {'result': 'WIN'}}
+2025-07-04 21:04:00,457 INFO: Número de documentos modificados: 1
+2025-07-04 21:04:00,457 INFO: Sinal Q459HHWA validado como WIN
+2025-07-04 21:04:00,457 INFO: Inicializando conexão com o MongoDB.
+2025-07-04 21:04:00,459 INFO: Conexão com o MongoDB estabelecida.
+2025-07-04 21:04:00,460 INFO: Buscando documento com a query: {'signal_id': 'Q459HHWA'}
+2025-07-04 21:04:00,477 INFO: Documento encontrado: {'_id': ObjectId('68686b3d9f41a075cd8a18e1'), 'signal_id': 'Q459HHWA', 'signal': 'FALL', 'price': 2674.699, 'confidence': 80, 'analyze_time': datetime.datetime(2025, 7, 5, 0, 1, 0, 426000), 'entry_time': '2025-07-04 21:02:00', 'open_candle_timestamp': 1751673778, 'message_id': 9204, 'chat_id': -4767147054, 'result': 'WIN'}
+2025-07-04 21:04:01,314 INFO: Finalizando metodo validate_signals_for_candle
+2025-07-04 21:05:00,394 INFO: Iniciando metodo validate_signals_for_candle
+2025-07-04 21:05:00,394 INFO: Inicializando conexão com o MongoDB.
+2025-07-04 21:05:00,396 INFO: 🔔 Novo candle em 2025-07-05 00:05:00 UTC
+2025-07-04 21:05:00,396 INFO: Estrutura dos dados: (1751673502, 2674.961, 2675.429, 2674.712, 2675.143)
+2025-07-04 21:05:00,400 INFO: Conexão com o MongoDB estabelecida.
+2025-07-04 21:05:00,407 INFO: ⚠️ Sem dados suficientes para HMA. Dados HMA: True, Confiança: 60
+2025-07-04 21:05:00,407 INFO: Finalizando metodo validate_signals_for_candle
+2025-07-04 21:05:00,407 INFO: 📈 Análise: EMA9=2677.49, EMA21=2677.05, trend_ema=RISE, trend_final=Tendencia nao definida, RSI=76.46, MACD=0.44/0.35, ATR=1.07, body=0.00, band_width=0.000, confidence=60
+2025-07-04 21:05:00,408 INFO: ⚡ Sem sinal forte. Aguardando próximo candle.
+2025-07-04 21:06:00,389 INFO: 🔔 Novo candle em 2025-07-05 00:06:00 UTC
+2025-07-04 21:06:00,389 INFO: Estrutura dos dados: (1751673562, 2676.04, 2676.154, 2675.59, 2675.59)
+2025-07-04 21:06:00,398 INFO: ⚠️ Sem dados suficientes para HMA. Dados HMA: True, Confiança: 20
+2025-07-04 21:06:00,399 INFO: Iniciando metodo validate_signals_for_candle
+2025-07-04 21:06:00,399 INFO: 📈 Análise: EMA9=2678.60, EMA21=2678.46, trend_ema=RISE, trend_final=Tendencia nao definida, RSI=61.27, MACD=0.21/0.27, ATR=1.06, body=0.00, band_width=0.000, confidence=20
+2025-07-04 21:06:00,399 INFO: Inicializando conexão com o MongoDB.
+2025-07-04 21:06:00,400 INFO: ⚡ Sem sinal forte. Aguardando próximo candle.
+2025-07-04 21:06:00,403 INFO: Conexão com o MongoDB estabelecida.
+2025-07-04 21:06:00,403 INFO: Finalizando metodo validate_signals_for_candle
+2025-07-04 21:07:00,404 INFO: 🔔 Novo candle em 2025-07-05 00:07:00 UTC
+2025-07-04 21:07:00,404 INFO: Estrutura dos dados: (1751673622, 2674.623, 2675.624, 2674.61, 2675.624)
+2025-07-04 21:07:00,413 INFO: ⚠️ Sem dados suficientes para HMA. Dados HMA: True, Confiança: 40
+2025-07-04 21:07:00,414 INFO: 📈 Análise: EMA9=2679.46, EMA21=2679.18, trend_ema=RISE, trend_final=Tendencia nao definida, RSI=63.74, MACD=0.30/0.28, ATR=1.06, body=0.00, band_width=0.000, confidence=40
+2025-07-04 21:07:00,414 INFO: ⚡ Sem sinal forte. Aguardando próximo candle.
+2025-07-04 21:08:00,392 INFO: 🔔 Novo candle em 2025-07-05 00:08:00 UTC
+2025-07-04 21:08:00,393 INFO: Estrutura dos dados: (1751673682, 2674.699, 2675.482, 2674.622, 2674.913)
+2025-07-04 21:08:00,402 INFO: ⚠️ Sem dados suficientes para HMA. Dados HMA: True, Confiança: 20
+2025-07-04 21:08:00,402 INFO: 📈 Análise: EMA9=2681.05, EMA21=2680.80, trend_ema=RISE, trend_final=Tendencia nao definida, RSI=53.63, MACD=0.34/0.40, ATR=1.34, body=0.00, band_width=0.000, confidence=20
+2025-07-04 21:08:00,403 INFO: ⚡ Sem sinal forte. Aguardando próximo candle.
+2025-07-04 21:09:00,393 INFO: 🔔 Novo candle em 2025-07-05 00:09:00 UTC
+2025-07-04 21:09:00,393 INFO: Estrutura dos dados: (1751673742, 2674.787, 2675.004, 2674.269, 2675.004)
+2025-07-04 21:09:00,404 INFO: ⚠️ Sem dados suficientes para HMA. Dados HMA: True, Confiança: 20
+2025-07-04 21:09:00,404 INFO: 📈 Análise: EMA9=2680.45, EMA21=2680.48, trend_ema=FALL, trend_final=Tendencia nao definida, RSI=48.30, MACD=-0.03/-0.04, ATR=0.71, body=0.00, band_width=0.000, confidence=20
+2025-07-04 21:09:00,404 INFO: ⚡ Sem sinal forte. Aguardando próximo candle.
+2025-07-04 21:10:00,391 INFO: 🔔 Novo candle em 2025-07-05 00:10:00 UTC
+2025-07-04 21:10:00,391 INFO: Estrutura dos dados: (1751673802, 2674.761, 2675.712, 2674.761, 2675.598)
+2025-07-04 21:10:00,400 INFO: ⚠️ Sem dados suficientes para HMA. Dados HMA: True, Confiança: 40
+2025-07-04 21:10:00,400 INFO: 📈 Análise: EMA9=2679.87, EMA21=2680.01, trend_ema=FALL, trend_final=Tendencia nao definida, RSI=40.88, MACD=-0.14/-0.12, ATR=0.56, body=0.00, band_width=0.000, confidence=40
+2025-07-04 21:10:00,401 INFO: ⚡ Sem sinal forte. Aguardando próximo candle.
+2025-07-04 21:11:00,391 INFO: 🔔 Novo candle em 2025-07-05 00:11:00 UTC
+2025-07-04 21:11:00,391 INFO: Estrutura dos dados: (1751673862, 2676.184, 2676.569, 2675.849, 2676.569)
+2025-07-04 21:11:00,401 INFO: ⚠️ Sem dados suficientes para HMA. Dados HMA: True, Confiança: 20
+2025-07-04 21:11:00,402 INFO: 📈 Análise: EMA9=2679.48, EMA21=2679.60, trend_ema=FALL, trend_final=Tendencia nao definida, RSI=53.95, MACD=-0.15/-0.17, ATR=0.81, body=0.00, band_width=0.000, confidence=20
+2025-07-04 21:11:00,402 INFO: ⚡ Sem sinal forte. Aguardando próximo candle.
+2025-07-04 21:12:00,402 INFO: 🔔 Novo candle em 2025-07-05 00:12:00 UTC
+2025-07-04 21:12:00,402 INFO: Estrutura dos dados: (1751673922, 2677.802, 2678.602, 2677.541, 2678.602)
+2025-07-04 21:12:00,411 INFO: ⚠️ Sem dados suficientes para HMA. Dados HMA: True, Confiança: 20
+2025-07-04 21:12:00,411 INFO: 📈 Análise: EMA9=2678.87, EMA21=2678.88, trend_ema=FALL, trend_final=Tendencia nao definida, RSI=52.25, MACD=-0.06/-0.12, ATR=1.10, body=0.00, band_width=0.000, confidence=20
+2025-07-04 21:12:00,411 INFO: ⚡ Sem sinal forte. Aguardando próximo candle.
+2025-07-04 21:13:00,420 INFO: 🔔 Novo candle em 2025-07-05 00:13:00 UTC
+2025-07-04 21:13:00,421 INFO: Estrutura dos dados: (1751673982, 2678.661, 2678.661, 2678.066, 2678.581)
+2025-07-04 21:13:00,430 INFO: ⚠️ Sem dados suficientes para HMA. Dados HMA: True, Confiança: 20
+2025-07-04 21:13:00,431 INFO: 📈 Análise: EMA9=2679.75, EMA21=2679.70, trend_ema=RISE, trend_final=Tendencia nao definida, RSI=57.30, MACD=0.09/0.13, ATR=0.93, body=0.00, band_width=0.000, confidence=20
+2025-07-04 21:13:00,431 INFO: ⚡ Sem sinal forte. Aguardando próximo candle.
+2025-07-04 21:14:00,391 INFO: 🔔 Novo candle em 2025-07-05 00:14:00 UTC
+2025-07-04 21:14:00,392 INFO: Estrutura dos dados: (1751674042, 2679.47, 2680.207, 2679.47, 2680.177)
+2025-07-04 21:14:00,406 INFO: ⚠️ Sem dados suficientes para HMA. Dados HMA: True, Confiança: 60
+2025-07-04 21:14:00,406 INFO: 📈 Análise: EMA9=2680.06, EMA21=2680.07, trend_ema=FALL, trend_final=Tendencia nao definida, RSI=47.74, MACD=0.03/0.08, ATR=0.98, body=0.00, band_width=0.000, confidence=60
+2025-07-04 21:14:00,406 INFO: ⚡ Sem sinal forte. Aguardando próximo candle.
+2025-07-04 21:15:00,397 INFO: 🔔 Novo candle em 2025-07-05 00:15:00 UTC
+2025-07-04 21:15:00,398 INFO: Estrutura dos dados: (1751674102, 2680.803, 2680.873, 2680.346, 2680.346)
+2025-07-04 21:15:00,421 INFO: Tendência HMA: FALL (HMA21=2680.81, HMA100=2680.30)
+2025-07-04 21:15:00,421 INFO: ✅ Tendências HMA21 e HMA100 concordam: FALL | EMA: RISE
+2025-07-04 21:15:00,421 INFO: 📈 Análise: EMA9=2680.63, EMA21=2680.39, trend_ema=RISE, trend_final=Tendencia nao definida, RSI=71.24, MACD=0.21/0.10, ATR=0.81, body=0.00, band_width=0.000, confidence=80
+2025-07-04 21:15:00,422 INFO: ⚡ Sem sinal forte. Aguardando próximo candle.
+2025-07-04 21:16:00,403 INFO: 🔔 Novo candle em 2025-07-05 00:16:00 UTC
+2025-07-04 21:16:00,403 INFO: Estrutura dos dados: (1751674162, 2680.427, 2680.439, 2680.038, 2680.217)
+2025-07-04 21:16:00,413 INFO: ⚠️ Sem dados suficientes para HMA. Dados HMA: True, Confiança: 40
+2025-07-04 21:16:00,413 INFO: 📈 Análise: EMA9=2680.44, EMA21=2680.58, trend_ema=FALL, trend_final=Tendencia nao definida, RSI=45.40, MACD=-0.10/-0.03, ATR=0.69, body=0.00, band_width=0.000, confidence=40
+2025-07-04 21:16:00,413 INFO: ⚡ Sem sinal forte. Aguardando próximo candle.
+2025-07-04 21:17:00,396 INFO: 🔔 Novo candle em 2025-07-05 00:17:00 UTC
+2025-07-04 21:17:00,397 INFO: Estrutura dos dados: (1751674222, 2679.765, 2680.355, 2679.765, 2680.054)
+2025-07-04 21:17:00,405 INFO: ⚠️ Sem dados suficientes para HMA. Dados HMA: True, Confiança: 20
+2025-07-04 21:17:00,405 INFO: 📈 Análise: EMA9=2680.78, EMA21=2680.77, trend_ema=RISE, trend_final=Tendencia nao definida, RSI=49.85, MACD=0.02/0.03, ATR=0.64, body=0.00, band_width=0.000, confidence=20
+2025-07-04 21:17:00,406 INFO: ⚡ Sem sinal forte. Aguardando próximo candle.
+2025-07-04 21:18:00,399 INFO: 🔔 Novo candle em 2025-07-05 00:18:00 UTC
+2025-07-04 21:18:00,399 INFO: Estrutura dos dados: (1751674282, 2679.788, 2679.788, 2678.611, 2678.611)
+2025-07-04 21:18:00,410 INFO: ⚠️ Sem dados suficientes para HMA. Dados HMA: True, Confiança: 40
+2025-07-04 21:18:00,411 INFO: 📈 Análise: EMA9=2680.61, EMA21=2680.46, trend_ema=RISE, trend_final=Tendencia nao definida, RSI=60.32, MACD=0.09/-0.01, ATR=0.95, body=0.00, band_width=0.000, confidence=40
+2025-07-04 21:18:00,411 INFO: ⚡ Sem sinal forte. Aguardando próximo candle.
+2025-07-04 21:19:00,417 INFO: 🔔 Novo candle em 2025-07-05 00:19:00 UTC
+2025-07-04 21:19:00,418 INFO: Estrutura dos dados: (1751674342, 2679.007, 2679.982, 2679.007, 2679.711)
+2025-07-04 21:19:00,426 INFO: ⚠️ Sem dados suficientes para HMA. Dados HMA: True, Confiança: 60
+2025-07-04 21:19:00,426 INFO: 📈 Análise: EMA9=2680.86, EMA21=2680.74, trend_ema=RISE, trend_final=Tendencia nao definida, RSI=61.95, MACD=0.10/0.06, ATR=0.93, body=0.00, band_width=0.000, confidence=60
+2025-07-04 21:19:00,427 INFO: ⚡ Sem sinal forte. Aguardando próximo candle.
+2025-07-04 21:20:00,401 INFO: 🔔 Novo candle em 2025-07-05 00:20:00 UTC
+2025-07-04 21:20:00,401 INFO: Estrutura dos dados: (1751674402, 2679.908, 2680.328, 2679.37, 2680.001)
+2025-07-04 21:20:00,410 INFO: ⚠️ Sem dados suficientes para HMA. Dados HMA: True, Confiança: 60
+2025-07-04 21:20:00,411 INFO: 📈 Análise: EMA9=2679.89, EMA21=2680.07, trend_ema=FALL, trend_final=Tendencia nao definida, RSI=37.86, MACD=-0.18/-0.14, ATR=1.05, body=0.00, band_width=0.000, confidence=60
+2025-07-04 21:20:00,411 INFO: ⚡ Sem sinal forte. Aguardando próximo candle.
+2025-07-04 21:21:00,406 INFO: 🔔 Novo candle em 2025-07-05 00:21:00 UTC
+2025-07-04 21:21:00,406 INFO: Estrutura dos dados: (1751674462, 2679.97, 2680.514, 2679.97, 2680.105)
+2025-07-04 21:21:00,414 INFO: ⚠️ Sem dados suficientes para HMA. Dados HMA: True, Confiança: 20
+2025-07-04 21:21:00,415 INFO: 📈 Análise: EMA9=2678.67, EMA21=2678.83, trend_ema=FALL, trend_final=Tendencia nao definida, RSI=40.82, MACD=-0.23/-0.28, ATR=1.05, body=0.00, band_width=0.000, confidence=20
+2025-07-04 21:21:00,415 INFO: ⚡ Sem sinal forte. Aguardando próximo candle.
+2025-07-04 21:22:00,401 INFO: 🔔 Novo candle em 2025-07-05 00:22:00 UTC
+2025-07-04 21:22:00,402 INFO: Estrutura dos dados: (1751674522, 2681.002, 2681.244, 2680.805, 2680.805)
+2025-07-04 21:22:00,411 INFO: ⚠️ Sem dados suficientes para HMA. Dados HMA: True, Confiança: 40
+2025-07-04 21:22:00,411 INFO: 📈 Análise: EMA9=2680.11, EMA21=2679.80, trend_ema=RISE, trend_final=Tendencia nao definida, RSI=65.26, MACD=0.32/0.28, ATR=1.16, body=0.00, band_width=0.000, confidence=40
+2025-07-04 21:22:00,412 INFO: ⚡ Sem sinal forte. Aguardando próximo candle.
+2025-07-04 21:23:00,406 INFO: 🔔 Novo candle em 2025-07-05 00:23:00 UTC
+2025-07-04 21:23:00,406 INFO: Estrutura dos dados: (1751674582, 2680.402, 2680.795, 2680.402, 2680.753)
+2025-07-04 21:23:00,416 INFO: ⚠️ Sem dados suficientes para HMA. Dados HMA: True, Confiança: 60
+2025-07-04 21:23:00,416 INFO: 📈 Análise: EMA9=2680.51, EMA21=2680.53, trend_ema=FALL, trend_final=Tendencia nao definida, RSI=40.22, MACD=0.05/0.15, ATR=0.85, body=0.00, band_width=0.000, confidence=60
+2025-07-04 21:23:00,416 INFO: ⚡ Sem sinal forte. Aguardando próximo candle.
+2025-07-04 21:24:00,398 INFO: 🔔 Novo candle em 2025-07-05 00:24:00 UTC
+2025-07-04 21:24:00,398 INFO: Estrutura dos dados: (1751674642, 2680.751, 2680.819, 2680.368, 2680.592)
+2025-07-04 21:24:00,423 INFO: Tendência HMA: FALL (HMA21=2679.77, HMA100=2680.46)
+2025-07-04 21:24:00,423 INFO: ✅ Tendências HMA21 e HMA100 concordam: FALL | EMA: FALL
+2025-07-04 21:24:00,424 INFO: 📈 Análise: EMA9=2679.92, EMA21=2680.09, trend_ema=FALL, trend_final=FALL, RSI=38.93, MACD=-0.17/-0.14, ATR=0.94, body=0.00, band_width=0.000, confidence=80
+2025-07-04 21:24:00,424 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 80%
+2025-07-04 21:24:01,240 INFO: ✅ Mensagem enviada ao Telegram (ID: 704WK51T).
+2025-07-04 21:24:01,240 INFO: Inicializando conexão com o MongoDB.
+2025-07-04 21:24:01,245 INFO: Conexão com o MongoDB estabelecida.
+2025-07-04 21:24:01,246 INFO: Inserindo documento: {'signal_id': '704WK51T', 'signal': 'FALL', 'price': np.float64(2679.739), 'confidence': 80, 'analyze_time': datetime.datetime(2025, 7, 4, 21, 24, 0, 424433, tzinfo=<DstTzInfo 'America/Sao_Paulo' -03-1 day, 21:00:00 STD>), 'entry_time': '2025-07-04 21:25:00', 'open_candle_timestamp': 1751675158, 'message_id': 9206, 'chat_id': -4767147054, 'result': None}
+2025-07-04 21:24:01,265 INFO: Documento inserido com ID: 686870a19f41a075cd8a18e7
+2025-07-04 21:25:00,398 INFO: 🔔 Novo candle em 2025-07-05 00:25:00 UTC
+2025-07-04 21:25:00,399 INFO: ⏳ Agendada validação do candle 1751675040 em 120s.
+2025-07-04 21:25:00,399 INFO: Estrutura dos dados: (1751674702, 2680.797, 2681.327, 2680.367, 2680.367)
+2025-07-04 21:25:00,407 INFO: ⚠️ Sem dados suficientes para HMA. Dados HMA: True, Confiança: 40
+2025-07-04 21:25:00,408 INFO: 📈 Análise: EMA9=2679.99, EMA21=2679.86, trend_ema=RISE, trend_final=Tendencia nao definida, RSI=54.13, MACD=0.11/0.06, ATR=1.11, body=0.00, band_width=0.000, confidence=40
+2025-07-04 21:25:00,408 INFO: ⚡ Sem sinal forte. Aguardando próximo candle.
+2025-07-04 21:26:00,408 INFO: 🔔 Novo candle em 2025-07-05 00:26:00 UTC
+2025-07-04 21:26:00,409 INFO: ⏳ Agendada validação do candle 1751675100 em 120s.
+2025-07-04 21:26:00,410 INFO: Estrutura dos dados: (1751674762, 2681.015, 2681.015, 2679.94, 2679.979)
+2025-07-04 21:26:00,419 INFO: ⚠️ Sem dados suficientes para HMA. Dados HMA: True, Confiança: 60
+2025-07-04 21:26:00,420 INFO: 📈 Análise: EMA9=2680.27, EMA21=2679.97, trend_ema=RISE, trend_final=Tendencia nao definida, RSI=69.57, MACD=0.25/0.13, ATR=1.10, body=0.00, band_width=0.000, confidence=60
+2025-07-04 21:26:00,420 INFO: ⚡ Sem sinal forte. Aguardando próximo candle.
+2025-07-04 21:27:00,394 INFO: 🔔 Novo candle em 2025-07-05 00:27:00 UTC
+2025-07-04 21:27:00,395 INFO: ⏳ Agendada validação do candle 1751675160 em 120s.
+2025-07-04 21:27:00,395 INFO: Estrutura dos dados: (1751674822, 2679.753, 2679.753, 2679.17, 2679.399)
+2025-07-04 21:27:00,403 INFO: ⚠️ Sem dados suficientes para HMA. Dados HMA: True, Confiança: 20
+2025-07-04 21:27:00,404 INFO: 📈 Análise: EMA9=2680.34, EMA21=2680.26, trend_ema=RISE, trend_final=Tendencia nao definida, RSI=50.35, MACD=0.10/0.11, ATR=0.97, body=0.00, band_width=0.000, confidence=20
+2025-07-04 21:27:00,404 INFO: Iniciando metodo validate_signals_for_candle
+2025-07-04 21:27:00,404 INFO: ⚡ Sem sinal forte. Aguardando próximo candle.
+2025-07-04 21:27:00,404 INFO: Inicializando conexão com o MongoDB.
+2025-07-04 21:27:00,408 INFO: Conexão com o MongoDB estabelecida.
+2025-07-04 21:27:00,409 INFO: Buscando documento com a query: {'signal_id': '704WK51T'}
+2025-07-04 21:27:00,448 INFO: Documento encontrado: {'_id': ObjectId('686870a19f41a075cd8a18e7'), 'signal_id': '704WK51T', 'signal': 'FALL', 'price': 2679.739, 'confidence': 80, 'analyze_time': datetime.datetime(2025, 7, 5, 0, 24, 0, 424000), 'entry_time': '2025-07-04 21:25:00', 'open_candle_timestamp': 1751675158, 'message_id': 9206, 'chat_id': -4767147054, 'result': None}
+2025-07-04 21:27:00,449 INFO: Atualizando documento com a query: {'signal_id': '704WK51T'}, update: {'$set': {'result': 'LOSS'}}
+2025-07-04 21:27:00,451 INFO: Número de documentos modificados: 1
+2025-07-04 21:27:00,452 INFO: Sinal 704WK51T validado como LOSS
+2025-07-04 21:27:00,452 INFO: Inicializando conexão com o MongoDB.
+2025-07-04 21:27:00,454 INFO: Conexão com o MongoDB estabelecida.
+2025-07-04 21:27:00,454 INFO: Buscando documento com a query: {'signal_id': '704WK51T'}
+2025-07-04 21:27:00,493 INFO: Documento encontrado: {'_id': ObjectId('686870a19f41a075cd8a18e7'), 'signal_id': '704WK51T', 'signal': 'FALL', 'price': 2679.739, 'confidence': 80, 'analyze_time': datetime.datetime(2025, 7, 5, 0, 24, 0, 424000), 'entry_time': '2025-07-04 21:25:00', 'open_candle_timestamp': 1751675158, 'message_id': 9206, 'chat_id': -4767147054, 'result': 'LOSS'}
+2025-07-04 21:27:01,306 INFO: Finalizando metodo validate_signals_for_candle
+2025-07-04 21:28:00,411 INFO: 🔔 Novo candle em 2025-07-05 00:28:00 UTC
+2025-07-04 21:28:00,411 INFO: Estrutura dos dados: (1751674882, 2678.549, 2679.297, 2678.549, 2679.235)
+2025-07-04 21:28:00,421 INFO: ⚠️ Sem dados suficientes para HMA. Dados HMA: True, Confiança: 40
+2025-07-04 21:28:00,421 INFO: Iniciando metodo validate_signals_for_candle
+2025-07-04 21:28:00,421 INFO: 📈 Análise: EMA9=2680.72, EMA21=2680.59, trend_ema=RISE, trend_final=Tendencia nao definida, RSI=59.05, MACD=0.15/0.15, ATR=0.97, body=0.00, band_width=0.000, confidence=40
+2025-07-04 21:28:00,422 INFO: Inicializando conexão com o MongoDB.
+2025-07-04 21:28:00,422 INFO: ⚡ Sem sinal forte. Aguardando próximo candle.
+2025-07-04 21:28:00,425 INFO: Conexão com o MongoDB estabelecida.
+2025-07-04 21:28:00,425 INFO: Finalizando metodo validate_signals_for_candle
+2025-07-04 21:29:00,400 INFO: 🔔 Novo candle em 2025-07-05 00:29:00 UTC
+2025-07-04 21:29:00,401 INFO: Estrutura dos dados: (1751674942, 2680.187, 2680.843, 2679.927, 2680.843)
+2025-07-04 21:29:00,410 INFO: Iniciando metodo validate_signals_for_candle
+2025-07-04 21:29:00,422 INFO: Inicializando conexão com o MongoDB.
+2025-07-04 21:29:00,432 INFO: Tendência HMA: FALL (HMA21=2680.48, HMA100=2681.46)
+2025-07-04 21:29:00,433 INFO: ✅ Tendências HMA21 e HMA100 concordam: FALL | EMA: FALL
+2025-07-04 21:29:00,434 INFO: 📈 Análise: EMA9=2680.77, EMA21=2680.99, trend_ema=FALL, trend_final=FALL, RSI=33.67, MACD=-0.14/-0.02, ATR=0.91, body=0.00, band_width=0.000, confidence=80
+2025-07-04 21:29:00,434 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 80%
+2025-07-04 21:29:00,435 INFO: Conexão com o MongoDB estabelecida.
+2025-07-04 21:29:00,437 INFO: Finalizando metodo validate_signals_for_candle
+2025-07-04 21:29:01,284 INFO: ✅ Mensagem enviada ao Telegram (ID: QPORDCWI).
+2025-07-04 21:29:01,285 INFO: Inicializando conexão com o MongoDB.
+2025-07-04 21:29:01,287 INFO: Conexão com o MongoDB estabelecida.
+2025-07-04 21:29:01,287 INFO: Inserindo documento: {'signal_id': 'QPORDCWI', 'signal': 'FALL', 'price': np.float64(2680.44), 'confidence': 80, 'analyze_time': datetime.datetime(2025, 7, 4, 21, 29, 0, 435600, tzinfo=<DstTzInfo 'America/Sao_Paulo' -03-1 day, 21:00:00 STD>), 'entry_time': '2025-07-04 21:30:00', 'open_candle_timestamp': 1751675458, 'message_id': 9208, 'chat_id': -4767147054, 'result': None}
+2025-07-04 21:29:01,330 INFO: Documento inserido com ID: 686871cd9f41a075cd8a18ed
+2025-07-04 21:30:00,397 INFO: 🔔 Novo candle em 2025-07-05 00:30:00 UTC
+2025-07-04 21:30:00,398 INFO: ⏳ Agendada validação do candle 1751675340 em 120s.
+2025-07-04 21:30:00,399 INFO: Estrutura dos dados: (1751675002, 2680.165, 2681.03, 2680.165, 2680.834)
+2025-07-04 21:30:00,408 INFO: ⚠️ Sem dados suficientes para HMA. Dados HMA: True, Confiança: 40
+2025-07-04 21:30:00,408 INFO: 📈 Análise: EMA9=2680.20, EMA21=2680.15, trend_ema=RISE, trend_final=Tendencia nao definida, RSI=48.77, MACD=0.00/-0.04, ATR=1.02, body=0.00, band_width=0.000, confidence=40
+2025-07-04 21:30:00,409 INFO: ⚡ Sem sinal forte. Aguardando próximo candle.
+2025-07-04 21:31:00,398 INFO: 🔔 Novo candle em 2025-07-05 00:31:00 UTC
+2025-07-04 21:31:00,399 INFO: ⏳ Agendada validação do candle 1751675400 em 120s.
+2025-07-04 21:31:00,399 INFO: Estrutura dos dados: (1751675062, 2679.739, 2679.932, 2678.799, 2678.799)
+2025-07-04 21:31:00,408 INFO: ⚠️ Sem dados suficientes para HMA. Dados HMA: True, Confiança: 40
+2025-07-04 21:31:00,408 INFO: 📈 Análise: EMA9=2680.27, EMA21=2680.32, trend_ema=FALL, trend_final=Tendencia nao definida, RSI=46.92, MACD=-0.04/-0.02, ATR=0.63, body=0.00, band_width=0.000, confidence=40
+2025-07-04 21:31:00,408 INFO: ⚡ Sem sinal forte. Aguardando próximo candle.
+2025-07-04 21:32:00,400 INFO: 🔔 Novo candle em 2025-07-05 00:32:00 UTC
+2025-07-04 21:32:00,401 INFO: ⏳ Agendada validação do candle 1751675460 em 120s.
+2025-07-04 21:32:00,402 INFO: Estrutura dos dados: (1751675122, 2679.997, 2680.12, 2678.961, 2678.961)
+2025-07-04 21:32:00,414 INFO: ⚠️ Sem dados suficientes para HMA. Dados HMA: True, Confiança: 60
+2025-07-04 21:32:00,414 INFO: Iniciando metodo validate_signals_for_candle
+2025-07-04 21:32:00,414 INFO: 📈 Análise: EMA9=2679.80, EMA21=2679.75, trend_ema=RISE, trend_final=Tendencia nao definida, RSI=60.96, MACD=-0.01/-0.10, ATR=1.07, body=0.00, band_width=0.000, confidence=60
+2025-07-04 21:32:00,414 INFO: Inicializando conexão com o MongoDB.
+2025-07-04 21:32:00,415 INFO: ⚡ Sem sinal forte. Aguardando próximo candle.
+2025-07-04 21:32:00,418 INFO: Conexão com o MongoDB estabelecida.
+2025-07-04 21:32:00,418 INFO: Buscando documento com a query: {'signal_id': 'QPORDCWI'}
+2025-07-04 21:32:00,439 INFO: Documento encontrado: {'_id': ObjectId('686871cd9f41a075cd8a18ed'), 'signal_id': 'QPORDCWI', 'signal': 'FALL', 'price': 2680.44, 'confidence': 80, 'analyze_time': datetime.datetime(2025, 7, 5, 0, 29, 0, 435000), 'entry_time': '2025-07-04 21:30:00', 'open_candle_timestamp': 1751675458, 'message_id': 9208, 'chat_id': -4767147054, 'result': None}
+2025-07-04 21:32:00,439 INFO: Atualizando documento com a query: {'signal_id': 'QPORDCWI'}, update: {'$set': {'result': 'LOSS'}}
+2025-07-04 21:32:00,442 INFO: Número de documentos modificados: 1
+2025-07-04 21:32:00,443 INFO: Sinal QPORDCWI validado como LOSS
+2025-07-04 21:32:00,443 INFO: Inicializando conexão com o MongoDB.
+2025-07-04 21:32:00,446 INFO: Conexão com o MongoDB estabelecida.
+2025-07-04 21:32:00,446 INFO: Buscando documento com a query: {'signal_id': 'QPORDCWI'}
+2025-07-04 21:32:00,484 INFO: Documento encontrado: {'_id': ObjectId('686871cd9f41a075cd8a18ed'), 'signal_id': 'QPORDCWI', 'signal': 'FALL', 'price': 2680.44, 'confidence': 80, 'analyze_time': datetime.datetime(2025, 7, 5, 0, 29, 0, 435000), 'entry_time': '2025-07-04 21:30:00', 'open_candle_timestamp': 1751675458, 'message_id': 9208, 'chat_id': -4767147054, 'result': 'LOSS'}
+2025-07-04 21:32:01,360 INFO: Finalizando metodo validate_signals_for_candle
+2025-07-04 21:33:00,405 INFO: 🔔 Novo candle em 2025-07-05 00:33:00 UTC
+2025-07-04 21:33:00,405 INFO: Estrutura dos dados: (1751675182, 2680.588, 2680.588, 2679.952, 2679.952)
+2025-07-04 21:33:00,414 INFO: Iniciando metodo validate_signals_for_candle
+2025-07-04 21:33:00,420 INFO: Inicializando conexão com o MongoDB.
+2025-07-04 21:33:00,435 INFO: Tendência HMA: FALL (HMA21=2680.52, HMA100=2680.33)
+2025-07-04 21:33:00,436 INFO: ✅ Tendências HMA21 e HMA100 concordam: FALL | EMA: FALL
+2025-07-04 21:33:00,436 INFO: 📈 Análise: EMA9=2680.35, EMA21=2680.37, trend_ema=FALL, trend_final=FALL, RSI=37.55, MACD=0.04/0.14, ATR=0.77, body=0.00, band_width=0.000, confidence=80
+2025-07-04 21:33:00,437 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 80%
+2025-07-04 21:33:00,440 INFO: Conexão com o MongoDB estabelecida.
+2025-07-04 21:33:00,442 INFO: Finalizando metodo validate_signals_for_candle
+2025-07-04 21:33:01,301 INFO: ✅ Mensagem enviada ao Telegram (ID: VPU55VEU).
+2025-07-04 21:33:01,301 INFO: Inicializando conexão com o MongoDB.
+2025-07-04 21:33:01,305 INFO: Conexão com o MongoDB estabelecida.
+2025-07-04 21:33:01,306 INFO: Inserindo documento: {'signal_id': 'VPU55VEU', 'signal': 'FALL', 'price': np.float64(2679.831), 'confidence': 80, 'analyze_time': datetime.datetime(2025, 7, 4, 21, 33, 0, 438911, tzinfo=<DstTzInfo 'America/Sao_Paulo' -03-1 day, 21:00:00 STD>), 'entry_time': '2025-07-04 21:34:00', 'open_candle_timestamp': 1751675698, 'message_id': 9210, 'chat_id': -4767147054, 'result': None}
+2025-07-04 21:33:01,321 INFO: Documento inserido com ID: 686872bd9f41a075cd8a18f2
+2025-07-04 21:34:00,402 INFO: 🔔 Novo candle em 2025-07-05 00:34:00 UTC
+2025-07-04 21:34:00,403 INFO: ⏳ Agendada validação do candle 1751675580 em 120s.
+2025-07-04 21:34:00,403 INFO: Estrutura dos dados: (1751675242, 2680.227, 2680.46, 2679.867, 2680.094)
+2025-07-04 21:34:00,408 INFO: Iniciando metodo validate_signals_for_candle
+2025-07-04 21:34:00,413 INFO: Inicializando conexão com o MongoDB.
+2025-07-04 21:34:00,438 INFO: Tendência HMA: FALL (HMA21=2679.11, HMA100=2679.81)
+2025-07-04 21:34:00,439 INFO: ✅ Tendências HMA21 e HMA100 concordam: FALL | EMA: FALL
+2025-07-04 21:34:00,439 INFO: 📈 Análise: EMA9=2679.33, EMA21=2679.56, trend_ema=FALL, trend_final=FALL, RSI=33.93, MACD=-0.23/-0.19, ATR=0.80, body=0.00, band_width=0.000, confidence=80
+2025-07-04 21:34:00,441 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 80%
+2025-07-04 21:34:00,441 INFO: Conexão com o MongoDB estabelecida.
+2025-07-04 21:34:00,441 INFO: ⏳ Em cooldown (120s). Próximo sinal em 60s.
+2025-07-04 21:34:00,442 INFO: Buscando documento com a query: {'signal_id': 'VPU55VEU'}
+2025-07-04 21:34:00,461 INFO: Documento encontrado: {'_id': ObjectId('686872bd9f41a075cd8a18f2'), 'signal_id': 'VPU55VEU', 'signal': 'FALL', 'price': 2679.831, 'confidence': 80, 'analyze_time': datetime.datetime(2025, 7, 5, 0, 33, 0, 438000), 'entry_time': '2025-07-04 21:34:00', 'open_candle_timestamp': 1751675698, 'message_id': 9210, 'chat_id': -4767147054, 'result': None}
+2025-07-04 21:34:00,462 INFO: ⚠️ Sinal VPU55VEU não encontrado no candle atual.
+2025-07-04 21:34:00,462 INFO: Finalizando metodo validate_signals_for_candle
+2025-07-04 21:35:00,408 INFO: 🔔 Novo candle em 2025-07-05 00:35:00 UTC
+2025-07-04 21:35:00,409 INFO: ⏳ Agendada validação do candle 1751675640 em 120s.
+2025-07-04 21:35:00,409 INFO: Estrutura dos dados: (1751675302, 2680.895, 2681.611, 2680.734, 2681.529)
+2025-07-04 21:35:00,417 INFO: ⚠️ Sem dados suficientes para HMA. Dados HMA: True, Confiança: 20
+2025-07-04 21:35:00,418 INFO: 📈 Análise: EMA9=2679.07, EMA21=2679.12, trend_ema=FALL, trend_final=Tendencia nao definida, RSI=45.06, MACD=-0.09/-0.13, ATR=1.05, body=0.00, band_width=0.000, confidence=20
+2025-07-04 21:35:00,418 INFO: ⚡ Sem sinal forte. Aguardando próximo candle.
+2025-07-04 21:36:00,412 INFO: Iniciando metodo validate_signals_for_candle
+2025-07-04 21:36:00,412 INFO: Inicializando conexão com o MongoDB.
+2025-07-04 21:36:00,415 INFO: Conexão com o MongoDB estabelecida.
+2025-07-04 21:36:00,415 INFO: Buscando documento com a query: {'signal_id': 'VPU55VEU'}
+2025-07-04 21:36:00,424 INFO: 🔔 Novo candle em 2025-07-05 00:36:00 UTC
+2025-07-04 21:36:00,424 INFO: ⏳ Agendada validação do candle 1751675700 em 120s.
+2025-07-04 21:36:00,425 INFO: Estrutura dos dados: (1751675362, 2680.44, 2680.44, 2679.345, 2679.6)
+2025-07-04 21:36:00,435 INFO: ⚠️ Sem dados suficientes para HMA. Dados HMA: True, Confiança: 60
+2025-07-04 21:36:00,435 INFO: 📈 Análise: EMA9=2678.26, EMA21=2678.33, trend_ema=FALL, trend_final=Tendencia nao definida, RSI=39.80, MACD=-0.10/-0.12, ATR=0.96, body=0.00, band_width=0.000, confidence=60
+2025-07-04 21:36:00,436 INFO: ⚡ Sem sinal forte. Aguardando próximo candle.
+2025-07-04 21:36:00,449 INFO: Documento encontrado: {'_id': ObjectId('686872bd9f41a075cd8a18f2'), 'signal_id': 'VPU55VEU', 'signal': 'FALL', 'price': 2679.831, 'confidence': 80, 'analyze_time': datetime.datetime(2025, 7, 5, 0, 33, 0, 438000), 'entry_time': '2025-07-04 21:34:00', 'open_candle_timestamp': 1751675698, 'message_id': 9210, 'chat_id': -4767147054, 'result': None}
+2025-07-04 21:36:00,449 INFO: Atualizando documento com a query: {'signal_id': 'VPU55VEU'}, update: {'$set': {'result': 'LOSS'}}
+2025-07-04 21:36:00,452 INFO: Número de documentos modificados: 1
+2025-07-04 21:36:00,452 INFO: Sinal VPU55VEU validado como LOSS
+2025-07-04 21:36:00,452 INFO: Inicializando conexão com o MongoDB.
+2025-07-04 21:36:00,454 INFO: Conexão com o MongoDB estabelecida.
+2025-07-04 21:36:00,454 INFO: Buscando documento com a query: {'signal_id': 'VPU55VEU'}
+2025-07-04 21:36:00,486 INFO: Documento encontrado: {'_id': ObjectId('686872bd9f41a075cd8a18f2'), 'signal_id': 'VPU55VEU', 'signal': 'FALL', 'price': 2679.831, 'confidence': 80, 'analyze_time': datetime.datetime(2025, 7, 5, 0, 33, 0, 438000), 'entry_time': '2025-07-04 21:34:00', 'open_candle_timestamp': 1751675698, 'message_id': 9210, 'chat_id': -4767147054, 'result': 'LOSS'}
+2025-07-04 21:36:01,339 INFO: Finalizando metodo validate_signals_for_candle
+2025-07-04 21:37:00,411 INFO: Iniciando metodo validate_signals_for_candle
+2025-07-04 21:37:00,411 INFO: Inicializando conexão com o MongoDB.
+2025-07-04 21:37:00,413 INFO: 🔔 Novo candle em 2025-07-05 00:37:00 UTC
+2025-07-04 21:37:00,414 INFO: Estrutura dos dados: (1751675422, 2680.13, 2680.749, 2680.13, 2680.749)
+2025-07-04 21:37:00,421 INFO: Conexão com o MongoDB estabelecida.
+2025-07-04 21:37:00,424 INFO: ⚠️ Sem dados suficientes para HMA. Dados HMA: True, Confiança: 40
+2025-07-04 21:37:00,424 INFO: Finalizando metodo validate_signals_for_candle
+2025-07-04 21:37:00,425 INFO: 📈 Análise: EMA9=2678.44, EMA21=2678.56, trend_ema=FALL, trend_final=Tendencia nao definida, RSI=47.22, MACD=-0.09/-0.05, ATR=1.07, body=0.00, band_width=0.000, confidence=40
+2025-07-04 21:37:00,426 INFO: ⚡ Sem sinal forte. Aguardando próximo candle.
+2025-07-04 21:38:00,416 INFO: 🔔 Novo candle em 2025-07-05 00:38:00 UTC
+2025-07-04 21:38:00,416 INFO: Estrutura dos dados: (1751675482, 2680.23, 2680.546, 2679.336, 2679.336)
+2025-07-04 21:38:00,426 INFO: ⚠️ Sem dados suficientes para HMA. Dados HMA: True, Confiança: 60
+2025-07-04 21:38:00,426 INFO: 📈 Análise: EMA9=2679.59, EMA21=2679.31, trend_ema=RISE, trend_final=Tendencia nao definida, RSI=68.61, MACD=0.27/0.22, ATR=0.94, body=0.00, band_width=0.000, confidence=60
+2025-07-04 21:38:00,426 INFO: ⚡ Sem sinal forte. Aguardando próximo candle.
+2025-07-04 21:38:00,431 INFO: Iniciando metodo validate_signals_for_candle
+2025-07-04 21:38:00,431 INFO: Inicializando conexão com o MongoDB.
+2025-07-04 21:38:00,433 INFO: Conexão com o MongoDB estabelecida.
+2025-07-04 21:38:00,433 INFO: Finalizando metodo validate_signals_for_candle
+2025-07-04 21:39:00,403 INFO: 🔔 Novo candle em 2025-07-05 00:39:00 UTC
+2025-07-04 21:39:00,403 INFO: Estrutura dos dados: (1751675542, 2680.083, 2680.266, 2679.948, 2680.247)
+2025-07-04 21:39:00,413 INFO: ⚠️ Sem dados suficientes para HMA. Dados HMA: True, Confiança: 60
+2025-07-04 21:39:00,414 INFO: 📈 Análise: EMA9=2680.32, EMA21=2680.22, trend_ema=RISE, trend_final=Tendencia nao definida, RSI=61.12, MACD=0.11/0.10, ATR=0.77, body=0.00, band_width=0.000, confidence=60
+2025-07-04 21:39:00,414 INFO: ⚡ Sem sinal forte. Aguardando próximo candle.
+2025-07-04 21:40:00,412 INFO: 🔔 Novo candle em 2025-07-05 00:40:00 UTC
+2025-07-04 21:40:00,413 INFO: Estrutura dos dados: (1751675602, 2679.831, 2680.268, 2679.483, 2680.09)
+2025-07-04 21:40:00,439 INFO: Tendência HMA: FALL (HMA21=2680.57, HMA100=2680.94)
+2025-07-04 21:40:00,439 INFO: ✅ Tendências HMA21 e HMA100 concordam: FALL | EMA: FALL
+2025-07-04 21:40:00,440 INFO: 📈 Análise: EMA9=2680.49, EMA21=2680.57, trend_ema=FALL, trend_final=FALL, RSI=38.09, MACD=-0.04/0.03, ATR=0.62, body=0.00, band_width=0.000, confidence=80
+2025-07-04 21:40:00,440 INFO: 🚨 SINAL DETECTADO: FALL | Confiança: 80%
+2025-07-04 21:40:01,238 INFO: ✅ Mensagem enviada ao Telegram (ID: XPM9QHQ7).
+2025-07-04 21:40:01,239 INFO: Inicializando conexão com o MongoDB.
+2025-07-04 21:40:01,241 INFO: Conexão com o MongoDB estabelecida.
+2025-07-04 21:40:01,242 INFO: Inserindo documento: {'signal_id': 'XPM9QHQ7', 'signal': 'FALL', 'price': np.float64(2680.196), 'confidence': 80, 'analyze_time': datetime.datetime(2025, 7, 4, 21, 40, 0, 441600, tzinfo=<DstTzInfo 'America/Sao_Paulo' -03-1 day, 21:00:00 STD>), 'entry_time': '2025-07-04 21:41:00', 'open_candle_timestamp': 1751676118, 'message_id': 9212, 'chat_id': -4767147054, 'result': None}
+2025-07-04 21:40:01,273 INFO: Documento inserido com ID: 686874619f41a075cd8a18f9
+2025-07-04 21:41:00,408 INFO: 🔔 Novo candle em 2025-07-05 00:41:00 UTC
+2025-07-04 21:41:00,409 INFO: ⏳ Agendada validação do candle 1751676000 em 120s.
+2025-07-04 21:41:00,409 INFO: Estrutura dos dados: (1751675662, 2679.108, 2679.994, 2679.039, 2679.994)
+2025-07-04 21:41:00,417 INFO: ⚠️ Sem dados suficientes para HMA. Dados HMA: True, Confiança: 60
+2025-07-04 21:41:00,417 INFO: 📈 Análise: EMA9=2679.25, EMA21=2679.63, trend_ema=FALL, trend_final=Tendencia nao definida, RSI=32.64, MACD=-0.37/-0.31, ATR=0.97, body=0.00, band_width=0.000, confidence=60
+2025-07-04 21:41:00,418 INFO: ⚡ Sem sinal forte. Aguardando próximo candle.
+2025-07-04 21:42:00,408 INFO: 🔔 Novo candle em 2025-07-05 00:42:00 UTC
+2025-07-04 21:42:00,409 INFO: ⏳ Agendada validação do candle 1751676060 em 120s.
+2025-07-04 21:42:00,409 INFO: Estrutura dos dados: (1751675722, 2678.987, 2678.987, 2677.959, 2678.333)
+2025-07-04 21:42:00,418 INFO: ⚠️ Sem dados suficientes para HMA. Dados HMA: True, Confiança: 20
+2025-07-04 21:42:00,418 INFO: 📈 Análise: EMA9=2678.67, EMA21=2678.70, trend_ema=FALL, trend_final=Tendencia nao definida, RSI=50.01, MACD=-0.09/-0.15, ATR=0.77, body=0.00, band_width=0.000, confidence=20
+2025-07-04 21:42:00,419 INFO: ⚡ Sem sinal forte. Aguardando próximo candle.
+2025-07-04 21:43:00,401 INFO: 🔔 Novo candle em 2025-07-05 00:43:00 UTC
+2025-07-04 21:43:00,402 INFO: ⏳ Agendada validação do candle 1751676120 em 120s.
+2025-07-04 21:43:00,402 INFO: Estrutura dos dados: (1751675782, 2677.957, 2679.061, 2677.957, 2679.061)
+2025-07-04 21:43:00,411 INFO: ⚠️ Sem dados suficientes para HMA. Dados HMA: True, Confiança: 60
+2025-07-04 21:43:00,411 INFO: 📈 Análise: EMA9=2678.46, EMA21=2678.40, trend_ema=RISE, trend_final=Tendencia nao definida, RSI=59.24, MACD=0.02/-0.05, ATR=0.71, body=0.00, band_width=0.000, confidence=60
+2025-07-04 21:43:00,411 INFO: ⚡ Sem sinal forte. Aguardando próximo candle.
+2025-07-04 21:43:00,417 INFO: Iniciando metodo validate_signals_for_candle
+2025-07-04 21:43:00,417 INFO: Inicializando conexão com o MongoDB.
+2025-07-04 21:43:00,420 INFO: Conexão com o MongoDB estabelecida.
+2025-07-04 21:43:00,421 INFO: Buscando documento com a query: {'signal_id': 'XPM9QHQ7'}
+2025-07-04 21:43:00,474 INFO: Documento encontrado: {'_id': ObjectId('686874619f41a075cd8a18f9'), 'signal_id': 'XPM9QHQ7', 'signal': 'FALL', 'price': 2680.196, 'confidence': 80, 'analyze_time': datetime.datetime(2025, 7, 5, 0, 40, 0, 441000), 'entry_time': '2025-07-04 21:41:00', 'open_candle_timestamp': 1751676118, 'message_id': 9212, 'chat_id': -4767147054, 'result': None}
+2025-07-04 21:43:00,474 INFO: Atualizando documento com a query: {'signal_id': 'XPM9QHQ7'}, update: {'$set': {'result': 'WIN'}}
+2025-07-04 21:43:00,477 INFO: Número de documentos modificados: 1
+2025-07-04 21:43:00,478 INFO: Sinal XPM9QHQ7 validado como WIN
+2025-07-04 21:43:00,479 INFO: Inicializando conexão com o MongoDB.
+2025-07-04 21:43:00,482 INFO: Conexão com o MongoDB estabelecida.
+2025-07-04 21:43:00,482 INFO: Buscando documento com a query: {'signal_id': 'XPM9QHQ7'}
+2025-07-04 21:43:00,503 INFO: Documento encontrado: {'_id': ObjectId('686874619f41a075cd8a18f9'), 'signal_id': 'XPM9QHQ7', 'signal': 'FALL', 'price': 2680.196, 'confidence': 80, 'analyze_time': datetime.datetime(2025, 7, 5, 0, 40, 0, 441000), 'entry_time': '2025-07-04 21:41:00', 'open_candle_timestamp': 1751676118, 'message_id': 9212, 'chat_id': -4767147054, 'result': 'WIN'}
+2025-07-04 21:43:01,384 INFO: Finalizando metodo validate_signals_for_candle
+2025-07-04 21:44:00,403 INFO: 🔔 Novo candle em 2025-07-05 00:44:00 UTC
+2025-07-04 21:44:00,404 INFO: Estrutura dos dados: (1751675842, 2678.488, 2678.974, 2678.406, 2678.922)
+2025-07-04 21:44:00,413 INFO: ⚠️ Sem dados suficientes para HMA. Dados HMA: True, Confiança: 40
+2025-07-04 21:44:00,413 INFO: 📈 Análise: EMA9=2678.83, EMA21=2678.90, trend_ema=FALL, trend_final=Tendencia nao definida, RSI=45.84, MACD=-0.04/0.01, ATR=0.78, body=0.00, band_width=0.000, confidence=40
+2025-07-04 21:44:00,413 INFO: ⚡ Sem sinal forte. Aguardando próximo candle.
+2025-07-04 21:44:00,422 INFO: Iniciando metodo validate_signals_for_candle
+2025-07-04 21:44:00,422 INFO: Inicializando conexão com o MongoDB.
+2025-07-04 21:44:00,425 INFO: Conexão com o MongoDB estabelecida.
+2025-07-04 21:44:00,426 INFO: Finalizando metodo validate_signals_for_candle
+2025-07-04 21:44:53,219 INFO: === Logging ROOT inicializado ===
+2025-07-04 21:44:53,225 INFO: Configurações carregadas: MAX_CANDLES=200, GRANULARITY=60, BOLLINGER_THRESHOLD=0.01, MIN_CONFIDENCE_TO_SEND=70, SIGNAL_COOLDOWN=120, VALIDATE_SIGNAL_COOLDOWN=120
+2025-07-04 21:44:53,225 INFO: 🔗 Conectando ao WebSocket...
+2025-07-04 21:44:53,227 INFO: 🔗 Conexão WebSocket estabelecida. Aguardando dados...
+2025-07-04 21:44:53,476 INFO: Websocket connected
+2025-07-04 21:44:53,767 INFO: Token autorizado. Solicitando 200 candles históricos...
+2025-07-04 21:44:53,767 INFO: Enviando requisição: {'ticks_history': 'R_25', 'style': 'candles', 'granularity': 60, 'count': 200, 'end': 'latest', 'subscribe': 1}
+2025-07-04 21:44:53,768 INFO: ✅ Token autorizado às 2025-07-05 00:44:53.768333 UTC
+2025-07-04 21:44:54,032 INFO: Recebendo histórico inicial com 200 candles
+2025-07-04 21:44:54,033 INFO: Estrutura do primeiro candle: {'close': 2674.322, 'epoch': 1751664300, 'high': 2676.15, 'low': 2674.14, 'open': 2675.841}
+2025-07-04 21:44:54,033 INFO: 📥 Histórico inicial recebido às 2025-07-05 00:44:54.033402 UTC. Total de candles: 200
+2025-07-04 21:44:54,033 INFO: Estrutura dos dados: (1751664300, 2675.841, 2676.15, 2674.14, 2674.322)
+2025-07-04 21:44:54,040 INFO: ⚠️ Bandas de Bollinger muito estreitas. Sem operação!
+2025-07-04 21:45:00,394 INFO: 🔔 Novo candle em 2025-07-05 00:45:00 UTC
+2025-07-04 21:45:00,395 INFO: Estrutura dos dados: (1751664540, 2674.017, 2674.922, 2673.892, 2673.962)
+2025-07-04 21:45:00,399 INFO: ⚠️ Bandas de Bollinger muito estreitas. Sem operação!
+2025-07-04 21:46:00,401 INFO: 🔔 Novo candle em 2025-07-05 00:46:00 UTC
+2025-07-04 21:46:00,402 INFO: Estrutura dos dados: (1751666340, 2671.225, 2671.715, 2670.846, 2671.165)
+2025-07-04 21:46:00,405 INFO: ⚠️ Bandas de Bollinger muito estreitas. Sem operação!
+2025-07-04 21:46:35,180 INFO: === Logging ROOT inicializado ===
+2025-07-04 21:46:35,181 INFO: Configurações carregadas: MAX_CANDLES=200, GRANULARITY=60, BOLLINGER_THRESHOLD=0.002, MIN_CONFIDENCE_TO_SEND=70, SIGNAL_COOLDOWN=120, VALIDATE_SIGNAL_COOLDOWN=120
+2025-07-04 21:46:35,182 INFO: 🔗 Conectando ao WebSocket...
+2025-07-04 21:46:35,183 INFO: 🔗 Conexão WebSocket estabelecida. Aguardando dados...
+2025-07-04 21:46:35,462 INFO: Websocket connected
+2025-07-04 21:46:35,750 INFO: Token autorizado. Solicitando 200 candles históricos...
+2025-07-04 21:46:35,765 INFO: Enviando requisição: {'ticks_history': 'R_25', 'style': 'candles', 'granularity': 60, 'count': 200, 'end': 'latest', 'subscribe': 1}
+2025-07-04 21:46:35,767 INFO: ✅ Token autorizado às 2025-07-05 00:46:35.767082 UTC
+2025-07-04 21:46:36,031 INFO: Recebendo histórico inicial com 200 candles
+2025-07-04 21:46:36,031 INFO: Estrutura do primeiro candle: {'close': 2673.454, 'epoch': 1751664420, 'high': 2674.33, 'low': 2673.454, 'open': 2674.33}
+2025-07-04 21:46:36,032 INFO: 📥 Histórico inicial recebido às 2025-07-05 00:46:36.032007 UTC. Total de candles: 200
+2025-07-04 21:46:36,032 INFO: Estrutura dos dados: (1751664420, 2674.33, 2674.33, 2673.454, 2673.454)
+2025-07-04 21:46:36,038 INFO: ⚠️ Bandas de Bollinger muito estreitas. Sem operação!
+2025-07-04 21:47:00,435 INFO: 🔔 Novo candle em 2025-07-05 00:47:00 UTC
+2025-07-04 21:47:00,436 INFO: Estrutura dos dados: (1751665200, 2671.125, 2671.359, 2668.576, 2668.576)
+2025-07-04 21:47:00,440 INFO: ⚠️ Bandas de Bollinger muito estreitas. Sem operação!
+2025-07-04 21:47:07,116 INFO: === Logging ROOT inicializado ===
+2025-07-04 21:47:07,117 INFO: Configurações carregadas: MAX_CANDLES=200, GRANULARITY=60, BOLLINGER_THRESHOLD=0.001, MIN_CONFIDENCE_TO_SEND=70, SIGNAL_COOLDOWN=120, VALIDATE_SIGNAL_COOLDOWN=120
+2025-07-04 21:47:07,117 INFO: 🔗 Conectando ao WebSocket...
+2025-07-04 21:47:07,118 INFO: 🔗 Conexão WebSocket estabelecida. Aguardando dados...
+2025-07-04 21:47:08,169 INFO: Websocket connected
+2025-07-04 21:47:08,844 INFO: Token autorizado. Solicitando 200 candles históricos...
+2025-07-04 21:47:08,844 INFO: Enviando requisição: {'ticks_history': 'R_25', 'style': 'candles', 'granularity': 60, 'count': 200, 'end': 'latest', 'subscribe': 1}
+2025-07-04 21:47:08,845 INFO: ✅ Token autorizado às 2025-07-05 00:47:08.845700 UTC
+2025-07-04 21:47:09,706 INFO: Recebendo histórico inicial com 200 candles
+2025-07-04 21:47:09,706 INFO: Estrutura do primeiro candle: {'close': 2674.034, 'epoch': 1751664480, 'high': 2674.567, 'low': 2673.682, 'open': 2673.693}
+2025-07-04 21:47:09,706 INFO: 📥 Histórico inicial recebido às 2025-07-05 00:47:09.706685 UTC. Total de candles: 200
+2025-07-04 21:47:09,707 INFO: Estrutura dos dados: (1751664480, 2673.693, 2674.567, 2673.682, 2674.034)
+2025-07-04 21:47:09,712 INFO: ⚠️ Bandas de Bollinger muito estreitas. Sem operação!
+2025-07-04 21:48:00,645 INFO: 🔔 Novo candle em 2025-07-05 00:48:00 UTC
+2025-07-04 21:48:00,646 INFO: Estrutura dos dados: (1751666040, 2670.151, 2670.521, 2669.86, 2670.383)
+2025-07-04 21:48:00,649 INFO: ⚠️ Bandas de Bollinger muito estreitas. Sem operação!
+2025-07-04 21:49:00,642 INFO: 🔔 Novo candle em 2025-07-05 00:49:00 UTC
+2025-07-04 21:49:00,642 INFO: Estrutura dos dados: (1751667840, 2669.799, 2670.31, 2669.513, 2670.137)
+2025-07-04 21:49:00,646 INFO: ⚠️ Bandas de Bollinger muito estreitas. Sem operação!
+2025-07-04 21:50:00,673 INFO: 🔔 Novo candle em 2025-07-05 00:50:00 UTC
+2025-07-04 21:50:00,673 INFO: Estrutura dos dados: (1751669640, 2671.797, 2672.028, 2671.259, 2671.74)
+2025-07-04 21:50:00,677 INFO: ⚠️ Bandas de Bollinger muito estreitas. Sem operação!
+2025-07-04 21:51:00,655 INFO: 🔔 Novo candle em 2025-07-05 00:51:00 UTC
+2025-07-04 21:51:00,656 INFO: Estrutura dos dados: (1751671440, 2668.971, 2668.971, 2667.032, 2667.532)
+2025-07-04 21:51:00,660 INFO: ⚠️ Bandas de Bollinger muito estreitas. Sem operação!
+2025-07-04 21:52:00,626 INFO: 🔔 Novo candle em 2025-07-05 00:52:00 UTC
+2025-07-04 21:52:00,627 INFO: Estrutura dos dados: (1751673240, 2677.338, 2677.338, 2675.981, 2676.973)
+2025-07-04 21:52:00,630 INFO: ⚠️ Bandas de Bollinger muito estreitas. Sem operação!
+2025-07-04 21:53:00,634 INFO: 🔔 Novo candle em 2025-07-05 00:53:00 UTC
+2025-07-04 21:53:00,634 INFO: Estrutura dos dados: (1751675040, 2679.739, 2680.348, 2678.799, 2680.096)
+2025-07-04 21:53:00,638 INFO: ⚠️ Bandas de Bollinger muito estreitas. Sem operação!
+2025-07-04 21:54:00,626 INFO: 🔔 Novo candle em 2025-07-05 00:54:00 UTC
+2025-07-04 21:54:00,627 INFO: Estrutura dos dados: (1751676442, 2677.534, 2677.687, 2677.305, 2677.687)
+2025-07-04 21:54:00,631 INFO: ⚠️ Bandas de Bollinger muito estreitas. Sem operação!
+2025-07-04 21:55:00,635 INFO: 🔔 Novo candle em 2025-07-05 00:55:00 UTC
+2025-07-04 21:55:00,635 INFO: Estrutura dos dados: (1751676502, 2677.574, 2677.649, 2677.182, 2677.208)
+2025-07-04 21:55:00,638 INFO: ⚠️ Bandas de Bollinger muito estreitas. Sem operação!
+2025-07-04 21:56:00,641 INFO: 🔔 Novo candle em 2025-07-05 00:56:00 UTC
+2025-07-04 21:56:00,641 INFO: Estrutura dos dados: (1751676562, 2677.663, 2678.001, 2677.663, 2677.915)
+2025-07-04 21:56:00,645 INFO: ⚠️ Bandas de Bollinger muito estreitas. Sem operação!
+2025-07-04 21:57:00,655 INFO: 🔔 Novo candle em 2025-07-05 00:57:00 UTC
+2025-07-04 21:57:00,655 INFO: Estrutura dos dados: (1751676622, 2678.12, 2679.231, 2678.12, 2678.941)
+2025-07-04 21:57:00,660 INFO: ⚠️ Bandas de Bollinger muito estreitas. Sem operação!
+2025-07-04 21:58:00,631 INFO: 🔔 Novo candle em 2025-07-05 00:58:00 UTC
+2025-07-04 21:58:00,632 INFO: Estrutura dos dados: (1751676682, 2679.234, 2679.446, 2678.976, 2679.446)
+2025-07-04 21:58:00,635 INFO: ⚠️ Bandas de Bollinger muito estreitas. Sem operação!
+2025-07-04 21:59:00,645 INFO: 🔔 Novo candle em 2025-07-05 00:59:00 UTC
+2025-07-04 21:59:00,645 INFO: Estrutura dos dados: (1751676742, 2680.14, 2680.403, 2680.024, 2680.045)
+2025-07-04 21:59:00,648 INFO: ⚠️ Bandas de Bollinger muito estreitas. Sem operação!
+2025-07-04 22:00:00,683 INFO: 🔔 Novo candle em 2025-07-05 01:00:00 UTC
+2025-07-04 22:00:00,684 INFO: Estrutura dos dados: (1751676802, 2679.513, 2679.787, 2679.232, 2679.232)
+2025-07-04 22:00:00,687 INFO: ⚠️ Bandas de Bollinger muito estreitas. Sem operação!
+2025-07-04 22:01:00,644 INFO: 🔔 Novo candle em 2025-07-05 01:01:00 UTC
+2025-07-04 22:01:00,645 INFO: Estrutura dos dados: (1751676862, 2678.078, 2678.314, 2677.846, 2678.052)
+2025-07-04 22:01:00,649 INFO: ⚠️ Bandas de Bollinger muito estreitas. Sem operação!
+2025-07-04 22:02:00,676 INFO: 🔔 Novo candle em 2025-07-05 01:02:00 UTC
+2025-07-04 22:02:00,676 INFO: Estrutura dos dados: (1751676922, 2677.082, 2677.082, 2676.779, 2676.957)
+2025-07-04 22:02:00,680 INFO: ⚠️ Bandas de Bollinger muito estreitas. Sem operação!
+2025-07-04 22:03:00,675 INFO: 🔔 Novo candle em 2025-07-05 01:03:00 UTC
+2025-07-04 22:03:00,675 INFO: Estrutura dos dados: (1751676982, 2676.348, 2677.125, 2676.271, 2677.125)
+2025-07-04 22:03:00,678 INFO: ⚠️ Bandas de Bollinger muito estreitas. Sem operação!

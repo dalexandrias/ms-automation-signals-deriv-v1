@@ -14,6 +14,8 @@ import requests
 
 from repository import MongoDBRepository
 from log_config import setup_logging
+from indicators import calculate_bollinger_bands, calculate_rsi, calculate_macd, calculate_atr
+from trend_analysis import analyze_ema_trend, analyze_hma_trend, calculate_signal_confidence
 
 # === CONFIGURAÇÕES ENV ===
 TOKEN = os.getenv('DERIV_TOKEN')
@@ -35,7 +37,7 @@ setup_logging()
 logger = logging.getLogger()               # root logger
 signal_logger = logging.getLogger('signals')  # logger para sinais
 
-logger.info(f"Configurações carregadas: MAX_CANDLES={max_candles}, GRANULARITY={granularity}")
+logger.info(f"Configurações carregadas: MAX_CANDLES={max_candles}, GRANULARITY={granularity}, BOLLINGER_THRESHOLD={bollinger_band_threshold}, MIN_CONFIDENCE_TO_SEND={min_confidence_to_send}, SIGNAL_COOLDOWN={signal_cooldown}, VALIDATE_SIGNAL_COOLDOWN={validate_signal_cooldown}")
 
 # === VARIÁVEIS GLOBAIS ===
 data_candles = []
@@ -81,76 +83,6 @@ def send_to_telegram(message: str) -> tuple:
     message_id = msg['message_id']
     chat_id    = msg['chat']['id']
     return message_id, chat_id
-
-# === Hull Moving Average ===
-def hull_moving_average(series, period: int):
-    """
-    Calcula o Hull Moving Average (HMA) para uma série de dados.
-    
-    Args:
-        series: Série pandas com os valores de preço
-        period: Período para o cálculo do HMA
-    
-    Returns:
-        Uma série pandas com os valores do HMA calculados
-    """
-    try:
-        # Verificar se a série tem dados suficientes
-        if len(series) < period:
-            logger.warning(f"Série com tamanho insuficiente para calcular HMA com período {period}. Tamanho atual: {len(series)}")
-            return pd.Series([float('nan')] * len(series), index=series.index)
-        
-        # 1. Calcula o WMA com metade do período
-        half_period = max(1, int(period/2))  # Garantir que half_period seja pelo menos 1
-        
-        def weighted_mean(x):
-            # Verificar se x tem dados suficientes
-            if len(x) == 0:
-                return float('nan')
-            
-            # Calcular os pesos
-            weights = np.array([(i+1) for i in range(len(x))])
-            
-            # Verificar se a soma dos pesos é zero
-            if weights.sum() == 0:
-                return float('nan')
-                
-            # Calcular a média ponderada
-            return np.sum(weights * x) / weights.sum()
-        
-        # Importar numpy para cálculos mais eficientes
-        import numpy as np
-        
-        # Usar apply com tratamento de erros
-        wma_half = series.rolling(window=half_period, min_periods=half_period).apply(
-            weighted_mean, raw=True
-        )
-        
-        # 2. Calcula o WMA com período completo
-        wma_full = series.rolling(window=period, min_periods=period).apply(
-            weighted_mean, raw=True
-        )
-        
-        # 3. Calcula o Raw HMA = 2 * WMA(n/2) - WMA(n)
-        raw_hma = 2 * wma_half - wma_full
-        
-        # 4. Aplica o WMA final com período = sqrt(n)
-        sqrt_period = max(1, int(period ** 0.5))  # Garantir que sqrt_period seja pelo menos 1
-        
-        hma = raw_hma.rolling(window=sqrt_period, min_periods=sqrt_period).apply(
-            weighted_mean, raw=True
-        )
-        
-        # Substituir valores NaN por valores anteriores válidos
-        hma = hma.fillna(method='ffill')
-        
-        return hma
-    except Exception as e:
-        logger.error(f"Erro ao calcular HMA: {e}")
-        import traceback
-        logger.error(f"Detalhes do erro no HMA: {traceback.format_exc()}")
-        # Retornar uma série de NaN com o mesmo índice da série original
-        return pd.Series([float('nan')] * len(series), index=series.index)
 
 def reply_result(signal_id: str):
     repo = MongoDBRepository()
@@ -300,157 +232,65 @@ def process_candles() -> None:
             
         df['time'] = pd.to_datetime(df['epoch'], unit='s')
 
-        # 5) Bollinger Bands (necessário para o filtro de volatilidade)
-        try:
-            from ta.volatility import BollingerBands
-            bb = BollingerBands(df['close'], window=10, window_dev=1.5)
-            upper = bb.bollinger_hband().iloc[-1]
-            middle = bb.bollinger_mavg().iloc[-1]
-            lower = bb.bollinger_lband().iloc[-1]
-        except (ImportError, AttributeError):
-            # Fallback caso a biblioteca ta não tenha o módulo volatility
-            # Calcula média móvel simples
-            sma = df['close'].rolling(window=10).mean()
-            # Calcula o desvio padrão
-            std = df['close'].rolling(window=10).std()
-            upper = (sma + (std * 1.5)).iloc[-1]
-            middle = sma.iloc[-1]
-            lower = (sma - (std * 1.5)).iloc[-1]
+        # Calcular Bollinger Bands
+        upper, middle, lower = calculate_bollinger_bands(df, window=10, window_dev=1.5)
+        if upper is None or middle is None or lower is None:
+            logger.error("Falha ao calcular Bollinger Bands")
+            return
 
-        # 0) Filtro de volatilidade – largura mínima das bandas
+        # Filtro de volatilidade – largura mínima das bandas
         band_width = (upper - lower) / middle
         if band_width < bollinger_band_threshold:
             logger.info("⚠️ Bandas de Bollinger muito estreitas. Sem operação!")
             return
 
-        # 1) Tendência via EMA9 e EMA21
-        ema9 = df['close'].ewm(span=9, adjust=False).mean().iloc[-1]
-        ema21 = df['close'].ewm(span=21, adjust=False).mean().iloc[-1]
-        trend_ema = 'RISE' if ema9 > ema21 else 'FALL'
-        
-        # 1.1) Tendência via Hull Moving Average (HMA) com períodos 21 e 100
-        # Calculamos apenas se temos dados suficientes
-        logger.info(f"Verificando dados para HMA. Tamanho do DataFrame: {len(df)}")
-        
-        if len(df) >= 100:
-            try:
-                # Calcular HMA para os últimos 5 candles para determinar a direção
-                logger.info("Calculando HMA21...")
-                hma21_values = hull_moving_average(df['close'], 21).iloc[-5:].values
-                
-                logger.info("Calculando HMA100...")
-                hma100_values = hull_moving_average(df['close'], 100).iloc[-5:].values
-                
-                # Verificar se os valores são válidos (não são NaN)
-                import numpy as np
-                if np.isnan(hma21_values).any() or np.isnan(hma100_values).any():
-                    logger.warning("Valores NaN detectados no HMA. Usando EMA como fallback.")
-                    trend = trend_ema
-                    trend_confidence = 20  # Confiança padrão
-                else:
-                    # Verifica se as médias estão subindo ou descendo
-                    hma21_direction = 'RISE' if hma21_values[-1] > hma21_values[0] else 'FALL'
-                    hma100_direction = 'RISE' if hma100_values[-1] > hma100_values[0] else 'FALL'
-                    
-                    # Se ambas as médias estiverem na mesma direção, segue essa tendência
-                    if hma21_direction == hma100_direction:
-                        trend_hma = hma21_direction
-                        trend_confidence = 30  # Maior confiança quando ambas concordam na direção
-                    else:
-                        # Se houver divergência, usa a direção do HMA21 (mais sensível a mudanças recentes)
-                        trend_hma = hma21_direction
-                        trend_confidence = 20  # Confiança padrão em caso de divergência
-                    
-                    # Define a tendência final com base no HMA
-                    trend = trend_hma
-                    
-                    # Para log, guardamos os valores atuais
-                    hma21 = hma21_values[-1]
-                    hma100 = hma100_values[-1]
-                    
-                    logger.info(f"📊 HMA: HMA21={hma21:.2f} ({hma21_direction}), HMA100={hma100:.2f} ({hma100_direction}), trend_hma={trend_hma}")
-            except Exception as e:
-                logger.error(f"Erro ao processar HMA: {e}")
-                import traceback
-                logger.error(f"Detalhes do erro no processamento do HMA: {traceback.format_exc()}")
-                # Fallback para EMA em caso de erro
-                trend = trend_ema
-                trend_confidence = 20  # Confiança padrão
-        else:
-            # Se não temos dados suficientes, continuamos usando apenas EMA
-            trend = trend_ema
-            trend_confidence = 20  # Confiança padrão
-            logger.info(f"⚠️ Dados insuficientes para HMA, usando apenas EMA. Necessário: 100, Disponível: {len(df)}")
+        # Calcular RSI
+        rsi = calculate_rsi(df, window=14)
+        if rsi is None:
+            logger.error("Falha ao calcular RSI")
+            return
 
-        # 2) RSI
-        try:
-            from ta.momentum import RSIIndicator
-            rsi = RSIIndicator(df['close'], window=14).rsi().iloc[-1]
-        except (ImportError, AttributeError):
-            # Implementação manual de RSI
-            delta = df['close'].diff()
-            gain = delta.mask(delta < 0, 0)
-            loss = -delta.mask(delta > 0, 0)
-            avg_gain = gain.rolling(window=14).mean()
-            avg_loss = loss.rolling(window=14).mean()
-            rs = avg_gain / avg_loss
-            rsi = 100 - (100 / (1 + rs)).iloc[-1]
+        # Calcular MACD
+        macd, macd_signal = calculate_macd(df)
+        if macd is None or macd_signal is None:
+            logger.error("Falha ao calcular MACD")
+            return
 
-        # 3) MACD
-        try:
-            from ta.trend import MACD
-            macd_ind = MACD(df['close'], window_slow=26, window_fast=12, window_sign=9)
-            macd = macd_ind.macd().iloc[-1]
-            macd_signal = macd_ind.macd_signal().iloc[-1]
-        except (ImportError, AttributeError):
-            # Implementação manual de MACD
-            ema12 = df['close'].ewm(span=12, adjust=False).mean()
-            ema26 = df['close'].ewm(span=26, adjust=False).mean()
-            macd_line = ema12 - ema26
-            macd_signal_line = macd_line.ewm(span=9, adjust=False).mean()
-            macd = macd_line.iloc[-1]
-            macd_signal = macd_signal_line.iloc[-1]
-
-        # 4) ATR + corpo do candle
-        try:
-            from ta.volatility import AverageTrueRange
-            atr = AverageTrueRange(
-                df['high'], df['low'], df['close'], window=14
-            ).average_true_range().iloc[-1]
-        except (ImportError, AttributeError):
-            # Implementação manual de ATR
-            high_low = df['high'] - df['low']
-            high_close = (df['high'] - df['close'].shift()).abs()
-            low_close = (df['low'] - df['close'].shift()).abs()
-            ranges = pd.concat([high_low, high_close, low_close], axis=1)
-            true_range = ranges.max(axis=1)
-            atr = true_range.rolling(window=14).mean().iloc[-1]
+        # Calcular ATR e corpo do candle
+        atr = calculate_atr(df, window=14)
+        if atr is None:
+            logger.error("Falha ao calcular ATR")
+            return
             
         last = df.iloc[-1]
         body = abs(last['close'] - last['open'])
 
-        # Confiança inicial com tendência
-        confidence = trend_confidence
-        # Ajustes por indicadores
-        if trend == 'RISE' and rsi >= 60:
-            confidence += 20
-        if trend == 'FALL' and rsi <= 40:
-            confidence += 20
-        if trend == 'RISE' and macd > macd_signal:
-            confidence += 20
-        if trend == 'FALL' and macd < macd_signal:
-            confidence += 20
-        if body >= 0.5 * atr:
-            confidence += 20
-        if (trend == 'RISE' and last['close'] > upper) or (trend == 'FALL' and last['close'] < lower):
-            confidence += 20
+        # Análise de tendência via EMA
+        trend_ema, ema9, ema21 = analyze_ema_trend(df, fast_period=9, slow_period=21)
 
-        signal = trend if confidence >= min_confidence_to_send else None
+        # Calcular confiança do sinal com base na tendência EMA
+        confidence = calculate_signal_confidence(
+            trend_ema, rsi, macd, macd_signal, body, atr, last['close'], upper, lower
+        )
+
+        signal = None
+        
+        # Verificar se temos dados suficientes para HMA e se a confiança é alta o suficiente
+        if len(df) >= 100 and confidence >= min_confidence_to_send:
+            # Usar HMA para confirmar ou reverter a tendência
+            trend_hma = analyze_hma_trend(df)
+            
+            if trend_hma == trend_ema:
+                signal = trend_hma
+                logger.info(f"✅ Tendências HMA21 e HMA100 concordam: {trend_hma} | EMA: {trend_ema}")
+            else:
+                logger.info("⚠️ Tendencia HMA21 e HMA100 não encontrada")
+        else:
+            logger.info(f"⚠️ Sem dados suficientes para HMA. Dados HMA: {len(df)>=100}, Confiança: {confidence}")
 
         logger.info(
             f"📈 Análise: EMA9={ema9:.2f}, EMA21={ema21:.2f}, trend_ema={trend_ema}, " +
-            (f"HMA21={hma21:.2f}, HMA100={hma100:.2f}, trend_hma={trend_hma}, " if 'hma21' in locals() else "") +
-            f"trend_final={trend}, " +
+            f"trend_final={signal if signal is not None else 'Tendencia nao definida'}, " +
             f"RSI={rsi:.2f}, MACD={macd:.2f}/{macd_signal:.2f}, ATR={atr:.2f}, " +
             f"body={body:.2f}, band_width={band_width:.3f}, confidence={confidence}"
         )

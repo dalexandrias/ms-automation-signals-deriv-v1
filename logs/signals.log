@@ -1,13 +1,8 @@
-2025-07-04 09:24:51,764 INFO: === Signal logger inicializado ===
-2025-07-04 09:25:04,531 INFO: [IRDBL0B8] Signal: FALL | Price: 2675.369 | Confidence: 40% | Entry: 2025-07-04 09:26:00.328657-03:00
-2025-07-04 09:25:32,667 INFO: === Signal logger inicializado ===
-2025-07-04 09:26:01,529 INFO: === Signal logger inicializado ===
-2025-07-04 09:26:58,432 INFO: === Signal logger inicializado ===
-2025-07-04 09:27:13,930 INFO: === Signal logger inicializado ===
-2025-07-04 09:27:34,229 INFO: === Signal logger inicializado ===
-2025-07-04 09:28:01,392 INFO: [GBO9GWEJ] Signal: FALL | Price: 2675.957 | Confidence: 60% | Entry: 2025-07-04 09:29:00.462225-03:00
-2025-07-04 09:29:43,308 INFO: === Signal logger inicializado ===
-2025-07-04 09:36:52,854 INFO: === Signal logger inicializado ===
-2025-07-04 09:37:01,354 INFO: [MDZ2F7WD] Signal: RISE | Price: 2679.737 | Confidence: 40% | Entry: 2025-07-04 09:38:00.439479-03:00
-2025-07-04 09:39:01,252 INFO: [GT26VV9L] Signal: FALL | Price: 2678.712 | Confidence: 50% | Entry: 2025-07-04 09:40:00.448626-03:00
-2025-07-04 09:41:01,258 INFO: [E76T30H9] Signal: RISE | Price: 2679.011 | Confidence: 20% | Entry: 2025-07-04 09:42:00.451459-03:00
+2025-07-04 21:01:01,294 INFO: [Q459HHWA] Signal: FALL | Price: 2674.699 | Confidence: 80% | Entry: 2025-07-04 21:02:00.426578-03:00
+2025-07-04 21:24:01,240 INFO: [704WK51T] Signal: FALL | Price: 2679.739 | Confidence: 80% | Entry: 2025-07-04 21:25:00.424433-03:00
+2025-07-04 21:29:01,284 INFO: [QPORDCWI] Signal: FALL | Price: 2680.44 | Confidence: 80% | Entry: 2025-07-04 21:30:00.435600-03:00
+2025-07-04 21:33:01,301 INFO: [VPU55VEU] Signal: FALL | Price: 2679.831 | Confidence: 80% | Entry: 2025-07-04 21:34:00.438911-03:00
+2025-07-04 21:40:01,238 INFO: [XPM9QHQ7] Signal: FALL | Price: 2680.196 | Confidence: 80% | Entry: 2025-07-04 21:41:00.441600-03:00
+2025-07-04 21:44:53,220 INFO: === Signal logger inicializado ===
+2025-07-04 21:46:35,181 INFO: === Signal logger inicializado ===
+2025-07-04 21:47:07,116 INFO: === Signal logger inicializado ===
