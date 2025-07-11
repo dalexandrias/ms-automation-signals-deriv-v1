@@ -211,4 +211,191 @@ def calculate_atr(df, window=14):
         return atr
     except Exception as e:
         logger.error(f"Erro ao calcular ATR: {e}")
-        return None 
+        return None
+
+def analyze_micro_trend(df, period=5, trend_strength_threshold=0.1):
+    """
+    Analisa a micro tendência dos candles baseada nos últimos períodos.
+    
+    Args:
+        df: DataFrame com colunas 'open', 'high', 'low', 'close'
+        period: Número de candles para analisar (padrão: 5)
+        trend_strength_threshold: Limite para considerar tendência forte (0.0 a 1.0)
+        
+    Returns:
+        dict: {
+            'trend': 'RISE'|'FALL'|'SIDEWAYS',
+            'strength': float (0.0 a 1.0),
+            'confidence': float (0.0 a 1.0),
+            'pattern': str,
+            'momentum': float
+        }
+    """
+    try:
+        if len(df) < period:
+            logger.warning(f"DataFrame insuficiente para analisar micro tendência. Tamanho: {len(df)}, Período: {period}")
+            return {
+                'trend': 'SIDEWAYS',
+                'strength': 0.0,
+                'confidence': 0.0,
+                'pattern': 'insufficient_data',
+                'momentum': 0.0
+            }
+        
+        # Pegar os últimos 'period' candles
+        recent_data = df.tail(period).copy()
+        
+        # Análise de fechamentos
+        closes = recent_data['close'].values
+        opens = recent_data['open'].values
+        highs = recent_data['high'].values
+        lows = recent_data['low'].values
+        
+        # 1. Análise de direção geral
+        price_changes = np.diff(closes)
+        positive_moves = np.sum(price_changes > 0)
+        negative_moves = np.sum(price_changes < 0)
+        total_moves = len(price_changes)
+        
+        # 2. Análise de momentum
+        total_change = closes[-1] - closes[0]
+        max_range = np.max(highs) - np.min(lows)
+        momentum = total_change / max_range if max_range > 0 else 0
+        
+        # 3. Análise de força dos candles
+        bullish_candles = np.sum(closes > opens)
+        bearish_candles = np.sum(closes < opens)
+        doji_candles = period - bullish_candles - bearish_candles
+        
+        # 4. Análise de tamanho dos corpos
+        body_sizes = np.abs(closes - opens)
+        avg_body_size = np.mean(body_sizes)
+        body_strength = avg_body_size / np.mean(highs - lows) if np.mean(highs - lows) > 0 else 0
+        
+        # 5. Determinar tendência
+        bullish_score = (positive_moves / total_moves) if total_moves > 0 else 0
+        bearish_score = (negative_moves / total_moves) if total_moves > 0 else 0
+        candle_score = (bullish_candles / period) if period > 0 else 0
+        
+        # Calcular força combinada
+        combined_bullish_strength = (bullish_score + candle_score + max(0, momentum)) / 3
+        combined_bearish_strength = (bearish_score + (bearish_candles / period) + max(0, -momentum)) / 3
+        
+        # 6. Análise de padrões
+        pattern = _identify_micro_pattern(recent_data)
+        
+        # 7. Determinar tendência final
+        if combined_bullish_strength > trend_strength_threshold:
+            trend = 'RISE'
+            strength = combined_bullish_strength
+        elif combined_bearish_strength > trend_strength_threshold:
+            trend = 'FALL'
+            strength = combined_bearish_strength
+        else:
+            trend = 'SIDEWAYS'
+            strength = max(combined_bullish_strength, combined_bearish_strength)
+        
+        # 8. Calcular confiança
+        volatility = np.std(price_changes) / np.mean(np.abs(price_changes)) if np.mean(np.abs(price_changes)) > 0 else 1
+        confidence = min(1.0, (body_strength * (1 - min(volatility, 1))) + (strength * 0.5))
+        
+        return {
+            'trend': trend,
+            'strength': round(strength, 3),
+            'confidence': round(confidence, 3),
+            'pattern': pattern,
+            'momentum': round(momentum, 3)
+        }
+        
+    except Exception as e:
+        logger.error(f"Erro ao analisar micro tendência: {e}")
+        import traceback
+        logger.error(f"Detalhes do erro: {traceback.format_exc()}")
+        return {
+            'trend': 'SIDEWAYS',
+            'strength': 0.0,
+            'confidence': 0.0,
+            'pattern': 'error',
+            'momentum': 0.0
+        }
+
+def _identify_micro_pattern(df):
+    """
+    Identifica padrões específicos nos últimos candles.
+    
+    Args:
+        df: DataFrame com os últimos candles
+        
+    Returns:
+        str: Nome do padrão identificado
+    """
+    try:
+        if len(df) < 3:
+            return 'insufficient_data'
+        
+        closes = df['close'].values
+        opens = df['open'].values
+        highs = df['high'].values
+        lows = df['low'].values
+        
+        # Analisar últimos 3 candles
+        last_3_closes = closes[-3:]
+        last_3_opens = opens[-3:]
+        
+        # Padrão de 3 candles ascendentes
+        if (last_3_closes[1] > last_3_closes[0] and 
+            last_3_closes[2] > last_3_closes[1] and
+            all(c > o for c, o in zip(last_3_closes, last_3_opens))):
+            return 'three_ascending_bullish'
+        
+        # Padrão de 3 candles descendentes
+        if (last_3_closes[1] < last_3_closes[0] and 
+            last_3_closes[2] < last_3_closes[1] and
+            all(c < o for c, o in zip(last_3_closes, last_3_opens))):
+            return 'three_descending_bearish'
+        
+        # Padrão de engolfo bullish
+        if (len(df) >= 2 and
+            closes[-2] < opens[-2] and  # Candle anterior bearish
+            closes[-1] > opens[-1] and  # Candle atual bullish
+            opens[-1] < closes[-2] and  # Abre abaixo do fechamento anterior
+            closes[-1] > opens[-2]):    # Fecha acima da abertura anterior
+            return 'bullish_engulfing'
+        
+        # Padrão de engolfo bearish
+        if (len(df) >= 2 and
+            closes[-2] > opens[-2] and  # Candle anterior bullish
+            closes[-1] < opens[-1] and  # Candle atual bearish
+            opens[-1] > closes[-2] and  # Abre acima do fechamento anterior
+            closes[-1] < opens[-2]):    # Fecha abaixo da abertura anterior
+            return 'bearish_engulfing'
+        
+        # Doji
+        if abs(closes[-1] - opens[-1]) < (highs[-1] - lows[-1]) * 0.1:
+            return 'doji'
+        
+        # Hammer/Shooting star
+        body_size = abs(closes[-1] - opens[-1])
+        total_range = highs[-1] - lows[-1]
+        lower_shadow = min(closes[-1], opens[-1]) - lows[-1]
+        upper_shadow = highs[-1] - max(closes[-1], opens[-1])
+        
+        if (lower_shadow > body_size * 2 and upper_shadow < body_size and 
+            total_range > 0):
+            return 'hammer'
+        
+        if (upper_shadow > body_size * 2 and lower_shadow < body_size and 
+            total_range > 0):
+            return 'shooting_star'
+        
+        # Padrão lateral
+        price_range = max(closes) - min(closes)
+        avg_body = np.mean(np.abs(closes - opens))
+        if price_range < avg_body * 2:
+            return 'sideways_consolidation'
+        
+        return 'no_clear_pattern'
+        
+    except Exception as e:
+        logger.error(f"Erro ao identificar padrão micro: {e}")
+        return 'pattern_error'
