@@ -74,7 +74,8 @@ def analyze_hma_trend(df, short_period=21, long_period=100):
 
 def calculate_signal_confidence(trend, rsi, macd, macd_signal, body, atr, close_price, upper_band, lower_band):
     """
-    Calcula a confiança do sinal com base nos indicadores.
+    Calcula a confiança base do sinal com base nos indicadores auxiliares.
+    Versão conservadora que retorna até 60% para deixar espaço para bônus de consenso.
     
     Args:
         trend: Direção da tendência ('RISE' ou 'FALL')
@@ -88,27 +89,55 @@ def calculate_signal_confidence(trend, rsi, macd, macd_signal, body, atr, close_
         lower_band: Banda inferior de Bollinger
         
     Returns:
-        int: Valor da confiança (0-100)
+        int: Valor da confiança base (20-60)
     """
     try:
-        # Confiança inicial baseada na tendência (já deve vir da análise de tendência)
+        # Confiança inicial conservadora
         confidence = 20
         
-        # Ajustes por indicadores
-        if trend == 'RISE' and rsi >= 55 and rsi <= 75:
-            confidence += 20
-        if trend == 'FALL' and rsi <= 50 and rsi >= 30:
-            confidence += 20
-        if trend == 'RISE' and macd > macd_signal:
-            confidence += 20
-        if trend == 'FALL' and macd < macd_signal:
-            confidence += 20
-        if body >= 0.5 * atr:
-            confidence += 20
-        if (trend == 'RISE' and close_price > upper_band) or (trend == 'FALL' and close_price < lower_band):
-            confidence += 20
+        # Ajustes por indicadores auxiliares (máximo 40 pontos adicionais)
+        # RSI - até 10 pontos
+        if trend == 'RISE' and 55 <= rsi <= 75:
+            confidence += 10
+        elif trend == 'FALL' and 30 <= rsi <= 50:
+            confidence += 10
+        elif trend == 'RISE' and 50 <= rsi < 55:
+            confidence += 5  # RSI neutro favorável
+        elif trend == 'FALL' and 50 < rsi <= 55:
+            confidence += 5  # RSI neutro favorável
             
+        # MACD - até 10 pontos
+        if trend == 'RISE' and macd > macd_signal:
+            # Força do cruzamento
+            macd_strength = min(10, int(abs(macd - macd_signal) * 100))
+            confidence += max(5, macd_strength)
+        elif trend == 'FALL' and macd < macd_signal:
+            # Força do cruzamento
+            macd_strength = min(10, int(abs(macd - macd_signal) * 100))
+            confidence += max(5, macd_strength)
+            
+        # Corpo do candle - até 10 pontos
+        if body >= 0.8 * atr:
+            confidence += 10  # Corpo muito forte
+        elif body >= 0.5 * atr:
+            confidence += 7   # Corpo forte
+        elif body >= 0.3 * atr:
+            confidence += 4   # Corpo moderado
+            
+        # Posição nas Bandas de Bollinger - até 10 pontos
+        if trend == 'RISE' and close_price > upper_band:
+            confidence += 10  # Breakout de alta
+        elif trend == 'FALL' and close_price < lower_band:
+            confidence += 10  # Breakout de baixa
+        elif trend == 'RISE' and close_price > (upper_band + lower_band) / 2:
+            confidence += 5   # Acima da média
+        elif trend == 'FALL' and close_price < (upper_band + lower_band) / 2:
+            confidence += 5   # Abaixo da média
+            
+        # Garantir que não ultrapasse 60 (deixar espaço para bônus de consenso)
+        confidence = min(60, confidence)
+        
         return confidence
     except Exception as e:
         logger.error(f"Erro ao calcular confiança do sinal: {e}")
-        return 0 
+        return 20  # Confiança mínima em caso de erro 

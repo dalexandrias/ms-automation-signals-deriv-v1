@@ -374,8 +374,14 @@ def validate_signals_for_candle() -> None:
 
 def process_candles() -> None:
     """
-    Processa candles, calcula indicadores e gera sinais.
-    Esta função é chamada quando um novo candle é recebido e não há cooldown ativo.
+    VERSÃO REORGANIZADA - Processa candles priorizando concordância entre indicadores.
+    
+    Fluxo:
+    1. Preparação dos dados
+    2. Análise de indicadores de tendência (BB, EMA, HMA, Micro)
+    3. Verificação de concordância entre indicadores  
+    4. Cálculo de confiança baseado no consenso
+    5. Geração de sinal se critérios atendidos
     """
     global data_candles, last_open_time
     
@@ -386,6 +392,8 @@ def process_candles() -> None:
     
     try:
         logger.info(f"📊 Iniciando processamento de {len(data_candles)} candles")
+        
+        # ==================== PREPARAÇÃO DOS DADOS ====================
         
         # Normalizar os dados para garantir consistência
         normalized_data = []
@@ -419,7 +427,7 @@ def process_candles() -> None:
         if len(df.columns) == 6:
             df.columns = ['epoch', 'open_time', 'open', 'high', 'low', 'close']
         else:
-            logger.error(f"❌ DataFrame com número incorreto de colunas: {len(df.columns)}. Esperado: 5")
+            logger.error(f"❌ DataFrame com número incorreto de colunas: {len(df.columns)}. Esperado: 6")
             return
             
         # Converter para tipos numéricos
@@ -427,143 +435,224 @@ def process_candles() -> None:
             df[col] = pd.to_numeric(df[col], errors='coerce')
             
         # Verificar se há valores NaN após a conversão
-        # Verificar porque os valores NaN estão aparecendo
         nan_counts = df.isna().sum()
         if nan_counts.sum() > 0:
             logger.warning(f"⚠️ Valores NaN detectados no DataFrame após conversão: {nan_counts}")
             
         df['time'] = pd.to_datetime(df['epoch'], unit='s')
+        last = df.iloc[-1]
 
-        # Calcular Bollinger Bands
+        # Calcular Bollinger Bands (necessário para todas as análises)
         upper, middle, lower = calculate_bollinger_bands(df, window=10, window_dev=1.5)
         if upper is None or middle is None or lower is None:
-            logger.error("Falha ao calcular Bollinger Bands")
+            logger.error("❌ Falha ao calcular Bollinger Bands")
             return
 
-        # Nova análise de Bollinger Bands
-        should_trade, bb_trend, bb_strength = should_trade_bollinger(df, upper, middle, lower)
-        if not should_trade:
-            logger.info("⚠️ Condições das Bandas de Bollinger não favoráveis para operação.")
+        # ==================== ANÁLISE DE INDICADORES DE TENDÊNCIA ====================
+        
+        # 1. BOLLINGER BANDS ANALYSIS
+        should_trade_bb, bb_trend, bb_strength = should_trade_bollinger(df, upper, middle, lower)
+        logger.info(f"📊 BB Analysis: trend={bb_trend}, strength={bb_strength:.3f}, should_trade={should_trade_bb}")
+        
+        # 2. EMA TREND ANALYSIS
+        trend_ema, ema9, ema21 = analyze_ema_trend(df, fast_period=9, slow_period=21)
+        if trend_ema is None:
+            logger.error("❌ Falha ao calcular EMA trend")
             return
-
-        # Apenas para teste
-        # bb_trend, bb_strength = None, None
-
-        # Calcular RSI
-        rsi = calculate_rsi(df, window=14)
-        if rsi is None:
-            logger.error("Falha ao calcular RSI")
-            return
-
-        # Calcular MACD
-        macd, macd_signal = calculate_macd(df)
-        if macd is None or macd_signal is None:
-            logger.error("Falha ao calcular MACD")
-            return
-
-        # Calcular ATR e corpo do candle
-        atr = calculate_atr(df, window=14)
-        if atr is None:
-            logger.error("Falha ao calcular ATR")
-            return
-            
-        last = df.iloc[-1]
-        body = abs(last['close'] - last['open'])
-
-        # Análise de micro tendência dos candles
+        logger.info(f"📊 EMA Analysis: trend={trend_ema}, EMA9={ema9:.5f}, EMA21={ema21:.5f}")
+        
+        # 3. HMA TREND ANALYSIS (se tiver dados suficientes)
+        trend_hma = None
+        if len(df) >= 100:
+            trend_hma = analyze_hma_trend(df)
+            logger.info(f"📊 HMA Analysis: trend={trend_hma}")
+        else:
+            logger.info(f"📊 HMA Analysis: dados insuficientes ({len(df)}/100)")
+        
+        # 4. MICRO TREND ANALYSIS
         micro_trend_analysis = analyze_micro_trend(df, period=5, trend_strength_threshold=0.6)
         micro_trend = micro_trend_analysis['trend']
         micro_strength = micro_trend_analysis['strength']
         micro_confidence = micro_trend_analysis['confidence']
         micro_pattern = micro_trend_analysis['pattern']
         micro_momentum = micro_trend_analysis['momentum']
+        logger.info(f"📊 Micro Analysis: trend={micro_trend}, strength={micro_strength:.3f}, confidence={micro_confidence:.3f}, pattern={micro_pattern}")
 
-        # Análise de tendência via EMA
-        trend_ema, ema9, ema21 = analyze_ema_trend(df, fast_period=9, slow_period=21)
+        # ==================== VERIFICAÇÃO DE CONCORDÂNCIA ====================
+        
+        # Lista de tendências válidas (não None e não SIDEWAYS)
+        trend_indicators = {
+            'BB': bb_trend if should_trade_bb and bb_trend not in [None, 'SIDEWAYS'] else None,
+            'EMA': trend_ema if trend_ema not in [None, 'SIDEWAYS'] else None,
+            'HMA': trend_hma if trend_hma not in [None, 'SIDEWAYS'] else None,
+            'Micro': micro_trend if micro_trend not in [None, 'SIDEWAYS'] else None
+        }
+        
+        # Filtrar apenas tendências válidas
+        valid_trends = {k: v for k, v in trend_indicators.items() if v is not None}
+        trends_list = list(valid_trends.values())
+        
+        logger.info(f"🔍 Indicadores válidos: {valid_trends}")
+        
+        # Verificar se há concordância entre pelo menos 3 indicadores
+        consensus_trend = None
+        consensus_count = 0
+        
+        if len(trends_list) >= 3:
+            # Contar votos para cada direção
+            rise_votes = trends_list.count('RISE')
+            fall_votes = trends_list.count('FALL')
+            total_votes = len(trends_list)
+            
+            # Exigir maioria absoluta (pelo menos 75% de concordância)
+            consensus_threshold = max(3, int(total_votes * 0.75))
+            
+            if rise_votes >= consensus_threshold:
+                consensus_trend = 'RISE'
+                consensus_count = rise_votes
+            elif fall_votes >= consensus_threshold:
+                consensus_trend = 'FALL'
+                consensus_count = fall_votes
+                
+            logger.info(f"🗳️ Votação: RISE={rise_votes}, FALL={fall_votes}, Total={total_votes}, Threshold={consensus_threshold}")
+        
+        # Se não há consenso, sair
+        if consensus_trend is None:
+            logger.info(f"⚠️ Sem consenso entre indicadores. Indicadores válidos: {len(trends_list)}, mínimo necessário: 3")
+            return
+        
+        logger.info(f"✅ CONSENSO ALCANÇADO: {consensus_trend} ({consensus_count}/{len(trends_list)} indicadores)")
 
-        # Calcular confiança do sinal com base na tendência EMA e força do BB
-        confidence = calculate_signal_confidence(
-            trend_ema, rsi, macd, macd_signal, body, atr, last['close'], upper, lower
+        # ==================== CÁLCULO DE CONFIANÇA ====================
+        
+        # Calcular indicadores auxiliares
+        rsi = calculate_rsi(df, window=14)
+        if rsi is None:
+            logger.error("❌ Falha ao calcular RSI")
+            return
+
+        macd, macd_signal = calculate_macd(df)
+        if macd is None or macd_signal is None:
+            logger.error("❌ Falha ao calcular MACD")
+            return
+
+        atr = calculate_atr(df, window=14)
+        if atr is None:
+            logger.error("❌ Falha ao calcular ATR")
+            return
+            
+        body = abs(last['close'] - last['open'])
+
+        # Calcular confiança base usando a tendência de consenso
+        base_confidence = calculate_signal_confidence(
+            consensus_trend, rsi, macd, macd_signal, body, atr, last['close'], upper, lower
         )
+        
+        # ==================== SISTEMA PROPORCIONAL DE CONFIANÇA ====================
+        
+        # Calcular pesos dos indicadores que concordam com o consenso
+        indicator_weights = {}
+        total_weight = 0
+        
+        # BB - peso baseado na força e se deve operar
+        if trend_indicators['BB'] == consensus_trend:
+            bb_weight = bb_strength * 25  # Peso máximo 25
+            indicator_weights['BB'] = bb_weight
+            total_weight += bb_weight
+        
+        # Micro - peso baseado na força e confiança
+        if trend_indicators['Micro'] == consensus_trend:
+            micro_weight = micro_strength * micro_confidence * 20  # Peso máximo 20
+            indicator_weights['Micro'] = micro_weight
+            total_weight += micro_weight
+        
+        # HMA - peso fixo alto (indicador de tendência longa)
+        if trend_indicators['HMA'] == consensus_trend:
+            hma_weight = 15
+            indicator_weights['HMA'] = hma_weight
+            total_weight += hma_weight
+        
+        # EMA - peso fixo moderado (sempre disponível)
+        if trend_indicators['EMA'] == consensus_trend:
+            ema_weight = 10
+            indicator_weights['EMA'] = ema_weight
+            total_weight += ema_weight
+        
+        # Calcular confiança final usando distribuição proporcional
+        # Base: 60% (da função calculate_signal_confidence)
+        # Bônus: 40% distribuídos proporcionalmente entre indicadores
+        
+        max_bonus = 40  # Máximo 40% de bônus
+        confidence_bonus = 0
+        bonus_breakdown = []
+        
+        if total_weight > 0:
+            for indicator, weight in indicator_weights.items():
+                # Distribuir o bônus proporcionalmente
+                indicator_bonus = int((weight / total_weight) * max_bonus)
+                confidence_bonus += indicator_bonus
+                bonus_breakdown.append(f"{indicator}: +{indicator_bonus}")
+        
+        # Confiança final
+        final_confidence = base_confidence + confidence_bonus
+        
+        # Garantir que não ultrapasse 100%
+        final_confidence = min(100, final_confidence)
+        
+        # Log detalhado do cálculo
+        weight_info = ", ".join([f"{k}={v:.2f}" for k, v in indicator_weights.items()])
+        logger.info(f"🔢 Pesos calculados: {weight_info} (total: {total_weight:.2f})")
+        logger.info(f"📈 Confiança final: {final_confidence}% (base: {base_confidence} + bônus: {confidence_bonus}) [{', '.join(bonus_breakdown)}]")
 
+        # Verificar se confiança atende ao mínimo
+        if final_confidence < min_confidence_to_send:
+            logger.info(f"⚠️ Confiança insuficiente: {final_confidence}% < {min_confidence_to_send}%")
+            return
+
+        # ==================== GERAÇÃO DE SINAL ====================
+        
         signal = Signal()
-
         candle_repo = RepositoryFactory.get_candle_repository()
         candle = candle_repo.find_by_epoch(int(last['epoch']))
 
         if candle is None:
             candle = Candle()
-        
-        # Adicionar bônus de confiança se BB concordar com EMA
-        # Apenas para teste
-        if bb_trend == trend_ema:
-            confidence += int(bb_strength * 20)  # Adiciona até 20 pontos extras baseado na força do BB
 
-        # Aplicar bônus adicional se micro tendência concordar com EMA
-        if micro_trend == trend_ema:
-            micro_bonus = int(micro_strength * micro_confidence * 15)  # Até 15 pontos extras
-            confidence += micro_bonus
-            logger.info(f"🎯 Micro tendência concorda com EMA. Bônus aplicado: +{micro_bonus} pontos")
+        # Configurar sinal
+        epoch = int(last['epoch']) + 60
+        signal.direction = SignalDirection.RISE if consensus_trend == 'RISE' else SignalDirection.FALL
+        signal.confidence = final_confidence
+        signal.analyze_time = datetime.utcnow()
+        signal.open_candle_timestamp = epoch
+        signal.message_id = None
+        signal.chat_id = None
+        signal.result = None
+        signal.signal_id = generate_signal_id()
+        signal.entry_time = None
 
-        # Verificar se temos dados suficientes para HMA e se a confiança é alta o suficiente
-        if len(df) >= 100 and confidence >= min_confidence_to_send:
-            # Usar HMA para confirmar ou reverter a tendência
-            trend_hma = analyze_hma_trend(df)
-            
-            # Agora requeremos concordância entre BB, EMA, HMA e Micro Tendência
-            micro_trend_ema_match = micro_trend == trend_ema
-            # all_trends_agree = (trend_hma == trend_ema == bb_trend and micro_trend_ema_match)
-            all_trends_agree = (True)
-            
-            if all_trends_agree:
-                epoch = int(last['epoch']) + 60
-                # Atribuir valores ao sinal
-                signal.direction = SignalDirection.RISE if trend_hma == 'RISE' else SignalDirection.FALL
-                signal.confidence = confidence
-                signal.analyze_time = datetime.utcnow()
-                signal.open_candle_timestamp = epoch
-                signal.message_id = None
-                signal.chat_id = None
-                signal.result = None
-                signal.signal_id = generate_signal_id()
-                signal.entry_time = None
-                
+        # Configurar candle
+        candle.epoch = epoch
+        candle.open_price = last['open']
+        candle.high = last['high']
+        candle.low = last['low']
+        candle.close_price = last['close']
+        candle.signal = signal
+        candle.time = last['time']
 
-                # Atribuir valores ao candle
-                candle.epoch = epoch
-                candle.open_price = last['open']
-                candle.high = last['high']
-                candle.low = last['low']
-                candle.close_price = last['close']
-                candle.signal = signal
-                candle.time = last['time']
-
-                logger.info(f"✅ Todas as tendências concordam: HMA={trend_hma}, EMA={trend_ema}, BB={bb_trend}, Micro={micro_trend}")
-            else:
-                logger.info(f"⚠️ Divergência entre indicadores - HMA:{trend_hma}, EMA:{trend_ema}, BB:{bb_trend}, Micro:{micro_trend}")
-        else:
-            logger.info(f"⚠️ Sem dados suficientes para HMA ou confiança baixa. Dados HMA: {len(df)>=100}, Confiança: {confidence}")
-
-        
-        
+        # Log detalhado da análise final
         logger.info(
-            f"📈 Análise: EMA9={ema9:.2f}, EMA21={ema21:.2f}, trend_ema={trend_ema}, " +
-            f"micro_trend={micro_trend}(força:{micro_strength:.2f}, conf:{micro_confidence:.2f}, padrão:{micro_pattern}), " +
-            f"trend_final={signal.direction if signal is not None else 'Tendencia nao definida'}, " +
-            f"RSI={rsi:.2f}, MACD={macd:.2f}/{macd_signal:.2f}, ATR={atr:.2f}, " +
-            f"body={body:.2f}, confidence={confidence}"
+            f"📈 Análise Final: "
+            f"Consenso={consensus_trend} ({consensus_count}/{len(trends_list)}), "
+            f"Confiança={final_confidence}%, "
+            f"RSI={rsi:.2f}, MACD={macd:.4f}/{macd_signal:.4f}, ATR={atr:.5f}, "
+            f"Body={body:.5f}, Indicadores={valid_trends}"
         )
 
-        if signal.direction:
-            logger.info(f"🚨 SINAL DETECTADO: {signal.direction} | Confiança: {confidence}%")
-            
-            # Persistir o candle sem o sinal associado
-            persist_candle(candle)
-            
-            # Enviar o sinal
-            handle_signal(candle)
-        else:
-            logger.info("⚡ Sem sinal forte. Aguardando próximo candle.")
+        logger.info(f"🚨 SINAL DETECTADO: {signal.direction} | Confiança: {final_confidence}%")
+        
+        # Persistir o candle e enviar o sinal
+        persist_candle(candle)
+        handle_signal(candle)
 
     except Exception as e:
         logger.error(f"⚠️ Erro no processamento dos candles: {e}")
