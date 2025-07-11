@@ -186,10 +186,9 @@ def handle_signal(candle: Candle) -> None:
     
     signal = candle.signal
 
-    open_time_candle = datetime.fromtimestamp(candle.epoch)
+    signal.entry_time = datetime.fromtimestamp(candle.epoch)
 
-    signal.analyze_time = get_brazil_time(open_time_candle)
-    signal.entry_time = calculate_entry_time(open_time_candle)
+    signal.analyze_time = datetime.fromtimestamp(candle.epoch - 60)
     signal.direction = signal.direction if signal.direction else SignalDirection.INDEFINIDO
 
     close_price = candle.close_price if candle.close_price is not None else 0.0
@@ -513,14 +512,16 @@ def process_candles() -> None:
             
             # Agora requeremos concordância entre BB, EMA, HMA e Micro Tendência
             micro_trend_ema_match = micro_trend == trend_ema
-            all_trends_agree = (trend_hma == trend_ema == bb_trend and micro_trend_ema_match)
+            # all_trends_agree = (trend_hma == trend_ema == bb_trend and micro_trend_ema_match)
+            all_trends_agree = (True)
             
             if all_trends_agree:
+                epoch = int(last['epoch']) + 60
                 # Atribuir valores ao sinal
                 signal.direction = SignalDirection.RISE if trend_hma == 'RISE' else SignalDirection.FALL
                 signal.confidence = confidence
                 signal.analyze_time = datetime.utcnow()
-                signal.open_candle_timestamp = int(last['epoch'])
+                signal.open_candle_timestamp = epoch
                 signal.message_id = None
                 signal.chat_id = None
                 signal.result = None
@@ -529,7 +530,7 @@ def process_candles() -> None:
                 
 
                 # Atribuir valores ao candle
-                candle.epoch = int(last['epoch'])
+                candle.epoch = epoch
                 candle.open_price = last['open']
                 candle.high = last['high']
                 candle.low = last['low']
@@ -651,7 +652,7 @@ def handle_ohlc(data: dict) -> None:
                             return
                         else:
                             logger.info(f"🔔 Candle {candle['epoch']} é maior que o entry_time {entry_time}")
-                            save_previous_candle_on_transition()
+                            save_previous_candle_on_transition(candle_db)
                             validate_signals_for_candle()
                     else:
                         logger.info(f"🔔 Candle {candle['epoch']} não tem entry_time")
@@ -700,7 +701,7 @@ def schedule_signal_validation(prev_open, prev_close):
     else:
         logger.info("📝 Sem sinais pendentes para agendar validação")
 
-def save_previous_candle_on_transition() -> bool:
+def save_previous_candle_on_transition(candle_db: Candle) -> bool:
     """
     Verifica se houve uma transição de candle e, se sim, salva o candle anterior no banco de dados.
     
@@ -716,9 +717,6 @@ def save_previous_candle_on_transition() -> bool:
     logger.info(f"Funcao save_previous_candle_on_transition iniciada.")
 
     try:
-        repo = RepositoryFactory.get_candle_repository()
-        candle_db = repo.find_by_signal_id(queue_validate_signal[0])
-
         if not candle_db:
             logger.warning(f"⚠️ Não foi possível encontrar o candle com signal_id={queue_validate_signal[0]}")
             return False
@@ -726,7 +724,10 @@ def save_previous_candle_on_transition() -> bool:
         last_open_time = candle_db.epoch
         if candle_db.has_gale_items():
             latest_gale_item = candle_db.get_latest_gale_item()
-            last_open_time = latest_gale_item.epoch      
+            last_open_time = latest_gale_item.epoch
+        else:
+            last_open_time = candle_db.epoch + 60
+              
 
         # Encontra o candle anterior baseado no last_open_time
         previous_candles = [c for c in data_candles if c[1] == last_open_time]
@@ -760,6 +761,7 @@ def save_previous_candle_on_transition() -> bool:
             candle_db.close_price = float(prev_candle_data[5])
         
         # Atualiza o candle no banco de dados usando o to_dict()
+        repo = RepositoryFactory.get_candle_repository()
         repo.update_one({'epoch': candle_db.epoch}, {'$set': candle_db.to_dict()})
         logger.info(f"✅ Candle {candle_db.epoch} atualizado com sucesso")
     
