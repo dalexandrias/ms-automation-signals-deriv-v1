@@ -95,9 +95,9 @@ def calculate_signal_confidence(trend, rsi, macd, macd_signal, body, atr, close_
         confidence = 20
         
         # Ajustes por indicadores
-        if trend == 'RISE' and rsi >= 55:
+        if trend == 'RISE' and rsi >= 55 and rsi <= 75:
             confidence += 20
-        if trend == 'FALL' and rsi <= 50:
+        if trend == 'FALL' and rsi <= 50 and rsi >= 30:
             confidence += 20
         if trend == 'RISE' and macd > macd_signal:
             confidence += 20
