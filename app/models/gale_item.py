@@ -1,7 +1,7 @@
 from typing import Optional, Union
 from datetime import datetime
-from enums.enum_gale_status import GaleEnum
-from enums.enum_result_status import ResultStatusEnum
+from app.enums.enum_gale_status import GaleEnum
+from app.enums.enum_result_status import ResultStatusEnum
 
 
 class GaleItem:

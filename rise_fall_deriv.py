@@ -12,18 +12,19 @@ import pytz
 import websocket
 import requests
 
-from enums.enum_gale_status import GaleEnum
-from models.gale_item import GaleItem
-from repositories.repository_factory import RepositoryFactory
-from models.signal import Signal
-from models.candle import Candle
-from models.gale_item import GaleItem
-from enums.enum_signal_direction import SignalDirection
-from enums.enum_result_status import ResultStatusEnum
-from log_config import setup_logging
-from indicators import calculate_bollinger_bands, calculate_rsi, calculate_macd, calculate_atr, analyze_micro_trend
-from trend_analysis import analyze_ema_trend, analyze_hma_trend, calculate_signal_confidence
-from bollinger_analysis import should_trade_bollinger
+from app.enums.enum_gale_status import GaleEnum
+from app.models.gale_item import GaleItem
+from app.repositories.repository_factory import RepositoryFactory
+from app.models.signal import Signal
+from app.models.candle import Candle
+from app.models.gale_item import GaleItem
+from app.enums.enum_signal_direction import SignalDirection
+from app.enums.enum_result_status import ResultStatusEnum
+from app.log_config import setup_logging
+
+# === SISTEMA DINÂMICO DE INDICADORES ===
+from app.indicator_system import IndicatorFactory, ConsensusAnalyzer, IndicatorResult
+from app.config.indicators import get_consensus_config
 
 # === CONFIGURAÇÕES ENV ===
 TOKEN = os.getenv('DERIV_TOKEN')
@@ -374,264 +375,239 @@ def validate_signals_for_candle() -> None:
 
 def process_candles() -> None:
     """
-    VERSÃO REORGANIZADA - Processa candles priorizando concordância entre indicadores.
+    FASE 3 - SISTEMA DINÂMICO EM PRODUÇÃO
     
-    Fluxo:
-    1. Preparação dos dados
-    2. Análise de indicadores de tendência (BB, EMA, HMA, Micro)
-    3. Verificação de concordância entre indicadores  
-    4. Cálculo de confiança baseado no consenso
-    5. Geração de sinal se critérios atendidos
+    Processa candles usando exclusivamente o sistema dinâmico de indicadores.
+    
+    Fluxo Otimizado:
+    1. Validação e preparação eficiente dos dados
+    2. Análise usando sistema dinâmico de indicadores
+    3. Verificação automática de consenso com validações de segurança
+    4. Cálculo distribuído de confiança
+    5. Geração e envio de sinal se critérios atendidos
+    
+    Performance Target: < 100ms para análise completa
     """
     global data_candles, last_open_time
     
-    # Verifica se há dados suficientes para análise
+    # Marcar início para medição de performance
+    process_start_time = datetime.utcnow()
+    
+    # Validações iniciais rápidas
     if len(data_candles) < max_candles:
-        logger.info(f"📊 Dados insuficientes para processar. Necessário: {max_candles}, Disponível: {len(data_candles)}")
+        logger.info(f"📊 Dados insuficientes: {len(data_candles)}/{max_candles} candles")
         return
     
     try:
-        logger.info(f"📊 Iniciando processamento de {len(data_candles)} candles")
+        logger.info(f"� [FASE 3] Processando {len(data_candles)} candles com sistema dinâmico")
         
         # ==================== PREPARAÇÃO DOS DADOS ====================
         
+        logger.debug(f"📊 Preparando dados de {len(data_candles)} candles para análise")
+        
+        # Usar apenas os últimos max_candles necessários para eficiência
+        recent_candles = data_candles[-max_candles:]
+        
         # Normalizar os dados para garantir consistência
         normalized_data = []
-        for candle in data_candles[-max_candles:]:
-            if len(candle) == 5:  # Formato antigo: (epoch, open, high, low, close)
-                normalized_data.append({
-                    'epoch': candle[0],
-                    'open_time': candle[0],  # Usar epoch como open_time se não estiver disponível
-                    'open': candle[1],
-                    'high': candle[2],
-                    'low': candle[3],
-                    'close': candle[4]
-                })
-            elif len(candle) == 6:  # Formato novo: (epoch, open_time, open, high, low, close)
-                normalized_data.append({
-                    'epoch': candle[0],
-                    'open_time': candle[1],
-                    'open': candle[2],
-                    'high': candle[3],
-                    'low': candle[4],
-                    'close': candle[5]
-                })
-            else:
-                logger.warning(f"⚠️ Formato de candle inesperado ignorado: {candle}")
+        for i, candle in enumerate(recent_candles):
+            try:
+                if len(candle) == 5:  # Formato antigo: (epoch, open, high, low, close)
+                    normalized_data.append({
+                        'epoch': candle[0],
+                        'open_time': candle[0],  # Usar epoch como open_time se não estiver disponível
+                        'open': float(candle[1]),
+                        'high': float(candle[2]),
+                        'low': float(candle[3]),
+                        'close': float(candle[4])
+                    })
+                elif len(candle) == 6:  # Formato novo: (epoch, open_time, open, high, low, close)
+                    normalized_data.append({
+                        'epoch': candle[0],
+                        'open_time': candle[1],
+                        'open': float(candle[2]),
+                        'high': float(candle[3]),
+                        'low': float(candle[4]),
+                        'close': float(candle[5])
+                    })
+                else:
+                    logger.warning(f"⚠️ Formato de candle inesperado no índice {i}: {candle}")
+                    continue
+            except (ValueError, TypeError, IndexError) as e:
+                logger.warning(f"⚠️ Erro ao normalizar candle {i}: {e}")
                 continue
 
-        # Criar o DataFrame a partir dos dados
+        if len(normalized_data) < max_candles:
+            logger.warning(f"⚠️ Dados normalizados insuficientes: {len(normalized_data)}/{max_candles}")
+            return
+
+        # Criar DataFrame otimizado
         df = pd.DataFrame(normalized_data)
         
-        # Renomear as colunas após criar o DataFrame
-        if len(df.columns) == 6:
-            df.columns = ['epoch', 'open_time', 'open', 'high', 'low', 'close']
-        else:
-            logger.error(f"❌ DataFrame com número incorreto de colunas: {len(df.columns)}. Esperado: 6")
+        # Verificar se DataFrame foi criado corretamente
+        if df.empty or len(df.columns) != 6:
+            logger.error(f"❌ DataFrame inválido: vazio={df.empty}, colunas={len(df.columns) if not df.empty else 0}")
             return
             
-        # Converter para tipos numéricos
-        for col in ['open', 'high', 'low', 'close']:
-            df[col] = pd.to_numeric(df[col], errors='coerce')
-            
-        # Verificar se há valores NaN após a conversão
-        nan_counts = df.isna().sum()
+        # Definir nomes das colunas
+        df.columns = ['epoch', 'open_time', 'open', 'high', 'low', 'close']
+        
+        # Verificar tipos de dados e valores NaN
+        numeric_cols = ['open', 'high', 'low', 'close']
+        nan_counts = df[numeric_cols].isna().sum()
         if nan_counts.sum() > 0:
-            logger.warning(f"⚠️ Valores NaN detectados no DataFrame após conversão: {nan_counts}")
+            logger.warning(f"⚠️ Valores NaN detectados: {nan_counts.to_dict()}")
+            # Preencher NaN com valores válidos (forward fill)
+            df[numeric_cols] = df[numeric_cols].fillna(method='ffill')
             
+        # Adicionar coluna de tempo para referência
         df['time'] = pd.to_datetime(df['epoch'], unit='s')
         last = df.iloc[-1]
+        
+        logger.debug(f"✅ DataFrame preparado: {len(df)} registros, último candle: {last['time']}")
 
-        # Calcular Bollinger Bands (necessário para todas as análises)
-        upper, middle, lower = calculate_bollinger_bands(df, window=10, window_dev=1.5)
-        if upper is None or middle is None or lower is None:
-            logger.error("❌ Falha ao calcular Bollinger Bands")
-            return
-
-        # ==================== ANÁLISE DE INDICADORES DE TENDÊNCIA ====================
+        # ==================== SISTEMA DINÂMICO DE INDICADORES ====================
         
-        # 1. BOLLINGER BANDS ANALYSIS
-        should_trade_bb, bb_trend, bb_strength = should_trade_bollinger(df, upper, middle, lower)
-        logger.info(f"📊 BB Analysis: trend={bb_trend}, strength={bb_strength:.3f}, should_trade={should_trade_bb}")
+        logger.info("🔄 Iniciando análise com sistema dinâmico de indicadores...")
         
-        # 2. EMA TREND ANALYSIS
-        trend_ema, ema9, ema21 = analyze_ema_trend(df, fast_period=9, slow_period=21)
-        if trend_ema is None:
-            logger.error("❌ Falha ao calcular EMA trend")
-            return
-        logger.info(f"📊 EMA Analysis: trend={trend_ema}, EMA9={ema9:.5f}, EMA21={ema21:.5f}")
-        
-        # 3. HMA TREND ANALYSIS (se tiver dados suficientes)
-        trend_hma = None
-        if len(df) >= 100:
-            trend_hma = analyze_hma_trend(df)
-            logger.info(f"📊 HMA Analysis: trend={trend_hma}")
-        else:
-            logger.info(f"📊 HMA Analysis: dados insuficientes ({len(df)}/100)")
-        
-        # 4. MICRO TREND ANALYSIS
-        micro_trend_analysis = analyze_micro_trend(df, period=5, trend_strength_threshold=0.6)
-        micro_trend = micro_trend_analysis['trend']
-        micro_strength = micro_trend_analysis['strength']
-        micro_confidence = micro_trend_analysis['confidence']
-        micro_pattern = micro_trend_analysis['pattern']
-        micro_momentum = micro_trend_analysis['momentum']
-        logger.info(f"📊 Micro Analysis: trend={micro_trend}, strength={micro_strength:.3f}, confidence={micro_confidence:.3f}, pattern={micro_pattern}")
-
-        # ==================== VERIFICAÇÃO DE CONCORDÂNCIA ====================
-        
-        # Lista de tendências válidas (não None e não SIDEWAYS)
-        trend_indicators = {
-            'BB': bb_trend if should_trade_bb and bb_trend not in [None, 'SIDEWAYS'] else None,
-            'EMA': trend_ema if trend_ema not in [None, 'SIDEWAYS'] else None,
-            'HMA': trend_hma if trend_hma not in [None, 'SIDEWAYS'] else None,
-            'Micro': micro_trend if micro_trend not in [None, 'SIDEWAYS'] else None
-        }
-        
-        # Filtrar apenas tendências válidas
-        valid_trends = {k: v for k, v in trend_indicators.items() if v is not None}
-        trends_list = list(valid_trends.values())
-        
-        logger.info(f"🔍 Indicadores válidos: {valid_trends}")
-        
-        # Verificar se há concordância entre pelo menos 3 indicadores
-        consensus_trend = None
-        consensus_count = 0
-        
-        if len(trends_list) >= 3:
-            # Contar votos para cada direção
-            rise_votes = trends_list.count('RISE')
-            fall_votes = trends_list.count('FALL')
-            total_votes = len(trends_list)
+        try:
+            # Inicializar sistema dinâmico (apenas uma vez por execução)
+            factory = IndicatorFactory()
+            consensus_analyzer = ConsensusAnalyzer()
             
-            # Exigir maioria absoluta (pelo menos 75% de concordância)
-            consensus_threshold = max(3, int(total_votes * 0.75))
+            # Medir tempo de processamento
+            start_time = datetime.utcnow()
             
-            if rise_votes >= consensus_threshold:
-                consensus_trend = 'RISE'
-                consensus_count = rise_votes
-            elif fall_votes >= consensus_threshold:
-                consensus_trend = 'FALL'
-                consensus_count = fall_votes
-                
-            logger.info(f"🗳️ Votação: RISE={rise_votes}, FALL={fall_votes}, Total={total_votes}, Threshold={consensus_threshold}")
-        
-        # Se não há consenso, sair
-        if consensus_trend is None:
-            logger.info(f"⚠️ Sem consenso entre indicadores. Indicadores válidos: {len(trends_list)}, mínimo necessário: 3")
+            # Calcular todos os indicadores usando o sistema dinâmico
+            indicator_results = factory.calculate_all_indicators(df)
+            
+            # Verificar se obtivemos resultados
+            if not indicator_results:
+                logger.warning("⚠️ Sistema dinâmico não retornou resultados")
+                return
+            
+            # Log dos resultados individuais
+            valid_count = sum(1 for r in indicator_results if r.is_valid_for_consensus())
+            logger.info(f"📊 Indicadores processados: {len(indicator_results)} total, {valid_count} válidos para consenso")
+            
+            for result in indicator_results:
+                status_icon = "✅" if result.is_valid_for_consensus() else "⚠️"
+                logger.info(f"   {status_icon} {result.name}: {result.trend} "
+                           f"(força: {result.strength:.3f}, confiança: {result.confidence:.3f})")
+            
+            # Analisar consenso
+            consensus_result = consensus_analyzer.analyze_consensus(indicator_results)
+            
+            # ==================== CÁLCULO DE CONFIANÇA PONDERADA ====================
+            
+            # Se há consenso, calcular confiança baseada em força e pesos dos indicadores
+            final_confidence = consensus_result.confidence  # Valor padrão (porcentagem simples)
+            
+            if consensus_result.has_consensus and consensus_result.trend:
+                try:
+                    # Filtrar indicadores que concordam com o consenso
+                    agreeing_indicators = [
+                        r for r in indicator_results 
+                        if r.trend == consensus_result.trend and r.is_valid_for_consensus()
+                    ]
+                    
+                    if agreeing_indicators:
+                        # Calcular confiança baseada na força média dos indicadores concordantes
+                        total_strength = sum(r.strength for r in agreeing_indicators)
+                        total_confidence = sum(r.confidence for r in agreeing_indicators)
+                        total_weight = sum(r.weight for r in agreeing_indicators)
+                        
+                        # CONVERSÃO: confianças vêm como decimais (0.0-1.0), converter para percentual
+                        confidence_percentages = [r.confidence * 100 for r in agreeing_indicators]
+                        
+                        # Confiança base: média ponderada das confianças individuais
+                        if total_weight > 0:
+                            weighted_confidence = sum(r.confidence * 100 * r.weight for r in agreeing_indicators) / total_weight
+                        else:
+                            weighted_confidence = sum(confidence_percentages) / len(agreeing_indicators)
+                        
+                        # Bônus por força: média das forças * 30 (força já está em 0.0-1.0)
+                        strength_bonus = (total_strength / len(agreeing_indicators)) * 30
+                        
+                        # Bônus por consenso: +10% por cada indicador adicional além do mínimo
+                        min_required = 2
+                        consensus_bonus = max(0, (len(agreeing_indicators) - min_required) * 10)
+                        
+                        # Confiança final
+                        final_confidence = min(100, weighted_confidence + strength_bonus + consensus_bonus)
+                        
+                        logger.info(f"🧮 Cálculo de Confiança Ponderada:")
+                        logger.info(f"   📊 Indicadores concordantes: {len(agreeing_indicators)}")
+                        logger.info(f"   🔍 Confianças originais: {[f'{r.confidence:.3f}' for r in agreeing_indicators]}")
+                        logger.info(f"   📈 Confianças convertidas: {[f'{c:.1f}%' for c in confidence_percentages]}")
+                        logger.info(f"   ⚖️ Confiança ponderada: {weighted_confidence:.1f}%")
+                        logger.info(f"   💪 Bônus força: +{strength_bonus:.1f}%")
+                        logger.info(f"   🤝 Bônus consenso: +{consensus_bonus:.1f}%")
+                        logger.info(f"   🎯 Confiança final: {final_confidence:.1f}%")
+                        
+                except Exception as e:
+                    logger.warning(f"⚠️ Erro no cálculo de confiança ponderada: {e}")
+                    final_confidence = consensus_result.confidence  # Fallback para valor simples
+            
+            # Medir tempo total de processamento
+            processing_time = (datetime.utcnow() - start_time).total_seconds() * 1000
+            
+            logger.info(f"🤖 Sistema Dinâmico - Resultado em {processing_time:.1f}ms:")
+            logger.info(f"   📈 Consenso: {consensus_result.trend}")
+            logger.info(f"   🔢 Indicadores: {consensus_result.agreeing_count}/{consensus_result.total_count}")
+            logger.info(f"   🎯 Confiança: {final_confidence:.1f}%")
+            logger.info(f"   🗳️ Votação: {consensus_result.vote_breakdown}")
+            
+        except Exception as e:
+            logger.error(f"❌ Erro no sistema dinâmico de indicadores: {e}")
+            import traceback
+            logger.error(f"Detalhes: {traceback.format_exc()}")
             return
         
-        logger.info(f"✅ CONSENSO ALCANÇADO: {consensus_trend} ({consensus_count}/{len(trends_list)} indicadores)")
-
-        # ==================== CÁLCULO DE CONFIANÇA ====================
+        # ==================== VALIDAÇÃO E GERAÇÃO DE SINAL ====================
         
-        # Calcular indicadores auxiliares
-        rsi = calculate_rsi(df, window=14)
-        if rsi is None:
-            logger.error("❌ Falha ao calcular RSI")
-            return
-
-        macd, macd_signal = calculate_macd(df)
-        if macd is None or macd_signal is None:
-            logger.error("❌ Falha ao calcular MACD")
-            return
-
-        atr = calculate_atr(df, window=14)
-        if atr is None:
-            logger.error("❌ Falha ao calcular ATR")
+        # Verificar critérios para geração de sinal
+        if consensus_result.trend is None:
+            logger.info("⚠️ Sem consenso entre indicadores - sinal não gerado")
             return
             
-        body = abs(last['close'] - last['open'])
-
-        # Calcular confiança base usando a tendência de consenso
-        base_confidence = calculate_signal_confidence(
-            consensus_trend, rsi, macd, macd_signal, body, atr, last['close'], upper, lower
-        )
-        
-        # ==================== SISTEMA PROPORCIONAL DE CONFIANÇA ====================
-        
-        # Calcular pesos dos indicadores que concordam com o consenso
-        indicator_weights = {}
-        total_weight = 0
-        
-        # BB - peso baseado na força e se deve operar
-        if trend_indicators['BB'] == consensus_trend:
-            bb_weight = bb_strength * 25  # Peso máximo 25
-            indicator_weights['BB'] = bb_weight
-            total_weight += bb_weight
-        
-        # Micro - peso baseado na força e confiança
-        if trend_indicators['Micro'] == consensus_trend:
-            micro_weight = micro_strength * micro_confidence * 20  # Peso máximo 20
-            indicator_weights['Micro'] = micro_weight
-            total_weight += micro_weight
-        
-        # HMA - peso fixo alto (indicador de tendência longa)
-        if trend_indicators['HMA'] == consensus_trend:
-            hma_weight = 15
-            indicator_weights['HMA'] = hma_weight
-            total_weight += hma_weight
-        
-        # EMA - peso fixo moderado (sempre disponível)
-        if trend_indicators['EMA'] == consensus_trend:
-            ema_weight = 10
-            indicator_weights['EMA'] = ema_weight
-            total_weight += ema_weight
-        
-        # Calcular confiança final usando distribuição proporcional
-        # Base: 60% (da função calculate_signal_confidence)
-        # Bônus: 40% distribuídos proporcionalmente entre indicadores
-        
-        max_bonus = 40  # Máximo 40% de bônus
-        confidence_bonus = 0
-        bonus_breakdown = []
-        
-        if total_weight > 0:
-            for indicator, weight in indicator_weights.items():
-                # Distribuir o bônus proporcionalmente
-                indicator_bonus = int((weight / total_weight) * max_bonus)
-                confidence_bonus += indicator_bonus
-                bonus_breakdown.append(f"{indicator}: +{indicator_bonus}")
-        
-        # Confiança final
-        final_confidence = base_confidence + confidence_bonus
-        
-        # Garantir que não ultrapasse 100%
-        final_confidence = min(100, final_confidence)
-        
-        # Log detalhado do cálculo
-        weight_info = ", ".join([f"{k}={v:.2f}" for k, v in indicator_weights.items()])
-        logger.info(f"🔢 Pesos calculados: {weight_info} (total: {total_weight:.2f})")
-        logger.info(f"📈 Confiança final: {final_confidence}% (base: {base_confidence} + bônus: {confidence_bonus}) [{', '.join(bonus_breakdown)}]")
-
-        # Verificar se confiança atende ao mínimo
         if final_confidence < min_confidence_to_send:
-            logger.info(f"⚠️ Confiança insuficiente: {final_confidence}% < {min_confidence_to_send}%")
+            logger.info(f"⚠️ Confiança insuficiente: {final_confidence:.1f}% < {min_confidence_to_send}% - sinal não gerado")
             return
-
-        # ==================== GERAÇÃO DE SINAL ====================
         
+        # Validações adicionais de segurança
+        if consensus_result.agreeing_count < 2:
+            logger.info(f"⚠️ Poucos indicadores concordantes: {consensus_result.agreeing_count} - sinal não gerado")
+            return
+        
+        logger.info("🎯 Critérios atendidos - gerando sinal...")
+        
+        # Criar sinal com dados otimizados
         signal = Signal()
-        candle_repo = RepositoryFactory.get_candle_repository()
-        candle = candle_repo.find_by_epoch(int(last['epoch']))
-
-        if candle is None:
-            candle = Candle()
-
-        # Configurar sinal
-        epoch = int(last['epoch']) + 60
-        signal.direction = SignalDirection.RISE if consensus_trend == 'RISE' else SignalDirection.FALL
-        signal.confidence = final_confidence
+        signal.signal_id = generate_signal_id()
+        signal.direction = SignalDirection.RISE if consensus_result.trend == 'RISE' else SignalDirection.FALL
+        signal.confidence = int(final_confidence)
         signal.analyze_time = datetime.utcnow()
-        signal.open_candle_timestamp = epoch
+        
+        # Época para o próximo candle (entrada)
+        next_epoch = int(last['epoch']) + 60
+        signal.open_candle_timestamp = next_epoch
+        signal.entry_time = None  # Será definido no handle_signal
+        
+        # Inicializar campos de resposta
         signal.message_id = None
         signal.chat_id = None
         signal.result = None
-        signal.signal_id = generate_signal_id()
-        signal.entry_time = None
-
-        # Configurar candle
-        candle.epoch = epoch
+        
+        # Buscar ou criar candle
+        candle_repo = RepositoryFactory.get_candle_repository()
+        candle = candle_repo.find_by_epoch(next_epoch)
+        
+        if candle is None:
+            candle = Candle()
+            candle.epoch = next_epoch
+            
+        # Configurar candle com dados do último candle analisado
         candle.open_price = last['open']
         candle.high = last['high']
         candle.low = last['low']
@@ -640,22 +616,41 @@ def process_candles() -> None:
         candle.time = last['time']
 
         # Log detalhado da análise final
-        logger.info(
-            f"📈 Análise Final: "
-            f"Consenso={consensus_trend} ({consensus_count}/{len(trends_list)}), "
-            f"Confiança={final_confidence}%, "
-            f"RSI={rsi:.2f}, MACD={macd:.4f}/{macd_signal:.4f}, ATR={atr:.5f}, "
-            f"Body={body:.5f}, Indicadores={valid_trends}"
-        )
+        indicator_summary = [f"{result.name}={result.trend}" for result in indicator_results]
+        logger.info("=" * 60)
+        logger.info("📈 ANÁLISE FINAL DO SISTEMA DINÂMICO:")
+        logger.info(f"   🎯 Consenso: {consensus_result.trend}")
+        logger.info(f"   🔢 Concordância: {consensus_result.agreeing_count}/{consensus_result.total_count} indicadores")
+        logger.info(f"   💯 Confiança: {final_confidence:.1f}%")
+        logger.info(f"   📊 Indicadores: {', '.join(indicator_summary)}")
+        logger.info(f"   📅 Próximo candle: {datetime.fromtimestamp(next_epoch).strftime('%H:%M:%S')}")
+        logger.info("=" * 60)
 
-        logger.info(f"🚨 SINAL DETECTADO: {signal.direction} | Confiança: {final_confidence}%")
+        logger.info(f"🚨 SINAL DETECTADO: {signal.direction} | ID: {signal.signal_id} | Confiança: {final_confidence:.1f}%")
         
-        # Persistir o candle e enviar o sinal
-        persist_candle(candle)
-        handle_signal(candle)
+        # Persistir e enviar sinal
+        try:
+            persist_candle(candle)
+            handle_signal(candle)
+            
+            # Métricas finais de performance
+            total_processing_time = (datetime.utcnow() - process_start_time).total_seconds() * 1000
+            logger.info(f"✅ Sinal {signal.signal_id} processado em {total_processing_time:.1f}ms")
+            
+            # Validar target de performance (< 100ms)
+            if total_processing_time > 100:
+                logger.warning(f"⚠️ Performance abaixo do target: {total_processing_time:.1f}ms > 100ms")
+            else:
+                logger.info(f"🎯 Performance dentro do target: {total_processing_time:.1f}ms")
+                
+        except Exception as e:
+            logger.error(f"❌ Erro ao processar sinal {signal.signal_id}: {e}")
+            raise
 
     except Exception as e:
-        logger.error(f"⚠️ Erro no processamento dos candles: {e}")
+        # Métricas de erro
+        error_processing_time = (datetime.utcnow() - process_start_time).total_seconds() * 1000
+        logger.error(f"⚠️ Erro no processamento após {error_processing_time:.1f}ms: {e}")
         import traceback
         logger.error(f"Detalhes do erro: {traceback.format_exc()}")
 
@@ -908,6 +903,7 @@ if __name__ == '__main__':
         logger.info(f"🔧 Configurações: MAX_CANDLES={max_candles}, GRANULARITY={granularity}s")
         logger.info(f"⏱️ Cooldowns: SIGNAL={signal_cooldown}s, VALIDATE={validate_signal_cooldown}s")
         logger.info(f"🎯 Confiança mínima: {min_confidence_to_send}%")
+        logger.info("🤖 Sistema: DINÂMICO (Fase 3 - Produção)")
         
         # Inicializa a conexão WebSocket
         logger.info("🔗 Conectando ao WebSocket Deriv...")
@@ -943,287 +939,3 @@ if __name__ == '__main__':
         logger.error(f"Detalhes do erro: {traceback.format_exc()}")
     finally:
         logger.info("🔚 Aplicação encerrada.")
-
-def check_candle_data_consistency() -> bool:
-    """
-    Verifica a consistência dos dados de candles armazenados.
-    
-    Returns:
-        bool: True se os dados são consistentes, False caso contrário
-    """
-    if not data_candles or len(data_candles) < 2:
-        logger.warning("⚠️ Dados insuficientes para verificar consistência")
-        return False
-    
-    # Verifica a estrutura dos candles
-    for idx, candle in enumerate(data_candles):
-        if len(candle) != 5:
-            logger.error(f"❌ Candle {idx} com estrutura inválida: {candle}")
-            return False
-    
-    # Verifica se os timestamps estão em ordem crescente
-    prev_time = data_candles[0][0]
-    for idx, candle in enumerate(data_candles[1:], 1):
-        curr_time = candle[0]
-        if curr_time < prev_time:
-            logger.error(f"❌ Timestamp fora de ordem: candle {idx-1}:{prev_time} > candle {idx}:{curr_time}")
-            return False
-        prev_time = curr_time
-    
-    # Verifica se há valores nulos ou inválidos
-    for idx, candle in enumerate(data_candles):
-        for i, val in enumerate(candle):
-            if val is None or (isinstance(val, (int, float)) and (val == 0 or pd.isna(val))):
-                field = ["timestamp", "open", "high", "low", "close"][i]
-                logger.error(f"❌ Valor inválido no candle {idx}, campo {field}: {val}")
-                return False
-    
-    # Verifica se os high/low são consistentes com open/close
-    for idx, candle in enumerate(data_candles):
-        open_price, high, low, close = candle[1], candle[2], candle[3], candle[4]
-        if high < open_price or high < close:
-            logger.error(f"❌ High inválido no candle {idx}: high={high}, open={open_price}, close={close}")
-            return False
-        if low > open_price or low > close:
-            logger.error(f"❌ Low inválido no candle {idx}: low={low}, open={open_price}, close={close}")
-            return False
-    
-    logger.info("✅ Dados de candles verificados e consistentes")
-    return True
-
-# === FUNÇÕES DE GERENCIAMENTO DE CANDLES ===
-def save_current_candle_update(ohlc_data: dict) -> None:
-    """
-    Salva as atualizações do candle atual (mesmo open_time).
-    
-    Args:
-        ohlc_data: Dados OHLC recebidos da API da Deriv
-    """
-    global current_candle_state
-    
-    try:
-        # Extrai os dados do evento OHLC
-        epoch = ohlc_data['epoch']
-        open_time = int(ohlc_data['open_time'])
-        open_price = float(ohlc_data['open'])
-        high = float(ohlc_data['high'])
-        low = float(ohlc_data['low'])
-        close = float(ohlc_data['close'])
-        
-        # Atualiza o estado do candle atual
-        current_candle_state = {
-            'epoch': epoch,
-            'open_time': open_time,
-            'open': open_price,
-            'high': high,
-            'low': low,
-            'close': close,
-            'time': datetime.utcfromtimestamp(epoch)
-        }
-        
-        logger.debug(f"📊 Candle atual atualizado: open_time={open_time}, "
-                    f"OHLC=({open_price:.3f}, {high:.3f}, {low:.3f}, {close:.3f})")
-        
-    except Exception as e:
-        logger.error(f"❌ Erro ao salvar atualização do candle atual: {e}")
-
-def detect_and_create_new_candle(ohlc_data: dict, previous_open_time: int) -> Candle:
-    """
-    Detecta um novo candle e cria uma instância da classe Candle com os dados.
-    
-    Args:
-        ohlc_data: Dados OHLC recebidos da API da Deriv
-        previous_open_time: Timestamp do open_time anterior
-        
-    Returns:
-        Candle: Nova instância da classe Candle ou None se não for um novo candle
-    """
-    try:
-        # Extrai os dados do evento OHLC
-        epoch = ohlc_data['epoch']
-        current_open_time = int(ohlc_data['open_time'])
-        open_price = float(ohlc_data['open'])
-        high = float(ohlc_data['high'])
-        low = float(ohlc_data['low'])
-        close = float(ohlc_data['close'])
-        
-        # Verifica se é realmente um novo candle
-        if current_open_time == previous_open_time:
-            return None
-            
-        # Cria uma nova instância da classe Candle
-        new_candle = Candle(
-            epoch=epoch,
-            open_price=open_price,
-            high=high,
-            low=low,
-            close_price=close,
-            time=datetime.utcfromtimestamp(epoch)
-        )
-        
-        logger.info(f"🆕 Novo candle criado: open_time={current_open_time}, "
-                   f"OHLC=({open_price:.3f}, {high:.3f}, {low:.3f}, {close:.3f})")
-        
-        # Valida a consistência do novo candle
-        if validate_new_candle_data(new_candle, current_candle_state):
-            return new_candle
-        else:
-            logger.warning(f"⚠️ Novo candle com dados inconsistentes, ignorando")
-            return None
-            
-    except Exception as e:
-        logger.error(f"❌ Erro ao detectar/criar novo candle: {e}")
-        return None
-
-def validate_new_candle_data(new_candle: Candle, previous_state: dict) -> bool:
-    """
-    Valida a consistência dos dados do novo candle.
-    
-    Args:
-        new_candle: Nova instância do candle
-        previous_state: Estado do candle anterior
-        
-    Returns:
-        bool: True se os dados são válidos, False caso contrário
-    """
-    try:
-        # Verifica se os valores OHLC são válidos
-        if (new_candle.open_price <= 0 or new_candle.high <= 0 or 
-            new_candle.low <= 0 or new_candle.close_price <= 0):
-            logger.error(f"❌ Candle com preços inválidos: {new_candle}")
-            return False
-        
-        # Verifica se high >= max(open, close) e low <= min(open, close)
-        max_oc = max(new_candle.open_price, new_candle.close_price)
-        min_oc = min(new_candle.open_price, new_candle.close_price)
-        
-        if new_candle.high < max_oc:
-            logger.error(f"❌ High ({new_candle.high}) menor que max(open, close) ({max_oc})")
-            return False
-            
-        if new_candle.low > min_oc:
-            logger.error(f"❌ Low ({new_candle.low}) maior que min(open, close) ({min_oc})")
-            return False
-        
-        # Verifica continuidade com o candle anterior (se existir)
-        if previous_state and 'close' in previous_state:
-            # O open do novo candle deve ser próximo ao close do anterior
-            price_diff = abs(new_candle.open_price - previous_state['close'])
-            max_gap = previous_state['close'] * 0.01  # 1% de tolerância
-            
-            if price_diff > max_gap:
-                logger.warning(f"⚠️ Gap significativo entre candles: "
-                             f"close anterior={previous_state['close']:.3f}, "
-                             f"open atual={new_candle.open_price:.3f}, "
-                             f"diferença={price_diff:.3f}")
-        
-        logger.debug(f"✅ Candle validado com sucesso: {new_candle}")
-        return True
-        
-    except Exception as e:
-        logger.error(f"❌ Erro na validação do candle: {e}")
-        return False
-
-def get_finalized_candle_from_state() -> tuple:
-    """
-    Retorna o candle finalizado baseado no estado atual salvo.
-    
-    Returns:
-        tuple: Tupla no formato (epoch, open, high, low, close) ou None
-    """
-    global current_candle_state
-    
-    if not current_candle_state:
-        return None
-    
-    try:
-        return (
-            current_candle_state['epoch'],
-            current_candle_state['open'],
-            current_candle_state['high'],
-            current_candle_state['low'],
-            current_candle_state['close']
-        )
-    except Exception as e:
-        logger.error(f"❌ Erro ao obter candle finalizado: {e}")
-        return None
-
-def analyze_deriv_api_pattern(ohlc_data: dict, last_open_time: int = None) -> dict:
-    """
-    Analisa o padrão dos dados recebidos da API da Deriv para identificar o tipo de evento.
-    
-    Args:
-        ohlc_data: Dados OHLC recebidos da API
-        last_open_time: Último open_time registrado
-        
-    Returns:
-        dict: Análise do evento contendo:
-            - event_type: 'new_candle' ou 'candle_update'
-            - is_valid: Se os dados são válidos
-            - transition_info: Informações sobre a transição (se novo candle)
-    """
-    try:
-        current_open_time = int(ohlc_data['open_time'])
-        current_epoch = ohlc_data['epoch']
-        
-        # Determina o tipo de evento
-        if last_open_time is None:
-            event_type = 'first_candle'
-        elif current_open_time != last_open_time:
-            event_type = 'new_candle'
-        else:
-            event_type = 'candle_update'
-        
-        # Análise de validade dos dados
-        open_price = float(ohlc_data['open'])
-        high = float(ohlc_data['high'])
-        low = float(ohlc_data['low'])
-        close = float(ohlc_data['close'])
-        
-        # Verifica a validade básica dos dados OHLC
-        is_valid = (
-            open_price > 0 and high > 0 and low > 0 and close > 0 and
-            high >= max(open_price, close) and
-            low <= min(open_price, close) and
-            high >= low
-        )
-        
-        # Informações sobre transição (para novos candles)
-        transition_info = {}
-        if event_type == 'new_candle' and current_candle_state:
-            transition_info = {
-                'previous_close': current_candle_state.get('close'),
-                'current_open': open_price,
-                'gap': abs(open_price - current_candle_state.get('close', 0)),
-                'gap_percentage': abs(open_price - current_candle_state.get('close', 0)) / current_candle_state.get('close', 1) * 100
-            }
-        
-        analysis = {
-            'event_type': event_type,
-            'is_valid': is_valid,
-            'open_time': current_open_time,
-            'epoch': current_epoch,
-            'ohlc': {
-                'open': open_price,
-                'high': high,
-                'low': low,
-                'close': close
-            },
-            'transition_info': transition_info,
-            'timestamp_human': datetime.utcfromtimestamp(current_epoch).strftime('%Y-%m-%d %H:%M:%S')
-        }
-        
-        logger.debug(f"📊 Análise da API: {event_type} - "
-                    f"open_time={current_open_time}, "
-                    f"valid={is_valid}, "
-                    f"OHLC=({open_price:.3f}, {high:.3f}, {low:.3f}, {close:.3f})")
-        
-        return analysis
-        
-    except Exception as e:
-        logger.error(f"❌ Erro na análise do padrão da API: {e}")
-        return {
-            'event_type': 'error',
-            'is_valid': False,
-            'error': str(e)
-        }

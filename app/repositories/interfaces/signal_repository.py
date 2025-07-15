@@ -2,8 +2,8 @@ from abc import abstractmethod
 from datetime import datetime
 from typing import List, Optional
 
-from repositories.interfaces.base_repository import BaseRepository
-from models.signal import Signal
+from .base_repository import BaseRepository
+from app.models.signal import Signal
 
 
 class SignalRepository(BaseRepository[Signal]):

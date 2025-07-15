@@ -1,4 +1,4 @@
-from models.signal import Signal
-from models.candle import Candle
+from .signal import Signal
+from .candle import Candle
 
 __all__ = ['Signal', 'Candle'] 

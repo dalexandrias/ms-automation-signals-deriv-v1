@@ -1,11 +1,11 @@
 import os
 from typing import Dict, Type, TypeVar, Optional, cast
 
-from repositories.interfaces.base_repository import BaseRepository
-from repositories.interfaces.signal_repository import SignalRepository
-from repositories.interfaces.candle_repository import CandleRepository
-from repositories.implementations.mongodb_signal_repository import MongoDBSignalRepository
-from repositories.implementations.mongodb_candle_repository import MongoDBCandleRepository
+from .interfaces.base_repository import BaseRepository
+from .interfaces.signal_repository import SignalRepository
+from .interfaces.candle_repository import CandleRepository
+from .implementations.mongodb_signal_repository import MongoDBSignalRepository
+from .implementations.mongodb_candle_repository import MongoDBCandleRepository
 
 T = TypeVar('T', bound=BaseRepository)
 

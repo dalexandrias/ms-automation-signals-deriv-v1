@@ -5,10 +5,10 @@ from typing import List, Dict, Any, Optional
 
 from pymongo.collection import Collection
 
-from repositories.interfaces.candle_repository import CandleRepository
-from repositories.implementations.mongodb_connection import MongoDBConnection
-from models.candle import Candle
-from models.signal import Signal
+from ..interfaces.candle_repository import CandleRepository
+from .mongodb_connection import MongoDBConnection
+from app.models.candle import Candle
+from app.models.signal import Signal
 
 logger = logging.getLogger(__name__)
 

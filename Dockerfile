@@ -24,7 +24,10 @@ COPY requirements.txt .
 RUN pip install --upgrade pip && pip install --no-cache-dir -r requirements.txt
 
 # Copiar todo o projeto para dentro do container
-COPY ./app .
+COPY ./app ./app
+COPY rise_fall_deriv.py .
+# Copiar o arquivo .env
+COPY .env .
 
 # Garantir que a pasta de logs exista
 RUN mkdir -p logs

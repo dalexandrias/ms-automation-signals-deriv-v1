@@ -1,7 +1,7 @@
 from datetime import datetime
 from typing import Optional, Union
-from enums.enum_signal_direction import SignalDirection 
-from enums.enum_result_status import ResultStatusEnum
+from app.enums.enum_signal_direction import SignalDirection 
+from app.enums.enum_result_status import ResultStatusEnum
 
 class Signal:
     """

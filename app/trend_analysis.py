@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 import logging
-from indicators import hull_moving_average, calculate_ema
+from .indicators import hull_moving_average, calculate_ema
 
 logger = logging.getLogger(__name__)
 

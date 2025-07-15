@@ -1,4 +1,4 @@
-from repositories.implementations.mongodb_connection import MongoDBConnection
-from repositories.implementations.mongodb_signal_repository import MongoDBSignalRepository
+from .mongodb_connection import MongoDBConnection
+from .mongodb_signal_repository import MongoDBSignalRepository
 
 __all__ = ['MongoDBConnection', 'MongoDBSignalRepository'] 

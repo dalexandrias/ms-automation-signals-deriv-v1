@@ -5,9 +5,9 @@ from typing import List, Dict, Any, Optional
 
 from pymongo.collection import Collection
 
-from repositories.interfaces.signal_repository import SignalRepository
-from repositories.implementations.mongodb_connection import MongoDBConnection
-from models.signal import Signal
+from ..interfaces.signal_repository import SignalRepository
+from .mongodb_connection import MongoDBConnection
+from app.models.signal import Signal
 
 logger = logging.getLogger(__name__)
 

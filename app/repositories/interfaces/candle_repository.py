@@ -2,9 +2,9 @@ from abc import abstractmethod
 from datetime import datetime
 from typing import List, Optional
 
-from models.signal import Signal
-from repositories.interfaces.base_repository import BaseRepository
-from models.candle import Candle
+from app.models.signal import Signal
+from .base_repository import BaseRepository
+from app.models.candle import Candle
 
 
 class CandleRepository(BaseRepository[Candle]):

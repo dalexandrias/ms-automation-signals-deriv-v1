@@ -1,10 +1,10 @@
 from datetime import datetime
 from typing import Optional, Tuple, Any, List, TYPE_CHECKING, Union
-from models.signal import Signal
+from .signal import Signal
 
 if TYPE_CHECKING:
-    from models.gale_item import GaleItem
-    from enums.enum_gale_status import GaleEnum
+    from .gale_item import GaleItem
+    from app.enums.enum_gale_status import GaleEnum
 
 class Candle:
     """
@@ -96,7 +96,7 @@ class Candle:
         if len(data) > 6:
             # Se o sinal for um dicionário, converter para objeto Signal
             if isinstance(data[6], dict):
-                from models.signal import Signal
+                from .signal import Signal
                 signal = Signal.from_dict(data[6])
             else:
                 signal = data[6]
@@ -136,14 +136,14 @@ class Candle:
         data.pop('_id', None)
         signal = None
         if signal_data:
-            from models.signal import Signal
+            from .signal import Signal
             signal = Signal.from_dict(signal_data)
         
         # Extrair os itens de gale se estiverem presentes
         gale_items_data = data.pop('gale_items', None)
         gale_items = []
         if gale_items_data:
-            from models.gale_item import GaleItem
+            from .gale_item import GaleItem
             gale_items = [GaleItem.from_dict(item) for item in gale_items_data]
             
         # Renomear chaves se necessário para compatibilidade com o construtor
